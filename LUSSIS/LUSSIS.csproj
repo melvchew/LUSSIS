@@ -106,11 +106,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Rep.aspx" />
     <Content Include="test\HtmlPage1.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rep.aspx.cs">
+      <DependentUpon>Rep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rep.aspx.designer.cs">
+      <DependentUpon>Rep.aspx</DependentUpon>
+    </Compile>
     <Compile Include="test\Class1.cs" />
   </ItemGroup>
   <PropertyGroup>
