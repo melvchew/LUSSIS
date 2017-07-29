@@ -116,7 +116,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RoleManagement.cs" />
-    <Compile Include="RawCode\BLL\data\Peter\UploadExcelBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Peter\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\RolesManagementBLL.cs" />
