@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HxxTest.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -108,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PTest.aspx" />
+    <Content Include="Redirect.aspx" />
     <Content Include="test\eee.aspx" />
     <Content Include="test\HtmlPage1.html" />
     <Content Include="Web.config" />
@@ -120,6 +122,13 @@
     <Compile Include="HxxTest.aspx.designer.cs">
       <DependentUpon>HxxTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PTest.aspx.cs">
       <DependentUpon>PTest.aspx</DependentUpon>
@@ -127,6 +136,13 @@
     </Compile>
     <Compile Include="PTest.aspx.designer.cs">
       <DependentUpon>PTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Redirect.aspx.cs">
+      <DependentUpon>Redirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Redirect.aspx.designer.cs">
+      <DependentUpon>Redirect.aspx</DependentUpon>
     </Compile>
     <Compile Include="test\Class1.cs" />
     <Compile Include="test\eee.aspx.cs">
