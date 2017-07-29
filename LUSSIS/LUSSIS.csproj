@@ -122,6 +122,7 @@
     <Compile Include="PTest.aspx.designer.cs">
       <DependentUpon>PTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RawCode\BLL\data\Jinshan\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RoleManagement.cs" />
     <Compile Include="RawCode\BLL\ReportBLL.cs" />
