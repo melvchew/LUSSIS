@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace LUSSIS.test
+namespace LUSSIS.RawCode.BLL
 {
-    public class Class1
+    public class VoucherManagementBLL
     {
     }
 }
