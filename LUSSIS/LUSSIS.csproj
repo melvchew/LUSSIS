@@ -137,7 +137,6 @@
     <Folder Include="Employee\" />
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
-    <Folder Include="RajM\" />
     <Folder Include="RawCode\BLL\data\HUXIAOXI\" />
     <Folder Include="RawCode\BLL\data\Kavya\" />
     <Folder Include="RawCode\BLL\data\Khin\" />
