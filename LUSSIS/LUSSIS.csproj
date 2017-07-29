@@ -139,6 +139,12 @@
     <Folder Include="Files\" />
     <Folder Include="RajM\" />
     <Folder Include="RawCode\BLL\data\HUXIAOXI\" />
+    <Folder Include="RawCode\BLL\data\Kavya\" />
+    <Folder Include="RawCode\BLL\data\Khin\" />
+    <Folder Include="RawCode\BLL\data\Phong\" />
+    <Folder Include="RawCode\BLL\data\Raj\" />
+    <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
+    <Folder Include="RawCode\BLL\data\Zwe\" />
     <Folder Include="RawCode\DAL\" />
     <Folder Include="RawCode\Generics\" />
   </ItemGroup>
