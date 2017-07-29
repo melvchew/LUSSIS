@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace LUSSIS.test
+namespace LUSSIS
 {
-    public partial class eee : System.Web.UI.Page
+    public partial class HxxTest : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
