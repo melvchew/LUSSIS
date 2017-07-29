@@ -120,6 +120,7 @@
     <Compile Include="test\eee.aspx.designer.cs">
       <DependentUpon>eee.aspx</DependentUpon>
     </Compile>
+    <Compile Include="test\razz.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
