@@ -342,7 +342,7 @@ namespace LUSSIS.RawCode.BLL.data.HUXIAOXI
                 if (r.ItemId == ri.ItemId)
                     flag++;
             }
-            bool result = (flag == 0) ? true : false; 
+            bool result = (flag == 0) ? true : false;
             return result;
         }
     }
