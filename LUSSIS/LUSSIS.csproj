@@ -204,6 +204,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawCode\BLL\data\HUXIAOXI\RequisitionBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Kavya\ChangeCollectionPointBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Kavya\ManageCollectionPointBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Kavya\ViewCollectionItemsBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RoleManagementBLL.cs" />
@@ -230,7 +233,6 @@
   <ItemGroup>
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
-    <Folder Include="RawCode\BLL\data\Kavya\" />
     <Folder Include="RawCode\BLL\data\Khin\" />
     <Folder Include="RawCode\BLL\data\Raj\" />
     <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
