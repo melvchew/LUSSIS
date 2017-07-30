@@ -317,6 +317,7 @@ namespace LUSSIS.RawCode.BLL.data.HUXIAOXI
 
 
         //Check if the adding new item duplicated(for new req)
+        //Not duplicated:ture, duplicated: false.
         public bool CheckSameItem(Item i, List<Item> litems)
         {
             int flag = 0;
@@ -330,6 +331,7 @@ namespace LUSSIS.RawCode.BLL.data.HUXIAOXI
         }
 
         //Check if the adding reqitem duplicated(for existed req)
+        //Not duplicated:ture, duplicated: false.
         public bool CheckSameReqItem(RequisitionItem ri, Requisition req)
         {
             int flag = 0;
@@ -340,7 +342,7 @@ namespace LUSSIS.RawCode.BLL.data.HUXIAOXI
                 if (r.ItemId == ri.ItemId)
                     flag++;
             }
-            bool result = (flag == 0) ? true : false;
+            bool result = (flag == 0) ? true : false; 
             return result;
         }
     }
