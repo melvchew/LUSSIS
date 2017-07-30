@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace LUSSIS.RawCode.BLL.data.Melvin
+namespace LUSSIS.RawCode.BLL
 {
-    public class RoleManagement
+    public class EmailBLL
     {
+
+        
     }
 }
