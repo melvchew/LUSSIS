@@ -94,6 +94,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Employee\AddReqItem.aspx" />
+    <Content Include="Employee\Catalogue.aspx" />
+    <Content Include="Employee\DeptHead\ViewPendingReq.aspx" />
+    <Content Include="Employee\DeptHead\ViewPendingReqDetails.aspx" />
+    <Content Include="Employee\ManageReq.aspx" />
+    <Content Include="Employee\RaiseReq.aspx" />
+    <Content Include="Employee\ReqConfirm.aspx" />
+    <Content Include="Employee\ViewDeptReqHistory.aspx" />
+    <Content Include="Employee\ViewReq.aspx" />
+    <Content Include="Employee\ViewReqConfirm.aspx" />
+    <Content Include="Employee\ViewUserReqHistory.aspx" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -111,13 +122,96 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Employee\AddReqItem.aspx.cs">
+      <DependentUpon>AddReqItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\AddReqItem.aspx.designer.cs">
+      <DependentUpon>AddReqItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\Catalogue.aspx.cs">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\Catalogue.aspx.designer.cs">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\DeptHead\ViewPendingReq.aspx.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\DeptHead\ViewPendingReq.aspx.designer.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\DeptHead\ViewPendingReqDetails.aspx.cs">
+      <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\DeptHead\ViewPendingReqDetails.aspx.designer.cs">
+      <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\ManageReq.aspx.cs">
+      <DependentUpon>ManageReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\ManageReq.aspx.designer.cs">
+      <DependentUpon>ManageReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\RaiseReq.aspx.cs">
+      <DependentUpon>RaiseReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\RaiseReq.aspx.designer.cs">
+      <DependentUpon>RaiseReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\ReqConfirm.aspx.cs">
+      <DependentUpon>ReqConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\ReqConfirm.aspx.designer.cs">
+      <DependentUpon>ReqConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\ViewDeptReqHistory.aspx.cs">
+      <DependentUpon>ViewDeptReqHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\ViewDeptReqHistory.aspx.designer.cs">
+      <DependentUpon>ViewDeptReqHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\ViewReq.aspx.cs">
+      <DependentUpon>ViewReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\ViewReq.aspx.designer.cs">
+      <DependentUpon>ViewReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\ViewReqConfirm.aspx.cs">
+      <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\ViewReqConfirm.aspx.designer.cs">
+      <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\ViewUserReqHistory.aspx.cs">
+      <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\ViewUserReqHistory.aspx.designer.cs">
+      <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RawCode\BLL\data\HUXIAOXI\RequisitionBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Melvin\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RequisitionBLL.cs" />
-    <Compile Include="RawCode\BLL\data\Melvin\RoleManagement.cs" />
-    <Compile Include="RawCode\BLL\data\Melvin\Peter\StockManagementBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Melvin\RoleManagementBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Melvin\StockManagement.cs" />
+    <Compile Include="RawCode\BLL\data\Peter\StockManagementBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Phong\ReportBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Phong\RequisitionBLL.cs" />
+    <Compile Include="RawCode\BLL\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\RolesManagementBLL.cs" />
@@ -134,14 +228,10 @@
     <Compile Include="test\razz.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Employee\" />
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
-    <Folder Include="RajM\" />
-    <Folder Include="RawCode\BLL\data\HUXIAOXI\" />
     <Folder Include="RawCode\BLL\data\Kavya\" />
     <Folder Include="RawCode\BLL\data\Khin\" />
-    <Folder Include="RawCode\BLL\data\Phong\" />
     <Folder Include="RawCode\BLL\data\Raj\" />
     <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
