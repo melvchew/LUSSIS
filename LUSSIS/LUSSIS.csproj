@@ -115,6 +115,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RawCode\BLL\data\HUXIAOXI\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RoleManagement.cs" />
     <Compile Include="RawCode\BLL\data\Peter\StockManagementBLL.cs" />
@@ -138,7 +139,6 @@
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
     <Folder Include="RajM\" />
-    <Folder Include="RawCode\BLL\data\HUXIAOXI\" />
     <Folder Include="RawCode\BLL\data\Kavya\" />
     <Folder Include="RawCode\BLL\data\Khin\" />
     <Folder Include="RawCode\BLL\data\Phong\" />
