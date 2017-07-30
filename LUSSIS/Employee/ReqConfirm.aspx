@@ -7,10 +7,19 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="frmReqComfirm" runat="server">
     <div>
     
+        <asp:Literal ID="litaConfirm" runat="server"></asp:Literal>
+        <br />
+        <br />
+    
     </div>
+        <asp:Label ID="lablConfirm" runat="server" Text="Your department head will be notified via email of your requisition."></asp:Label>
+        <br />
+        <br />
+        <asp:Button ID="btnHome" runat="server" Text="Return to Home Page" />
+
     </form>
 </body>
 </html>

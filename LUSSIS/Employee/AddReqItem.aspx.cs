@@ -4,16 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LUSSIS.RawCode;
+using LUSSIS.RawCode.BLL.data.HUXIAOXI;
 
-
+//Made by Hu Xiaoxi(Team5)
 namespace LUSSIS.Employee
 {
     public partial class AddReqItem : System.Web.UI.Page
     {
         LUSSdb context;
-        
-        Reqservice rs = new Reqservice();
+        RequisitionBLL rs = new RequisitionBLL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
