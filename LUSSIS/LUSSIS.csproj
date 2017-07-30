@@ -94,6 +94,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Department\ChangeCollectionPoint.aspx" />
+    <Content Include="Department\ManageCollectionPoint.aspx" />
+    <Content Include="Department\ViewCollectionItems.aspx" />
     <Content Include="Employee\AddReqItem.aspx" />
     <Content Include="Employee\Catalogue.aspx" />
     <Content Include="Employee\DeptHead\ViewPendingReq.aspx" />
@@ -122,6 +125,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Department\ChangeCollectionPoint.aspx.cs">
+      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Department\ChangeCollectionPoint.aspx.designer.cs">
+      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Department\ManageCollectionPoint.aspx.cs">
+      <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Department\ManageCollectionPoint.aspx.designer.cs">
+      <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Department\ViewCollectionItems.aspx.cs">
+      <DependentUpon>ViewCollectionItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Department\ViewCollectionItems.aspx.designer.cs">
+      <DependentUpon>ViewCollectionItems.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employee\AddReqItem.aspx.cs">
       <DependentUpon>AddReqItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
