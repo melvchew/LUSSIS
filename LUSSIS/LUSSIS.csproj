@@ -144,9 +144,9 @@
     <Content Include="View\DepartmentView\Emp\ViewReq.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewReqConfirm.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx" />
+    <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewProduct.aspx" />
-    <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewSupplier.aspx" />
     <Content Include="View\StoreView\Clerk\EditSuppliers.aspx" />
     <Content Include="View\StoreView\Clerk\Inventory Status Report.aspx" />
@@ -173,7 +173,7 @@
     <Compile Include="RawCode\BLL\data\Melvin\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RoleManagementBLL.cs" />
-    <Compile Include="RawCode\BLL\data\Melvin\StockManagement.cs" />
+    <Compile Include="RawCode\BLL\data\Melvin\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Peter\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\RequisitionBLL.cs" />
@@ -308,6 +308,13 @@
     </Compile>
     <Compile Include="View\DepartmentView\Emp\ViewReqConfirm.aspx.designer.cs">
       <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.designer.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx.cs">
       <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
