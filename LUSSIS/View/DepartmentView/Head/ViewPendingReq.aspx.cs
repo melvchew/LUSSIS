@@ -7,32 +7,34 @@ using System.Web.UI.WebControls;
 using LUSSIS.RawCode.DAL;
 using LUSSIS.RawCode.BLL.data.Melvin;
 
+
 namespace LUSSIS.View.DepartmentView.Head
 {
     public partial class ViewPendingReq : System.Web.UI.Page
     {
+        RoleManagementBLL rmBLL = new RoleManagementBLL();
+        EmailBLL eBLL = new EmailBLL();
+        RequisitionBLL rBLL = new RequisitionBLL();
+        StockManagementBLL sBLL = new StockManagementBLL();
 
-        RoleManagementBLL rmbll = new RoleManagementBLL();
-        LUSSdb ctx = new LUSSdb();
         protected void Page_Load(object sender, EventArgs e)
         {
             Label_PageTitle.Text = "Pending Requisitions";
 
             try
             {
-                
                 //Get User Data from Session, Create User object
                 //Employee head = s.GetEmpByID(SessionParam)
                 //Create Dept object using User object
                 //Department dept = s.GetDeptByUser(head);
-                Department dept = s.GetDeptByID(1); //hardcoded
+                Department dept = rmBLL.GetDeptByID(1); //hardcoded
                 //Department dept = s.GetDeptByID(Session.Param)
 
                 //Get List of employees
-                List<Employee> Lemp = s.GetEmployees();
+                List<Employee> Lemp = rmBLL.GetEmployees();
 
                 //Get Pending requisitions based on department
-                List<Requisition> Lreq = s.GetPendingReqByDepartment(dept);
+                List<Requisition> Lreq = rBLL.GetPendingReqByDepartment(dept);
 
                 //Bind Data from Lreq to Grid View
                 GridView_VPR.DataSource = Lreq.Select(o => new { ReqId = o.ReqId, SubmitDate = o.SubmitDate, Name = Lemp.FirstOrDefault(x => x.EmpId == o.EmpId).Name });

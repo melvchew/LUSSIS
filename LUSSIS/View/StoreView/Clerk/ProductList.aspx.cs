@@ -4,14 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LUSSIS.RawCode.DAL;
+using LUSSIS.RawCode.BLL.data.Khin;
 
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class ProductList : System.Web.UI.Page
     {
-        LUSSIS context;
-        BissLog bl = new BissLog();
+         StockManagementBLL bl= new StockManagementBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -22,12 +21,8 @@ namespace LUSSIS.View.StoreView.Clerk
 
         private void BindGrid()
         {
-            using (context = new LUSSIS())
-            {
-
                 gvProductList.DataSource = bl.searchProductList(txtSearch.Text);
                 gvProductList.DataBind();
-            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

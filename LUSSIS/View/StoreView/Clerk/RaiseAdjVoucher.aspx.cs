@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.BLL.data.Raj;
 
-namespace LUSSIS.Store.Clerk
+namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class RaiseAdjVoucher : System.Web.UI.Page
     {
-        Class1 c = new Class1();
+        VoucherManagementBLL vm = new VoucherManagementBLL();
         // get employee Id using Login Session
         int empId = 7;
         static int count = 2;
@@ -46,14 +47,14 @@ namespace LUSSIS.Store.Clerk
                 //txtQtyAdj.Text = "Adj" + counter;
                 txtQtyAdj.Width = 100;
                 txtQtyAdj.AutoPostBack = true;
-                txtQtyAdj.CssClass = "btn btn-default";
+                txtQtyAdj.CssClass = "form-control";
                 PlaceHolder3.Controls.Add(txtQtyAdj);
                 //---TextBox Reason
                 TextBox txtReason = new TextBox();
                 txtReason.ID = "txtReason" + counter;
                 //txtReason.Text = "Reason" + counter;
                 txtReason.Width = 300;
-                txtReason.CssClass = "btn btn-default";
+                txtReason.CssClass = "form-control";
                 PlaceHolder4.Controls.Add(txtReason);
                 //---TextBox Value
                 TextBox txtValue = new TextBox();
@@ -61,12 +62,13 @@ namespace LUSSIS.Store.Clerk
                 //txtValue.Text = "Value" + counter;
                 txtValue.Width = 100;
                 txtValue.ReadOnly = true;
-                txtValue.CssClass = "btn btn-default";
+                txtValue.CssClass = "form-control";
                 PlaceHolder5.Controls.Add(txtValue);
 
                 Literal lt = new Literal();
                 lt.Text = "<br/>";
                 PlaceHolder5.Controls.Add(lt);
+
             }
         }
 
@@ -89,7 +91,7 @@ namespace LUSSIS.Store.Clerk
         {
             decimal avgPrice = 0;
             Decimal TotAdjValue = 0;
-            Item i = c.getItemById(id);
+            Item i = vm.getItemById(id);
             avgPrice = (i.Supplier1Price + i.Supplier1Price + i.Supplier1Price) / 3;
             TotAdjValue = dItem * avgPrice;
             totAmt = TotAdjValue + totAmt;
@@ -118,14 +120,14 @@ namespace LUSSIS.Store.Clerk
             txtQtyAdj.ID = "txtQtyAdj" + counter;
             //txtQtyAdj.Text = "Adj" + counter;
             txtQtyAdj.Width = 100;
-            txtQtyAdj.CssClass = "btn btn-default";
+            txtQtyAdj.CssClass = "form-control";
             PlaceHolder3.Controls.Add(txtQtyAdj);
             //---TextBox Reason
             TextBox txtReason = new TextBox();
             txtReason.ID = "txtReason" + counter;
             //txtReason.Text = "Reason" + counter;
             txtReason.Width = 300;
-            txtReason.CssClass = "btn btn-default";
+            txtReason.CssClass = "form-control";
             PlaceHolder4.Controls.Add(txtReason);
             //---TextBox Value
             TextBox txtValue = new TextBox();
@@ -133,7 +135,7 @@ namespace LUSSIS.Store.Clerk
             //txtValue.Text = "Value" + counter;
             txtValue.Width = 100;
             txtValue.ReadOnly = true;
-            txtValue.CssClass = "btn btn-default";
+            txtValue.CssClass = "form-control";
             PlaceHolder5.Controls.Add(txtValue);
 
             Literal lt = new Literal();
@@ -154,7 +156,7 @@ namespace LUSSIS.Store.Clerk
             Button1.Visible = true;
             if (!IsPostBack)
             {
-                ItemsList1.DataSource = c.getItems();
+                ItemsList1.DataSource = vm.getItems();
                 ItemsList1.DataBind();
                 ItemsList1.DataTextField = "Description";
                 ItemsList1.DataValueField = "ItemId";
@@ -169,9 +171,9 @@ namespace LUSSIS.Store.Clerk
 
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
-            StoreEmployee se = c.getStoreEmployeeById(empId);
+             StoreEmployee se = vm.getStoreEmployeeById(empId);
             c.RaiseVoucher(empId, date, status, txtReasons1.Text);
-            InvAdjVoucher adj = c.getAdjVocherIdByDate(date);
+            InvAdjVoucher adj = vm.getAdjVocherIdByDate(date);
             TextBox tb = new TextBox();
             DropDownList ddl = new DropDownList();
             int itemId = 0, adjQty = 0;
@@ -187,7 +189,7 @@ namespace LUSSIS.Store.Clerk
                     ddl = (DropDownList)ctr.FindControl(str);
                     itemId = Convert.ToInt32(ddl.SelectedValue);
                     adjQty = Convert.ToInt32(tb.Text);
-                    c.AddRaiseAdjItem(adj.VoucherId, itemId, adjQty);
+                    vm.AddRaiseAdjItem(adj.VoucherId, itemId, adjQty);
                 }
                 inr++;
             }
@@ -209,32 +211,32 @@ namespace LUSSIS.Store.Clerk
             //Value3.Text = calValue(id,dItem);
         }
 
-        public void createControls(int Count)
-        {
-            DropDownList d = new DropDownList();
-            d.ID = "ItemsLst" + count;
-            d.DataSource = c.getItems();
-            d.DataBind();
-            d.DataTextField = "Description";
-            d.DataValueField = "ItemId";
-            d.DataBind();
-            form1.Controls.Add(d);
+        //public void createControls(int Count)
+        //{
+        //    DropDownList d = new DropDownList();
+        //    d.ID = "ItemsLst" + count;
+        //    d.DataSource = c.getItems();
+        //    d.DataBind();
+        //    d.DataTextField = "Description";
+        //    d.DataValueField = "ItemId";
+        //    d.DataBind();
+        //    form1.Controls.Add(d);
 
-            TextBox AdjQ = new TextBox();
-            AdjQ.ID = "QtyAdj" + count;
-            AdjQ.TextChanged += new EventHandler(textbox_textchange);
-            form1.Controls.Add(AdjQ);
+        //    TextBox AdjQ = new TextBox();
+        //    AdjQ.ID = "QtyAdj" + count;
+        //    AdjQ.TextChanged += new EventHandler(textbox_textchange);
+        //    form1.Controls.Add(AdjQ);
 
-            TextBox r = new TextBox();
-            r.ID = "Reasons" + count;
-            form1.Controls.Add(r);
+        //    TextBox r = new TextBox();
+        //    r.ID = "Reasons" + count;
+        //    form1.Controls.Add(r);
 
-            TextBox v = new TextBox();
-            v.ID = "Value" + count;
-            form1.Controls.Add(v);
+        //    TextBox v = new TextBox();
+        //    v.ID = "Value" + count;
+        //    form1.Controls.Add(v);
 
-            form1.Controls.Add(new LiteralControl("<br />"));
-        }
+        //    form1.Controls.Add(new LiteralControl("<br /><br />"));
+        //}
 
         protected void Button1_Click(object sender, EventArgs e)
         {

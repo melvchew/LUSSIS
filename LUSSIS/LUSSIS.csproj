@@ -117,6 +117,7 @@
     <Content Include="RawCode\DAL\LussModel.edmx.diagram">
       <DependentUpon>LussModel.edmx</DependentUpon>
     </Content>
+    <Content Include="MasterPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -146,12 +147,15 @@
     <Content Include="View\DepartmentView\Emp\ViewReq.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewReqConfirm.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx" />
+    <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
+    <Content Include="View\DepartmentView\Head\DelegateRole.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\Logout.aspx" />
     <Content Include="View\Redirect.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewProduct.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
+    <Content Include="View\StoreView\Clerk\RaiseAdjVoucher.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewSupplier.aspx" />
     <Content Include="View\StoreView\Clerk\Chart.aspx" />
     <Content Include="View\StoreView\Clerk\EditSuppliers.aspx" />
@@ -164,11 +168,19 @@
     <Content Include="View\StoreView\Manager\AdjVoucherDetail.aspx" />
     <Content Include="View\StoreView\Supervisor\AdjVoucherBelow250.aspx" />
     <Content Include="View\StoreView\Clerk\UpdateSuppliers.aspx" />
+    <Content Include="View\StoreView\Supervisor\AdjVoucherBelow250Detail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawCode\BLL\data\HUXIAOXI\RequisitionBLL.cs" />
@@ -181,14 +193,14 @@
     <Compile Include="RawCode\BLL\data\Melvin\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RoleManagementBLL.cs" />
-    <Compile Include="RawCode\BLL\data\Melvin\StockManagement.cs" />
+    <Compile Include="RawCode\BLL\data\Melvin\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Peter\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\RequisitionBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Raj\VoucherManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\ZhangJinshan\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\data\ZhangJinshan\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\ZhangJinshan\StockManagementBLL.cs" />
-    <Compile Include="RawCode\BLL\data\Raj\RaiseAdjVoucherBLL.cs" />
     <Compile Include="RawCode\BLL\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\RequisitionBLL.cs" />
@@ -325,6 +337,20 @@
     <Compile Include="View\DepartmentView\Emp\ViewReqConfirm.aspx.designer.cs">
       <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\DepartmentView\Head\DelegateRole.aspx.cs">
+      <DependentUpon>DelegateRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\DelegateRole.aspx.designer.cs">
+      <DependentUpon>DelegateRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.designer.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx.cs">
       <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -356,6 +382,9 @@
     <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.cs">
       <DependentUpon>AddNewProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.designer.cs">
+      <DependentUpon>AddNewProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Clerk\Chart.aspx.cs">
       <DependentUpon>Chart.aspx</DependentUpon>
@@ -410,6 +439,13 @@
     <Compile Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx.designer.cs">
       <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\StoreView\Clerk\RaiseAdjVoucher.aspx.cs">
+      <DependentUpon>RaiseAdjVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\RaiseAdjVoucher.aspx.designer.cs">
+      <DependentUpon>RaiseAdjVoucher.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\StoreView\Clerk\ViewAllReq.aspx.cs">
       <DependentUpon>ViewAllReq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -444,6 +480,13 @@
     </Compile>
     <Compile Include="View\StoreView\Clerk\UpdateSuppliers.aspx.designer.cs">
       <DependentUpon>UpdateSuppliers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Supervisor\AdjVoucherBelow250Detail.aspx.cs">
+      <DependentUpon>AdjVoucherBelow250Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Supervisor\AdjVoucherBelow250Detail.aspx.designer.cs">
+      <DependentUpon>AdjVoucherBelow250Detail.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LUSSIS.RawCode.BLL.data.Khin;
+using LUSSIS.RawCode.Generics;
 
-namespace LUSSIS.View.StoreView.Manager
+namespace LUSSIS.View.StoreView.Supervisor
 {
-    public partial class AdjVoucherDetail : System.Web.UI.Page
+    public partial class AdjVoucherBelow250Detail : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,7 +33,7 @@ namespace LUSSIS.View.StoreView.Manager
         {
             int id = Convert.ToInt32(Request.QueryString["id"].ToString());
             InvAdjVoucher iav = new InvAdjVoucher();
-            BissLog b = new BissLog();
+            VoucherManagementBLL b = new VoucherManagementBLL();
             iav.VoucherId = id;
             iav.ApproveBy = 1;
             iav.ApproveDate = DateTime.Now;
@@ -40,14 +41,14 @@ namespace LUSSIS.View.StoreView.Manager
             iav.Status = "APPROVED";
             b.updateAdjVoucher(iav);
             string msg = "Request has been Approved";
-            Response.Redirect("AdjustmentVoucher.aspx?message=" + msg);
+            Response.Redirect("AdjVoucherBelow250.aspx?message=" + msg);
         }
 
         protected void btnReject_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(Request.QueryString["id"].ToString());
             InvAdjVoucher iav = new InvAdjVoucher();
-            BissLog b = new BissLog();
+            VoucherManagementBLL b = new VoucherManagementBLL();
             iav.VoucherId = id;
             iav.ApproveBy = 1;
             iav.ApproveDate = DateTime.Now;
@@ -55,7 +56,7 @@ namespace LUSSIS.View.StoreView.Manager
             iav.Status = "REJECTED";
             b.updateAdjVoucher(iav);
             string msg = "Request has been Rejected";
-            Response.Redirect("AdjustmentVoucher.aspx?message=" + msg);
+            Response.Redirect("AdjVoucherBelow250.aspx?message=" + msg);
         }
     }
 }

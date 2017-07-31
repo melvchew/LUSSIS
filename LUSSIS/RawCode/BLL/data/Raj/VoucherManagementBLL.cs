@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
+using System.Net.Mail;
 
 namespace LUSSIS.RawCode.BLL.data.Raj
 {
-    public class RaiseAdjVoucher
+    public class VoucherManagementBLL
     {
-        LUSSdbEntities dbObject = new LUSSdbEntities();
+        
+        LUSSdb dbObject = new LUSSdb();
 
         public List<Item> getItems()
         {
@@ -72,7 +75,7 @@ namespace LUSSIS.RawCode.BLL.data.Raj
         {
             try
             {
-                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                System.Net.Mail.SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
                 client.Credentials = new System.Net.NetworkCredential("lusissa44@gmail.com", "TEAM5!SA44");
                 client.EnableSsl = true;
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
