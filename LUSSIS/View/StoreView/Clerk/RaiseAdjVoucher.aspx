@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RaiseAdjVoucher.aspx.cs" Inherits="LUSSIS.Store.Clerk.RaiseAdjVoucher" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RaiseAdjVoucher.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.RaiseAdjVoucher" %>
 
 <!DOCTYPE html>
 
@@ -43,13 +43,13 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-3">
-                        <asp:DropDownList ID="ItemsList1" Width="300" CssClass="btn btn-default dropdown-toggle" runat="server"></asp:DropDownList></div>
+                        <asp:DropDownList ID="ItemsList1" Width="250" CssClass="btn btn-default dropdown-toggle" runat="server"></asp:DropDownList></div>
                     <div class="col-md-2">
-                        <asp:TextBox ID="txtQtyAdj1" CssClass="btn btn-default" runat="server" AutoPostBack="True" Width="100px"></asp:TextBox></div>
+                        <asp:TextBox ID="txtQtyAdj1" CssClass="form-control" runat="server" AutoPostBack="True" Width="100px"></asp:TextBox></div>
                     <div class="col-md-3">
-                        <asp:TextBox ID="txtReasons1" CssClass="btn btn-default" runat="server" Width="300px"></asp:TextBox></div>
+                        <asp:TextBox ID="txtReasons1" CssClass="form-control" runat="server" Width="300px"></asp:TextBox></div>
                     <div class="col-md-3">
-                        <asp:TextBox ID="txtValue1" CssClass="btn btn-default" runat="server" Width="100px" ReadOnly="true"></asp:TextBox></div>
+                        <asp:TextBox ID="txtValue1" CssClass="form-control" runat="server" Width="100px" ReadOnly="true"></asp:TextBox></div>
                 </div>
                 <div class="row">
                     <div class="col-md-1"></div>
