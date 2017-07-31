@@ -5,8 +5,9 @@ using System.Web;
 
 namespace LUSSIS.RawCode.BLL.data.Raj
 {
-    public class RaiseAdjVoucher
+    public class VoucherManagementBLL
     {
+        
         LUSSdbEntities dbObject = new LUSSdbEntities();
 
         public List<Item> getItems()
