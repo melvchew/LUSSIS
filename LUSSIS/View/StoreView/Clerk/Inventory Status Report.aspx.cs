@@ -9,7 +9,7 @@ namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class Inventory_Status_Report : System.Web.UI.Page
     {
-        InventoryStatusReport report = new InventoryStatusReport();
+        ReportBLL report = new ReportBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

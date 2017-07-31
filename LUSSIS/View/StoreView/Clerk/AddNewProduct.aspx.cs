@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LUSSIS.RawCode.BLL.data.Khin;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.View.StoreView.Clerk
 {

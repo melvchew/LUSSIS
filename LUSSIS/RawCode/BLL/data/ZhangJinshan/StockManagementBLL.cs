@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.RawCode.BLL.data.ZhangJinshan
 {
@@ -120,7 +121,7 @@ namespace LUSSIS.RawCode.BLL.data.ZhangJinshan
         //fuzzy query supplier by name
         public List<Supplier> SearchSupplier(string name)
         {
-            List<Supplier> v = new List<ADmodel.Supplier>();
+            List<Supplier> v = new List<Supplier>();
             if (name != null)
             {
                 try
@@ -142,7 +143,7 @@ namespace LUSSIS.RawCode.BLL.data.ZhangJinshan
         // find a supplier by id
         public Supplier FindSupplierById(string id)
         {
-            Supplier supplier = new ADmodel.Supplier();
+            Supplier supplier = new Supplier();
 
             try
             {
