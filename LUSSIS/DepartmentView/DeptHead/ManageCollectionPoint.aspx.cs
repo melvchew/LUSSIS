@@ -1,18 +1,14 @@
-﻿/*
- * Developed By : Kavya Elizabeth James 
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace LUSSIS.Department
+namespace LUSSIS.DepartmentView.DeptHead
 {
     public partial class ManageCollectionPoint : System.Web.UI.Page
     {
-
         static int cp1, cp2, cp3, cp4, cp5, cp6;
 
         Service s = new Service();

@@ -1,7 +1,6 @@
-﻿<!--
-    Developed By : Kavya Elizabeth James
--->
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangeCollectionPoint.aspx.cs" Inherits="LUSSIS.Department.ChangeCollectionPoint" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangeCollectionPoint.aspx.cs" Inherits="LUSSIS.DepartmentView.DeptRep.ChangeCollectionPoint" %>
+
+<!DOCTYPE html>
 
 <!DOCTYPE html>
 

@@ -104,9 +104,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Department\ChangeCollectionPoint.aspx" />
-    <Content Include="Department\ManageCollectionPoint.aspx" />
-    <Content Include="Department\ViewCollectionItems.aspx" />
+    <Content Include="DepartmentView\DeptHead\ManageCollectionPoint.aspx" />
+    <Content Include="DepartmentView\DeptRep\ChangeCollectionPoint.aspx" />
+    <Content Include="DepartmentView\DeptRep\ViewCollectionItems.aspx" />
     <Content Include="DepartmentView\AddReqItem.aspx" />
     <Content Include="DepartmentView\Catalogue.aspx" />
     <Content Include="DepartmentView\DeptHead\ViewPendingReq.aspx" />
@@ -152,25 +152,25 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Department\ChangeCollectionPoint.aspx.cs">
-      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Department\ChangeCollectionPoint.aspx.designer.cs">
-      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Department\ManageCollectionPoint.aspx.cs">
+    <Compile Include="DepartmentView\DeptHead\ManageCollectionPoint.aspx.cs">
       <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Department\ManageCollectionPoint.aspx.designer.cs">
+    <Compile Include="DepartmentView\DeptHead\ManageCollectionPoint.aspx.designer.cs">
       <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Department\ViewCollectionItems.aspx.cs">
+    <Compile Include="DepartmentView\DeptRep\ChangeCollectionPoint.aspx.cs">
+      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DepartmentView\DeptRep\ChangeCollectionPoint.aspx.designer.cs">
+      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentView\DeptRep\ViewCollectionItems.aspx.cs">
       <DependentUpon>ViewCollectionItems.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Department\ViewCollectionItems.aspx.designer.cs">
+    <Compile Include="DepartmentView\DeptRep\ViewCollectionItems.aspx.designer.cs">
       <DependentUpon>ViewCollectionItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="DepartmentView\AddReqItem.aspx.cs">

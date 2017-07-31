@@ -1,7 +1,4 @@
-﻿<!--
-    Developed By : Kavya Elizabeth James
--->
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageCollectionPoint.aspx.cs" Inherits="LUSSIS.Department.ManageCollectionPoint" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageCollectionPoint.aspx.cs" Inherits="LUSSIS.DepartmentView.DeptHead.ManageCollectionPoint" %>
 
 <!DOCTYPE html>
 

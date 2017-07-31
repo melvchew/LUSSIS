@@ -1,14 +1,11 @@
-﻿/*
- * Developed By : Kavya Elizabeth James 
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace LUSSIS.Department
+namespace LUSSIS.DepartmentView.DeptRep
 {
     public partial class ViewCollectionItems : System.Web.UI.Page
     {
@@ -46,30 +43,3 @@ namespace LUSSIS.Department
     }
 }
 
-/*            Disbursement sempdet = s.GetDisbursement(date, dep);
-                        Label3.Text = sempdet.StoreEmployee.Name;
-                        Label4.Text = sempdet.StoreEmployee.Phone.ToString();
-            
-                        //GridView1.DataSource = s.GetCollectionList(date, dep);
-                        //GridView1.DataBind();
-                        DataTable dt = new DataTable();
-                        List<String> list = s.GetCollectionList(date, dep);
-                        //Label4.Text = list.ElementAt(2);
-                        dt.Columns.AddRange(new DataColumn[3] { new DataColumn("Item Description"), new DataColumn("Quantity"), new DataColumn("Unit")});
-                        for(int i = 0; i<list.Count/3;i++) {
-                            dt.Rows.Add(list.ElementAt(i), list.ElementAt(i+1), list.ElementAt(i+2));
-
-                        }
-                        //dt.Rows.Add(list.ElementAt(0), list.ElementAt(1), list.ElementAt(2));
-
-                        GridView1.DataSource = dt;
-                        GridView1.DataBind();*/
-//Employee e1 = s.GetEmployeeById(5);
-//Disbursement d = s.GetDisbursementByID(1);
-// List<String> list = s.GetDisbursement(date, dep);
-//List<DisburseReqItem> dr = d.DisburseReqItems.ToList();
-//s.GetCollectionItem(d.DisburseReqItems);
-//GridView1.DataSource = d.DisburseReqItems.ToList();
-//GridView1.DataSource = s.GetDisbursement(new DateTime(2017, 8, 15), empList.Department);
-//GridView1.DataSource = 
-//GridView1.DataBind();

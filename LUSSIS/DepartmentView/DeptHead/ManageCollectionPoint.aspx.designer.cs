@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LUSSIS.Department {
+namespace LUSSIS.DepartmentView.DeptHead {
     
     
     public partial class ManageCollectionPoint {

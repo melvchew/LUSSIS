@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LUSSIS.Department {
+namespace LUSSIS.DepartmentView.DeptRep {
     
     
-    public partial class ChangeCollectionPoint {
+    public partial class ViewCollectionItems {
         
         /// <summary>
         /// form1 control.
@@ -22,15 +22,6 @@ namespace LUSSIS.Department {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace LUSSIS.Department {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// Label3 control.
@@ -58,57 +58,30 @@ namespace LUSSIS.Department {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// CurCP control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CurCP;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// CurCT control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CurCT;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// CollectionPoints control.
+        /// Label6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList CollectionPoints;
-        
-        /// <summary>
-        /// ChangedCT control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ChangedCT;
-        
-        /// <summary>
-        /// Cancelbtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Cancelbtn;
-        
-        /// <summary>
-        /// Submitbtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Submitbtn;
+        protected global::System.Web.UI.WebControls.Label Label6;
     }
 }

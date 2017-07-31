@@ -1,18 +1,14 @@
-﻿/*
- * Developed By : Kavya Elizabeth James 
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace LUSSIS.Department
+namespace LUSSIS.DepartmentView.DeptRep
 {
     public partial class ChangeCollectionPoint : System.Web.UI.Page
     {
-
         //Session ID needed for current dept
 
         static int curDeptId;
@@ -73,5 +69,4 @@ namespace LUSSIS.Department
        ChangedCT.Text = "AAAAA";
        if (ScienceSchool.Checked == true)
        {
-getCollectionPoint(1);       }
-   }*/
+getColl

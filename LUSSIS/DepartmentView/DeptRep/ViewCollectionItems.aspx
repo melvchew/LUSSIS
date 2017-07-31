@@ -1,7 +1,4 @@
-﻿<!--
-    Developed By : Kavya Elizabeth James
--->
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewCollectionItems.aspx.cs" Inherits="LUSSIS.Department.ViewCollectionItems" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewCollectionItems.aspx.cs" Inherits="LUSSIS.DepartmentView.DeptRep.ViewCollectionItems" %>
 
 <!DOCTYPE html>
 
