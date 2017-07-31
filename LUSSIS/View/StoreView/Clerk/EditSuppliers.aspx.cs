@@ -76,7 +76,7 @@ namespace LUSSIS.View.StoreView.Clerk
             if (l.Count != 0)
             {
                 Session["Suppliers"] = l;
-                Response.Redirect("EditSuppliers.aspx");
+                Response.Redirect("UpdateSuppliers.aspx");
             }
 
             else
