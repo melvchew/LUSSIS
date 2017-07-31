@@ -135,6 +135,7 @@
       <LastGenOutput>LussModel.cs</LastGenOutput>
     </Content>
     <Content Include="Store\UploadExcel.aspx" />
+    <Content Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewProduct.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="View\StoreView\Clerk\UpdateProduct.aspx" />
@@ -238,6 +239,13 @@
     </Compile>
     <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.designer.cs">
       <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx.cs">
+      <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx.designer.cs">
+      <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.cs">
       <DependentUpon>AddNewProduct.aspx</DependentUpon>
