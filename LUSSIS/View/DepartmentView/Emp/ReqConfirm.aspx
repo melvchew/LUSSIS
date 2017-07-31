@@ -18,7 +18,7 @@
         <asp:Label ID="lablConfirm" runat="server" Text="Your department head will be notified via email of your requisition."></asp:Label>
         <br />
         <br />
-        <asp:Button ID="btnHome" runat="server" Text="Return to Home Page" />
+        <asp:Button ID="btnHome" runat="server" Text="Return to Home Page" OnClick="btnHome_Click" />
 
     </form>
 </body>

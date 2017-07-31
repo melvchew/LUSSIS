@@ -37,7 +37,7 @@ namespace LUSSIS.View.DepartmentView.Emp
 
         protected void btnAddNewItem_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Catalog.aspx?rid=0");
+            Response.Redirect("Catalogue.aspx?rid=0");
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

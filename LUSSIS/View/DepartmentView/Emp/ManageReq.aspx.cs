@@ -137,7 +137,7 @@ namespace LUSSIS.View.DepartmentView.Emp
         protected void btn_Add_Click(object sender, EventArgs e)
         {
             String rid = Request.QueryString["rid"];
-            Response.Redirect("Catalog.aspx?rid=" + rid);
+            Response.Redirect("Catalogue.aspx?rid=" + rid);
         }
 
         protected void gvReqItem_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -154,7 +154,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
             else if ((String)Session["View"] == "own")
             {
-                Response.Redirect("ViewOwnReqHistory.aspx");
+                Response.Redirect("ViewUserReqHistory.aspx");
             }
         }
     }
