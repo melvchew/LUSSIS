@@ -7,6 +7,7 @@ using System.Web.Profile;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Security;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.View
 {
@@ -27,7 +28,7 @@ namespace LUSSIS.View
             //    if (mu.IsApproved)
             //    {
             //Session["UserID"] = mu.ProviderUserKey.ToString();
-            LUSSdbEntities context = new LUSSdbEntities();
+            LUSSdb context = new LUSSdb();
 
             //List<Department> deptList = trendAnalysisBizLogic.getDepartmentList();
             var query = context.Departments.Select(x => x.DeptRep).ToList();
