@@ -121,6 +121,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Store\Clerk\RaiseAdjVoucher.aspx" />
     <Content Include="Store\UploadExcel.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -246,6 +247,13 @@
     <Compile Include="RawCode\BLL\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\UsersAccountBLL.cs" />
     <Compile Include="RawCode\BLL\VoucherManagementBLL.cs" />
+    <Compile Include="Store\Clerk\RaiseAdjVoucher.aspx.cs">
+      <DependentUpon>RaiseAdjVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\Clerk\RaiseAdjVoucher.aspx.designer.cs">
+      <DependentUpon>RaiseAdjVoucher.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Store\UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
