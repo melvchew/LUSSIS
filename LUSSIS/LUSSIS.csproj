@@ -241,6 +241,7 @@
     <Compile Include="RawCode\DAL\Supplier.cs">
       <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RawCode\Generics\ViewModel.cs" />
     <Compile Include="Store\UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -360,7 +361,6 @@
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
-    <Folder Include="RawCode\Generics\" />
     <Folder Include="View\DepartmentView\ActingHead\" />
     <Folder Include="View\DepartmentView\Rep\" />
   </ItemGroup>

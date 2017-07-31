@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.RawCode.BLL.data.Khin
 {
@@ -9,25 +10,25 @@ namespace LUSSIS.RawCode.BLL.data.Khin
     {
         public List<Item> getProductList()
         {
-            LUSSdbEntities context = new LUSSdbEntities();
+            LUSSdb context = new LUSSdb();
             return context.Items.ToList<Item>();
         }
 
         public List<Item> searchProductList(String value)
         {
-            LUSSdbEntities context = new LUSSdbEntities();
+            LUSSdb context = new LUSSdb();
             return context.Items.Where(x => x.Description.Contains(value) || x.Category.Contains(value)).ToList<Item>();
         }
 
 
         public List<String> getCategory()
         {
-            LUSSdbEntities context = new LUSSdbEntities();
+            LUSSdb context = new LUSSdb();
             return context.Items.Select(x => x.Category).Distinct().ToList<String>();
         }
         public List<Supplier> getSupplierList()
         {
-            LUSSdbEntities context = new LUSSdbEntities();
+            LUSSdb context = new LUSSdb();
             return context.Suppliers.ToList<Supplier>();
         }
 
@@ -35,7 +36,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
 
         public Item getProductByIDs(int id)
         {
-            LUSSdbEntities context = new LUSSdbEntities();
+            LUSSdb context = new LUSSdb();
             return context.Items.Where(p => p.ItemId == id).FirstOrDefault();
         }
 
@@ -43,8 +44,8 @@ namespace LUSSIS.RawCode.BLL.data.Khin
         {
             try
             {
-                using (LUSSdbEntities context = new LUSSdbEntities())
-                {
+                LUSSdb context = new LUSSdb();
+                
                     Item i = new Item();
                     i.Category = item.Category;
                     i.BinNumber = item.BinNumber;
@@ -62,7 +63,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
                     i.IsCataloged = item.IsCataloged;
                     context.Items.Add(i);
                     context.SaveChanges();
-                }
+                
                 return true;
             }
             catch (Exception)
@@ -75,7 +76,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
         {
             try
             {
-                LUSSdbEntities context = new LUSSdbEntities();
+                LUSSdb context = new LUSSdb();
                 Item i = context.Items.Where(p => p.ItemId == item.ItemId).FirstOrDefault();
                 i.Category = item.Category;
                 i.BinNumber = item.BinNumber;

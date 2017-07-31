@@ -13,7 +13,8 @@ namespace LUSSIS.View.StoreView.Clerk
         {
             if (!IsPostBack)
             {
-                AD.EF.BissLog b = new AD.EF.BissLog();
+                RawCode.BLL.data.Khin.StockManagementBLL b = new RawCode.BLL.data.Khin.StockManagementBLL();
+                
                 ddSupplier1.DataSource = b.getSupplierList();
                 ddSupplier1.DataTextField = "CompanyName";
                 ddSupplier1.DataValueField = "SupplierId";
@@ -34,7 +35,7 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            AD.EF.BissLog b = new AD.EF.BissLog();
+            RawCode.BLL.data.Khin.StockManagementBLL b = new RawCode.BLL.data.Khin.StockManagementBLL();
             Item i = new Item();
             i.BinNumber = txtBin.Text;
             i.Category = ddCategory.Text;

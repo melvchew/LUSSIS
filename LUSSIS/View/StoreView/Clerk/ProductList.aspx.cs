@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class ProductList : System.Web.UI.Page
     {
-        LUSSdbEntities context;
+        LUSSIS context;
         BissLog bl = new BissLog();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,7 +22,7 @@ namespace LUSSIS.View.StoreView.Clerk
 
         private void BindGrid()
         {
-            using (context = new LUSSdbEntities())
+            using (context = new LUSSIS())
             {
 
                 gvProductList.DataSource = bl.searchProductList(txtSearch.Text);
