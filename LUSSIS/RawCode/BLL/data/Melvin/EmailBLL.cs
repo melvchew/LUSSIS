@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
+using System.Net.Mail;
 
 namespace LUSSIS.RawCode.BLL.data.Melvin
 {
     public class EmailBLL
     {
+
+        LUSSdb ctx = new LUSSdb();
         //Melvin
         public void SendRequisitionStatusUpdate(Employee emp, Requisition req)
         {

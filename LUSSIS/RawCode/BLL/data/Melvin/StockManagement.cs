@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.RawCode.BLL.data.Melvin
 {
@@ -9,7 +10,7 @@ namespace LUSSIS.RawCode.BLL.data.Melvin
     {
 
         //Melvin
-
+        LUSSdb ctx = new LUSSdb();
         public List<Item> GetItemList()
         {
             {

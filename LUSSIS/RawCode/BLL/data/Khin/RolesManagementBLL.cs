@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.RawCode.BLL.data.Khin
 {
@@ -9,7 +10,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
     {
         public List<Employee> getEmployeeListByDept(int id)
         {
-            LUSSdbEntities context = new LUSSdbEntities();
+            LUSSdb context = new LUSSdb();
             return context.Employees.Where(x => x.DeptId == id).ToList<Employee>();
         }
 
@@ -17,12 +18,12 @@ namespace LUSSIS.RawCode.BLL.data.Khin
         {
             try
             {
-                LUSSdbEntities context = new LUSSdbEntities();
+                LUSSdb context = new LUSSdb();
                 Department d = context.Departments.Where(x => x.DeptId == dept.DeptId).FirstOrDefault();
                 d.DeptRep = dept.DeptRep;
                 d.ActingHead = dept.ActingHead;
                 d.AHStartDate = dept.AHStartDate;
-                d.AHEndDate = dept.AHEndDate;
+                d.AHEndDate = dept.AHEndDate;                
                 context.SaveChanges();
                 return true;
             }
@@ -35,7 +36,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
 
         public Employee getCurrentDeptRep(int id)
         {
-            LUSSdbEntities context = new LUSSdbEntities();
+            LUSSdb context = new LUSSdb();
             var employee = (from x in context.Employees
                             join i in context.Departments
                             on x.EmpId equals i.DeptRep
@@ -46,7 +47,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
         }
         public Employee getCurrentActingHead(int id)
         {
-            LUSSdbEntities context = new LUSSdbEntities();
+            LUSSdb context = new LUSSdb();
             var employee = (from x in context.Employees
                             join i in context.Departments
                             on x.EmpId equals i.ActingHead

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ALUSSIS.RawCode.DAL.Khin;
+using LUSSIS.RawCode.DAL;
+using LUSSIS.RawCode.Generics;
 
 namespace LUSSIS.RawCode.BLL.data.Khin
 {
@@ -10,7 +11,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
     {
         public List<AdVoucherLIst> getAdjVoucherListBelow250()
         {
-            LUSSdbEntities ctx = new LUSSdbEntities();
+            LUSSdb ctx = new LUSSdb();
             List<AdVoucherLIst> list = new List<AdVoucherLIst>();
             var voucherlist = (from iav in ctx.InvAdjVouchers
                                join ia in ctx.InvAdjItems
@@ -26,6 +27,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
                                    SubmitDate = iav.SubmitDate,
                                    RaiseBy = e.Name
                                }).ToList();
+            
             foreach (var v in voucherlist)
             {
                 AdVoucherLIst iav = new AdVoucherLIst();
@@ -40,7 +42,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
         }
         public List<AdVoucherLIst> getAdjVoucherList()
         {
-            LUSSdbEntities ctx = new LUSSdbEntities();
+            LUSSdb ctx = new LUSSdb();
             List<AdVoucherLIst> list = new List<AdVoucherLIst>();
             var voucherlist = (from iav in ctx.InvAdjVouchers
                                join ia in ctx.InvAdjItems
@@ -71,7 +73,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
 
         public List<AdjustmentItem> getAdjustmentItemByID(int id)
         {
-            LUSSdbEntities ctx = new LUSSdbEntities();
+            LUSSdb ctx = new LUSSdb();
             List<AdjustmentItem> list = new List<AdjustmentItem>();
             var itemlist = (from ai in ctx.InvAdjItems
                             join i in ctx.Items
@@ -109,7 +111,7 @@ namespace LUSSIS.RawCode.BLL.data.Khin
         {
             try
             {
-                using (LUSSdbEntities context = new LUSSdbEntities())
+                using (LUSSdb context = new LUSSdb())
                 {
                     InvAdjVoucher voucher = context.InvAdjVouchers.Where(p => p.VoucherId == adjVoucher.VoucherId).FirstOrDefault();
                     voucher.Status = adjVoucher.Status;
