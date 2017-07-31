@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="createuser.aspx" />
     <Content Include="Employee\AddReqItem.aspx" />
     <Content Include="Employee\Catalogue.aspx" />
     <Content Include="Employee\DeptHead\ViewPendingReq.aspx" />
@@ -122,6 +123,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="createuser.aspx.cs">
+      <DependentUpon>createuser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="createuser.aspx.designer.cs">
+      <DependentUpon>createuser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employee\AddReqItem.aspx.cs">
       <DependentUpon>AddReqItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
