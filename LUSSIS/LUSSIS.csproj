@@ -234,6 +234,12 @@
     <Compile Include="RawCode\DAL\Item.cs">
       <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RawCode\DAL\ItemBackup.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\ItemStaging.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="RawCode\DAL\LussModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -261,10 +267,25 @@
     <Compile Include="RawCode\DAL\RequisitionItem.cs">
       <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RawCode\DAL\RequisitionReport.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="RawCode\DAL\StoreEmployee.cs">
       <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RawCode\DAL\Supplier.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\SupplierBackup.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\SupplierStaging.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\TransposedRequisitionReport.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\TransposedRequisitionReportByCost.cs">
       <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RawCode\Generics\ViewModel.cs" />

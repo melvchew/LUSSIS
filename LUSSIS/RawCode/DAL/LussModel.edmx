@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LUSSdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LUSSdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CollectionPoint">
           <Key>
             <PropertyRef Name="CollectionPointId" />
@@ -93,7 +93,7 @@
           <Property Name="Category" Type="nvarchar" MaxLength="30" />
           <Property Name="BinNumber" Type="nvarchar" MaxLength="20" />
           <Property Name="Description" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="StockBalance" Type="int" Nullable="false" />
+          <Property Name="StockBalance" Type="int" />
           <Property Name="ReorderLvl" Type="int" />
           <Property Name="ReorderQty" Type="int" />
           <Property Name="Unit" Type="nvarchar" MaxLength="20" Nullable="false" />
@@ -104,6 +104,60 @@
           <Property Name="Supplier3Id" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="Supplier3Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="IsCataloged" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LUSSdb.dbo.ItemBackup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ItemBackup">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="Unit" />
+            <PropertyRef Name="Supplier1Id" />
+            <PropertyRef Name="Supplier1Price" />
+            <PropertyRef Name="Supplier2Id" />
+            <PropertyRef Name="Supplier2Price" />
+            <PropertyRef Name="Supplier3Id" />
+            <PropertyRef Name="Supplier3Price" />
+            <PropertyRef Name="IsCataloged" />
+          </Key>
+          <Property Name="ItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="30" />
+          <Property Name="BinNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="StockBalance" Type="int" />
+          <Property Name="ReorderLvl" Type="int" />
+          <Property Name="ReorderQty" Type="int" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Supplier1Id" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Supplier1Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Supplier2Id" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Supplier2Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Supplier3Id" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Supplier3Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IsCataloged" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LUSSdb.dbo.ItemStaging' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ItemStaging">
+          <Key>
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="Unit" />
+            <PropertyRef Name="Supplier1Id" />
+            <PropertyRef Name="Supplier1Price" />
+            <PropertyRef Name="Supplier2Id" />
+            <PropertyRef Name="Supplier2Price" />
+            <PropertyRef Name="Supplier3Id" />
+            <PropertyRef Name="Supplier3Price" />
+          </Key>
+          <Property Name="Category" Type="nvarchar" MaxLength="30" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Supplier1Id" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Supplier1Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Supplier2Id" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Supplier2Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Supplier3Id" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="Supplier3Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="PurchaseOrder">
           <Key>
@@ -177,6 +231,108 @@
           <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="GstNo" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LUSSdb.dbo.SupplierBackup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SupplierBackup">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+            <PropertyRef Name="CompanyName" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="SupplierId" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GstNo" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LUSSdb.dbo.SupplierStaging' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SupplierStaging">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+            <PropertyRef Name="CompanyName" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="SupplierId" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GstNo" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LUSSdb.dbo.RequisitionReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="RequisitionReport">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="Item" />
+            <PropertyRef Name="DeptID" />
+            <PropertyRef Name="DeptName" />
+            <PropertyRef Name="SubmitDate" />
+            <PropertyRef Name="SubmitMonth" />
+          </Key>
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="Item" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Cost" Type="decimal" Precision="27" Scale="6" />
+          <Property Name="DeptID" Type="int" Nullable="false" />
+          <Property Name="DeptName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SubmitDate" Type="date" Nullable="false" />
+          <Property Name="Total Requested" Type="int" />
+          <Property Name="SubmitMonth" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LUSSdb.dbo.TransposedRequisitionReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TransposedRequisitionReport">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="SubmitMonth" />
+            <PropertyRef Name="SubmitDate" />
+          </Key>
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="SubmitMonth" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="SubmitDate" Type="date" Nullable="false" />
+          <Property Name="1" Type="int" />
+          <Property Name="2" Type="int" />
+          <Property Name="3" Type="int" />
+          <Property Name="4" Type="int" />
+          <Property Name="5" Type="int" />
+          <Property Name="6" Type="int" />
+          <Property Name="7" Type="int" />
+          <Property Name="8" Type="int" />
+          <Property Name="9" Type="int" />
+          <Property Name="10" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LUSSdb.dbo.TransposedRequisitionReportByCost' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TransposedRequisitionReportByCost">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="SubmitMonth" />
+            <PropertyRef Name="SubmitDate" />
+          </Key>
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="SubmitMonth" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="SubmitDate" Type="date" Nullable="false" />
+          <Property Name="1" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="2" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="3" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="4" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="5" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="6" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="7" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="8" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="9" Type="decimal" Precision="38" Scale="6" />
+          <Property Name="10" Type="decimal" Precision="38" Scale="6" />
         </EntityType>
         <Association Name="FK_CollectionPoint_StoreEmployee">
           <End Role="StoreEmployee" Type="Self.StoreEmployee" Multiplicity="1" />
@@ -529,6 +685,108 @@
           <EntitySet Name="RequisitionItem" EntityType="Self.RequisitionItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StoreEmployee" EntityType="Self.StoreEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemBackup" EntityType="Self.ItemBackup" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ItemBackup].[ItemId] AS [ItemId], 
+    [ItemBackup].[Category] AS [Category], 
+    [ItemBackup].[BinNumber] AS [BinNumber], 
+    [ItemBackup].[Description] AS [Description], 
+    [ItemBackup].[StockBalance] AS [StockBalance], 
+    [ItemBackup].[ReorderLvl] AS [ReorderLvl], 
+    [ItemBackup].[ReorderQty] AS [ReorderQty], 
+    [ItemBackup].[Unit] AS [Unit], 
+    [ItemBackup].[Supplier1Id] AS [Supplier1Id], 
+    [ItemBackup].[Supplier1Price] AS [Supplier1Price], 
+    [ItemBackup].[Supplier2Id] AS [Supplier2Id], 
+    [ItemBackup].[Supplier2Price] AS [Supplier2Price], 
+    [ItemBackup].[Supplier3Id] AS [Supplier3Id], 
+    [ItemBackup].[Supplier3Price] AS [Supplier3Price], 
+    [ItemBackup].[IsCataloged] AS [IsCataloged]
+    FROM [dbo].[ItemBackup] AS [ItemBackup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ItemStaging" EntityType="Self.ItemStaging" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ItemStaging].[Category] AS [Category], 
+    [ItemStaging].[Description] AS [Description], 
+    [ItemStaging].[Unit] AS [Unit], 
+    [ItemStaging].[Supplier1Id] AS [Supplier1Id], 
+    [ItemStaging].[Supplier1Price] AS [Supplier1Price], 
+    [ItemStaging].[Supplier2Id] AS [Supplier2Id], 
+    [ItemStaging].[Supplier2Price] AS [Supplier2Price], 
+    [ItemStaging].[Supplier3Id] AS [Supplier3Id], 
+    [ItemStaging].[Supplier3Price] AS [Supplier3Price]
+    FROM [dbo].[ItemStaging] AS [ItemStaging]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SupplierBackup" EntityType="Self.SupplierBackup" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SupplierBackup].[SupplierId] AS [SupplierId], 
+    [SupplierBackup].[CompanyName] AS [CompanyName], 
+    [SupplierBackup].[ContactPerson] AS [ContactPerson], 
+    [SupplierBackup].[Phone] AS [Phone], 
+    [SupplierBackup].[Fax] AS [Fax], 
+    [SupplierBackup].[Address] AS [Address], 
+    [SupplierBackup].[Email] AS [Email], 
+    [SupplierBackup].[GstNo] AS [GstNo]
+    FROM [dbo].[SupplierBackup] AS [SupplierBackup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SupplierStaging" EntityType="Self.SupplierStaging" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SupplierStaging].[SupplierId] AS [SupplierId], 
+    [SupplierStaging].[CompanyName] AS [CompanyName], 
+    [SupplierStaging].[ContactPerson] AS [ContactPerson], 
+    [SupplierStaging].[Phone] AS [Phone], 
+    [SupplierStaging].[Fax] AS [Fax], 
+    [SupplierStaging].[Address] AS [Address], 
+    [SupplierStaging].[Email] AS [Email], 
+    [SupplierStaging].[GstNo] AS [GstNo]
+    FROM [dbo].[SupplierStaging] AS [SupplierStaging]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RequisitionReport" EntityType="Self.RequisitionReport" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RequisitionReport].[ItemId] AS [ItemId], 
+    [RequisitionReport].[Item] AS [Item], 
+    [RequisitionReport].[Cost] AS [Cost], 
+    [RequisitionReport].[DeptID] AS [DeptID], 
+    [RequisitionReport].[DeptName] AS [DeptName], 
+    [RequisitionReport].[SubmitDate] AS [SubmitDate], 
+    [RequisitionReport].[Total Requested] AS [Total Requested], 
+    [RequisitionReport].[SubmitMonth] AS [SubmitMonth]
+    FROM [dbo].[RequisitionReport] AS [RequisitionReport]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TransposedRequisitionReport" EntityType="Self.TransposedRequisitionReport" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TransposedRequisitionReport].[ItemId] AS [ItemId], 
+    [TransposedRequisitionReport].[SubmitMonth] AS [SubmitMonth], 
+    [TransposedRequisitionReport].[SubmitDate] AS [SubmitDate], 
+    [TransposedRequisitionReport].[1] AS [1], 
+    [TransposedRequisitionReport].[2] AS [2], 
+    [TransposedRequisitionReport].[3] AS [3], 
+    [TransposedRequisitionReport].[4] AS [4], 
+    [TransposedRequisitionReport].[5] AS [5], 
+    [TransposedRequisitionReport].[6] AS [6], 
+    [TransposedRequisitionReport].[7] AS [7], 
+    [TransposedRequisitionReport].[8] AS [8], 
+    [TransposedRequisitionReport].[9] AS [9], 
+    [TransposedRequisitionReport].[10] AS [10]
+    FROM [dbo].[TransposedRequisitionReport] AS [TransposedRequisitionReport]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TransposedRequisitionReportByCost" EntityType="Self.TransposedRequisitionReportByCost" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TransposedRequisitionReportByCost].[ItemId] AS [ItemId], 
+    [TransposedRequisitionReportByCost].[SubmitMonth] AS [SubmitMonth], 
+    [TransposedRequisitionReportByCost].[SubmitDate] AS [SubmitDate], 
+    [TransposedRequisitionReportByCost].[1] AS [1], 
+    [TransposedRequisitionReportByCost].[2] AS [2], 
+    [TransposedRequisitionReportByCost].[3] AS [3], 
+    [TransposedRequisitionReportByCost].[4] AS [4], 
+    [TransposedRequisitionReportByCost].[5] AS [5], 
+    [TransposedRequisitionReportByCost].[6] AS [6], 
+    [TransposedRequisitionReportByCost].[7] AS [7], 
+    [TransposedRequisitionReportByCost].[8] AS [8], 
+    [TransposedRequisitionReportByCost].[9] AS [9], 
+    [TransposedRequisitionReportByCost].[10] AS [10]
+    FROM [dbo].[TransposedRequisitionReportByCost] AS [TransposedRequisitionReportByCost]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_CollectionPoint_StoreEmployee" Association="Self.FK_CollectionPoint_StoreEmployee">
             <End Role="StoreEmployee" EntitySet="StoreEmployee" />
             <End Role="CollectionPoint" EntitySet="CollectionPoint" />
@@ -642,8 +900,7 @@
             <End Role="RequisitionItem" EntitySet="RequisitionItem" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LUSSdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -760,7 +1017,7 @@
           <Property Name="Category" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="BinNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="StockBalance" Type="Int32" Nullable="false" />
+          <Property Name="StockBalance" Type="Int32" />
           <Property Name="ReorderLvl" Type="Int32" />
           <Property Name="ReorderQty" Type="Int32" />
           <Property Name="Unit" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
@@ -1339,7 +1596,156 @@
             <End Role="Requisition" EntitySet="Requisitions" />
             <End Role="RequisitionItem" EntitySet="RequisitionItems" />
           </AssociationSet>
+          <EntitySet Name="ItemBackups" EntityType="LUSSdbModel.ItemBackup" />
+          <EntitySet Name="ItemStagings" EntityType="LUSSdbModel.ItemStaging" />
+          <EntitySet Name="SupplierBackups" EntityType="LUSSdbModel.SupplierBackup" />
+          <EntitySet Name="SupplierStagings" EntityType="LUSSdbModel.SupplierStaging" />
+          <EntitySet Name="RequisitionReports" EntityType="LUSSdbModel.RequisitionReport" />
+          <EntitySet Name="TransposedRequisitionReports" EntityType="LUSSdbModel.TransposedRequisitionReport" />
+          <EntitySet Name="TransposedRequisitionReportByCosts" EntityType="LUSSdbModel.TransposedRequisitionReportByCost" />
         </EntityContainer>
+        <EntityType Name="ItemBackup">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="Unit" />
+            <PropertyRef Name="Supplier1Id" />
+            <PropertyRef Name="Supplier1Price" />
+            <PropertyRef Name="Supplier2Id" />
+            <PropertyRef Name="Supplier2Price" />
+            <PropertyRef Name="Supplier3Id" />
+            <PropertyRef Name="Supplier3Price" />
+            <PropertyRef Name="IsCataloged" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="BinNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="StockBalance" Type="Int32" />
+          <Property Name="ReorderLvl" Type="Int32" />
+          <Property Name="ReorderQty" Type="Int32" />
+          <Property Name="Unit" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier1Id" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier1Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Supplier2Id" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier2Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Supplier3Id" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier3Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="IsCataloged" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemStaging">
+          <Key>
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="Unit" />
+            <PropertyRef Name="Supplier1Id" />
+            <PropertyRef Name="Supplier1Price" />
+            <PropertyRef Name="Supplier2Id" />
+            <PropertyRef Name="Supplier2Price" />
+            <PropertyRef Name="Supplier3Id" />
+            <PropertyRef Name="Supplier3Price" />
+          </Key>
+          <Property Name="Category" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Unit" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier1Id" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier1Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Supplier2Id" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier2Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Supplier3Id" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier3Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="SupplierBackup">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+            <PropertyRef Name="CompanyName" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="SupplierId" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GstNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SupplierStaging">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+            <PropertyRef Name="CompanyName" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="SupplierId" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GstNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RequisitionReport">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="Item" />
+            <PropertyRef Name="DeptID" />
+            <PropertyRef Name="DeptName" />
+            <PropertyRef Name="SubmitDate" />
+            <PropertyRef Name="SubmitMonth" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="Item" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Precision="27" Scale="6" />
+          <Property Name="DeptID" Type="Int32" Nullable="false" />
+          <Property Name="DeptName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SubmitDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Total_Requested" Type="Int32" />
+          <Property Name="SubmitMonth" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TransposedRequisitionReport">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="SubmitDate" />
+            <PropertyRef Name="SubmitMonth" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="SubmitDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="C1" Type="Int32" />
+          <Property Name="C2" Type="Int32" />
+          <Property Name="C3" Type="Int32" />
+          <Property Name="C4" Type="Int32" />
+          <Property Name="C5" Type="Int32" />
+          <Property Name="C6" Type="Int32" />
+          <Property Name="C7" Type="Int32" />
+          <Property Name="C8" Type="Int32" />
+          <Property Name="C9" Type="Int32" />
+          <Property Name="C10" Type="Int32" />
+          <Property Name="SubmitMonth" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TransposedRequisitionReportByCost">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="SubmitMonth" />
+            <PropertyRef Name="SubmitDate" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="SubmitMonth" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="SubmitDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="C1" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="C2" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="C3" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="C4" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="C5" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="C6" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="C7" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="C8" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="C9" Type="Decimal" Precision="38" Scale="6" />
+          <Property Name="C10" Type="Decimal" Precision="38" Scale="6" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1525,6 +1931,122 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="GstNo" ColumnName="GstNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemBackups">
+            <EntityTypeMapping TypeName="LUSSdbModel.ItemBackup">
+              <MappingFragment StoreEntitySet="ItemBackup">
+                <ScalarProperty Name="IsCataloged" ColumnName="IsCataloged" />
+                <ScalarProperty Name="Supplier3Price" ColumnName="Supplier3Price" />
+                <ScalarProperty Name="Supplier3Id" ColumnName="Supplier3Id" />
+                <ScalarProperty Name="Supplier2Price" ColumnName="Supplier2Price" />
+                <ScalarProperty Name="Supplier2Id" ColumnName="Supplier2Id" />
+                <ScalarProperty Name="Supplier1Price" ColumnName="Supplier1Price" />
+                <ScalarProperty Name="Supplier1Id" ColumnName="Supplier1Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="ReorderQty" ColumnName="ReorderQty" />
+                <ScalarProperty Name="ReorderLvl" ColumnName="ReorderLvl" />
+                <ScalarProperty Name="StockBalance" ColumnName="StockBalance" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BinNumber" ColumnName="BinNumber" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemStagings">
+            <EntityTypeMapping TypeName="LUSSdbModel.ItemStaging">
+              <MappingFragment StoreEntitySet="ItemStaging">
+                <ScalarProperty Name="Supplier3Price" ColumnName="Supplier3Price" />
+                <ScalarProperty Name="Supplier3Id" ColumnName="Supplier3Id" />
+                <ScalarProperty Name="Supplier2Price" ColumnName="Supplier2Price" />
+                <ScalarProperty Name="Supplier2Id" ColumnName="Supplier2Id" />
+                <ScalarProperty Name="Supplier1Price" ColumnName="Supplier1Price" />
+                <ScalarProperty Name="Supplier1Id" ColumnName="Supplier1Id" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplierBackups">
+            <EntityTypeMapping TypeName="LUSSdbModel.SupplierBackup">
+              <MappingFragment StoreEntitySet="SupplierBackup">
+                <ScalarProperty Name="GstNo" ColumnName="GstNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SupplierStagings">
+            <EntityTypeMapping TypeName="LUSSdbModel.SupplierStaging">
+              <MappingFragment StoreEntitySet="SupplierStaging">
+                <ScalarProperty Name="GstNo" ColumnName="GstNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequisitionReports">
+            <EntityTypeMapping TypeName="LUSSdbModel.RequisitionReport">
+              <MappingFragment StoreEntitySet="RequisitionReport">
+                <ScalarProperty Name="SubmitMonth" ColumnName="SubmitMonth" />
+                <ScalarProperty Name="Total_Requested" ColumnName="Total Requested" />
+                <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransposedRequisitionReports">
+            <EntityTypeMapping TypeName="LUSSdbModel.TransposedRequisitionReport">
+              <MappingFragment StoreEntitySet="TransposedRequisitionReport">
+                <ScalarProperty Name="SubmitMonth" ColumnName="SubmitMonth" />
+                <ScalarProperty Name="C10" ColumnName="10" />
+                <ScalarProperty Name="C9" ColumnName="9" />
+                <ScalarProperty Name="C8" ColumnName="8" />
+                <ScalarProperty Name="C7" ColumnName="7" />
+                <ScalarProperty Name="C6" ColumnName="6" />
+                <ScalarProperty Name="C5" ColumnName="5" />
+                <ScalarProperty Name="C4" ColumnName="4" />
+                <ScalarProperty Name="C3" ColumnName="3" />
+                <ScalarProperty Name="C2" ColumnName="2" />
+                <ScalarProperty Name="C1" ColumnName="1" />
+                <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransposedRequisitionReportByCosts">
+            <EntityTypeMapping TypeName="LUSSdbModel.TransposedRequisitionReportByCost">
+              <MappingFragment StoreEntitySet="TransposedRequisitionReportByCost">
+                <ScalarProperty Name="C10" ColumnName="10" />
+                <ScalarProperty Name="C9" ColumnName="9" />
+                <ScalarProperty Name="C8" ColumnName="8" />
+                <ScalarProperty Name="C7" ColumnName="7" />
+                <ScalarProperty Name="C6" ColumnName="6" />
+                <ScalarProperty Name="C5" ColumnName="5" />
+                <ScalarProperty Name="C4" ColumnName="4" />
+                <ScalarProperty Name="C3" ColumnName="3" />
+                <ScalarProperty Name="C2" ColumnName="2" />
+                <ScalarProperty Name="C1" ColumnName="1" />
+                <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+                <ScalarProperty Name="SubmitMonth" ColumnName="SubmitMonth" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
