@@ -41,7 +41,7 @@ namespace LUSSIS.View.StoreView.Clerk
         //delete items which user choose
         protected void Button2_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < GridView1.Rows.Count; i++)
+            for (int i = 1; i < GridView1.Rows.Count; i++)
             {
                 CheckBox cbox = (CheckBox)GridView1.Rows[i].FindControl("CheckBox1");
                 if (cbox.Checked == true)
