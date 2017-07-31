@@ -136,6 +136,7 @@
     </Content>
     <Content Include="Store\UploadExcel.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewProduct.aspx" />
+    <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="View\StoreView\Clerk\UpdateProduct.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -231,6 +232,13 @@
       <DependentUpon>UploadExcel.aspx</DependentUpon>
     </Compile>
     <Compile Include="test\razz.cs" />
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.designer.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.cs">
       <DependentUpon>AddNewProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -254,7 +262,6 @@
     <Folder Include="RawCode\Generics\" />
     <Folder Include="View\DepartmentView\ActingHead\" />
     <Folder Include="View\DepartmentView\Emp\" />
-    <Folder Include="View\DepartmentView\Head\" />
     <Folder Include="View\DepartmentView\Rep\" />
     <Folder Include="View\StoreView\Manager\" />
     <Folder Include="View\StoreView\Supervisor\" />
