@@ -476,6 +476,9 @@
     <Compile Include="View\StoreView\Clerk\RaiseAdjVoucher.aspx.designer.cs">
       <DependentUpon>RaiseAdjVoucher.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\StoreView\Clerk\UpdateProduct.aspx.designer.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\StoreView\Clerk\ViewAllReq.aspx.cs">
       <DependentUpon>ViewAllReq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
