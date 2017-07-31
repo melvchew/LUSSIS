@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -76,6 +84,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -113,6 +123,13 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EntityDeploy Include="RawCode\DAL\LussModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LussModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="RawCode\DAL\LussModel.edmx.diagram">
+      <DependentUpon>LussModel.edmx</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -121,6 +138,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RawCode\DAL\LussModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LussModel.edmx</DependentUpon>
+      <LastGenOutput>LussModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RawCode\DAL\LussModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LussModel.edmx</DependentUpon>
+      <LastGenOutput>LussModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Store\UploadExcel.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -246,6 +273,63 @@
     <Compile Include="RawCode\BLL\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\UsersAccountBLL.cs" />
     <Compile Include="RawCode\BLL\VoucherManagementBLL.cs" />
+    <Compile Include="RawCode\DAL\CollectionPoint.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\Department.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\Disbursement.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\DisburseReqItem.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\Employee.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\InvAdjItem.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\InvAdjVoucher.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\Item.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\LussModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LussModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\LussModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\LussModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LussModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\PurchaseOrder.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\PurchaseOrderItem.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\Requisition.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\RequisitionItem.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\StoreEmployee.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\Supplier.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Store\UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -261,7 +345,6 @@
     <Folder Include="RawCode\BLL\data\Khin\" />
     <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
-    <Folder Include="RawCode\DAL\" />
     <Folder Include="RawCode\Generics\" />
   </ItemGroup>
   <ItemGroup>
@@ -292,6 +375,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

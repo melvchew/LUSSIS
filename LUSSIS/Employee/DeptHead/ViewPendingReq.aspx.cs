@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.DAL;
+using LUSSIS.RawCode.BLL.data.Melvin;
+
 
 namespace LUSSIS.Employee.DeptHead
 {
@@ -12,7 +15,6 @@ namespace LUSSIS.Employee.DeptHead
 
         //Melvin
 
-
         Service s = new Service();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,6 +22,7 @@ namespace LUSSIS.Employee.DeptHead
 
             try
             {
+                LUSSIS.r
                 //Get User Data from Session, Create User object
                 //Employee head = s.GetEmpByID(SessionParam)
                 //Create Dept object using User object
