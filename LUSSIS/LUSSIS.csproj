@@ -152,7 +152,9 @@
     <Content Include="View\Redirect.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewProduct.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
+    <Content Include="View\StoreView\Clerk\RaiseAdjVoucher.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewSupplier.aspx" />
+    <Content Include="View\StoreView\Clerk\Chart.aspx" />
     <Content Include="View\StoreView\Clerk\EditSuppliers.aspx" />
     <Content Include="View\StoreView\Clerk\Inventory Status Report.aspx" />
     <Content Include="View\StoreView\Clerk\ProductList.aspx" />
@@ -185,10 +187,10 @@
     <Compile Include="RawCode\BLL\data\Peter\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\RequisitionBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Raj\VoucherManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\ZhangJinshan\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\data\ZhangJinshan\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\ZhangJinshan\StockManagementBLL.cs" />
-    <Compile Include="RawCode\BLL\data\Raj\RaiseAdjVoucherBLL.cs" />
     <Compile Include="RawCode\BLL\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\RequisitionBLL.cs" />
@@ -419,6 +421,13 @@
     </Compile>
     <Compile Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx.designer.cs">
       <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\RaiseAdjVoucher.aspx.cs">
+      <DependentUpon>RaiseAdjVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\RaiseAdjVoucher.aspx.designer.cs">
+      <DependentUpon>RaiseAdjVoucher.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Clerk\ViewAllReq.aspx.cs">
       <DependentUpon>ViewAllReq.aspx</DependentUpon>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LUSSIS.Store.Clerk {
+namespace LUSSIS.View.StoreView.Clerk {
     
     
     public partial class RaiseAdjVoucher {
