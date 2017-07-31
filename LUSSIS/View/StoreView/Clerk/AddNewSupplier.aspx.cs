@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.BLL.data.ZhangJinshan;
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class AddNewSupplier : System.Web.UI.Page

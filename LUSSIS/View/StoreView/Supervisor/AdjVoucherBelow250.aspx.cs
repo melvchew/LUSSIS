@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.BLL.data.Khin;
 
 namespace LUSSIS.View.StoreView.Supervisor
 {
@@ -21,7 +22,7 @@ namespace LUSSIS.View.StoreView.Supervisor
                 {
                     lblAppOrRej.Text = null;
                 }
-                BissLog b = new BissLog();
+                VoucherManagementBLL b = new VoucherManagementBLL();
                 gvVoucher.DataSource = b.getAdjVoucherListBelow250();
                 gvVoucher.DataBind();
             }
