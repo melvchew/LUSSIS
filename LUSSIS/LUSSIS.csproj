@@ -149,6 +149,7 @@
       <LastGenOutput>LussModel.cs</LastGenOutput>
     </Content>
     <Content Include="Store\UploadExcel.aspx" />
+    <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -338,6 +339,13 @@
       <DependentUpon>UploadExcel.aspx</DependentUpon>
     </Compile>
     <Compile Include="test\razz.cs" />
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.designer.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExcelFiles\" />
@@ -348,7 +356,6 @@
     <Folder Include="RawCode\Generics\" />
     <Folder Include="View\DepartmentView\ActingHead\" />
     <Folder Include="View\DepartmentView\Emp\" />
-    <Folder Include="View\DepartmentView\Head\" />
     <Folder Include="View\DepartmentView\Rep\" />
     <Folder Include="View\StoreView\Clerk\" />
     <Folder Include="View\StoreView\Manager\" />
