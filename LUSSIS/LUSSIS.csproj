@@ -135,6 +135,15 @@
       <LastGenOutput>LussModel.cs</LastGenOutput>
     </Content>
     <Content Include="Store\UploadExcel.aspx" />
+    <Content Include="View\DepartmentView\Emp\AddReqItem.aspx" />
+    <Content Include="View\DepartmentView\Emp\Catalogue.aspx" />
+    <Content Include="View\DepartmentView\Emp\ManageReq.aspx" />
+    <Content Include="View\DepartmentView\Emp\RaiseReq.aspx" />
+    <Content Include="View\DepartmentView\Emp\ReqConfirm.aspx" />
+    <Content Include="View\DepartmentView\Emp\ViewDeptReqHistory.aspx" />
+    <Content Include="View\DepartmentView\Emp\ViewReq.aspx" />
+    <Content Include="View\DepartmentView\Emp\ViewReqConfirm.aspx" />
+    <Content Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewProduct.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="View\StoreView\Clerk\ProductList.aspx" />
@@ -163,6 +172,9 @@
     <Compile Include="RawCode\BLL\data\Peter\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\RequisitionBLL.cs" />
+    <Compile Include="RawCode\BLL\data\ZhangJinshan\EmailBLL.cs" />
+    <Compile Include="RawCode\BLL\data\ZhangJinshan\ReportBLL.cs" />
+    <Compile Include="RawCode\BLL\data\ZhangJinshan\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Raj\RaiseAdjVoucherBLL.cs" />
     <Compile Include="RawCode\BLL\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\ReportBLL.cs" />
@@ -236,19 +248,61 @@
       <DependentUpon>UploadExcel.aspx</DependentUpon>
     </Compile>
     <Compile Include="test\razz.cs" />
-    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.cs">
-      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+    <Compile Include="View\DepartmentView\Emp\AddReqItem.aspx.cs">
+      <DependentUpon>AddReqItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.designer.cs">
-      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+    <Compile Include="View\DepartmentView\Emp\AddReqItem.aspx.designer.cs">
+      <DependentUpon>AddReqItem.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.cs">
-      <DependentUpon>AddNewProduct.aspx</DependentUpon>
+    <Compile Include="View\DepartmentView\Emp\Catalogue.aspx.cs">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.designer.cs">
-      <DependentUpon>AddNewProduct.aspx</DependentUpon>
+    <Compile Include="View\DepartmentView\Emp\Catalogue.aspx.designer.cs">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ManageReq.aspx.cs">
+      <DependentUpon>ManageReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ManageReq.aspx.designer.cs">
+      <DependentUpon>ManageReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\RaiseReq.aspx.cs">
+      <DependentUpon>RaiseReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\RaiseReq.aspx.designer.cs">
+      <DependentUpon>RaiseReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ReqConfirm.aspx.cs">
+      <DependentUpon>ReqConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ReqConfirm.aspx.designer.cs">
+      <DependentUpon>ReqConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewDeptReqHistory.aspx.cs">
+      <DependentUpon>ViewDeptReqHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewDeptReqHistory.aspx.designer.cs">
+      <DependentUpon>ViewDeptReqHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewReq.aspx.cs">
+      <DependentUpon>ViewReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewReq.aspx.designer.cs">
+      <DependentUpon>ViewReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewReqConfirm.aspx.cs">
+      <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewReqConfirm.aspx.designer.cs">
+      <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Clerk\ProductList.aspx.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
@@ -259,10 +313,12 @@
     </Compile>
     <Compile Include="View\StoreView\Clerk\UpdateProduct.aspx.cs">
       <DependentUpon>UpdateProduct.aspx</DependentUpon>
+    <Compile Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx.cs">
+      <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\StoreView\Clerk\UpdateProduct.aspx.designer.cs">
-      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+    <Compile Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx.designer.cs">
+      <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Manager\AdjVoucher.aspx.cs">
       <DependentUpon>AdjVoucher.aspx</DependentUpon>
@@ -290,6 +346,8 @@
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
     <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
+    <Folder Include="RawCode\BLL\data\Khin\" />
+    <Folder Include="RawCode\BLL\data\Raj\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
     <Folder Include="RawCode\Generics\" />
     <Folder Include="View\DepartmentView\ActingHead\" />
