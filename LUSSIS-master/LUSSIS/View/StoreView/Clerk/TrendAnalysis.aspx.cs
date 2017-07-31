@@ -6,14 +6,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using LUSSIS.RawCode.DAL;
+using LUSSIS.RawCode.BLL.data.Phong;
 
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class TrendAnalysis : System.Web.UI.Page
     {
-        LUSSdbEntities context;
-        ViewAllReqBLL viewReqBizLogic;
-        TrendAnalysisBLL trendAnalysisBizLogic;
+        LUSSdb context;
+        RequisitionBLL viewReqBizLogic;
+        ReportBLL trendAnalysisBizLogic;
         List<Department> deptList;
         List<Item> itemList;
         List<String> monthList;
@@ -26,13 +28,13 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            viewReqBizLogic = new ViewAllReqBLL();
-            trendAnalysisBizLogic = new TrendAnalysisBLL();
-            context = new LUSSdbEntities();
+            viewReqBizLogic = new RequisitionBLL();
+            trendAnalysisBizLogic = new ReportBLL();
+            context = new LUSSdb();
 
             if (!IsPostBack)
             {
-                using (context = new LUSSdbEntities())
+                using (context = new LUSSdb())
                 {
                     //populate list of months
                     monthList = trendAnalysisBizLogic.getSubmitMonthList();

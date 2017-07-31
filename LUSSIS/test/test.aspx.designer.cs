@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LUSSIS.View.DepartmentView.Head
+namespace LUSSIS.test
 {
 
 
-    public partial class ManageCollectionPoint
+    public partial class test
     {
 
         /// <summary>

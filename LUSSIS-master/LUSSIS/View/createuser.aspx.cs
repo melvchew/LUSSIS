@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.Security;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.DAL;
+using System.Web.Profile;
+using System.Configuration;
 
 namespace LUSSIS.View
 {
     public partial class createuser : System.Web.UI.Page
     {
-        LUSSdbEntities context;
+        LUSSdb context;
         DropDownList k1;
 
         protected void Page_Load(object sender, EventArgs e)

@@ -147,9 +147,12 @@
     <Content Include="View\DepartmentView\Emp\ViewReq.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewReqConfirm.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx" />
+    <Content Include="View\DepartmentView\Head\ManageCollectionPoint.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="View\DepartmentView\Head\DelegateRole.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx" />
+    <Content Include="View\DepartmentView\Rep\ChangeCollectionPoint.aspx" />
+    <Content Include="View\DepartmentView\Rep\ViewCollectionItems.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\Logout.aspx" />
     <Content Include="View\Redirect.aspx" />
@@ -184,9 +187,8 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawCode\BLL\data\HUXIAOXI\RequisitionBLL.cs" />
-    <Compile Include="RawCode\BLL\data\Kavya\ChangeCollectionPointBLL.cs" />
     <Compile Include="RawCode\BLL\data\Kavya\ManageCollectionPointBLL.cs" />
-    <Compile Include="RawCode\BLL\data\Kavya\ViewCollectionItemsBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Kavya\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Khin\VoucherManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Khin\RolesManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Khin\StockManagementBLL.cs" />
@@ -344,6 +346,13 @@
     <Compile Include="View\DepartmentView\Head\DelegateRole.aspx.designer.cs">
       <DependentUpon>DelegateRole.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\DepartmentView\Head\ManageCollectionPoint.aspx.cs">
+      <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ManageCollectionPoint.aspx.designer.cs">
+      <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.cs">
       <DependentUpon>ViewPendingReq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -357,6 +366,20 @@
     </Compile>
     <Compile Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx.designer.cs">
       <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Rep\ChangeCollectionPoint.aspx.cs">
+      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Rep\ChangeCollectionPoint.aspx.designer.cs">
+      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Rep\ViewCollectionItems.aspx.cs">
+      <DependentUpon>ViewCollectionItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Rep\ViewCollectionItems.aspx.designer.cs">
+      <DependentUpon>ViewCollectionItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -494,7 +517,6 @@
     <Folder Include="Files\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
     <Folder Include="View\DepartmentView\ActingHead\" />
-    <Folder Include="View\DepartmentView\Rep\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

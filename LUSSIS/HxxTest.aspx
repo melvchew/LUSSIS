@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageCollectionPoint.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Head.ManageCollectionPoint" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HxxTest.aspx.cs" Inherits="LUSSIS.HxxTest" %>
 
 <!DOCTYPE html>
 
