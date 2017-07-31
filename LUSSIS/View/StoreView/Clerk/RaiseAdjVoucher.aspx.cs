@@ -4,12 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LUSSIS.RawCode.BLL.data;
+using LUSSIS.RawCode.BLL.data.Raj;
 
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class RaiseAdjVoucher : System.Web.UI.Page
     {
+        VoucherManagementBLL vm = new VoucherManagementBLL();
         // get employee Id using Login Session
         int empId = 7;
         static int count = 2;
@@ -90,7 +91,7 @@ namespace LUSSIS.View.StoreView.Clerk
         {
             decimal avgPrice = 0;
             Decimal TotAdjValue = 0;
-            Item i = c.getItemById(id);
+            Item i = vm.getItemById(id);
             avgPrice = (i.Supplier1Price + i.Supplier1Price + i.Supplier1Price) / 3;
             TotAdjValue = dItem * avgPrice;
             totAmt = TotAdjValue + totAmt;
@@ -155,7 +156,7 @@ namespace LUSSIS.View.StoreView.Clerk
             Button1.Visible = true;
             if (!IsPostBack)
             {
-                ItemsList1.DataSource = c.getItems();
+                ItemsList1.DataSource = vm.getItems();
                 ItemsList1.DataBind();
                 ItemsList1.DataTextField = "Description";
                 ItemsList1.DataValueField = "ItemId";
@@ -170,9 +171,9 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
-            StoreEmployee se = c.getStoreEmployeeById(empId);
+             StoreEmployee se = vm.getStoreEmployeeById(empId);
             c.RaiseVoucher(empId, date, status, txtReasons1.Text);
-            InvAdjVoucher adj = c.getAdjVocherIdByDate(date);
+            InvAdjVoucher adj = vm.getAdjVocherIdByDate(date);
             TextBox tb = new TextBox();
             DropDownList ddl = new DropDownList();
             int itemId = 0, adjQty = 0;
@@ -188,7 +189,7 @@ namespace LUSSIS.View.StoreView.Clerk
                     ddl = (DropDownList)ctr.FindControl(str);
                     itemId = Convert.ToInt32(ddl.SelectedValue);
                     adjQty = Convert.ToInt32(tb.Text);
-                    c.AddRaiseAdjItem(adj.VoucherId, itemId, adjQty);
+                    vm.AddRaiseAdjItem(adj.VoucherId, itemId, adjQty);
                 }
                 inr++;
             }
