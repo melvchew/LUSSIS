@@ -137,6 +137,7 @@
       <LastGenOutput>LussModel.cs</LastGenOutput>
     </Content>
     <Content Include="Store\UploadExcel.aspx" />
+    <Content Include="View\AccessDenied.aspx" />
     <Content Include="View\createuser.aspx" />
     <Content Include="View\DepartmentView\Emp\AddReqItem.aspx" />
     <Content Include="View\DepartmentView\Emp\Catalogue.aspx" />
@@ -275,6 +276,13 @@
       <DependentUpon>UploadExcel.aspx</DependentUpon>
     </Compile>
     <Compile Include="test\razz.cs" />
+    <Compile Include="View\AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\createuser.aspx.cs">
       <DependentUpon>createuser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
