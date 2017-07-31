@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 using LUSSIS.RawCode.DAL;
-using LUSSIS.RawCode.BLL.data.Phong;
+using LUSSIS.RawCode.BLL;
 
 namespace LUSSIS.View.StoreView.Clerk
 {

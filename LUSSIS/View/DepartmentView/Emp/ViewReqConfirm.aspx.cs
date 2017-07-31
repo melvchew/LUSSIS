@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LUSSIS.RawCode.BLL.data.HUXIAOXI;
+using LUSSIS.RawCode.BLL;
 using LUSSIS.RawCode.DAL;
 
 //Made by Hu Xiaoxi(Team5)
