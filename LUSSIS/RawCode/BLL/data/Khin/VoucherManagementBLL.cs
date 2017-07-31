@@ -6,7 +6,7 @@ using ALUSSIS.RawCode.DAL.Khin;
 
 namespace LUSSIS.RawCode.BLL.data.Khin
 {
-    public class AdjustmentVoucherBLL
+    public class VoucherManagementBLL
     {
         public List<AdVoucherLIst> getAdjVoucherListBelow250()
         {

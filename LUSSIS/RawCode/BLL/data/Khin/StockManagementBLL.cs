@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LUSSIS.RawCode.BLL.data.Khin
 {
-    public class ManageProductBLL
+    public class StockManagementBLL
     {
         public List<Item> getProductList()
         {

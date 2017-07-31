@@ -5,7 +5,7 @@ using System.Web;
 
 namespace LUSSIS.RawCode.BLL.data.Khin
 {
-    public class DelegateRoleBLL
+    public class RolesManagementBLL
     {
         public List<Employee> getEmployeeListByDept(int id)
         {
