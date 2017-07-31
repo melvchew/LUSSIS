@@ -104,20 +104,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Department\ChangeCollectionPoint.aspx" />
-    <Content Include="Department\ManageCollectionPoint.aspx" />
-    <Content Include="Department\ViewCollectionItems.aspx" />
-    <Content Include="DepartmentView\AddReqItem.aspx" />
-    <Content Include="DepartmentView\Catalogue.aspx" />
-    <Content Include="DepartmentView\DeptHead\ViewPendingReq.aspx" />
-    <Content Include="DepartmentView\DeptHead\ViewPendingReqDetails.aspx" />
-    <Content Include="DepartmentView\ManageReq.aspx" />
-    <Content Include="DepartmentView\RaiseReq.aspx" />
-    <Content Include="DepartmentView\ReqConfirm.aspx" />
-    <Content Include="DepartmentView\ViewDeptReqHistory.aspx" />
-    <Content Include="DepartmentView\ViewReq.aspx" />
-    <Content Include="DepartmentView\ViewReqConfirm.aspx" />
-    <Content Include="DepartmentView\ViewUserReqHistory.aspx" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -158,107 +144,12 @@
     <Content Include="View\DepartmentView\Emp\ViewReq.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewReqConfirm.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx" />
+    <Content Include="View\StoreView\Clerk\AddNewProduct.aspx" />
+    <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
+    <Content Include="View\StoreView\Clerk\UpdateProduct.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Department\ChangeCollectionPoint.aspx.cs">
-      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Department\ChangeCollectionPoint.aspx.designer.cs">
-      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Department\ManageCollectionPoint.aspx.cs">
-      <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Department\ManageCollectionPoint.aspx.designer.cs">
-      <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Department\ViewCollectionItems.aspx.cs">
-      <DependentUpon>ViewCollectionItems.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Department\ViewCollectionItems.aspx.designer.cs">
-      <DependentUpon>ViewCollectionItems.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\AddReqItem.aspx.cs">
-      <DependentUpon>AddReqItem.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\AddReqItem.aspx.designer.cs">
-      <DependentUpon>AddReqItem.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\Catalogue.aspx.cs">
-      <DependentUpon>Catalogue.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\Catalogue.aspx.designer.cs">
-      <DependentUpon>Catalogue.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\DeptHead\ViewPendingReq.aspx.cs">
-      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\DeptHead\ViewPendingReq.aspx.designer.cs">
-      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\DeptHead\ViewPendingReqDetails.aspx.cs">
-      <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\DeptHead\ViewPendingReqDetails.aspx.designer.cs">
-      <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\ManageReq.aspx.cs">
-      <DependentUpon>ManageReq.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\ManageReq.aspx.designer.cs">
-      <DependentUpon>ManageReq.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\RaiseReq.aspx.cs">
-      <DependentUpon>RaiseReq.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\RaiseReq.aspx.designer.cs">
-      <DependentUpon>RaiseReq.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\ReqConfirm.aspx.cs">
-      <DependentUpon>ReqConfirm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\ReqConfirm.aspx.designer.cs">
-      <DependentUpon>ReqConfirm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\ViewDeptReqHistory.aspx.cs">
-      <DependentUpon>ViewDeptReqHistory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\ViewDeptReqHistory.aspx.designer.cs">
-      <DependentUpon>ViewDeptReqHistory.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\ViewReq.aspx.cs">
-      <DependentUpon>ViewReq.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\ViewReq.aspx.designer.cs">
-      <DependentUpon>ViewReq.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\ViewReqConfirm.aspx.cs">
-      <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\ViewReqConfirm.aspx.designer.cs">
-      <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DepartmentView\ViewUserReqHistory.aspx.cs">
-      <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DepartmentView\ViewUserReqHistory.aspx.designer.cs">
-      <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -267,6 +158,9 @@
     <Compile Include="RawCode\BLL\data\Kavya\ChangeCollectionPointBLL.cs" />
     <Compile Include="RawCode\BLL\data\Kavya\ManageCollectionPointBLL.cs" />
     <Compile Include="RawCode\BLL\data\Kavya\ViewCollectionItemsBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Khin\VoucherManagementBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Khin\RolesManagementBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Khin\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RoleManagementBLL.cs" />
@@ -274,6 +168,9 @@
     <Compile Include="RawCode\BLL\data\Peter\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\RequisitionBLL.cs" />
+    <Compile Include="RawCode\BLL\data\ZhangJinshan\EmailBLL.cs" />
+    <Compile Include="RawCode\BLL\data\ZhangJinshan\ReportBLL.cs" />
+    <Compile Include="RawCode\BLL\data\ZhangJinshan\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Raj\RaiseAdjVoucherBLL.cs" />
     <Compile Include="RawCode\BLL\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\ReportBLL.cs" />
@@ -414,14 +311,14 @@
   <ItemGroup>
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
-    <Folder Include="RawCode\BLL\data\Khin\" />
     <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
+    <Folder Include="RawCode\BLL\data\Khin\" />
+    <Folder Include="RawCode\BLL\data\Raj\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
     <Folder Include="RawCode\Generics\" />
     <Folder Include="View\DepartmentView\ActingHead\" />
-    <Folder Include="View\DepartmentView\Head\" />
+    <Folder Include="View\DepartmentView\Emp\" />
     <Folder Include="View\DepartmentView\Rep\" />
-    <Folder Include="View\StoreView\Clerk\" />
     <Folder Include="View\StoreView\Manager\" />
     <Folder Include="View\StoreView\Supervisor\" />
   </ItemGroup>
