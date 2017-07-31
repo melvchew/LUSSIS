@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.DataVisualization.Charting;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.BLL.data.Phong;
 
 namespace LUSSIS.View.StoreView.Clerk
 {
@@ -17,7 +18,7 @@ namespace LUSSIS.View.StoreView.Clerk
         SqlCommand cmd;
         SqlDataAdapter da;
         DataTable dt;
-        TrendAnalysisBLL chartData;
+        ReportBLL chartData;
         protected void Page_Load(object sender, EventArgs e)
         {
 
