@@ -27,7 +27,7 @@ namespace LUSSIS.RawCode.DAL
         public string Category { get; set; }
         public string BinNumber { get; set; }
         public string Description { get; set; }
-        public int StockBalance { get; set; }
+        public Nullable<int> StockBalance { get; set; }
         public Nullable<int> ReorderLvl { get; set; }
         public Nullable<int> ReorderQty { get; set; }
         public string Unit { get; set; }

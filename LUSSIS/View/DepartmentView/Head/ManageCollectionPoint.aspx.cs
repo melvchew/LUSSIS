@@ -4,22 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using LUSSIS.RawCode.BLL;
+using LUSSIS.RawCode.DAL;
 namespace LUSSIS.View.DepartmentView.Head
 {
     public partial class ManageCollectionPoint : System.Web.UI.Page
     {
         static int cp1, cp2, cp3, cp4, cp5, cp6;
 
-        Service s = new Service();
-        LUSS2 context = new LUSS2();
+      ManageCollectionPointBLL mcp = new ManageCollectionPointBLL();
+        LUSSdb context = new LUSSdb();
         CollectionPoint d = new CollectionPoint();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                List<CollectionPoint> list = s.getCollectionPoints();
+                List<CollectionPoint> list = mcp.getCollectionPoints();
                 int i = 0;
                 foreach (var cp in list)
                 {
@@ -52,51 +53,51 @@ namespace LUSSIS.View.DepartmentView.Head
                             break;
                     }
                 }
-                StationeryStoreAdministrationBuilding.DataSource = s.getEmployees();
+                StationeryStoreAdministrationBuilding.DataSource = mcp.getEmployees();
                 StationeryStoreAdministrationBuilding.DataBind();
                 StationeryStoreAdministrationBuilding.DataTextField = "Name";
                 StationeryStoreAdministrationBuilding.DataValueField = "StoreEmpId";
-                d = s.getCurStoreEmplyeeInDisbursement(cp1);
+                d = mcp.getCurStoreEmplyeeInDisbursement(cp1);
                 StationeryStoreAdministrationBuilding.SelectedValue = d.StoreEmpId.ToString();
                 StationeryStoreAdministrationBuilding.DataBind();
 
-                ManagementSchool.DataSource = s.getEmployees();
+                ManagementSchool.DataSource =mcp.getEmployees();
                 ManagementSchool.DataBind();
                 ManagementSchool.DataTextField = "Name";
                 ManagementSchool.DataValueField = "StoreEmpId";
-                d = s.getCurStoreEmplyeeInDisbursement(cp2);
+                d = mcp.getCurStoreEmplyeeInDisbursement(cp2);
                 ManagementSchool.SelectedValue = d.StoreEmpId.ToString();
                 ManagementSchool.DataBind();
 
-                MedicalSchool.DataSource = s.getEmployees();
+                MedicalSchool.DataSource = mcp.getEmployees();
                 MedicalSchool.DataBind();
                 MedicalSchool.DataTextField = "Name";
                 MedicalSchool.DataValueField = "StoreEmpId";
-                d = s.getCurStoreEmplyeeInDisbursement(cp3);
+                d = mcp.getCurStoreEmplyeeInDisbursement(cp3);
                 MedicalSchool.SelectedValue = d.StoreEmpId.ToString();
                 MedicalSchool.DataBind();
 
-                EngineeringSchool.DataSource = s.getEmployees();
+                EngineeringSchool.DataSource = mcp.getEmployees();
                 EngineeringSchool.DataBind();
                 EngineeringSchool.DataTextField = "Name";
                 EngineeringSchool.DataValueField = "StoreEmpId";
-                d = s.getCurStoreEmplyeeInDisbursement(cp4);
+                d = mcp.getCurStoreEmplyeeInDisbursement(cp4);
                 EngineeringSchool.SelectedValue = d.StoreEmpId.ToString();
                 EngineeringSchool.DataBind();
 
-                ScienceSchool.DataSource = s.getEmployees();
+                ScienceSchool.DataSource = mcp.getEmployees();
                 ScienceSchool.DataBind();
                 ScienceSchool.DataTextField = "Name";
                 ScienceSchool.DataValueField = "StoreEmpId";
-                d = s.getCurStoreEmplyeeInDisbursement(cp5);
+                d = mcp.getCurStoreEmplyeeInDisbursement(cp5);
                 ScienceSchool.SelectedValue = d.StoreEmpId.ToString();
                 ScienceSchool.DataBind();
 
-                UniversityHospital.DataSource = s.getEmployees();
+                UniversityHospital.DataSource = mcp.getEmployees();
                 UniversityHospital.DataBind();
                 UniversityHospital.DataTextField = "Name";
                 UniversityHospital.DataValueField = "StoreEmpId";
-                d = s.getCurStoreEmplyeeInDisbursement(cp6);
+                d = mcp.getCurStoreEmplyeeInDisbursement(cp6);
                 UniversityHospital.SelectedValue = d.StoreEmpId.ToString();
                 UniversityHospital.DataBind();
             }
@@ -106,12 +107,12 @@ namespace LUSSIS.View.DepartmentView.Head
 
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
-            s.UpdateStoreEmployeeInDisbursement(cp1, StationeryStoreAdministrationBuilding.SelectedValue);
-            s.UpdateStoreEmployeeInDisbursement(cp2, ManagementSchool.SelectedValue);
-            s.UpdateStoreEmployeeInDisbursement(cp3, MedicalSchool.SelectedValue);
-            s.UpdateStoreEmployeeInDisbursement(cp4, EngineeringSchool.SelectedValue);
-            s.UpdateStoreEmployeeInDisbursement(cp5, ScienceSchool.SelectedValue);
-            s.UpdateStoreEmployeeInDisbursement(cp6, UniversityHospital.SelectedValue);
+            mcp.UpdateStoreEmployeeInDisbursement(cp1, StationeryStoreAdministrationBuilding.SelectedValue);
+            mcp.UpdateStoreEmployeeInDisbursement(cp2, ManagementSchool.SelectedValue);
+            mcp.UpdateStoreEmployeeInDisbursement(cp3, MedicalSchool.SelectedValue);
+            mcp.UpdateStoreEmployeeInDisbursement(cp4, EngineeringSchool.SelectedValue);
+            mcp.UpdateStoreEmployeeInDisbursement(cp5, ScienceSchool.SelectedValue);
+            mcp.UpdateStoreEmployeeInDisbursement(cp6, UniversityHospital.SelectedValue);
             Response.Write("<script>alert('Updated Successfully')</script>");
         }
 

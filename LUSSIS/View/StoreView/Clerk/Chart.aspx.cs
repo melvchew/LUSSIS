@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.DataVisualization.Charting;
 using System.Web.UI.WebControls;
-using LUSSIS.RawCode.BLL.data.Phong;
+using LUSSIS.RawCode.BLL;
 
 namespace LUSSIS.View.StoreView.Clerk
 {

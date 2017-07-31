@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LUSSIS.RawCode.BLL.data.HUXIAOXI;
+using LUSSIS.RawCode.BLL;
 using LUSSIS.RawCode.DAL;
 
 //Made by Hu Xiaoxi(Team5)
@@ -119,7 +119,7 @@ namespace LUSSIS.View.DepartmentView.Emp
                         }
                         Session["AddItemlist"] = listsession;
 
-                        Response.Redirect("CreateReq.aspx");
+                        Response.Redirect("RaiseReq.aspx");
                     }
                     else
                     {
@@ -166,7 +166,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             int rid = Int32.Parse(Request.QueryString["rid"]);
             if (rid == 0)
             {
-                Response.Redirect("CreateReq.aspx");
+                Response.Redirect("RaiseReq.aspx");
             }
             else
             {

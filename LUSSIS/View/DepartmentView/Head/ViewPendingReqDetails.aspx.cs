@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LUSSIS.RawCode.DAL;
-using LUSSIS.RawCode.BLL.data.Melvin;
+using LUSSIS.RawCode.BLL;
 
 namespace LUSSIS.View.DepartmentView.Head
 {
     public partial class ViewPendingReqDetails : System.Web.UI.Page
     {
-        RoleManagementBLL rmBLL = new RoleManagementBLL();
+        RolesManagementBLL rmBLL = new RolesManagementBLL();
         EmailBLL eBLL = new EmailBLL();
         RequisitionBLL rBLL = new RequisitionBLL();
         StockManagementBLL sBLL = new StockManagementBLL();

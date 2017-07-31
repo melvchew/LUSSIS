@@ -8,6 +8,7 @@ namespace LUSSIS.RawCode.BLL.data.Phong
 {
     public class RequisitionBLL
     {
+        //Created by Phong
         LUSSdb context;
         enum ReqStatus
         {

@@ -39,5 +39,12 @@ namespace LUSSIS.RawCode.DAL
         public virtual DbSet<RequisitionItem> RequisitionItems { get; set; }
         public virtual DbSet<StoreEmployee> StoreEmployees { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<ItemBackup> ItemBackups { get; set; }
+        public virtual DbSet<ItemStaging> ItemStagings { get; set; }
+        public virtual DbSet<SupplierBackup> SupplierBackups { get; set; }
+        public virtual DbSet<SupplierStaging> SupplierStagings { get; set; }
+        public virtual DbSet<RequisitionReport> RequisitionReports { get; set; }
+        public virtual DbSet<TransposedRequisitionReport> TransposedRequisitionReports { get; set; }
+        public virtual DbSet<TransposedRequisitionReportByCost> TransposedRequisitionReportByCosts { get; set; }
     }
 }

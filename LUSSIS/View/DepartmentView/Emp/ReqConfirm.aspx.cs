@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LUSSIS.RawCode.BLL.data.HUXIAOXI;
+using LUSSIS.RawCode.BLL;
 
 //Made by Hu Xiaoxi(Team5)
 namespace LUSSIS.View.DepartmentView.Emp
@@ -15,6 +15,11 @@ namespace LUSSIS.View.DepartmentView.Emp
         {
             string rid = Request.QueryString["rid"];
             litaConfirm.Text = "Requisition succeeded, requisition id is " + rid + ". ";
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //Still Need to complete.
         }
     }
 }

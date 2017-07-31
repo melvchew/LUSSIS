@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LUSSIS.RawCode.BLL.data.HUXIAOXI;
+using LUSSIS.RawCode.BLL;
 using LUSSIS.RawCode.DAL;
 
 //Made by Hu Xiaoxi(Team5)
@@ -48,7 +48,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
             else if ((String)Session["View"] == "own")
             {
-                Response.Redirect("ViewOwnReqHistory.aspx");
+                Response.Redirect("ViewUserReqHistory.aspx");
             }
         }
     }

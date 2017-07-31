@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LUSSIS.RawCode.BLL.data.Raj;
+using LUSSIS.RawCode.BLL;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.View.StoreView.Clerk
 {
@@ -33,7 +34,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 //---DropDownListBox
                 DropDownList d = new DropDownList();
                 d.ID = "ItemsList" + counter;
-                d.DataSource = c.getItems();
+                d.DataSource = vm.getItems();
                 d.Width = 250;
                 d.CssClass = "btn btn-default";
                 d.DataBind();
@@ -107,7 +108,7 @@ namespace LUSSIS.View.StoreView.Clerk
             //-- DropDownList Box
             DropDownList d = new DropDownList();
             d.ID = "ItemsList" + counter;
-            d.DataSource = c.getItems();
+            d.DataSource = vm.getItems();
             d.Width = 250;
             d.CssClass = "btn btn-default";
             d.DataBind();
@@ -172,7 +173,7 @@ namespace LUSSIS.View.StoreView.Clerk
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
              StoreEmployee se = vm.getStoreEmployeeById(empId);
-            c.RaiseVoucher(empId, date, status, txtReasons1.Text);
+            vm.RaiseVoucher(empId, date, status, txtReasons1.Text);
             InvAdjVoucher adj = vm.getAdjVocherIdByDate(date);
             TextBox tb = new TextBox();
             DropDownList ddl = new DropDownList();
@@ -196,7 +197,7 @@ namespace LUSSIS.View.StoreView.Clerk
             Response.Write("<script>alert('Voucher ID = " + adj.VoucherId + " is raised successfully')</script>");
             if (totAmt > 250)
             {
-                c.sendnotification(se, adj.VoucherId);
+                vm.sendnotification(se, adj.VoucherId);
             }
             //Label2.Text = adj.VoucherId.ToString();
         }
