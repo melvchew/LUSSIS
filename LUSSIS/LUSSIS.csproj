@@ -145,6 +145,7 @@
     <Content Include="View\DepartmentView\Emp\ViewReq.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewReqConfirm.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx" />
+    <Content Include="View\DepartmentView\Head\DelegateRole.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\Logout.aspx" />
@@ -162,6 +163,7 @@
     <Content Include="View\StoreView\Manager\AdjVoucherDetail.aspx" />
     <Content Include="View\StoreView\Supervisor\AdjVoucherBelow250.aspx" />
     <Content Include="View\StoreView\Clerk\UpdateSuppliers.aspx" />
+    <Content Include="View\StoreView\Supervisor\AdjVoucherBelow250Detail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -323,6 +325,13 @@
     <Compile Include="View\DepartmentView\Emp\ViewReqConfirm.aspx.designer.cs">
       <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\DepartmentView\Head\DelegateRole.aspx.cs">
+      <DependentUpon>DelegateRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\DelegateRole.aspx.designer.cs">
+      <DependentUpon>DelegateRole.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx.cs">
       <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -354,6 +363,9 @@
     <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.cs">
       <DependentUpon>AddNewProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.designer.cs">
+      <DependentUpon>AddNewProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Clerk\Chart.aspx.cs">
       <DependentUpon>Chart.aspx</DependentUpon>
@@ -442,6 +454,13 @@
     </Compile>
     <Compile Include="View\StoreView\Clerk\UpdateSuppliers.aspx.designer.cs">
       <DependentUpon>UpdateSuppliers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Supervisor\AdjVoucherBelow250Detail.aspx.cs">
+      <DependentUpon>AdjVoucherBelow250Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Supervisor\AdjVoucherBelow250Detail.aspx.designer.cs">
+      <DependentUpon>AdjVoucherBelow250Detail.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
