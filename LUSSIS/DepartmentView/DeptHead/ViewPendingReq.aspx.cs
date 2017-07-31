@@ -22,7 +22,7 @@ namespace LUSSIS.Employee.DeptHead
 
             try
             {
-                LUSSIS.r
+                
                 //Get User Data from Session, Create User object
                 //Employee head = s.GetEmpByID(SessionParam)
                 //Create Dept object using User object
