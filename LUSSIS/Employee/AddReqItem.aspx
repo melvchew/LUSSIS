@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddReqItem.aspx.cs" Inherits="LUSSIS.Employee.AddReqItem" %>
-
+<%-- Made by Hu Xiaoxi(Team5) --%>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,6 +19,7 @@
                 <asp:TemplateField HeaderText="Item Name">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Description") %>'></asp:TextBox>
+                    
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
