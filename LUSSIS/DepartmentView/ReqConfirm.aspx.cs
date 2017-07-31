@@ -15,7 +15,6 @@ namespace LUSSIS.Employee
         {
             string rid = Request.QueryString["rid"];
             litaConfirm.Text = "Requisition succeeded, requisition id is " + rid + ". ";
-
         }
     }
 }

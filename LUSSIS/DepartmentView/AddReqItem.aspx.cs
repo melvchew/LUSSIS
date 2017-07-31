@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LUSSIS.RawCode.BLL.data.HUXIAOXI;
+using LUSSIS.RawCode.DAL;
 
 //Made by Hu Xiaoxi(Team5)
 namespace LUSSIS.Employee
@@ -12,6 +13,7 @@ namespace LUSSIS.Employee
     public partial class AddReqItem : System.Web.UI.Page
     {
         LUSSdb context;
+
         RequisitionBLL rs = new RequisitionBLL();
 
         protected void Page_Load(object sender, EventArgs e)

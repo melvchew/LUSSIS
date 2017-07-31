@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -76,6 +84,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -97,22 +107,28 @@
     <Content Include="Department\ChangeCollectionPoint.aspx" />
     <Content Include="Department\ManageCollectionPoint.aspx" />
     <Content Include="Department\ViewCollectionItems.aspx" />
-    <Content Include="Employee\AddReqItem.aspx" />
-    <Content Include="Employee\Catalogue.aspx" />
-    <Content Include="Employee\DeptHead\DelegateRole.aspx" />
-    <Content Include="Employee\DeptHead\ViewPendingReq.aspx" />
-    <Content Include="Employee\DeptHead\ViewPendingReqDetails.aspx" />
-    <Content Include="Employee\ManageReq.aspx" />
-    <Content Include="Employee\RaiseReq.aspx" />
-    <Content Include="Employee\ReqConfirm.aspx" />
-    <Content Include="Employee\ViewDeptReqHistory.aspx" />
-    <Content Include="Employee\ViewReq.aspx" />
-    <Content Include="Employee\ViewReqConfirm.aspx" />
-    <Content Include="Employee\ViewUserReqHistory.aspx" />
+    <Content Include="DepartmentView\AddReqItem.aspx" />
+    <Content Include="DepartmentView\Catalogue.aspx" />
+    <Content Include="DepartmentView\DeptHead\ViewPendingReq.aspx" />
+    <Content Include="DepartmentView\DeptHead\ViewPendingReqDetails.aspx" />
+    <Content Include="DepartmentView\ManageReq.aspx" />
+    <Content Include="DepartmentView\RaiseReq.aspx" />
+    <Content Include="DepartmentView\ReqConfirm.aspx" />
+    <Content Include="DepartmentView\ViewDeptReqHistory.aspx" />
+    <Content Include="DepartmentView\ViewReq.aspx" />
+    <Content Include="DepartmentView\ViewReqConfirm.aspx" />
+    <Content Include="DepartmentView\ViewUserReqHistory.aspx" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="RawCode\DAL\LussModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LussModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="RawCode\DAL\LussModel.edmx.diagram">
+      <DependentUpon>LussModel.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -122,13 +138,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Store\Clerk\AddNewProduct.aspx" />
-    <Content Include="Store\Clerk\ProductList.aspx" />
-    <Content Include="Store\Clerk\UpdateProduct.aspx" />
-    <Content Include="Store\Manager\AdjustmentVoucher.aspx" />
-    <Content Include="Store\Manager\AdjustmentVoucherDetail.aspx" />
-    <Content Include="Store\Supervisor\AdjustmentVoucherBelow250.aspx" />
-    <Content Include="Store\Supervisor\AdjustmentVoucherDetailBelow250.aspx" />
+    <Content Include="RawCode\DAL\LussModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LussModel.edmx</DependentUpon>
+      <LastGenOutput>LussModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RawCode\DAL\LussModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LussModel.edmx</DependentUpon>
+      <LastGenOutput>LussModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Store\UploadExcel.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -154,88 +173,81 @@
     <Compile Include="Department\ViewCollectionItems.aspx.designer.cs">
       <DependentUpon>ViewCollectionItems.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\AddReqItem.aspx.cs">
+    <Compile Include="DepartmentView\AddReqItem.aspx.cs">
       <DependentUpon>AddReqItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\AddReqItem.aspx.designer.cs">
+    <Compile Include="DepartmentView\AddReqItem.aspx.designer.cs">
       <DependentUpon>AddReqItem.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\Catalogue.aspx.cs">
+    <Compile Include="DepartmentView\Catalogue.aspx.cs">
       <DependentUpon>Catalogue.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\Catalogue.aspx.designer.cs">
+    <Compile Include="DepartmentView\Catalogue.aspx.designer.cs">
       <DependentUpon>Catalogue.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\DeptHead\DelegateRole.aspx.cs">
-      <DependentUpon>DelegateRole.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Employee\DeptHead\DelegateRole.aspx.designer.cs">
-      <DependentUpon>DelegateRole.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Employee\DeptHead\ViewPendingReq.aspx.cs">
+    <Compile Include="DepartmentView\DeptHead\ViewPendingReq.aspx.cs">
       <DependentUpon>ViewPendingReq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\DeptHead\ViewPendingReq.aspx.designer.cs">
+    <Compile Include="DepartmentView\DeptHead\ViewPendingReq.aspx.designer.cs">
       <DependentUpon>ViewPendingReq.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\DeptHead\ViewPendingReqDetails.aspx.cs">
+    <Compile Include="DepartmentView\DeptHead\ViewPendingReqDetails.aspx.cs">
       <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\DeptHead\ViewPendingReqDetails.aspx.designer.cs">
+    <Compile Include="DepartmentView\DeptHead\ViewPendingReqDetails.aspx.designer.cs">
       <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\ManageReq.aspx.cs">
+    <Compile Include="DepartmentView\ManageReq.aspx.cs">
       <DependentUpon>ManageReq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\ManageReq.aspx.designer.cs">
+    <Compile Include="DepartmentView\ManageReq.aspx.designer.cs">
       <DependentUpon>ManageReq.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\RaiseReq.aspx.cs">
+    <Compile Include="DepartmentView\RaiseReq.aspx.cs">
       <DependentUpon>RaiseReq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\RaiseReq.aspx.designer.cs">
+    <Compile Include="DepartmentView\RaiseReq.aspx.designer.cs">
       <DependentUpon>RaiseReq.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\ReqConfirm.aspx.cs">
+    <Compile Include="DepartmentView\ReqConfirm.aspx.cs">
       <DependentUpon>ReqConfirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\ReqConfirm.aspx.designer.cs">
+    <Compile Include="DepartmentView\ReqConfirm.aspx.designer.cs">
       <DependentUpon>ReqConfirm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\ViewDeptReqHistory.aspx.cs">
+    <Compile Include="DepartmentView\ViewDeptReqHistory.aspx.cs">
       <DependentUpon>ViewDeptReqHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\ViewDeptReqHistory.aspx.designer.cs">
+    <Compile Include="DepartmentView\ViewDeptReqHistory.aspx.designer.cs">
       <DependentUpon>ViewDeptReqHistory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\ViewReq.aspx.cs">
+    <Compile Include="DepartmentView\ViewReq.aspx.cs">
       <DependentUpon>ViewReq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\ViewReq.aspx.designer.cs">
+    <Compile Include="DepartmentView\ViewReq.aspx.designer.cs">
       <DependentUpon>ViewReq.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\ViewReqConfirm.aspx.cs">
+    <Compile Include="DepartmentView\ViewReqConfirm.aspx.cs">
       <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\ViewReqConfirm.aspx.designer.cs">
+    <Compile Include="DepartmentView\ViewReqConfirm.aspx.designer.cs">
       <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Employee\ViewUserReqHistory.aspx.cs">
+    <Compile Include="DepartmentView\ViewUserReqHistory.aspx.cs">
       <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Employee\ViewUserReqHistory.aspx.designer.cs">
+    <Compile Include="DepartmentView\ViewUserReqHistory.aspx.designer.cs">
       <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -246,9 +258,6 @@
     <Compile Include="RawCode\BLL\data\Kavya\ChangeCollectionPointBLL.cs" />
     <Compile Include="RawCode\BLL\data\Kavya\ManageCollectionPointBLL.cs" />
     <Compile Include="RawCode\BLL\data\Kavya\ViewCollectionItemsBLL.cs" />
-    <Compile Include="RawCode\BLL\data\Khin\AdjustmentVoucherBLL.cs" />
-    <Compile Include="RawCode\BLL\data\Khin\DelegateRoleBLL.cs" />
-    <Compile Include="RawCode\BLL\data\Khin\ManageProductBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RoleManagementBLL.cs" />
@@ -264,56 +273,62 @@
     <Compile Include="RawCode\BLL\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\UsersAccountBLL.cs" />
     <Compile Include="RawCode\BLL\VoucherManagementBLL.cs" />
-    <Compile Include="RawCode\DAL\Khin\AdjustmentItem.cs" />
-    <Compile Include="RawCode\DAL\Khin\AdVoucherLIst.cs" />
-    <Compile Include="Store\Clerk\AddNewProduct.aspx.cs">
-      <DependentUpon>AddNewProduct.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="RawCode\DAL\CollectionPoint.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Clerk\AddNewProduct.aspx.designer.cs">
-      <DependentUpon>AddNewProduct.aspx</DependentUpon>
+    <Compile Include="RawCode\DAL\Department.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Clerk\ProductList.aspx.cs">
-      <DependentUpon>ProductList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="RawCode\DAL\Disbursement.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Clerk\ProductList.aspx.designer.cs">
-      <DependentUpon>ProductList.aspx</DependentUpon>
+    <Compile Include="RawCode\DAL\DisburseReqItem.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Clerk\UpdateProduct.aspx.cs">
-      <DependentUpon>UpdateProduct.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="RawCode\DAL\Employee.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Clerk\UpdateProduct.aspx.designer.cs">
-      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+    <Compile Include="RawCode\DAL\InvAdjItem.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Manager\AdjustmentVoucher.aspx.cs">
-      <DependentUpon>AdjustmentVoucher.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="RawCode\DAL\InvAdjVoucher.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Manager\AdjustmentVoucher.aspx.designer.cs">
-      <DependentUpon>AdjustmentVoucher.aspx</DependentUpon>
+    <Compile Include="RawCode\DAL\Item.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Manager\AdjustmentVoucherDetail.aspx.cs">
-      <DependentUpon>AdjustmentVoucherDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="RawCode\DAL\LussModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LussModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Manager\AdjustmentVoucherDetail.aspx.designer.cs">
-      <DependentUpon>AdjustmentVoucherDetail.aspx</DependentUpon>
+    <Compile Include="RawCode\DAL\LussModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Supervisor\AdjustmentVoucherBelow250.aspx.cs">
-      <DependentUpon>AdjustmentVoucherBelow250.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="RawCode\DAL\LussModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LussModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Store\Supervisor\AdjustmentVoucherBelow250.aspx.designer.cs">
-      <DependentUpon>AdjustmentVoucherBelow250.aspx</DependentUpon>
+    <Compile Include="RawCode\DAL\PurchaseOrder.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Supervisor\AdjustmentVoucherDetailBelow250.aspx.cs">
-      <DependentUpon>AdjustmentVoucherDetailBelow250.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="RawCode\DAL\PurchaseOrderItem.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Store\Supervisor\AdjustmentVoucherDetailBelow250.aspx.designer.cs">
-      <DependentUpon>AdjustmentVoucherDetailBelow250.aspx</DependentUpon>
+    <Compile Include="RawCode\DAL\Requisition.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\RequisitionItem.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\StoreEmployee.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RawCode\DAL\Supplier.cs">
+      <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Store\UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
@@ -327,9 +342,17 @@
   <ItemGroup>
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
+    <Folder Include="RawCode\BLL\data\Khin\" />
     <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
     <Folder Include="RawCode\Generics\" />
+    <Folder Include="View\DepartmentView\ActingHead\" />
+    <Folder Include="View\DepartmentView\Emp\" />
+    <Folder Include="View\DepartmentView\Head\" />
+    <Folder Include="View\DepartmentView\Rep\" />
+    <Folder Include="View\StoreView\Clerk\" />
+    <Folder Include="View\StoreView\Manager\" />
+    <Folder Include="View\StoreView\Supervisor\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
@@ -359,6 +382,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

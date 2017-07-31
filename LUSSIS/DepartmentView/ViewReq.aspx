@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewReqConfirm.aspx.cs" Inherits="LUSSIS.Employee.ViewReqConfirm" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewReq.aspx.cs" Inherits="LUSSIS.Employee.ViewReq" %>
+<%-- Made by Hu Xiaoxi(Team5) --%>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <form id="frmViewReqConfirm" runat="server">
+    <form id="frmViewReq" runat="server">
 <div>
     
         <asp:Label ID="labl_ViewReq" runat="server" Text="Requisition Details"></asp:Label>
@@ -19,7 +19,7 @@
         <br />  
                 <asp:Literal ID="Lite_ReqDate" runat="server"></asp:Literal>  
         <br /> 
-     
+
         <asp:GridView ID="gvDisReqItem" runat="server" Width="454px" AutoGenerateColumns="False">
             <Columns>
                 <asp:TemplateField HeaderText="Item Discription">
@@ -34,7 +34,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Deliveried">
                     <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetDisbursedQty((int)Eval("ReqId"), (int)Eval("ItemId")) %>'></asp:Label>
+                        <asp:Label ID="Label3" runat="server" Text="--"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -55,7 +55,7 @@
         </asp:GridView>
    
     </div>
-    <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" />
+        <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" />
     </form>
 </body>
 </html>
