@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using LUSSIS.RawCode.BLL.data.Khin;
 using LUSSIS.RawCode.DAL;
+using LUSSIS.RawCode.Generics;
 
 namespace LUSSIS.View.StoreView.Manager
 {
@@ -33,7 +34,7 @@ namespace LUSSIS.View.StoreView.Manager
         {
             int id = Convert.ToInt32(Request.QueryString["id"].ToString());
             InvAdjVoucher iav = new InvAdjVoucher();
-            BissLog b = new BissLog();
+            VoucherManagementBLL b = new VoucherManagementBLL();
             iav.VoucherId = id;
             iav.ApproveBy = 1;
             iav.ApproveDate = DateTime.Now;
@@ -48,7 +49,7 @@ namespace LUSSIS.View.StoreView.Manager
         {
             int id = Convert.ToInt32(Request.QueryString["id"].ToString());
             InvAdjVoucher iav = new InvAdjVoucher();
-            BissLog b = new BissLog();
+            VoucherManagementBLL b = new VoucherManagementBLL();
             iav.VoucherId = id;
             iav.ApproveBy = 1;
             iav.ApproveDate = DateTime.Now;

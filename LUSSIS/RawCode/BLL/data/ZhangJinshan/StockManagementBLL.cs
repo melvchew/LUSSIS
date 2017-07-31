@@ -12,7 +12,7 @@ namespace LUSSIS.RawCode.BLL.data.ZhangJinshan
         public bool CheckSupplierID(string id)
         {
             bool check = false;
-            IList l = FindAllSuppliers();
+            IList<Supplier> l = FindAllSuppliers();
             for (int i = 0; i < l.Count; i++)
             {
                 if (((Supplier)l[i]).SupplierId == id)
