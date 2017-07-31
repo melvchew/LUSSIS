@@ -155,7 +155,7 @@
       <DependentUpon>LussModel.edmx</DependentUpon>
       <LastGenOutput>LussModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Store\UploadExcel.aspx" />
+    <Content Include="View\StoreView\Clerk\UploadExcel.aspx" />
     <Content Include="View\AccessDenied.aspx" />
     <Content Include="View\createuser.aspx" />
     <Content Include="View\DepartmentView\Emp\AddReqItem.aspx" />
@@ -309,11 +309,11 @@
     </Compile>
     <Compile Include="RawCode\Generics\enums.cs" />
     <Compile Include="RawCode\Generics\ViewModel.cs" />
-    <Compile Include="Store\UploadExcel.aspx.cs">
+    <Compile Include="View\StoreView\Clerk\UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Store\UploadExcel.aspx.designer.cs">
+    <Compile Include="View\StoreView\Clerk\UploadExcel.aspx.designer.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
     </Compile>
     <Compile Include="test\razz.cs" />
