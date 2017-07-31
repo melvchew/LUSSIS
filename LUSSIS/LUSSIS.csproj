@@ -314,6 +314,8 @@
     </Compile>
     <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.cs">
       <DependentUpon>AddNewProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="View\StoreView\Clerk\ProductList.aspx.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -323,6 +325,8 @@
     </Compile>
     <Compile Include="View\StoreView\Clerk\UpdateProduct.aspx.cs">
       <DependentUpon>UpdateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx.cs">
       <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -355,13 +359,9 @@
   <ItemGroup>
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
-    <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
-    <Folder Include="RawCode\BLL\data\Khin\" />
-    <Folder Include="RawCode\BLL\data\Raj\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
     <Folder Include="RawCode\Generics\" />
     <Folder Include="View\DepartmentView\ActingHead\" />
-    <Folder Include="View\DepartmentView\Emp\" />
     <Folder Include="View\DepartmentView\Rep\" />
   </ItemGroup>
   <ItemGroup>
