@@ -153,6 +153,7 @@
     <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="View\StoreView\Clerk\RaiseAdjVoucher.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewSupplier.aspx" />
+    <Content Include="View\StoreView\Clerk\Chart.aspx" />
     <Content Include="View\StoreView\Clerk\EditSuppliers.aspx" />
     <Content Include="View\StoreView\Clerk\Inventory Status Report.aspx" />
     <Content Include="View\StoreView\Clerk\ProductList.aspx" />
