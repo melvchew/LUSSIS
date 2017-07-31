@@ -262,6 +262,7 @@
     <Compile Include="test\razz.cs" />
     <Compile Include="View\createuser.aspx.cs">
       <DependentUpon>createuser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\createuser.aspx.designer.cs">
       <DependentUpon>createuser.aspx</DependentUpon>
@@ -331,27 +332,32 @@
     </Compile>
     <Compile Include="View\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Redirect.aspx.cs">
       <DependentUpon>Redirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Redirect.aspx.designer.cs">
       <DependentUpon>Redirect.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.cs">
       <DependentUpon>AddNewProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\StoreView\Clerk\Chart.aspx.cs">
       <DependentUpon>Chart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\StoreView\Clerk\Chart.aspx.designer.cs">
       <DependentUpon>Chart.aspx</DependentUpon>
@@ -386,13 +392,13 @@
     </Compile>
     <Compile Include="View\StoreView\Clerk\TrendAnalysis.aspx.cs">
       <DependentUpon>TrendAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\StoreView\Clerk\TrendAnalysis.aspx.designer.cs">
       <DependentUpon>TrendAnalysis.aspx</DependentUpon>
     </Compile>
-	<Compile Include="View\StoreView\Clerk\UpdateProduct.aspx.cs">
+    <Compile Include="View\StoreView\Clerk\UpdateProduct.aspx.cs">
       <DependentUpon>UpdateProduct.aspx</DependentUpon>
-	      </Compile>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx.cs">
@@ -404,6 +410,7 @@
     </Compile>
     <Compile Include="View\StoreView\Clerk\ViewAllReq.aspx.cs">
       <DependentUpon>ViewAllReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\StoreView\Clerk\ViewAllReq.aspx.designer.cs">
       <DependentUpon>ViewAllReq.aspx</DependentUpon>
