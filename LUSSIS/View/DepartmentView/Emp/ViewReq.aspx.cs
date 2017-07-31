@@ -43,7 +43,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
             else if ((String)Session["View"] == "own")
             {
-                Response.Redirect("ViewOwnReqHistory.aspx");
+                Response.Redirect("ViewUserReqHistory.aspx");
             }
         }
     }
