@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.BLL.data.Kavya;
+using LUSSIS.RawCode.DAL;
+using System.Net.Mail;
+
 
 namespace LUSSIS.RawCode.BLL.data.Kavya
 {
     public class ManageCollectionPointBLL
     {
+
+        LUSSdb context = new LUSSdb();
         public List<CollectionPoint> getCollectionPoints()
         {
             return context.CollectionPoints.ToList();
@@ -44,6 +50,25 @@ namespace LUSSIS.RawCode.BLL.data.Kavya
             cp.CollectionPointId = cpId;
             context.SaveChanges();
         }
+        public Disbursement GetDisbursementByID(int id)
+        {
+            return context.Disbursements.Where(x => x.DisbursementId == id).First<Disbursement>();
+        }
+
+        public List<String> GetCollectionItemList(DateTime disDate, Department dep)
+        {
+            List<String> list = new List<String>();
+            Disbursement d = new Disbursement();
+            d = context.Disbursements.FirstOrDefault(x => x.DisburseDate == disDate && x.Department.DeptId == dep.DeptId);
+            foreach (var item in d.DisburseReqItems)
+            {
+                list.Add(item.Item.Description);
+                list.Add(item.RetrieveQty.ToString());
+                list.Add(item.Item.Unit);
+            }
+            return list;
+        }
+
 
         public void SendChangeNotification(Department dept, int deptId)
         {
