@@ -10,87 +10,87 @@
 namespace LUSSIS.View.DepartmentView.Head {
     
     
-    public partial class ViewPendingReqDetails {
+    public partial class DelegateRole {
         
         /// <summary>
-        /// form2 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Label_ReqID control.
+        /// lblCurrentDeptRep control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_ReqID;
+        protected global::System.Web.UI.WebControls.Label lblCurrentDeptRep;
         
         /// <summary>
-        /// Label_ReqDate control.
+        /// ddDeptRepre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_ReqDate;
+        protected global::System.Web.UI.WebControls.DropDownList ddDeptRepre;
         
         /// <summary>
-        /// Label_RaisedBy control.
+        /// lblCurrentActingHead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_RaisedBy;
+        protected global::System.Web.UI.WebControls.Label lblCurrentActingHead;
         
         /// <summary>
-        /// GridView_PendingReq control.
+        /// ddActingHead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView_PendingReq;
+        protected global::System.Web.UI.WebControls.DropDownList ddActingHead;
         
         /// <summary>
-        /// Label_EmpComments control.
+        /// txtFromDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_EmpComments;
+        protected global::System.Web.UI.WebControls.TextBox txtFromDate;
         
         /// <summary>
-        /// TextBox_HeadComment control.
+        /// txtToDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_HeadComment;
+        protected global::System.Web.UI.WebControls.TextBox txtToDate;
         
         /// <summary>
-        /// Button_Approve control.
+        /// lblerror control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Approve;
+        protected global::System.Web.UI.WebControls.Label lblerror;
         
         /// <summary>
-        /// Button_Reject control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Reject;
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }

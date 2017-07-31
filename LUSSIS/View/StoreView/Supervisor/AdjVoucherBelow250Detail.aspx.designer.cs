@@ -7,90 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LUSSIS.View.DepartmentView.Head {
+namespace LUSSIS.View.StoreView.Supervisor {
     
     
-    public partial class ViewPendingReqDetails {
+    public partial class AdjVoucherBelow250Detail {
         
         /// <summary>
-        /// form2 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Label_ReqID control.
+        /// lblrequestID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_ReqID;
+        protected global::System.Web.UI.WebControls.Label lblrequestID;
         
         /// <summary>
-        /// Label_ReqDate control.
+        /// lbldate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_ReqDate;
+        protected global::System.Web.UI.WebControls.Label lbldate;
         
         /// <summary>
-        /// Label_RaisedBy control.
+        /// gvItemList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_RaisedBy;
+        protected global::System.Web.UI.WebControls.GridView gvItemList;
         
         /// <summary>
-        /// GridView_PendingReq control.
+        /// txtcomment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView_PendingReq;
+        protected global::System.Web.UI.WebControls.TextBox txtcomment;
         
         /// <summary>
-        /// Label_EmpComments control.
+        /// btnApprove control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_EmpComments;
+        protected global::System.Web.UI.WebControls.Button btnApprove;
         
         /// <summary>
-        /// TextBox_HeadComment control.
+        /// btnReject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_HeadComment;
-        
-        /// <summary>
-        /// Button_Approve control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Approve;
-        
-        /// <summary>
-        /// Button_Reject control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Reject;
+        protected global::System.Web.UI.WebControls.Button btnReject;
     }
 }

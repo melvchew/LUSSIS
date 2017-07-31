@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using LUSSIS.RawCode.DAL;
-
-
 namespace LUSSIS.RawCode.BLL.data.Melvin
 {
     public class RoleManagementBLL

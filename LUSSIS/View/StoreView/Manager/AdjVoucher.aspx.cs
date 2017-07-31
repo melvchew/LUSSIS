@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.BLL.data.Khin;
 
 namespace LUSSIS.View.StoreView.Manager
 {
@@ -21,7 +22,7 @@ namespace LUSSIS.View.StoreView.Manager
                 {
                     lblAppOrRej.Text = null;
                 }
-                BissLog b = new BissLog();
+                VoucherManagementBLL b = new VoucherManagementBLL();
                 gvVoucher.DataSource = b.getAdjVoucherList();
                 gvVoucher.DataBind();
 
@@ -31,7 +32,7 @@ namespace LUSSIS.View.StoreView.Manager
         protected void gvVoucher_RowEditing1(object sender, GridViewEditEventArgs e)
         {
             String id = gvVoucher.Rows[e.NewEditIndex].Cells[0].Text;
-            Response.Redirect("AdjustmentVoucherDetail.aspx?id=" + id);
+            Response.Redirect("AdjVoucherDetail.aspx?id=" + id);
         }
     }
 }

@@ -6,7 +6,8 @@ using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.RawCode.BLL.data.Melvin
 {
-    public class StockManagement
+    public class StockManagementBLL
+
     {
 
         //Melvin

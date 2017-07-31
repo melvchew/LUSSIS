@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.BLL.data.Khin;
 
 namespace LUSSIS.View.StoreView.Clerk
 {
@@ -13,7 +14,7 @@ namespace LUSSIS.View.StoreView.Clerk
         {
             if (!IsPostBack)
             {
-                AD.EF.BissLog b = new AD.EF.BissLog();
+                StockManagementBLL b = new StockManagementBLL();
                 ddSupplier1.DataSource = b.getSupplierList();
                 ddSupplier1.DataTextField = "CompanyName";
                 ddSupplier1.DataValueField = "SupplierId";
@@ -54,7 +55,7 @@ namespace LUSSIS.View.StoreView.Clerk
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            AD.EF.BissLog b = new AD.EF.BissLog();
+            StockManagementBLL b = new StockManagementBLL();
             Item i = new Item();
             i.ItemId = Convert.ToInt32(txtID.Text);
             i.BinNumber = txtBin.Text;
