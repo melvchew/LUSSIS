@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PTest.aspx.cs" Inherits="LUSSIS.PTest" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="test.aspx.cs" Inherits="LUSSIS.test.test" %>
 
 <!DOCTYPE html>
 
