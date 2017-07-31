@@ -24,13 +24,24 @@ namespace LUSSIS
                     CdnDebugPath = "http://ajax.microsoft.com/ajax/jQuery/jquery-1.12.4.js"
                 }
                );
+            //Zhang Jinshan Add
+            System.Timers.Timer t = new System.Timers.Timer(60000);//check condition each minute
+            t.Enabled = true;
+            t.Elapsed += T_Elapsed;
 
+        }
+        //Zhang Jinshan Add
+        public void T_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            EmailBLL email = new EmailBLL();
+            email.SendEmailsToClerk();
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
             Session["xlPath"] = ""; //Peter
             Session["Err"] = ""; //Peter
+            Session["Suppliers"] = new List<ADmodel.Supplier>();//Zhang Jinshan Add
             Session["AddItemlist"] = new List<Item>(); //HU XIAOXI
             Session["View"] = ""; //HU XIAOXI
         }
