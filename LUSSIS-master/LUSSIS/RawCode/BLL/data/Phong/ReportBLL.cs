@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.RawCode.BLL.data.Phong
 {
     public class ReportBLL
     {
-        LUSSdbEntities context;
+        LUSSdb context;
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataAdapter da;
         DataTable dt;
         public List<Department> getDepartmentList()
         {
-            context = new LUSSdbEntities();
+            context = new LUSSdb();
             List<Department> deptList;
             deptList = context.Departments.ToList<Department>();
             return deptList;
@@ -22,7 +25,7 @@ namespace LUSSIS.RawCode.BLL.data.Phong
         }
         public List<Item> getItemList()
         {
-            context = new LUSSdbEntities();
+            context = new LUSSdb();
             List<Item> itemList;
             itemList = context.Items.ToList<Item>();
             return itemList;
@@ -31,7 +34,7 @@ namespace LUSSIS.RawCode.BLL.data.Phong
 
         public List<String> getSubmitMonthList()
         {
-            context = new LUSSdbEntities();
+            context = new LUSSdb();
             List<String> monthList = context.TransposedRequisitionReports.Select(x => x.SubmitMonth).Distinct().ToList();
             return monthList;
 

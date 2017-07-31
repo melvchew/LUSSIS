@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.RawCode.BLL.data.Phong
 {
     public class RequisitionBLL
     {
-        LUSSdbEntities context;
+        LUSSdb context;
         enum ReqStatus
         {
             PENDING = 1, CANCELLED, APPROVED, REJECTED, PARTIAL, DELIVERED
@@ -15,7 +16,7 @@ namespace LUSSIS.RawCode.BLL.data.Phong
 
         public Object GetRequisitionList()
         {
-            context = new LUSSdbEntities();
+            context = new LUSSdb();
 
             //int i = (int)ReqStatus.APPROVED;
             var q2 = (from ri in context.RequisitionItems
@@ -57,7 +58,7 @@ namespace LUSSIS.RawCode.BLL.data.Phong
 
         public Object GetRequisitionListByDepartment(int deptID)
         {
-            LUSSdbEntities context = new LUSSdbEntities();
+            LUSSdb context = new LUSSdb();
 
             if (deptID == 0)
             {
