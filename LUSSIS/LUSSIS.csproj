@@ -137,7 +137,11 @@
     <Content Include="Store\UploadExcel.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewProduct.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
+    <Content Include="View\StoreView\Clerk\AddNewSupplier.aspx" />
+    <Content Include="View\StoreView\Clerk\EditSuppliers.aspx" />
+    <Content Include="View\StoreView\Clerk\Inventory Status Report.aspx" />
     <Content Include="View\StoreView\Clerk\UpdateProduct.aspx" />
+    <Content Include="View\StoreView\Clerk\UpdateSuppliers.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -249,6 +253,27 @@
     <Compile Include="View\StoreView\Clerk\AddNewProduct.aspx.designer.cs">
       <DependentUpon>AddNewProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\StoreView\Clerk\AddNewSupplier.aspx.cs">
+      <DependentUpon>AddNewSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\AddNewSupplier.aspx.designer.cs">
+      <DependentUpon>AddNewSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\EditSuppliers.aspx.cs">
+      <DependentUpon>EditSuppliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\EditSuppliers.aspx.designer.cs">
+      <DependentUpon>EditSuppliers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\Inventory Status Report.aspx.cs">
+      <DependentUpon>Inventory Status Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\Inventory Status Report.aspx.designer.cs">
+      <DependentUpon>Inventory Status Report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\StoreView\Clerk\UpdateProduct.aspx.cs">
       <DependentUpon>UpdateProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -256,13 +281,17 @@
     <Compile Include="View\StoreView\Clerk\UpdateProduct.aspx.designer.cs">
       <DependentUpon>UpdateProduct.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\StoreView\Clerk\UpdateSuppliers.aspx.cs">
+      <DependentUpon>UpdateSuppliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\UpdateSuppliers.aspx.designer.cs">
+      <DependentUpon>UpdateSuppliers.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
-    <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
-    <Folder Include="RawCode\BLL\data\Khin\" />
-    <Folder Include="RawCode\BLL\data\Raj\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
     <Folder Include="RawCode\Generics\" />
     <Folder Include="View\DepartmentView\ActingHead\" />
