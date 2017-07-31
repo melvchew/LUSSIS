@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
+
 
 namespace LUSSIS.RawCode.BLL.data.Melvin
 {
@@ -9,13 +11,14 @@ namespace LUSSIS.RawCode.BLL.data.Melvin
     {
 
         //Melvin
+        LUSSdb ctx = new LUSSdb();
 
         public void ApproveReq(Requisition req, int bossid)
         {
             {
                 DateTime date = DateTime.Now.Date;
                 Requisition requisition = ctx.Requisitions.FirstOrDefault(r => r.ReqId == req.ReqId);
-                requisition.Status = (ReqStatus.APPROVED).ToString();
+                requisition.Status = "APPROVED";
                 requisition.ApproveDate = date;
                 requisition.ApproveBy = bossid;
                 requisition.ApproverComments = req.ApproverComments;
@@ -28,7 +31,7 @@ namespace LUSSIS.RawCode.BLL.data.Melvin
             {
                 DateTime date = DateTime.Now.Date;
                 Requisition requisition = ctx.Requisitions.FirstOrDefault(r => r.ReqId == req.ReqId);
-                requisition.Status = (ReqStatus.REJECTED).ToString();
+                requisition.Status = "REJECTED";
                 requisition.ApproveDate = date;
                 requisition.ApproveBy = bossid;
                 requisition.ApproverComments = req.ApproverComments;

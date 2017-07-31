@@ -151,7 +151,9 @@
     <Content Include="View\Redirect.aspx" />
     <Content Include="View\StoreView\Clerk\AddNewProduct.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
-    <Content Include="View\StoreView\Clerk\Chart.aspx" />
+    <Content Include="View\StoreView\Clerk\AddNewSupplier.aspx" />
+    <Content Include="View\StoreView\Clerk\EditSuppliers.aspx" />
+    <Content Include="View\StoreView\Clerk\Inventory Status Report.aspx" />
     <Content Include="View\StoreView\Clerk\ProductList.aspx" />
     <Content Include="View\StoreView\Clerk\TrendAnalysis.aspx" />
     <Content Include="View\StoreView\Clerk\UpdateProduct.aspx" />
@@ -159,6 +161,7 @@
     <Content Include="View\StoreView\Manager\AdjVoucher.aspx" />
     <Content Include="View\StoreView\Manager\AdjVoucherDetail.aspx" />
     <Content Include="View\StoreView\Supervisor\AdjVoucherBelow250.aspx" />
+    <Content Include="View\StoreView\Clerk\UpdateSuppliers.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -359,14 +362,37 @@
     <Compile Include="View\StoreView\Clerk\ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\StoreView\Clerk\AddNewSupplier.aspx.cs">
+      <DependentUpon>AddNewSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\AddNewSupplier.aspx.designer.cs">
+      <DependentUpon>AddNewSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\EditSuppliers.aspx.cs">
+      <DependentUpon>EditSuppliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\EditSuppliers.aspx.designer.cs">
+      <DependentUpon>EditSuppliers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\Inventory Status Report.aspx.cs">
+      <DependentUpon>Inventory Status Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\Inventory Status Report.aspx.designer.cs">
+      <DependentUpon>Inventory Status Report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\StoreView\Clerk\TrendAnalysis.aspx.cs">
       <DependentUpon>TrendAnalysis.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Clerk\TrendAnalysis.aspx.designer.cs">
       <DependentUpon>TrendAnalysis.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\StoreView\Clerk\UpdateProduct.aspx.cs">
+	<Compile Include="View\StoreView\Clerk\UpdateProduct.aspx.cs">
       <DependentUpon>UpdateProduct.aspx</DependentUpon>
+	      </Compile>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx.cs">
       <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
@@ -401,6 +427,13 @@
     </Compile>
     <Compile Include="View\StoreView\Supervisor\AdjVoucherBelow250.aspx.designer.cs">
       <DependentUpon>AdjVoucherBelow250.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\UpdateSuppliers.aspx.cs">
+      <DependentUpon>UpdateSuppliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\UpdateSuppliers.aspx.designer.cs">
+      <DependentUpon>UpdateSuppliers.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
