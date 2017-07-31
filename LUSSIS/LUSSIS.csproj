@@ -99,6 +99,7 @@
     <Content Include="Department\ViewCollectionItems.aspx" />
     <Content Include="Employee\AddReqItem.aspx" />
     <Content Include="Employee\Catalogue.aspx" />
+    <Content Include="Employee\DeptHead\DelegateRole.aspx" />
     <Content Include="Employee\DeptHead\ViewPendingReq.aspx" />
     <Content Include="Employee\DeptHead\ViewPendingReqDetails.aspx" />
     <Content Include="Employee\ManageReq.aspx" />
@@ -121,6 +122,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Store\Clerk\AddNewProduct.aspx" />
+    <Content Include="Store\Clerk\ProductList.aspx" />
+    <Content Include="Store\Clerk\UpdateProduct.aspx" />
+    <Content Include="Store\Manager\AdjustmentVoucher.aspx" />
+    <Content Include="Store\Manager\AdjustmentVoucherDetail.aspx" />
+    <Content Include="Store\Supervisor\AdjustmentVoucherBelow250.aspx" />
+    <Content Include="Store\Supervisor\AdjustmentVoucherDetailBelow250.aspx" />
     <Content Include="Store\UploadExcel.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -159,6 +167,13 @@
     </Compile>
     <Compile Include="Employee\Catalogue.aspx.designer.cs">
       <DependentUpon>Catalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\DeptHead\DelegateRole.aspx.cs">
+      <DependentUpon>DelegateRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee\DeptHead\DelegateRole.aspx.designer.cs">
+      <DependentUpon>DelegateRole.aspx</DependentUpon>
     </Compile>
     <Compile Include="Employee\DeptHead\ViewPendingReq.aspx.cs">
       <DependentUpon>ViewPendingReq.aspx</DependentUpon>
@@ -231,6 +246,9 @@
     <Compile Include="RawCode\BLL\data\Kavya\ChangeCollectionPointBLL.cs" />
     <Compile Include="RawCode\BLL\data\Kavya\ManageCollectionPointBLL.cs" />
     <Compile Include="RawCode\BLL\data\Kavya\ViewCollectionItemsBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Khin\AdjustmentVoucherBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Khin\DelegateRoleBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Khin\ManageProductBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\data\Melvin\RoleManagementBLL.cs" />
@@ -246,6 +264,57 @@
     <Compile Include="RawCode\BLL\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\UsersAccountBLL.cs" />
     <Compile Include="RawCode\BLL\VoucherManagementBLL.cs" />
+    <Compile Include="RawCode\DAL\Khin\AdjustmentItem.cs" />
+    <Compile Include="RawCode\DAL\Khin\AdVoucherLIst.cs" />
+    <Compile Include="Store\Clerk\AddNewProduct.aspx.cs">
+      <DependentUpon>AddNewProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\Clerk\AddNewProduct.aspx.designer.cs">
+      <DependentUpon>AddNewProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store\Clerk\ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\Clerk\ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store\Clerk\UpdateProduct.aspx.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\Clerk\UpdateProduct.aspx.designer.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store\Manager\AdjustmentVoucher.aspx.cs">
+      <DependentUpon>AdjustmentVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\Manager\AdjustmentVoucher.aspx.designer.cs">
+      <DependentUpon>AdjustmentVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store\Manager\AdjustmentVoucherDetail.aspx.cs">
+      <DependentUpon>AdjustmentVoucherDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\Manager\AdjustmentVoucherDetail.aspx.designer.cs">
+      <DependentUpon>AdjustmentVoucherDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store\Supervisor\AdjustmentVoucherBelow250.aspx.cs">
+      <DependentUpon>AdjustmentVoucherBelow250.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\Supervisor\AdjustmentVoucherBelow250.aspx.designer.cs">
+      <DependentUpon>AdjustmentVoucherBelow250.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Store\Supervisor\AdjustmentVoucherDetailBelow250.aspx.cs">
+      <DependentUpon>AdjustmentVoucherDetailBelow250.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Store\Supervisor\AdjustmentVoucherDetailBelow250.aspx.designer.cs">
+      <DependentUpon>AdjustmentVoucherDetailBelow250.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Store\UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -258,10 +327,8 @@
   <ItemGroup>
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
-    <Folder Include="RawCode\BLL\data\Khin\" />
     <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
-    <Folder Include="RawCode\DAL\" />
     <Folder Include="RawCode\Generics\" />
   </ItemGroup>
   <ItemGroup>
