@@ -149,6 +149,15 @@
       <LastGenOutput>LussModel.cs</LastGenOutput>
     </Content>
     <Content Include="Store\UploadExcel.aspx" />
+    <Content Include="View\DepartmentView\Emp\AddReqItem.aspx" />
+    <Content Include="View\DepartmentView\Emp\Catalogue.aspx" />
+    <Content Include="View\DepartmentView\Emp\ManageReq.aspx" />
+    <Content Include="View\DepartmentView\Emp\RaiseReq.aspx" />
+    <Content Include="View\DepartmentView\Emp\ReqConfirm.aspx" />
+    <Content Include="View\DepartmentView\Emp\ViewDeptReqHistory.aspx" />
+    <Content Include="View\DepartmentView\Emp\ViewReq.aspx" />
+    <Content Include="View\DepartmentView\Emp\ViewReqConfirm.aspx" />
+    <Content Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -338,6 +347,69 @@
       <DependentUpon>UploadExcel.aspx</DependentUpon>
     </Compile>
     <Compile Include="test\razz.cs" />
+    <Compile Include="View\DepartmentView\Emp\AddReqItem.aspx.cs">
+      <DependentUpon>AddReqItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\AddReqItem.aspx.designer.cs">
+      <DependentUpon>AddReqItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\Catalogue.aspx.cs">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\Catalogue.aspx.designer.cs">
+      <DependentUpon>Catalogue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ManageReq.aspx.cs">
+      <DependentUpon>ManageReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ManageReq.aspx.designer.cs">
+      <DependentUpon>ManageReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\RaiseReq.aspx.cs">
+      <DependentUpon>RaiseReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\RaiseReq.aspx.designer.cs">
+      <DependentUpon>RaiseReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ReqConfirm.aspx.cs">
+      <DependentUpon>ReqConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ReqConfirm.aspx.designer.cs">
+      <DependentUpon>ReqConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewDeptReqHistory.aspx.cs">
+      <DependentUpon>ViewDeptReqHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewDeptReqHistory.aspx.designer.cs">
+      <DependentUpon>ViewDeptReqHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewReq.aspx.cs">
+      <DependentUpon>ViewReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewReq.aspx.designer.cs">
+      <DependentUpon>ViewReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewReqConfirm.aspx.cs">
+      <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewReqConfirm.aspx.designer.cs">
+      <DependentUpon>ViewReqConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx.cs">
+      <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx.designer.cs">
+      <DependentUpon>ViewUserReqHistory.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExcelFiles\" />
@@ -347,7 +419,6 @@
     <Folder Include="RawCode\BLL\data\Zwe\" />
     <Folder Include="RawCode\Generics\" />
     <Folder Include="View\DepartmentView\ActingHead\" />
-    <Folder Include="View\DepartmentView\Emp\" />
     <Folder Include="View\DepartmentView\Head\" />
     <Folder Include="View\DepartmentView\Rep\" />
     <Folder Include="View\StoreView\Clerk\" />

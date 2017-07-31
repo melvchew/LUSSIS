@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewUserReqHistory.aspx.cs" Inherits="LUSSIS.Employee.ViewUserReqHistory" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewUserReqHistory.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Emp.ViewUserReqHistory" %>
 <%-- Made by Hu Xiaoxi(Team5) --%>
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <form id="frmViewUserReqHistory" runat="server">
+<form id="frmViewUserReqHistory" runat="server">
 <div>
     
         <asp:Label ID="labl_ReqHistory" runat="server" Text="Personal Requisition History"></asp:Label>

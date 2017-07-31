@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
 
 //Made by Hu Xiaoxi(Team5)
 namespace LUSSIS.RawCode.BLL.data.HUXIAOXI
