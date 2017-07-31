@@ -238,6 +238,7 @@
     <Compile Include="RawCode\BLL\data\Peter\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\Phong\RequisitionBLL.cs" />
+    <Compile Include="RawCode\BLL\data\Raj\RaiseAdjVoucherBLL.cs" />
     <Compile Include="RawCode\BLL\EmailBLL.cs" />
     <Compile Include="RawCode\BLL\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\RequisitionBLL.cs" />
@@ -258,7 +259,6 @@
     <Folder Include="ExcelFiles\" />
     <Folder Include="Files\" />
     <Folder Include="RawCode\BLL\data\Khin\" />
-    <Folder Include="RawCode\BLL\data\Raj\" />
     <Folder Include="RawCode\BLL\data\ZhangJinshan\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
     <Folder Include="RawCode\DAL\" />
