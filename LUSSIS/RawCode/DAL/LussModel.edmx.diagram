@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3cb2cb5fd1454f8290a4eac2c780385b" Name="Diagram1">
+      <Diagram DiagramId="3cb2cb5fd1454f8290a4eac2c780385b" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="LUSSdbModel.CollectionPoint" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LUSSdbModel.Department" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="LUSSdbModel.Disbursement" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
@@ -47,6 +47,13 @@
         <AssociationConnector Association="LUSSdbModel.FK_PurchaseOrder_Supplier" ManuallyRouted="false" />
         <AssociationConnector Association="LUSSdbModel.FK_PurchaseOrderItem_PurchaseOrder" ManuallyRouted="false" />
         <AssociationConnector Association="LUSSdbModel.FK_RequisitionItem_Requisition" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LUSSdbModel.ItemBackup" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LUSSdbModel.ItemStaging" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LUSSdbModel.SupplierBackup" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LUSSdbModel.SupplierStaging" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LUSSdbModel.RequisitionReport" Width="1.5" PointX="10.375" PointY="6.75" />
+        <EntityTypeShape EntityType="LUSSdbModel.TransposedRequisitionReport" Width="1.5" PointX="12.375" PointY="6.75" />
+        <EntityTypeShape EntityType="LUSSdbModel.TransposedRequisitionReportByCost" Width="1.5" PointX="13.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LUSSIS.RawCode.BLL.data.ZhangJinshan;
+using LUSSIS.RawCode.BLL;
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class Inventory_Status_Report : System.Web.UI.Page
     {
-        InventoryStatusReport report = new InventoryStatusReport();
+        ReportBLL report = new ReportBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

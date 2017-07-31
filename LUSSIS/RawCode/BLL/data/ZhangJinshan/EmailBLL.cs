@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.RawCode.BLL.data.ZhangJinshan
 {
@@ -41,9 +42,9 @@ namespace LUSSIS.RawCode.BLL.data.ZhangJinshan
 
         public List<String> GetEmailAddress()
         {
-            List<ADmodel.StoreEmployee> l1 = new List<ADmodel.StoreEmployee>();
+            List<StoreEmployee> l1 = new List<StoreEmployee>();
             List<string> l2 = new List<string>();
-            using (ADmodel.LUSSdb entity = new ADmodel.LUSSdb())
+            using (LUSSdb entity = new LUSSdb())
             {
                 l1 = entity.StoreEmployees.Where(se => se.Position == "Clerk").ToList();
             }
@@ -61,13 +62,13 @@ namespace LUSSIS.RawCode.BLL.data.ZhangJinshan
         {
             bool low = false;
 
-            using (ADmodel.LUSSdb entities = new ADmodel.LUSSdb())
+            using (LUSSdb entities = new LUSSdb())
             {
 
-                List<ADmodel.Item> l2 = entities.Items.ToList();
+                List<Item> l2 = entities.Items.ToList();
                 for (int i = 0; i < l2.Count; i++)
                 {
-                    if (((ADmodel.Item)l2[i]).StockBalance < ((ADmodel.Item)l2[i]).ReorderLvl)
+                    if (((Item)l2[i]).StockBalance < ((Item)l2[i]).ReorderLvl)
                     {
                         low = true;
                         break;
