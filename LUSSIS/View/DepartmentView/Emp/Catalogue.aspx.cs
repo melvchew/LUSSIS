@@ -119,7 +119,7 @@ namespace LUSSIS.View.DepartmentView.Emp
                         }
                         Session["AddItemlist"] = listsession;
 
-                        Response.Redirect("CreateReq.aspx");
+                        Response.Redirect("RaiseReq.aspx");
                     }
                     else
                     {
@@ -166,7 +166,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             int rid = Int32.Parse(Request.QueryString["rid"]);
             if (rid == 0)
             {
-                Response.Redirect("CreateReq.aspx");
+                Response.Redirect("RaiseReq.aspx");
             }
             else
             {

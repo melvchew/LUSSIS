@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.BLL.data.Kavya;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.View.DepartmentView.Rep
 {
@@ -12,7 +14,7 @@ namespace LUSSIS.View.DepartmentView.Rep
         //Session ID needed for current dept
 
         static int curDeptId;
-        Service s = new Service();
+        ManageCollectionPointBLL mcp = new ManageCollectionPointBLL();
         Department dept = new Department();
         static int cpId = 1;
 
@@ -20,20 +22,20 @@ namespace LUSSIS.View.DepartmentView.Rep
         {
             HttpContext.Current.Session["DepartmentId"] = 1;
             curDeptId = Convert.ToInt32(Session["DepartmentId"]);
-            dept = s.GetCurrentDeptById(curDeptId);
+            dept = mcp.GetCurrentDeptById(curDeptId);
             getCurrentCollectionPoint(dept.CollectionPointId);
         }
 
         public void getCurrentCollectionPoint(int cpId)
         {
-            CollectionPoint ccp = s.getCollectionPointById(cpId);
+            CollectionPoint ccp = mcp.getCollectionPointById(cpId);
             CurCP.Text = ccp.Description;
             CurCT.Text = ccp.CollectionTime;
         }
 
         public void getChangedCollectionPointTime(int id)
         {
-            CollectionPoint ccp = s.getCollectionPointById(id);
+            CollectionPoint ccp = mcp.getCollectionPointById(id);
             ChangedCT.Text = ccp.CollectionTime;
             cpId = id;
         }
@@ -45,11 +47,11 @@ namespace LUSSIS.View.DepartmentView.Rep
 
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
-            s.changeCollectionPoint(cpId, curDeptId);
+            mcp.changeCollectionPoint(cpId, curDeptId);
             Response.Write("<script>alert('Collection Point Changed Successfully')</script>");
             getChangedCollectionPointTime(cpId);
             getCurrentCollectionPoint(cpId);
-            s.SendChangeNotification(new Department(), curDeptId);
+            mcp.SendChangeNotification(new Department(), curDeptId);
             //s.notification(s.getEmployees());
         }
     }

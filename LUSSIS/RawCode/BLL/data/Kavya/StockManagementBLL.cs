@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
+using LUSSIS.RawCode.BLL.data.Kavya;
 
 namespace LUSSIS.RawCode.BLL.data.Kavya
 {
     public class StockManagementBLL
     {
+        LUSSdb context = new LUSSdb();
+
         public Department GetCurrentDeptById(int depId)  // Used also in ChangeCollectionPointBLL.cs
         {
             return context.Departments.Where(x => x.DeptId == depId).FirstOrDefault();

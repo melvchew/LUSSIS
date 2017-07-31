@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LUSSIS.RawCode.BLL.data.ZhangJinshan;
+using LUSSIS.RawCode.DAL;
+
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class EditSuppliers : System.Web.UI.Page
     {
-        SupplierServices s = new SupplierServices();
+        StockManagementBLL s = new StockManagementBLL();
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -10,7 +10,7 @@ namespace LUSSIS.View.StoreView.Clerk
     public partial class AddNewSupplier : System.Web.UI.Page
     {
 
-        SupplierServices s = new SupplierServices();
+        StockManagementBLL s = new StockManagementBLL();
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -16,5 +16,10 @@ namespace LUSSIS.View.DepartmentView.Emp
             string rid = Request.QueryString["rid"];
             litaConfirm.Text = "Requisition succeeded, requisition id is " + rid + ". ";
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            //Still Need to complete.
+        }
     }
 }
