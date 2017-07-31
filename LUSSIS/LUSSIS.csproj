@@ -204,11 +204,11 @@
     <Compile Include="RawCode\BLL\data\ZhangJinshan\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\ZhangJinshan\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\EmailBLL.cs" />
+    <Compile Include="RawCode\BLL\ManageCollectionPointBLL.cs" />
     <Compile Include="RawCode\BLL\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\RequisitionBLL.cs" />
     <Compile Include="RawCode\BLL\RolesManagementBLL.cs" />
     <Compile Include="RawCode\BLL\StockManagementBLL.cs" />
-    <Compile Include="RawCode\BLL\UsersAccountBLL.cs" />
     <Compile Include="RawCode\BLL\VoucherManagementBLL.cs" />
     <Compile Include="RawCode\DAL\CollectionPoint.cs">
       <DependentUpon>LussModel.tt</DependentUpon>
@@ -288,6 +288,7 @@
     <Compile Include="RawCode\DAL\TransposedRequisitionReportByCost.cs">
       <DependentUpon>LussModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RawCode\Generics\enums.cs" />
     <Compile Include="RawCode\Generics\ViewModel.cs" />
     <Compile Include="Store\UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
