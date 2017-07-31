@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LUSSIS
+namespace LUSSIS.test
 {
 
 
-    public partial class PTest
+    public partial class test
     {
 
         /// <summary>
