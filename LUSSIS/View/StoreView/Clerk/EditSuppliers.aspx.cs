@@ -41,16 +41,27 @@ namespace LUSSIS.View.StoreView.Clerk
         //delete items which user choose
         protected void Button2_Click(object sender, EventArgs e)
         {
+            List<Supplier> l1 = new List<Supplier>();
+            Supplier s1 = new Supplier();
             for (int i = 0; i < GridView1.Rows.Count; i++)
             {
                 CheckBox cbox = (CheckBox)GridView1.Rows[i].FindControl("CheckBox1");
                 if (cbox.Checked == true)
                 {
                     string id = (GridView1.Rows[i].FindControl("Label8") as Label).Text;
-                    s.DeleteSupplier(id);
+                    s1 = s.FindSupplierById(id);
+                    l1.Add(s1);
 
                 }
 
+            }
+
+            if(l1.Count!=0)
+            {
+                for(int i=0;i<l1.Count;i++)
+                {
+                    s.DeleteSupplier(l1[i].SupplierId);
+                }
             }
 
             GridView1.DataSource = s.FindAllSuppliers();
