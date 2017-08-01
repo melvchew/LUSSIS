@@ -61,6 +61,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 for(int i=0;i<l1.Count;i++)
                 {
                     s.DeleteSupplier(l1[i].SupplierId);
+
                 }
             }
 
