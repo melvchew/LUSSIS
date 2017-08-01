@@ -122,5 +122,10 @@ namespace LUSSIS.View.DepartmentView.Emp
                 droplistEmp.Text = empname;
             }
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/DepartmentView/Home.aspx");
+        }
     }
 }
