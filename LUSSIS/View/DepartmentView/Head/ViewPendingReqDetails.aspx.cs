@@ -19,9 +19,9 @@ namespace LUSSIS.View.DepartmentView.Head
         
         Requisition req;
         Employee emp;
-        Employee boss;
+        //Employee boss;
         int bossid;
-        Department dept;
+        //Department dept;
 
         protected void Page_Load(object sender, EventArgs e)
         {

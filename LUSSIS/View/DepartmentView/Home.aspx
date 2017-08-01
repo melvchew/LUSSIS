@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <span>Logged in user(Session["empId"]) =</span> <asp:Literal ID="litEmpId" runat="server"></asp:Literal>  <br />
-        <asp:HyperLink ID="HyperLink1" runat="server">View Pending Req</asp:HyperLink> <br />
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/View/DepartmentView/Head/ViewPendingReq.aspx">View Pending Req</asp:HyperLink> <br />
         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/View/DepartmentView/Emp/RaiseReq.aspx">Raise Req</asp:HyperLink> <br />
         <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/View/DepartmentView/Emp/ViewDeptReqHistory.aspx">View Dep Req History</asp:HyperLink> <br />
         <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/View/DepartmentView/Emp/ViewUserReqHistory.aspx">View User Req History</asp:HyperLink> <br />

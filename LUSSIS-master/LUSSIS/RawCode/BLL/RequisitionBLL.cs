@@ -7,5 +7,6 @@ namespace LUSSIS.RawCode.BLL
 {
     public class RequisitionBLL
     {
+
     }
 }

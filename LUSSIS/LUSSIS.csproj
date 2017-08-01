@@ -156,6 +156,7 @@
       <DependentUpon>LussModel.edmx</DependentUpon>
       <LastGenOutput>LussModel.cs</LastGenOutput>
     </Content>
+    <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="View\DepartmentView\Home.aspx" />
     <Content Include="View\StoreView\Clerk\UploadExcel.aspx" />
     <Content Include="View\AccessDenied.aspx" />
@@ -311,6 +312,13 @@
     </Compile>
     <Compile Include="RawCode\Generics\enums.cs" />
     <Compile Include="RawCode\Generics\ViewModel.cs" />
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.designer.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\DepartmentView\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
