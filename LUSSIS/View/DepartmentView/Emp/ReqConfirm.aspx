@@ -8,8 +8,10 @@
     <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body>
-<form id="frmReqComfirm" runat="server">
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form id="frmReqComfirm" runat="server">
     <div>
     
         <asp:Literal ID="litaConfirm" runat="server"></asp:Literal>
@@ -20,8 +22,10 @@
         <asp:Label ID="lablConfirm" runat="server" Text="Your department head will be notified via email of your requisition."></asp:Label>
         <br />
         <br />
-        <asp:Button ID="btnHome" runat="server" Text="Return to Home Page" OnClick="btnHome_Click" />
+        <asp:Button ID="btnHome" runat="server" Text="Return to Home Page" OnClick="btnHome_Click" CssClass="btn btn-primary pull-left" />
 
     </form>
+        </div>
+    </div>
 </body>
 </html>

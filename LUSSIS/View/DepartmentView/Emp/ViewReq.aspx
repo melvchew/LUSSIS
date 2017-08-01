@@ -11,7 +11,7 @@
 <body>
 <form id="frmViewReq" runat="server">
 <div>
-    
+
         <asp:Label ID="labl_ViewReq" runat="server" Text="Requisition Details"></asp:Label>
         <br />
         <br />

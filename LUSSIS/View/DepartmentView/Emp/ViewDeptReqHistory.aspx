@@ -8,23 +8,23 @@
     <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body>
-<form id="form1" runat="server">
-<div>
-    
-        <asp:Label ID="lablDeptReq" runat="server" Text="Department Requisition History"></asp:Label>
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form id="frmViewDeptReqHistory" runat="server">
+                <div>
+                    <h1 style="text-align: center">Department Requisition History</h1>
         <br />
-        <br />
-        <asp:Label ID="LablEmp" runat="server" Text="Employee Name: "></asp:Label>
-        <br />
+        <h4><span class="label label-success">Employee Name: </span></h4>
         <asp:DropDownList ID="droplistEmp" runat="server" AutoPostBack="true" 
             CausesValidation="false" EnableViewState="true" 
-            OnSelectedIndexChanged="droplistEmp_SelectedIndexChanged">
-        </asp:DropDownList>
+            OnSelectedIndexChanged="droplistEmp_SelectedIndexChanged" 
+            CssClass="form-control" data-style="btn-inverse" Width="400px">
+        </asp:DropDownList><br />
     
     </div>
         <asp:GridView ID="gvDeptReq" runat="server" AutoGenerateColumns="False" OnRowCommand="gvDeptReq_RowCommand" 
-            AllowPaging="true" OnPageIndexChanging="gvDeptReq_PageIndexChanging">
+            AllowPaging="true" OnPageIndexChanging="gvDeptReq_PageIndexChanging" CssClass="table table-striped">
             <Columns>
                 <asp:BoundField HeaderText="Requisition ID" DataField="ReqId"/>
                 <asp:BoundField HeaderText="Employee Name" DataField="Employee.Name"/>
@@ -49,7 +49,9 @@
                 </table>
             </EmptyDataTemplate>
         </asp:GridView>
-    <asp:Button ID="btnBack" runat="server" Text="Back to Home Page" OnClick="btnBack_Click" />
+    <asp:Button ID="btnBack" runat="server" Text="Back to Home Page" OnClick="btnBack_Click" CssClass="btn btn-primary pull-right" />
     </form>
+         </div>
+    </div>
 </body>
 </html>

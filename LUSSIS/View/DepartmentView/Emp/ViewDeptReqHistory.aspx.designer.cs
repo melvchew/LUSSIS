@@ -13,31 +13,13 @@ namespace LUSSIS.View.DepartmentView.Emp {
     public partial class ViewDeptReqHistory {
         
         /// <summary>
-        /// form1 control.
+        /// frmViewDeptReqHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// lablDeptReq control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lablDeptReq;
-        
-        /// <summary>
-        /// LablEmp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LablEmp;
+        protected global::System.Web.UI.HtmlControls.HtmlForm frmViewDeptReqHistory;
         
         /// <summary>
         /// droplistEmp control.
