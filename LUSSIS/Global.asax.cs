@@ -62,14 +62,19 @@ namespace LUSSIS
 
         protected void Application_Error(object sender, EventArgs e)
         {
-            var ex = Server.GetLastError(); //Peter
+            //Peter
+            var ex = Server.GetLastError();
             var httpException = ex.InnerException as HttpException;
 
-            if (httpException.WebEventCode == System.Web.Management.WebEventCodes.RuntimeErrorPostTooLarge)
+            if (httpException != null)
             {
-                Response.Redirect("Default.aspx");
-                Session["Err"] = "FileTooLarge";
-            } //Peter
+                if (httpException.WebEventCode == System.Web.Management.WebEventCodes.RuntimeErrorPostTooLarge)
+                {
+                    Response.Redirect("UploadExcel.aspx");
+                    Session["Err"] = "FileTooLarge";
+                }
+            }
+            //Peter
         }
 
         protected void Session_End(object sender, EventArgs e)
