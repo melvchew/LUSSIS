@@ -60,7 +60,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Address">
                             <EditItemTemplate>
-                                <asp:TextBox ID="Textbox3" runat="server" Text='<%# Eval("Address") %>'></asp:TextBox>
+                                <asp:TextBox ID="Textbox3" runat="server" TextMode="MultiLine" Text='<%# Eval("Address") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <asp:Label ID="Label3" runat="server" Text='<%# Bind("Address") %>'></asp:Label>
