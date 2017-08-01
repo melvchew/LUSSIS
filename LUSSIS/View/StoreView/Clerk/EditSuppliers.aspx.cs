@@ -58,11 +58,12 @@ namespace LUSSIS.View.StoreView.Clerk
 
             if(l1.Count!=0)
             {
-                for(int i=0;i<l1.Count;i++)
+                for (int i=0;i<l1.Count;i++)
                 {
                     s.DeleteSupplier(l1[i].SupplierId);
 
                 }
+               
             }
 
             GridView1.DataSource = s.FindAllSuppliers();
