@@ -29,16 +29,16 @@
                                             </tr>--%>
                                             <tr>
                                                 <td align="right">
-                                                    <asp:Label ID="UserNameLabel" runat="server" CssClass="control-label col-sm-2" AssociatedControlID="UserName">User Name:</asp:Label>
+                                                    <asp:Label ID="UserNameLabel" runat="server" CssClass="control-label col-sm-3" AssociatedControlID="UserName">Username:</asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="UserName" runat="server" CssClass="form-control col-sm-10"></asp:TextBox>
-                                                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="Username is required." ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td align="right">
-                                                    <asp:Label ID="PasswordLabel" CssClass="control-label col-sm-2" runat="server" AssociatedControlID="Password">Password:</asp:Label>
+                                                    <asp:Label ID="PasswordLabel" CssClass="control-label col-sm-3" runat="server" AssociatedControlID="Password">Password:</asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="Password" runat="server" CssClass="form-control col-sm-10" TextMode="Password"></asp:TextBox>
