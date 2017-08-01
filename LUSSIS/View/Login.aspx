@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
-    <link rel="stylesheet" href="Content/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <title></title>
 </head>
 
@@ -17,7 +17,7 @@
             <div class="col-md-8 col-lg-offset-4">
                 <h3 class="col-md-10 col-lg-offset-2">Log In</h3>
                 <div class="form-group">
-                    <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/Redirect.aspx" OnLoggingIn="Login1_LoggingIn">
+                    <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/View/Redirect.aspx" OnLoggingIn="Login1_LoggingIn">
                         <InstructionTextStyle CssClass="control-label" />
                         <LayoutTemplate>
                             <table class="table col-md-11 col-md-offset-1">
