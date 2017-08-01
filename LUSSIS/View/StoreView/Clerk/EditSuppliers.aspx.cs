@@ -15,26 +15,40 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+           
             if (!IsPostBack)
             {
                 GridView1.DataSource = s.FindAllSuppliers();
                 GridView1.DataBind();
-
-
             }
         }
 
         //search item by company name
         protected void Button1_Click(object sender, EventArgs e)
         {
+            if (TextBox1.Text == "")
+            {
+                Label9.Visible = true;
+                Label9.Text = "Please input companyname!";
+            }
+            else
+            {
+                Label9.Visible = false;
                 List<Supplier> l1 = new List<Supplier>();
                 l1 = s.SearchSupplier(TextBox1.Text);
-            if (l1.Count != 0)
-            {
-                GridView1.DataSource = l1;
-                GridView1.DataBind();
+                if (l1.Count != 0)
+                {
+                    GridView1.DataSource = l1;
+                    GridView1.DataBind();
+                }
+                else
+                {
+                    Label9.Visible = true;
+                    Label9.Text = "There is no matching item";
+                }
             }
-            
+
 
         }
 
@@ -55,16 +69,24 @@ namespace LUSSIS.View.StoreView.Clerk
                 }
 
             }
-
-            if(l1.Count!=0)
+            int items = 0;
+            items = l1.Count;
+            if (items== 0)
             {
-                for(int i=0;i<l1.Count;i++)
+                Label9.Visible = true;
+                Label9.Text = "There is no item selected";
+
+            }
+            else
+            {
+               
+                for (int i = 0; i < l1.Count; i++)
                 {
                     s.DeleteSupplier(l1[i].SupplierId);
-
                 }
+                
             }
-
+            
             GridView1.DataSource = s.FindAllSuppliers();
             GridView1.DataBind();
 
@@ -87,19 +109,24 @@ namespace LUSSIS.View.StoreView.Clerk
 
             if (l.Count != 0)
             {
+                Label9.Visible = false;
                 Session["Suppliers"] = l;
                 Response.Redirect("UpdateSuppliers.aspx");
             }
 
             else
             {
-                Button3.Attributes.Add("onclick", "didn't choose any item");
+
+                Label9.Visible = true;
+                Label9.Text = "There is no item selected";
             }
 
         }
 
         protected void Button4_Click(object sender, EventArgs e)
         {
+            Label9.Visible = false;
+            TextBox1.Text = "";
             for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
             {
                 CheckBox cbox = (CheckBox)GridView1.Rows[i].FindControl("CheckBox1");

@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LUSSIS.RawCode.BLL;
+using LUSSIS.RawCode.DAL;
+
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class Inventory_Status_Report : System.Web.UI.Page
@@ -62,13 +64,25 @@ namespace LUSSIS.View.StoreView.Clerk
         //get low stock items
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-            GridView1.DataSource = report.GetLowStock();
-            GridView1.DataBind();
-            for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
+            List<Item> l1 = new List<Item>();
+            l1= report.GetLowStock();
+            if (l1.Count != 0)
             {
-                GridView1.Rows[i].BackColor = System.Drawing.Color.Green;
+                Label7.Visible = false;
+                GridView1.DataSource = l1;
+                GridView1.DataBind();
+                for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
+                {
+                    GridView1.Rows[i].BackColor = System.Drawing.Color.Green;
+                }
             }
+            else
+            {
+                Label7.Visible = true;
+                Label7.Text = "There is no Low Stock Item";
+                
+            }
+           
         }
     }
 }
