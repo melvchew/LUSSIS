@@ -63,4 +63,3 @@ namespace LUSSIS.View.DepartmentView.Head
         }
     }
 }
-}
