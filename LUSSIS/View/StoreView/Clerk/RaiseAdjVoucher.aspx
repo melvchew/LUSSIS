@@ -6,8 +6,8 @@
 
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="content/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="content/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../content/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="../../../content/bootstrap.min.css" />
 </head>
 
 <body>
