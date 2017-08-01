@@ -5,11 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Configuration;
-using LUSSIS.RawCode.BLL.data.Peter;
+using LUSSIS.RawCode.BLL;
 
+//Done by Peter
 namespace LUSSIS.Store
 {
-    public partial class UploadExcel : System.Web.UI.Page //Peter
+    public partial class UploadExcel : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,7 +45,7 @@ namespace LUSSIS.Store
 
             if (FileUpload1.HasFile)
             {
-                String savePath = Server.MapPath("~/ExcelUploads/");
+                String savePath = Server.MapPath("~/ExcelFiles/");
                 Boolean fileExtOK = false;
                 String fileExtension = System.IO.Path.GetExtension(FileUpload1.FileName).ToLower();
                 String[] allowedExtensions = { ".xlsx" };
