@@ -316,6 +316,7 @@ namespace LUSSIS.RawCode.BLL
         //Not duplicated:ture, duplicated: false.
         public bool CheckSameItem(Item i, List<Item> litems)
         {
+            try {
             int flag = 0;
             foreach (Item ite in litems)
             {
@@ -324,22 +325,37 @@ namespace LUSSIS.RawCode.BLL
             }
             bool result = (flag == 0) ? true : false;
             return result;
+            }
+            catch (Exception exp)
+            {
+                Console.WriteLine("CheckSameItem Error: " + exp.Message);
+                return true;
+            }
         }
 
         //Check if the adding reqitem duplicated(for existed req)
         //Not duplicated:ture, duplicated: false.
         public bool CheckSameReqItem(RequisitionItem ri, Requisition req)
         {
-            int flag = 0;
-            LUSSdb context = new LUSSdb();
-            List<RequisitionItem> chklist = context.RequisitionItems.Where(r => r.ReqId == req.ReqId).ToList();
-            foreach (RequisitionItem r in chklist)
+            try
             {
-                if (r.ItemId == ri.ItemId)
-                    flag++;
+                int flag = 0;
+                LUSSdb context = new LUSSdb();
+                List<RequisitionItem> chklist = context.RequisitionItems.Where(r => r.ReqId == req.ReqId).ToList();
+                foreach (RequisitionItem r in chklist)
+                {
+                    if (r.ItemId == ri.ItemId)
+                        flag++;
+                }
+                bool result = (flag == 0) ? true : false;
+                return result;
             }
-            bool result = (flag == 0) ? true : false;
-            return result;
+            catch (Exception exp)
+            {
+                Console.WriteLine("CheckSameReqItem Error: " + exp.Message);
+                return true;
+            }
+
         }
 
         //----------------------------------------------------------------------------------------------------------------
