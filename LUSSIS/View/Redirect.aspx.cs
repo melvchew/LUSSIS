@@ -138,7 +138,7 @@ namespace LUSSIS.View
                             foreach (DateTime sd in ahStartDateList)
                             {
 
-                                if (DateTime.Today == sd)
+                                if (DateTime.Today >= sd)
                                 {
                                     Roles.AddUserToRole(id.Name, "DeptActingHead");
                                     Roles.RemoveUserFromRole(id.Name, "DeptEmp");
