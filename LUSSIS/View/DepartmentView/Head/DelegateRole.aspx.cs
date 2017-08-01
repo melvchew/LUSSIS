@@ -15,16 +15,17 @@ namespace LUSSIS.View.DepartmentView.Head
         {
             if (!IsPostBack)
             {
+                int empid = Convert.ToInt32(Session["empId"]);
                 RolesManagementBLL b = new RolesManagementBLL();
-
-                ddActingHead.DataSource = b.getEmployeeListByDept(1);//ID depends on login user
+                int depid = b.getDepartmentID(empid);
+                ddActingHead.DataSource = b.getEmployeeListByDept(depid);//ID depends on login user
                 ddActingHead.DataTextField = "Name";
                 ddActingHead.DataValueField = "EmpId";
                 ddActingHead.DataBind();
                 ddActingHead.Items.Insert(0, new ListItem(String.Empty, string.Empty));
                 ddActingHead.SelectedIndex = 0;
 
-                ddDeptRepre.DataSource = b.getEmployeeListByDept(1);//ID depends on login user
+                ddDeptRepre.DataSource = b.getEmployeeListByDept(depid);//ID depends on login user
                 ddDeptRepre.DataTextField = "Name";
                 ddDeptRepre.DataValueField = "EmpId";
                 ddDeptRepre.DataBind();
@@ -33,7 +34,7 @@ namespace LUSSIS.View.DepartmentView.Head
 
                 if (b.getCurrentActingHead(1) != null)
                 {
-                    Employee currentActingHead = b.getCurrentActingHead(1);//ID depends on login user
+                    Employee currentActingHead = b.getCurrentActingHead(depid);//ID depends on login user
                     lblCurrentActingHead.Text = currentActingHead.Name.ToString();
                     ddActingHead.SelectedValue = currentActingHead.EmpId.ToString();
                 }
@@ -43,7 +44,7 @@ namespace LUSSIS.View.DepartmentView.Head
                 }
                 if (b.getCurrentDeptRep(1) != null)
                 {
-                    Employee currentDeptRep = b.getCurrentDeptRep(1);//ID depends on login user
+                    Employee currentDeptRep = b.getCurrentDeptRep(depid);//ID depends on login user
                     lblCurrentDeptRep.Text = currentDeptRep.Name.ToString();
                     ddDeptRepre.SelectedValue = currentDeptRep.EmpId.ToString();
                 }
@@ -82,9 +83,12 @@ namespace LUSSIS.View.DepartmentView.Head
                 }
                 else
                 {
+                    int empid = Convert.ToInt32(Session["empId"]);
                     RolesManagementBLL b = new RolesManagementBLL();
+                    int depid = b.getDepartmentID(empid);
+                    
                     Department d = new Department();
-                    d.DeptId = 1;// ID depends on login user
+                    d.DeptId = depid;// ID depends on login user
                     d.ActingHead = Convert.ToInt32(ddActingHead.SelectedValue);
                     d.DeptRep = Convert.ToInt32(ddDeptRepre.SelectedValue);
                     d.AHStartDate = DateTime.Parse(txtFromDate.Text);
@@ -103,9 +107,11 @@ namespace LUSSIS.View.DepartmentView.Head
 
             else
             {
+                int empid = Convert.ToInt32(Session["empId"]);
                 RolesManagementBLL b = new RolesManagementBLL();
+                int depid = b.getDepartmentID(empid);
                 Department d = new Department();
-                d.DeptId = 1;// ID depends on login user
+                d.DeptId = depid;// ID depends on login user
                 d.DeptRep = Convert.ToInt32(ddDeptRepre.SelectedValue);
                 bool update = b.delegateRoles(d);
                 if (update)
