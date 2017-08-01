@@ -36,7 +36,7 @@ namespace LUSSIS.View.StoreView.Supervisor
             InvAdjVoucher iav = new InvAdjVoucher();
             VoucherManagementBLL b = new VoucherManagementBLL();
             iav.VoucherId = id;
-            iav.ApproveBy = 1;
+            iav.ApproveBy = Convert.ToInt32(Session["storeEmpId"]); ;
             iav.ApproveDate = DateTime.Now;
             iav.ApproverComments = txtcomment.Text;
             iav.Status = "APPROVED";
@@ -51,7 +51,7 @@ namespace LUSSIS.View.StoreView.Supervisor
             InvAdjVoucher iav = new InvAdjVoucher();
             VoucherManagementBLL b = new VoucherManagementBLL();
             iav.VoucherId = id;
-            iav.ApproveBy = 1;
+            iav.ApproveBy = Convert.ToInt32(Session["storeEmpId"]); ;
             iav.ApproveDate = DateTime.Now;
             iav.ApproverComments = txtcomment.Text;
             iav.Status = "REJECTED";
