@@ -21,7 +21,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             {
                 if (!IsPostBack)
                 {
-                    int empid = 4; //Need connect to login info
+                    int empid = Convert.ToInt32(Session["empId"]);
                     Employee emp = context.Employees.Where(em => em.EmpId == empid).ToList().First();
                     this.BindGrid(emp);
                 }
@@ -60,7 +60,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             using (context = new LUSSdb())
             {
                 gvReqHistory.PageIndex = e.NewPageIndex;
-                int empid = 4;
+                int empid = Convert.ToInt32(Session["empId"]);
                 Employee emp = context.Employees.Where(em => em.EmpId == empid).ToList().First();
                 this.BindGrid(emp);
             }
