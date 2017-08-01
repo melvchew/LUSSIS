@@ -50,14 +50,15 @@
                                                     <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me next time." />
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td align="center" colspan="2" style="color: Red;">
-                                                    <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
-                                                </td>
-                                            </tr>
+                                            
                                             <tr>
                                                 <td align="right" colspan="2">
                                                     <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" CssClass="btn btn-success" ValidationGroup="Login1" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" colspan="2" style="color: Red;">
+                                                    <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
                                                 </td>
                                             </tr>
                                         </table>
@@ -69,10 +70,10 @@
                         <TextBoxStyle CssClass="form-control" />
                         <TitleTextStyle CssClass="control-label" />
                     </asp:Login>
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Login1" ForeColor="Red" />
                 </div>
             </div>
         </div>
-        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Login1" />
 
     </form>
 </body>
