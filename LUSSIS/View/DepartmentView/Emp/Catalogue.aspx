@@ -10,7 +10,7 @@
 <form id="frmCatalogue" runat="server">
     <div>
     
-        <asp:Label ID="lablItemCatalog" runat="server" Text="Item Catalog"></asp:Label>
+        <asp:Label ID="lablItemCatalog" runat="server" Text="Item Catalogue"></asp:Label>
         <br /><br />
 
         <asp:TextBox ID="txtBoxSearchItem" runat="server" AutoPostBack="false"
