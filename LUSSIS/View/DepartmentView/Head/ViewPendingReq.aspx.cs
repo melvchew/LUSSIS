@@ -50,7 +50,7 @@ namespace LUSSIS.View.DepartmentView.Head
         {
             //Direct to pendingdetail page including the ReqID selected
             String value = GridView_VPR.Rows[GridView_VPR.SelectedIndex].Cells[0].Text;
-            Response.Redirect("PendingRequisition.aspx?ReqId=" + value); //pass the value to the next page.
+            Response.Redirect("ViewPendingReqDetails.aspx?ReqId=" + value); //pass the value to the next page.
 
         }
 
@@ -58,7 +58,7 @@ namespace LUSSIS.View.DepartmentView.Head
         {
             //Direct to pendingdetail page including the ReqID selected
             String value = GridView_VPR.Rows[GridView_VPR.SelectedIndex].Cells[0].Text;
-            Response.Redirect("PendingRequisition.aspx?ReqId=" + value); //pass the value to the next page.
+            Response.Redirect("ViewPendingReqDetails.aspx?ReqId=" + value); //pass the value to the next page.
 
         }
     }
