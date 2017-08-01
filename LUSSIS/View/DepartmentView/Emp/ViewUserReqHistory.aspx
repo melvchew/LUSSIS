@@ -40,6 +40,7 @@
                 </table>
             </EmptyDataTemplate>
         </asp:GridView>
+    <asp:Button ID="btnBack" runat="server" Text="Back to Home Page" OnClick="btnBack_Click" />
     </form>
 </body>
 </html>

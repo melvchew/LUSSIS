@@ -65,5 +65,10 @@ namespace LUSSIS.View.DepartmentView.Emp
                 this.BindGrid(emp);
             }
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/DepartmentView/Home.aspx");
+        }
     }
 }

@@ -67,7 +67,7 @@
             <asp:TextBox ID="txtBoxComment" runat="server" Height="16px" Width="316px" TextMode="multiline" onkeyup="this.value = this.value.slice(0, 200)"></asp:TextBox>
         </p>
         <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
-        <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
     </form>
 </body>
 </html>
