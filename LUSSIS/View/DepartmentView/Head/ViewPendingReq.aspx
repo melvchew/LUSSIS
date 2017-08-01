@@ -5,6 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    
+    <link rel="stylesheet" href="../../../Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../Content/bootstrap-theme.min.css.map" />
 </head>
 <body>
 

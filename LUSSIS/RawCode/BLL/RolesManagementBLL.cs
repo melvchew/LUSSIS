@@ -12,6 +12,12 @@ namespace LUSSIS.RawCode.BLL
         LUSSdb context = new LUSSdb();
 
         //Created by Khin
+
+        public int getDepartmentID(int id)
+        {
+            context = new LUSSdb();
+            return context.Departments.Where(x => x.DeptHead == id).Select(x => x.DeptId).FirstOrDefault<int>();
+        }
         public List<Employee> getEmployeeListByDept(int id)
         {
             context = new LUSSdb();
