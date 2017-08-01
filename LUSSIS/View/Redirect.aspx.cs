@@ -36,6 +36,7 @@ namespace LUSSIS.View
             dynamic profile = ProfileBase.Create(id.Name);
             List<int> deptRepList = context.Departments.Select(x => x.DeptRep).ToList<int>();
             List<Department> deptList = context.Departments.ToList<Department>();
+
             List<int?> queryAH = context.Departments.Select(x => x.ActingHead).ToList<int?>();
             List<String> deptActingHeadList = new List<String>();
 
@@ -49,7 +50,30 @@ namespace LUSSIS.View
                 }
             }
 
-            //List<int> deptActingHeadList = context.Departments.Select(x => x.ActingHead).ToList<int>();
+            List<DateTime?> queryStartDate = deptList.Select(x => x.AHStartDate).ToList<DateTime?>();
+            List<DateTime> ahStartDateList = new List<DateTime>();
+
+            foreach (DateTime? d in queryStartDate)
+            {
+                if (d.HasValue)
+                {
+                    string start = d.ToString();
+                    if (start != null)
+                        ahStartDateList.Add(DateTime.Parse(start));
+                }
+            }
+            List<DateTime?> queryEndDate = deptList.Select(x => x.AHEndDate).ToList<DateTime?>();
+            List<DateTime> ahEndDateList = new List<DateTime>();
+
+            foreach (DateTime? d in queryStartDate)
+            {
+                if (d.HasValue)
+                {
+                    string end = d.ToString();
+                    if (end != null)
+                        ahEndDateList.Add(DateTime.Parse(end));
+                }
+            }
 
             if (User.IsInRole("StoreClerk") ||
                 User.IsInRole("StoreManager") ||
@@ -89,7 +113,7 @@ namespace LUSSIS.View
                 }
                 else if (User.IsInRole("DeptEmp"))
                 {
-
+                    //check if employee has been delegated to be rep
                     foreach (int r in deptRepList)
                     {
                         //if (r == (int)Session["empId"])
@@ -102,17 +126,26 @@ namespace LUSSIS.View
                             break;
                         }
                     }
+                    //check if employee has been delegated to be acting head
                     foreach (string ah in deptActingHeadList)
-                    //foreach (int ah in deptActingHeadList)
                     {
+
                         string s = ah.ToString();
+                        //DateTime today = DateTime.Today;
                         if (s == profile.empId)
-                        //if (ah == Convert.ToInt32(profile.empId))
+
                         {
-                            Roles.AddUserToRole(id.Name, "DeptActingHead");
-                            Roles.RemoveUserFromRole(id.Name, "DeptEmp");
-                            Response.Redirect("~/Dept/ActingHead/home.aspx");
-                            break;
+                            foreach (DateTime sd in ahStartDateList)
+                            {
+
+                                if (DateTime.Today == sd)
+                                {
+                                    Roles.AddUserToRole(id.Name, "DeptActingHead");
+                                    Roles.RemoveUserFromRole(id.Name, "DeptEmp");
+                                    Response.Redirect("~/Dept/ActingHead/home.aspx");
+                                    break;
+                                }
+                            }
                         }
                     }
 
@@ -121,21 +154,34 @@ namespace LUSSIS.View
                 else if (User.IsInRole("DeptActingHead"))
                 {
                     foreach (string ah in deptActingHeadList)
-                    //foreach (int ah in deptActingHeadList)
                     {
-                        //if (ah == (int)Session["empId"])
                         string s = ah.ToString();
                         if (s == profile.empId)
                         {
 
+                            foreach (DateTime ed in ahEndDateList)
+                            {
+                                //remove from role and restore Employee role if delegation has expired
+                                if (DateTime.Today > ed)
+                                {
+                                    Roles.AddUserToRole(id.Name, "DeptEmp");
+                                    Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
+                                    Response.Redirect("~/Dept/home.aspx");
+                                    break;
+                                }
+
+                            }
+                            //keep Acting Head role if today's date is before or equals to end date
                             Response.Redirect("~/Dept/ActingHead/home.aspx");
-                            break;
                         }
+                        //if another person has been delegated as Acting Head
+                        else
+                            Roles.AddUserToRole(id.Name, "DeptEmp");
+                        Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
+                        Response.Redirect("~/Dept/home.aspx");
                     }
 
-                    Roles.AddUserToRole(id.Name, "DeptEmp");
-                    Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
-                    Response.Redirect("~/Dept/home.aspx");
+
                 }
                 else if (User.IsInRole("DeptRep"))
                 {
@@ -170,3 +216,86 @@ namespace LUSSIS.View
         }
     }
 }
+//                else if (User.IsInRole("DeptEmp"))
+//                {
+
+//                    foreach (int r in deptRepList)
+//                    {
+//                        //if (r == (int)Session["empId"])
+//                        string s = r.ToString();
+//                        if (s == profile.empId)
+//                        {
+//                            Roles.AddUserToRole(id.Name, "DeptRep");
+//                            Roles.RemoveUserFromRole(id.Name, "DeptEmp");
+//                            Response.Redirect("~/Dept/Rep/home.aspx");
+//                            break;
+//                        }
+//                    }
+//                    foreach (string ah in deptActingHeadList)
+//                    //foreach (int ah in deptActingHeadList)
+//                    {
+//                        string s = ah.ToString();
+//                        if (s == profile.empId)
+//                        //if (ah == Convert.ToInt32(profile.empId))
+//                        {
+//                            Roles.AddUserToRole(id.Name, "DeptActingHead");
+//                            Roles.RemoveUserFromRole(id.Name, "DeptEmp");
+//                            Response.Redirect("~/Dept/ActingHead/home.aspx");
+//                            break;
+//                        }
+//                    }
+
+//                    Response.Redirect("~/Dept/home.aspx");
+//                }
+//                else if (User.IsInRole("DeptActingHead"))
+//                {
+//                    foreach (string ah in deptActingHeadList)
+//                    //foreach (int ah in deptActingHeadList)
+//                    {
+//                        //if (ah == (int)Session["empId"])
+//                        string s = ah.ToString();
+//                        if (s == profile.empId)
+//                        {
+
+//                            Response.Redirect("~/Dept/ActingHead/home.aspx");
+//                            break;
+//                        }
+//                    }
+
+//                    Roles.AddUserToRole(id.Name, "DeptEmp");
+//                    Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
+//                    Response.Redirect("~/Dept/home.aspx");
+//                }
+//                else if (User.IsInRole("DeptRep"))
+//                {
+//                    foreach (int r in deptRepList)
+//                    {
+//                        //if (r == (int)Session["empId"])
+//                        string s = r.ToString();
+//                        if (s == profile.empId)
+//                        {
+
+//                            Response.Redirect("~/Dept/Rep/home.aspx");
+//                            break;
+//                        }
+//                    }
+
+//                    Roles.AddUserToRole(id.Name, "DeptEmp");
+//                    Roles.RemoveUserFromRole(id.Name, "DeptRep");
+//                    Response.Redirect("~/Dept/home.aspx");
+//                }
+
+//                else if (User.IsInRole("DeptHead"))
+//                {
+//                    Response.Redirect("~/Dept/Head/home.aspx");
+//                }
+
+//                else
+//                {
+//                    Response.Write("Role not assigned yet");
+//                    Response.Redirect("Login.aspx");
+//                }
+//            }
+//        }
+//    }
+//}
