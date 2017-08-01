@@ -156,6 +156,7 @@
       <DependentUpon>LussModel.edmx</DependentUpon>
       <LastGenOutput>LussModel.cs</LastGenOutput>
     </Content>
+    <Content Include="View\DepartmentView\Home.aspx" />
     <Content Include="View\StoreView\Clerk\UploadExcel.aspx" />
     <Content Include="View\AccessDenied.aspx" />
     <Content Include="View\createuser.aspx" />
@@ -186,6 +187,7 @@
     <Content Include="View\StoreView\Clerk\TrendAnalysis.aspx" />
     <Content Include="View\StoreView\Clerk\UpdateProduct.aspx" />
     <Content Include="View\StoreView\Clerk\ViewAllReq.aspx" />
+    <Content Include="View\StoreView\Home.aspx" />
     <Content Include="View\StoreView\Manager\AdjVoucher.aspx" />
     <Content Include="View\StoreView\Manager\AdjVoucherDetail.aspx" />
     <Content Include="View\StoreView\Supervisor\AdjVoucherBelow250.aspx" />
@@ -309,6 +311,13 @@
     </Compile>
     <Compile Include="RawCode\Generics\enums.cs" />
     <Compile Include="RawCode\Generics\ViewModel.cs" />
+    <Compile Include="View\DepartmentView\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\StoreView\Clerk\UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -519,6 +528,13 @@
     </Compile>
     <Compile Include="View\StoreView\Clerk\ViewAllReq.aspx.designer.cs">
       <DependentUpon>ViewAllReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Manager\AdjVoucher.aspx.cs">
       <DependentUpon>AdjVoucher.aspx</DependentUpon>

@@ -101,15 +101,15 @@ namespace LUSSIS.View
 
                 if (User.IsInRole("StoreClerk"))
                 {
-                    Response.Redirect("~/Store/home.aspx");
+                    Response.Redirect("~/View/StoreView/Home.aspx");
                 }
                 else if (User.IsInRole("StoreManager"))
                 {
-                    Response.Redirect("~/Store/Manager/home.aspx");
+                    Response.Redirect("~/View/StoreView/Home.aspx");
                 }
                 else if (User.IsInRole("StoreSupervisor"))
                 {
-                    Response.Redirect("~/Store/Supervisor/home.aspx");
+                    Response.Redirect("~/View/StoreView/Home.aspx");
                 }
                 else if (User.IsInRole("DeptEmp"))
                 {
@@ -122,7 +122,7 @@ namespace LUSSIS.View
                         {
                             Roles.AddUserToRole(id.Name, "DeptRep");
                             Roles.RemoveUserFromRole(id.Name, "DeptEmp");
-                            Response.Redirect("~/Dept/Rep/home.aspx");
+                            Response.Redirect("~/View/DepartmentView/Home.aspx");
                             break;
                         }
                     }
@@ -142,7 +142,7 @@ namespace LUSSIS.View
                                 {
                                     Roles.AddUserToRole(id.Name, "DeptActingHead");
                                     Roles.RemoveUserFromRole(id.Name, "DeptEmp");
-                                    Response.Redirect("~/Dept/ActingHead/home.aspx");
+                                    Response.Redirect("~/View/DepartmentView/Home.aspx");
                                     break;
                                 }
                             }
@@ -166,7 +166,7 @@ namespace LUSSIS.View
                                 {
                                     Roles.AddUserToRole(id.Name, "DeptEmp");
                                     Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
-                                    Response.Redirect("~/Dept/home.aspx");
+                                    Response.Redirect("~/View/DepartmentView/Home.aspxx");
                                     break;
                                 }
 
@@ -178,7 +178,7 @@ namespace LUSSIS.View
                         else
                             Roles.AddUserToRole(id.Name, "DeptEmp");
                         Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
-                        Response.Redirect("~/Dept/home.aspx");
+                        Response.Redirect("~/View/DepartmentView/Home.aspx");
                     }
 
 
@@ -192,7 +192,7 @@ namespace LUSSIS.View
                         if (s == profile.empId)
                         {
 
-                            Response.Redirect("~/Dept/Rep/home.aspx");
+                            Response.Redirect("~/View/DepartmentView/Home.aspx");
                             break;
                         }
                     }
@@ -204,7 +204,7 @@ namespace LUSSIS.View
 
                 else if (User.IsInRole("DeptHead"))
                 {
-                    Response.Redirect("~/Dept/Head/home.aspx");
+                    Response.Redirect("~/View/DepartmentView/Home.aspx" );
                 }
 
                 else
