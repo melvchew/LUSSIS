@@ -19,7 +19,7 @@ namespace LUSSIS.View.DepartmentView.Emp
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            //Still Need to complete.
+            Response.Redirect("~/View/DepartmentView/Home.aspx");
         }
     }
 }

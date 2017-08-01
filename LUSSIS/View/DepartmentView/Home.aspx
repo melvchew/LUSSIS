@@ -14,7 +14,7 @@
         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/View/DepartmentView/Emp/RaiseReq.aspx">Raise Req</asp:HyperLink> <br />
         <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/View/DepartmentView/Emp/ViewDeptReqHistory.aspx">View Dep Req History</asp:HyperLink> <br />
         <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/View/DepartmentView/Emp/ViewUserReqHistory.aspx">View User Req History</asp:HyperLink> <br />
-        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/View/DepartmentView/Emp/ViewCollectionItems.aspx">View Collection Items</asp:HyperLink> <br />
+        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/View/DepartmentView/Rep/ViewCollectionItems.aspx">View Collection Items</asp:HyperLink> <br />
         <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/View/Logout.aspx">Log Out</asp:HyperLink>
     </div>
     </form>
