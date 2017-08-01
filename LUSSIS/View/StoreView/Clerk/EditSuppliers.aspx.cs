@@ -27,14 +27,14 @@ namespace LUSSIS.View.StoreView.Clerk
         //search item by company name
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text != null)
-            {
                 List<Supplier> l1 = new List<Supplier>();
                 l1 = s.SearchSupplier(TextBox1.Text);
-
+            if (l1.Count != 0)
+            {
                 GridView1.DataSource = l1;
                 GridView1.DataBind();
             }
+            
 
         }
 

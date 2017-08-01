@@ -45,6 +45,9 @@ namespace LUSSIS
             Session["Suppliers"] = new List<Supplier>();//Zhang Jinshan Add
             Session["AddItemlist"] = new List<Item>(); //HU XIAOXI
             Session["View"] = ""; //HU XIAOXI
+
+            Session["empId"] = null; //Phong
+            Session["storeEmpId"] = null; //Phong
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
