@@ -6,19 +6,12 @@
 
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="../../../content/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="../../../content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/content/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="~/content/bootstrap.min.css" />
 </head>
 
 <body>
     <form id="form1" runat="server">
-
-        <!-- <span class="label label-default">Default</span>
-<span class="label label-primary">Primary</span>
-<span class="label label-success">Success</span>
-<span class="label label-info">Info</span>
-<span class="label label-danger">Danger</span>
-        -->
 
         <asp:PlaceHolder ID="PlaceHolder1" runat="server">
             <div class="container-fluid">
@@ -68,12 +61,11 @@
                 </div>
                 </div>
         </asp:PlaceHolder>
-        <br />
+        <span class="text-primary">la</span><br />
         <div class="col-md-9"></div>
         <div class="col-md-3">
             <asp:Button ID="Button1" runat="server" Class="btn btn-default" OnClick="Button1_Click" Text="Calc" />
             <asp:Button ID="Submitbtn" runat="server" Class="btn btn-default" Text="Submit" OnClick="Submitbtn_Click" />
-            <asp:Button ID="Cancelbtn" runat="server" Class="btn btn-default" Text="Cancel" />
         </div>
         <asp:Label ID="Label2" runat="server"></asp:Label>
     </form>

@@ -196,7 +196,7 @@ namespace LUSSIS.RawCode.BLL
             return context.StoreEmployees.Where(x => x.StoreEmpId == empId).First<StoreEmployee>();
         }
 
-        public void sendnotification(StoreEmployee se, int voucherId)
+        public void sendnotification(StoreEmployee se, int voucherId, int itemId)
         {
             try
             {
@@ -206,7 +206,8 @@ namespace LUSSIS.RawCode.BLL
                 client.DeliveryMethod = SmtpDeliveryMethod.Network;
                 MailMessage mm = new MailMessage("lusissa44@gmail.com", "razz.aiw@gmail.com");
                 mm.Subject = "Adjustment Voucher";
-                mm.Body = $"Hi,\n\n" + se.Name + " Raised an adjustment Voucher as Voucher No : " + voucherId + "\n\nThis is an automated generated email, please do not reply to this email";
+                mm.Body = $"Hi,\n\n" + se.Name + " Raised an adjustment Voucher for an Item ID " + itemId
+                    + " with the Voucher No : " + voucherId + "\n\nThis is an automated generated email, please do not reply to this email";
                 client.Send(mm);
             }
             catch (SmtpException ex)
@@ -218,6 +219,7 @@ namespace LUSSIS.RawCode.BLL
                 Console.WriteLine("SmtpException has occured: " + ex.Message);
             }
         }
+
 
     }
 }

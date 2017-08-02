@@ -11,11 +11,14 @@ namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class RaiseAdjVoucher : System.Web.UI.Page
     {
+
         VoucherManagementBLL vm = new VoucherManagementBLL();
         // get employee Id using Login Session
         int empId = 7;
+        static int count = 2;
         String status = "PENDING";
         DateTime date = DateTime.Today;
+        static Boolean calc = false;
         static decimal totAmt = 0;
 
         List<String> controlsList = new List<string>();
@@ -79,6 +82,7 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void AddNewRowLinkBtn_Click1(object sender, EventArgs e)
         {
+            Button1.Visible = true;
             counter++;
             //-- DropDownList Box
             DropDownList d = new DropDownList();
@@ -120,7 +124,8 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Submitbtn.Visible = false;
+            Button1.Visible = true;
             if (!IsPostBack)
             {
                 ItemsList1.DataSource = vm.getItems();
@@ -202,10 +207,12 @@ namespace LUSSIS.View.StoreView.Clerk
                         str = "txtValue" + i;
                         tb = (TextBox)PlaceHolder1.FindControl(str);
                         tb.Text = calValue(itemId, adjQty);
+                        Button1.Visible = false;
+                        Submitbtn.Visible = true;
                     }
                     else
                     {
-                        Response.Write("<script>alert('Please Enter Valid Data')</script>");
+                        Response.Write("<script>alert('Please Enter Numeric Data')</script>");
                     }
                 }
                 else
