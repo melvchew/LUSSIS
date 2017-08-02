@@ -372,25 +372,6 @@ namespace LUSSIS.RawCode.BLL
 
         }
 
-        //delete supplier
-        public void DeleteSupplier(string id)
-        {
-            try
-            {
-                using (context = new LUSSdb())
-                {
-                    Supplier supplier = context.Suppliers.Where(s => s.SupplierId == id).First<Supplier>();
-                    context.Suppliers.Remove(supplier);
-                    context.SaveChanges();
-                }
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-
-
         //upsate supplier
         public void UpdateSupplier(Supplier s)
         {

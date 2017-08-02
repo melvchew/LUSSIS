@@ -10,8 +10,8 @@ namespace LUSSIS.RawCode.BLL.data.ZhangJinshan
     {
         public void SendEmailsToClerk()
         {
-            int send_hour = 12;//hour of sending email
-            int send_minute = 29;//minute of sending email
+            int send_hour = 13;//hour of sending email
+            int send_minute = 4;//minute of sending email
             int now_Hour = Convert.ToInt32(DateTime.Now.Hour.ToString());//current hour
             int now_Minute = Convert.ToInt32(DateTime.Now.Minute.ToString());//current minute
 

@@ -42,7 +42,6 @@ namespace LUSSIS
         {
             Session["xlPath"] = ""; //Peter
             Session["Err"] = ""; //Peter
-            Session["Suppliers"] = new List<Supplier>();//Zhang Jinshan Add
             Session["AddItemlist"] = null; //HU XIAOXI
             Session["View"] = ""; //HU XIAOXI
 

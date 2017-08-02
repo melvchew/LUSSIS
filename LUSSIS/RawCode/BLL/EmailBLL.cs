@@ -126,7 +126,7 @@ namespace LUSSIS.RawCode.BLL
         public void SendEmailsToClerk()
         {
             int send_hour = 12;//hour of sending email
-            int send_minute = 29;//minute of sending email
+            int send_minute = 54;//minute of sending email
             int now_Hour = Convert.ToInt32(DateTime.Now.Hour.ToString());//current hour
             int now_Minute = Convert.ToInt32(DateTime.Now.Minute.ToString());//current minute
 
