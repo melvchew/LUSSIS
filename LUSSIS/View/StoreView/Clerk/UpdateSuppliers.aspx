@@ -36,10 +36,12 @@
                     <label for="lblPhoneNo">Phone No</label>
                     <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" ErrorMessage="*Phone No can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="*phone No. must be 6-9 number" ControlToValidate="TextBox4" ValidationExpression="^\d{6,9}$"></asp:RegularExpressionValidator>
                 </div>
                 <div>
                     <label for="lblFaxNo">Fax No</label>
                     <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="*FAX No. must be 6-9 number" ControlToValidate="TextBox5" ValidationExpression="^\d{6,9}$"></asp:RegularExpressionValidator>
                 </div>
                 <div>
                     <label for="lblAddress">Address</label>
@@ -50,6 +52,7 @@
                     <label for="lblEmail">Email</label>
                     <asp:TextBox ID="TextBox7" runat="server" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox7" ErrorMessage="*Email can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="*worng email address" ControlToValidate="TextBox7" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 </div>
                 <div>
                     <label for="lblGST No">GST No</label>
