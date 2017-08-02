@@ -5,21 +5,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body>
-<form id="frmAddReqItem" runat="server">
+<body class="container-fluid">
+<div class="row">
+        <div class="col-md-8 col-md-offset-2">
+                <form id="frmAddReqItem" runat="server">
     <div>
     
-        <asp:Label ID="lablAddReqItem" runat="server" Text="Add Requisition Items"></asp:Label>
-        <br /><br />
+
+        <h1 style="text-align: center">Add Requisition Items</h1>
+        <br />
     
     </div>
-        <asp:GridView ID="gvAddReqItems" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" >
+        <asp:GridView ID="gvAddReqItems" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-bordered" >
             <Columns>
                 <asp:TemplateField HeaderText="Item Name">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Description") %>'></asp:TextBox>
-                    
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
@@ -44,8 +48,10 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-        <asp:Button ID="btdAddItem" runat="server" Text="Add Items" OnClick="btdAddItem_Click" />
-        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+        <asp:Button ID="btdAddItem" runat="server" Text="Add Items" OnClick="btdAddItem_Click" CssClass="btn btn-success pull-right" />
+        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="btn btn-danger col-lg-offset-10" />
     </form>
+        </div>
+    </div>
 </body>
 </html>

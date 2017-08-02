@@ -14,6 +14,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h3>Suppliers List</h3>
+                <asp:Label ID="Label9" runat="server" Visible="False" ForeColor="#FF6600"></asp:Label>
             </div>
         </div>
 
@@ -110,7 +111,7 @@
 
         <div class="row">
             <div class="col-lg-1 col-lg-offset-9">
-                <asp:Button ID="Button2" runat="server" Text="Delete" CssClass="btn btn-danger col-lg-12" OnClientClick="return confirm('Delete Now?');" OnClick="Button2_Click" />
+                <asp:Button ID="Button2" runat="server" Text="Delete" CssClass="btn btn-danger col-lg-12" OnClientClick="JavaScript:return confirm('Delete Now？')" OnClick="Button2_Click" />
             </div>
             <div class="col-lg-1">
                 <asp:Button ID="Button3" runat="server" Text="Edit" CssClass="btn btn-warning col-lg-12" OnClick="Button3_Click" />

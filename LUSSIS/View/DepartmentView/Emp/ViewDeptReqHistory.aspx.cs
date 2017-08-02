@@ -21,8 +21,9 @@ namespace LUSSIS.View.DepartmentView.Emp
             {
                 using (context = new LUSSdb())
                 {
-                    int deptid = 1; //Need connect to login info
-                    Department dept = context.Departments.Where(d => d.DeptId == deptid).ToList().First();
+                    int empid = Convert.ToInt32(Session["empId"]);
+                    Employee emp = context.Employees.Where(em => em.EmpId == empid).First();
+                    Department dept = context.Departments.Where(d => d.DeptId == emp.DeptId).ToList().First();
                     this.BindGrid(dept);
                 }
             }
@@ -78,8 +79,10 @@ namespace LUSSIS.View.DepartmentView.Emp
             using (context = new LUSSdb())
             {
                 gvDeptReq.PageIndex = e.NewPageIndex;
-                int deptid = 1;
-                Department dept = context.Departments.Where(d => d.DeptId == deptid).ToList().First();
+
+                int empid = Convert.ToInt32(Session["empId"]);
+                Employee emp = context.Employees.Where(em => em.EmpId == empid).First();
+                Department dept = context.Departments.Where(d => d.DeptId == emp.DeptId).ToList().First();
 
 
                 string empname = droplistEmp.SelectedItem.Text;
@@ -111,12 +114,18 @@ namespace LUSSIS.View.DepartmentView.Emp
                 }
                 else
                 {
-                    int deptid = 1; //Need connect to login info
-                    Department dept = context.Departments.Where(d => d.DeptId == deptid).ToList().First();
+                    int empid = Convert.ToInt32(Session["empId"]);
+                    Employee emp = context.Employees.Where(em => em.EmpId == empid).First();
+                    Department dept = context.Departments.Where(d => d.DeptId == emp.DeptId).ToList().First();
                     this.BindGrid(dept);
                 }
                 droplistEmp.Text = empname;
             }
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/DepartmentView/Home.aspx");
         }
     }
 }

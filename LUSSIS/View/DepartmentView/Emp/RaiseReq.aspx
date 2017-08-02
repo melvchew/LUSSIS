@@ -5,15 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body>
-<form id="frmRaiseReq" runat="server">
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form id="frmRaiseReq" runat="server">
 <div>
-    
-        <asp:Label ID="labl_NewReq" runat="server" Text="Raise New Requisition"></asp:Label>
+        <h1 style="text-align: center">Raise New Requisition</h1>
                         <br /><br />    
     </div>
-        <asp:GridView ID="gvNewReqItem" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" >
+        <asp:GridView ID="gvNewReqItem" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-bordered" >
             <Columns>
                 <asp:TemplateField HeaderText="Item Name">
                     <ItemTemplate>
@@ -59,15 +62,16 @@
                 </table>
             </EmptyDataTemplate>
         </asp:GridView>
-        <br />
-        <asp:Button ID="btnAddNewItem" runat="server" Text="Add Items" OnClick="btnAddNewItem_Click" />
-        <asp:Button ID="btnRemove" runat="server" Text="Remove Items" OnClick="btnRemove_Click" />
-        <p>
-            <asp:Label ID="lablComment" runat="server" Text="Comments: "></asp:Label>
-            <asp:TextBox ID="txtBoxComment" runat="server" Height="16px" Width="316px" TextMode="multiline" onkeyup="this.value = this.value.slice(0, 200)"></asp:TextBox>
-        </p>
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
-        <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+        <asp:Button ID="btnAddNewItem" runat="server" Text="Add Items" OnClick="btnAddNewItem_Click" CssClass="btn btn-success pull-left"/>
+        <asp:Button ID="btnRemove" runat="server" Text="Remove Items" OnClick="btnRemove_Click" CssClass="btn btn-warning col-md-offset-1" />
+        <h4><asp:Label ID="lablComment" runat="server" Text="Comments: "></asp:Label></h4>
+            <asp:TextBox ID="txtBoxComment" runat="server" Height="50px" Width="400px" TextMode="multiline" onkeyup="this.value = this.value.slice(0, 200)" ></asp:TextBox>
+<br />
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" CssClass="btn btn-success pull-right"/>
+        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="btn btn-danger col-md-offset-10" />
     </form>
+        </div>
+    </div>
+
 </body>
 </html>

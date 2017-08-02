@@ -22,15 +22,6 @@ namespace LUSSIS.View.DepartmentView.Emp {
         protected global::System.Web.UI.HtmlControls.HtmlForm frmRaiseReq;
         
         /// <summary>
-        /// labl_NewReq control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label labl_NewReq;
-        
-        /// <summary>
         /// gvNewReqItem control.
         /// </summary>
         /// <remarks>

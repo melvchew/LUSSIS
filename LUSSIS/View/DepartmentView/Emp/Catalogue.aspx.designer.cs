@@ -22,15 +22,6 @@ namespace LUSSIS.View.DepartmentView.Emp {
         protected global::System.Web.UI.HtmlControls.HtmlForm frmCatalogue;
         
         /// <summary>
-        /// lablItemCatalog control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lablItemCatalog;
-        
-        /// <summary>
         /// txtBoxSearchItem control.
         /// </summary>
         /// <remarks>
@@ -47,15 +38,6 @@ namespace LUSSIS.View.DepartmentView.Emp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearchItem;
-        
-        /// <summary>
-        /// lablCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lablCategory;
         
         /// <summary>
         /// droplistItemCategory control.

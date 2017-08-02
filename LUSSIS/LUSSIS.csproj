@@ -133,7 +133,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\ADLUSSIS.pubxml" />
     <None Include="Properties\PublishProfiles\Luss.pubxml" />
-    <None Include="Properties\PublishProfiles\LUSSIS.pubxml" />
+    <None Include="Properties\PublishProfiles\LUSSTest.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

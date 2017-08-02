@@ -5,12 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body>
-<form id="frmViewReqConfirm" runat="server">
-<div>
-    
-        <asp:Label ID="labl_ViewReq" runat="server" Text="Requisition Details"></asp:Label>
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form id="frmViewReqConfirm" runat="server">
+                <div>
+                    <h1 style="text-align: center">Requisition Details</h1>
         <br />
         <br />
         <asp:Literal ID="Lite_ReqStatus" runat="server"></asp:Literal>  
@@ -20,7 +23,7 @@
                 <asp:Literal ID="Lite_ReqDate" runat="server"></asp:Literal>  
         <br /> 
      
-        <asp:GridView ID="gvDisReqItem" runat="server" Width="454px" AutoGenerateColumns="False">
+        <asp:GridView ID="gvDisReqItem" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered">
             <Columns>
                 <asp:TemplateField HeaderText="Item Discription">
                     <ItemTemplate>
@@ -55,7 +58,9 @@
         </asp:GridView>
    
     </div>
-    <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" />
+    <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CssClass="btn btn-primary pull-right" />
     </form>
+        </div>
+    </div>
 </body>
 </html>

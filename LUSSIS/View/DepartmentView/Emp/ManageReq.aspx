@@ -5,13 +5,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body>
-<form id="frmManageReq" runat="server">
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form id="frmManageReq" runat="server">
 <div>
-    
-        <asp:Label ID="labl_ManageReq" runat="server" Text="Requisition Details"></asp:Label>
-        <br /><br />     
+    <h1 style="text-align: center">Requisition Details</h1> 
         <asp:Literal ID="Lite_ReqStatus" runat="server"></asp:Literal>
         <br />
         <asp:Literal ID="Lite_ReqId" runat="server"></asp:Literal>
@@ -25,7 +27,7 @@
             OnRowEditing="gvReqItem_RowEditing" 
             OnRowCancelingEdit="gvReqItem_RowCancelingEdit" 
             OnRowUpdating="gvReqItem_RowUpdating" EnableViewState="true" 
-            AllowPaging="true" OnPageIndexChanging="gvReqItem_PageIndexChanging">
+            AllowPaging="true" OnPageIndexChanging="gvReqItem_PageIndexChanging" CssClass="table table-bordered">
             <Columns>
 
 
@@ -72,17 +74,20 @@
             </EmptyDataTemplate>
         </asp:GridView>
 
-        <asp:Button ID="btn_Add" runat="server" Text="Add Items" OnClick="btn_Add_Click" />
+        <asp:Button ID="btn_Add" runat="server" Text="Add Items" OnClick="btn_Add_Click" CssClass="btn btn-success" />
 
         <asp:Button ID="btn_Remov" runat="server" Text="Remove Items" 
           OnClientClick="return confirm('Are you sure to remove the requisition items?')"  
-            OnClick="btn_Remov_Click" />
+            OnClick="btn_Remov_Click" CssClass="btn btn-warning" />
 
         <asp:Button ID="btn_CancelReq" runat="server" Text="Cancel Requisition" 
             OnClick="btn_CancelReq_Click" 
-            OnClientClick="return confirm('Are you sure to cancel the requisition?')"/>
+            OnClientClick="return confirm('Are you sure to cancel the requisition?')" CssClass="btn btn-danger"/>
         <br /><br />
-        <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" />
+        <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CssClass="btn btn-primary" />
     </form>
+        </div>
+    </div>
+
 </body>
 </html>

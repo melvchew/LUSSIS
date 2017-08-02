@@ -149,7 +149,7 @@ namespace LUSSIS.View
                         }
                     }
 
-                    Response.Redirect("~/Dept/home.aspx");
+                    Response.Redirect("~/View/DepartmentView/home.aspx");
                 }
                 else if (User.IsInRole("DeptActingHead"))
                 {
@@ -166,13 +166,13 @@ namespace LUSSIS.View
                                 {
                                     Roles.AddUserToRole(id.Name, "DeptEmp");
                                     Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
-                                    Response.Redirect("~/View/DepartmentView/Home.aspxx");
+                                    Response.Redirect("~/View/DepartmentView/Home.aspx");
                                     break;
                                 }
 
                             }
                             //keep Acting Head role if today's date is before or equals to end date
-                            Response.Redirect("~/Dept/ActingHead/home.aspx");
+                            Response.Redirect("~/View/DepartmentView/home.aspx");
                         }
                         //if another person has been delegated as Acting Head
                         else
@@ -199,7 +199,7 @@ namespace LUSSIS.View
 
                     Roles.AddUserToRole(id.Name, "DeptEmp");
                     Roles.RemoveUserFromRole(id.Name, "DeptRep");
-                    Response.Redirect("~/Dept/home.aspx");
+                    Response.Redirect("~/View/DepartmentView/home.aspx");
                 }
 
                 else if (User.IsInRole("DeptHead"))
