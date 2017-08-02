@@ -97,9 +97,9 @@
 
         <asp:Button ID="btn_CancelReq" runat="server" Text="Cancel Requisition" 
             OnClick="btn_CancelReq_Click" 
-            OnClientClick="return confirm('Are you sure to cancel the requisition?')" CssClass="btn btn-danger"/>
+            OnClientClick="return confirm('Are you sure to cancel the requisition?')" CssClass="btn btn-danger pull-right"/>
         <br /><br />
-        <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CssClass="btn btn-primary" />
+        <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CssClass="btn btn-primary pull-right" />
     </form>
         </div>
     </div>
