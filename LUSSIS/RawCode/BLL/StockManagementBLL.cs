@@ -69,6 +69,7 @@ namespace LUSSIS.RawCode.BLL
             return context.Items.Where(x => x.Description.Contains(value) || x.Category.Contains(value)).ToList<Item>();
         }
 
+       
 
         public List<String> getCategory()
         {
@@ -318,6 +319,12 @@ namespace LUSSIS.RawCode.BLL
             return check;
         }
 
+        public Supplier getSupplierbyID(string id)
+        {
+            context = new LUSSdb();
+            return context.Suppliers.Where(x => x.SupplierId == id).FirstOrDefault<Supplier>();
+        }
+
         //insert a new supplier
         public void InsertNewSupplier(string id, string name, string contactPerson, string phoneNo, string faxNo, string address, string email, string gstNo)
         {
@@ -385,21 +392,21 @@ namespace LUSSIS.RawCode.BLL
 
 
         //upsate supplier
-        public void UpdateSupplier(string id, string name, string contactPerson, string phoneNo, string faxNo, string address, string email, string gstNo)
+        public void UpdateSupplier(Supplier s)
         {
             try
             {
                 using (context = new LUSSdb())
                 {
 
-                    Supplier supplier = context.Suppliers.Where(s => s.SupplierId == id).First<Supplier>();
-                    supplier.CompanyName = name;
-                    supplier.ContactPerson = contactPerson;
-                    supplier.Phone = phoneNo;
-                    supplier.Fax = faxNo;
-                    supplier.Address = address;
-                    supplier.Email = email;
-                    supplier.GstNo = gstNo;
+                    Supplier supplier = context.Suppliers.Where(x => x.SupplierId == s.SupplierId).First<Supplier>();
+                    supplier.CompanyName = s.CompanyName;
+                    supplier.ContactPerson = s.ContactPerson;
+                    supplier.Phone = s.Phone;
+                    supplier.Fax = s.Fax;
+                    supplier.Address = s.Address;
+                    supplier.Email = s.Email;
+                    supplier.GstNo = s.GstNo;
                     context.SaveChanges();
                 }
             }
