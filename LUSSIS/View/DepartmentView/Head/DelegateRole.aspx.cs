@@ -32,7 +32,7 @@ namespace LUSSIS.View.DepartmentView.Head
 
 
 
-                if (b.getCurrentActingHead(1) != null)
+                if (b.getCurrentActingHead(depid) != null)
                 {
                     Employee currentActingHead = b.getCurrentActingHead(depid);//ID depends on login user
                     lblCurrentActingHead.Text = currentActingHead.Name.ToString();
@@ -42,7 +42,7 @@ namespace LUSSIS.View.DepartmentView.Head
                 {
                     lblCurrentActingHead.Text = "There is no Department Acting Head.";
                 }
-                if (b.getCurrentDeptRep(1) != null)
+                if (b.getCurrentDeptRep(depid) != null)
                 {
                     Employee currentDeptRep = b.getCurrentDeptRep(depid);//ID depends on login user
                     lblCurrentDeptRep.Text = currentDeptRep.Name.ToString();
