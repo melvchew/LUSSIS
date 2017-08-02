@@ -135,10 +135,11 @@ namespace LUSSIS.RawCode.BLL
         public void CheckExistingAH()
         {
             List<Department> LDept = context.Departments.ToList<Department>();
+            DateTime today = DateTime.Today;
             foreach (Department dept in LDept)
             {
-                DateTime today = DateTime.Today;
-                if (dept.AHEndDate != null)
+                
+                if (dept.ActingHead != null)
                 {
                     if (DateTime.Compare((DateTime)dept.AHEndDate, today) < 0)
                     {
