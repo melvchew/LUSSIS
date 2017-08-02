@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using LUSSIS.RawCode.DAL;
 using LUSSIS.RawCode.BLL;
 
-
 namespace LUSSIS.View.DepartmentView.Head
 {
     public partial class ViewPendingReq : System.Web.UI.Page
@@ -16,10 +15,9 @@ namespace LUSSIS.View.DepartmentView.Head
         EmailBLL eBLL = new EmailBLL();
         RequisitionBLL rBLL = new RequisitionBLL();
         StockManagementBLL sBLL = new StockManagementBLL();
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label_PageTitle.Text = "Pending Requisitions";
+            //Label_PageTitle.Text = "Pending Requisitions";
 
             try
             {
@@ -52,7 +50,7 @@ namespace LUSSIS.View.DepartmentView.Head
         {
             //Direct to pendingdetail page including the ReqID selected
             String value = GridView_VPR.Rows[GridView_VPR.SelectedIndex].Cells[0].Text;
-            Response.Redirect("PendingRequisition.aspx?ReqId=" + value); //pass the value to the next page.
+            Response.Redirect("ViewPendingReqDetails.aspx?ReqId=" + value); //pass the value to the next page.
 
         }
 
@@ -60,7 +58,7 @@ namespace LUSSIS.View.DepartmentView.Head
         {
             //Direct to pendingdetail page including the ReqID selected
             String value = GridView_VPR.Rows[GridView_VPR.SelectedIndex].Cells[0].Text;
-            Response.Redirect("PendingRequisition.aspx?ReqId=" + value); //pass the value to the next page.
+            Response.Redirect("ViewPendingReqDetails.aspx?ReqId=" + value); //pass the value to the next page.
 
         }
     }

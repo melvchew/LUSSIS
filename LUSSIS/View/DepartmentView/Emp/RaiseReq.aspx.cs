@@ -68,7 +68,6 @@ namespace LUSSIS.View.DepartmentView.Emp
                     Response.Write(" <script language=JavaScript> alert('Need to add at least one item!!!!'); </script>");
                 }
                 Session["AddItemlist"] = null;
-
             }
         }
 
@@ -126,6 +125,12 @@ namespace LUSSIS.View.DepartmentView.Emp
                 litems = (List<Item>)Session["AddItemlist"];
                 this.BindGrid(litems);
             }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Session["AddItemlist"] = null;
+            Response.Redirect("~/View/DepartmentView/Home.aspx");
         }
     }
 }

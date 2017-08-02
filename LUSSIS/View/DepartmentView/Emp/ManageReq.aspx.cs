@@ -34,7 +34,7 @@ namespace LUSSIS.View.DepartmentView.Emp
 
                 Lite_ReqStatus.Text = "Requisition Status: " + req.Status;
                 Lite_ReqId.Text = "Requisition ID: " + req.ReqId;
-                Lite_ReqDate.Text = "Requisition Date: " + String.Format("{0:F}", req.SubmitDate.ToString());
+                Lite_ReqDate.Text = "Requisition Date: " + String.Format("{0:D}", req.SubmitDate);
 
                 List<RequisitionItem> lreqItems = rs.GetReqItems(req);
 
@@ -52,7 +52,7 @@ namespace LUSSIS.View.DepartmentView.Emp
                 rs.CancelReq(context.Requisitions.Where(r => r.ReqId == rid).ToList().First());
                 Response.Write(" <script language=JavaScript> alert('Cancelled successful!'); </script>");
             }
-            this.BindGrid();
+            Response.Redirect("ViewReq.aspx?rid=" + rid);
         }
 
         protected void btn_Remov_Click(object sender, EventArgs e)
@@ -126,6 +126,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             gvReqItem.EditIndex = -1;
             this.BindGrid();
         }
+
         protected void gvReqItem_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvReqItem.EditIndex = -1;

@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AD_Web {
+namespace LUSSIS.View.StoreView {
     
     
-    public partial class AdjustmentVoucherDetailBelow250 {
+    public partial class Home {
         
         /// <summary>
         /// form1 control.
@@ -22,57 +22,66 @@ namespace AD_Web {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblrequestID control.
+        /// litEmpId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblrequestID;
+        protected global::System.Web.UI.WebControls.Literal litEmpId;
         
         /// <summary>
-        /// lbldate control.
+        /// HyperLink1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbldate;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
         
         /// <summary>
-        /// gvItemList control.
+        /// HyperLink2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvItemList;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
         
         /// <summary>
-        /// txtcomment control.
+        /// HyperLink3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcomment;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
         
         /// <summary>
-        /// btnApprove control.
+        /// HyperLink4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnApprove;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
         
         /// <summary>
-        /// btnReject control.
+        /// HyperLink5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReject;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink5;
+        
+        /// <summary>
+        /// HyperLink6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink6;
     }
 }

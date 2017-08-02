@@ -38,6 +38,7 @@
                     </div>
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtStockBalance" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtStockBalance" ErrorMessage="Stock Balance is Required"></asp:RequiredFieldValidator>
                         <asp:RangeValidator ID="RangeValidator7" runat="server" ControlToValidate="txtStockBalance" ErrorMessage="Stock Balance must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator>
                     </div>
                     <div class="col-sm-4">
@@ -45,6 +46,7 @@
                     </div>
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtReorderLvl" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtReorderLvl" ErrorMessage="Reorder Level is Required"></asp:RequiredFieldValidator>
                         <asp:RangeValidator ID="RangeValidator8" runat="server" ControlToValidate="txtReorderLvl" ErrorMessage="Reorder Level must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator>
                     </div>
                      <div class="col-sm-4">
@@ -52,7 +54,8 @@
                     </div>
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtReorderQty" CssClass="form-control" runat="server"></asp:TextBox>
-                        <asp:RangeValidator ID="RangeValidator9" runat="server" ControlToValidate="txtReorderQty" ErrorMessage="Reorder Qty must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtReorderQty" ErrorMessage="Reorder Quantity is Required"></asp:RequiredFieldValidator>
+                        <asp:RangeValidator ID="RangeValidator9" runat="server" ControlToValidate="txtReorderQty" ErrorMessage="Reorder Quantity must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator>
                     </div>
                      <div class="col-sm-4">
                         <p>Unit of Measure</p>
@@ -78,6 +81,7 @@
                     </div>
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtSupplier1Price" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtSupplier1Price" ErrorMessage="Supplier #1 Price is Required"></asp:RequiredFieldValidator>
                         <asp:RangeValidator ID="RangeValidator10" runat="server" ControlToValidate="txtSupplier1Price" ErrorMessage="Supplier Price must be Numberic" MaximumValue="99999.99" MinimumValue="0.00"></asp:RangeValidator>
                     </div>
                     <div class="col-sm-4">
@@ -91,6 +95,7 @@
                     </div>
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtSupplier2Price" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtSupplier2Price" ErrorMessage="Supplier #2 Price is Required"></asp:RequiredFieldValidator>
                         <asp:RangeValidator ID="RangeValidator11" CssClass="form-control" runat="server" ControlToValidate="txtSupplier2Price" ErrorMessage="Supplier Price must be Numberic" MaximumValue="99999.99" MinimumValue="0.00"></asp:RangeValidator>
                     </div>
                     <div class="col-sm-4">
@@ -104,6 +109,7 @@
                     </div>
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtSupplier3Price" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtSupplier3Price" ErrorMessage="Supplier #3 Price is Required"></asp:RequiredFieldValidator>
                         <asp:RangeValidator ID="RangeValidator12" runat="server" ControlToValidate="txtSupplier3Price" ErrorMessage="Supplier Price must be Numberic" MaximumValue="99999.00" MinimumValue="0.00"></asp:RangeValidator>
                     </div>
                     <div class="col-sm-4">

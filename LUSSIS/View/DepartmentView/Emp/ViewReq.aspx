@@ -5,11 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 <form id="frmViewReq" runat="server">
 <div>
-    
+
         <asp:Label ID="labl_ViewReq" runat="server" Text="Requisition Details"></asp:Label>
         <br />
         <br />

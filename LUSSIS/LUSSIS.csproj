@@ -131,6 +131,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\ADLUSSIS.pubxml" />
+    <None Include="Properties\PublishProfiles\Luss.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -155,7 +157,9 @@
       <DependentUpon>LussModel.edmx</DependentUpon>
       <LastGenOutput>LussModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Store\UploadExcel.aspx" />
+    <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
+    <Content Include="View\DepartmentView\Home.aspx" />
+    <Content Include="View\StoreView\Clerk\UploadExcel.aspx" />
     <Content Include="View\AccessDenied.aspx" />
     <Content Include="View\createuser.aspx" />
     <Content Include="View\DepartmentView\Emp\AddReqItem.aspx" />
@@ -168,7 +172,6 @@
     <Content Include="View\DepartmentView\Emp\ViewReqConfirm.aspx" />
     <Content Include="View\DepartmentView\Emp\ViewUserReqHistory.aspx" />
     <Content Include="View\DepartmentView\Head\ManageCollectionPoint.aspx" />
-    <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="View\DepartmentView\Head\DelegateRole.aspx" />
     <Content Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx" />
     <Content Include="View\DepartmentView\Rep\ChangeCollectionPoint.aspx" />
@@ -186,6 +189,7 @@
     <Content Include="View\StoreView\Clerk\TrendAnalysis.aspx" />
     <Content Include="View\StoreView\Clerk\UpdateProduct.aspx" />
     <Content Include="View\StoreView\Clerk\ViewAllReq.aspx" />
+    <Content Include="View\StoreView\Home.aspx" />
     <Content Include="View\StoreView\Manager\AdjVoucher.aspx" />
     <Content Include="View\StoreView\Manager\AdjVoucherDetail.aspx" />
     <Content Include="View\StoreView\Supervisor\AdjVoucherBelow250.aspx" />
@@ -309,11 +313,25 @@
     </Compile>
     <Compile Include="RawCode\Generics\enums.cs" />
     <Compile Include="RawCode\Generics\ViewModel.cs" />
-    <Compile Include="Store\UploadExcel.aspx.cs">
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.designer.cs">
+      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DepartmentView\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DepartmentView\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Store\UploadExcel.aspx.designer.cs">
+    <Compile Include="View\StoreView\Clerk\UploadExcel.aspx.designer.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>
     </Compile>
     <Compile Include="test\razz.cs" />
@@ -400,13 +418,6 @@
     </Compile>
     <Compile Include="View\DepartmentView\Head\ManageCollectionPoint.aspx.designer.cs">
       <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.cs">
-      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.designer.cs">
-      <DependentUpon>ViewPendingReq.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\DepartmentView\Head\ViewPendingReqDetails.aspx.cs">
       <DependentUpon>ViewPendingReqDetails.aspx</DependentUpon>
@@ -526,6 +537,13 @@
     </Compile>
     <Compile Include="View\StoreView\Clerk\ViewAllReq.aspx.designer.cs">
       <DependentUpon>ViewAllReq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Manager\AdjVoucher.aspx.cs">
       <DependentUpon>AdjVoucher.aspx</DependentUpon>
