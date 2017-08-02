@@ -1,19 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inventory Status Report.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.Inventory_Status_Report" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterStore.Master" CodeBehind="Inventory Status Report.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.Inventory_Status_Report" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../../../Content/bootstrap.min.css" />
+    <script src="../../../Scripts/bootstrap.min.js"></script>
+    <script src="../../../Scripts/jquery-1.9.1.min.js"></script>
+    <link href="../../../Style/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
-    <title></title>
-</head>
-<body class="container-fluid">
-    <form id="form1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container" style="margin-top: 50px; margin-bottom: 20px">
         <div class="container-fluid">
             <h3 style="text-align: center">Inventory Status Report</h3>
         </div>
-        <div class="row" style="margin-bottom: 1em">
+        <div class="row">
             <div class="col-lg-6 col-lg-offset-1">
                 <div class="input-group">
                     <asp:Button ID="Button1" runat="server" Text="Low Stock Items" OnClick="Button1_Click" CssClass="pull-right btn btn-default" />
@@ -71,9 +72,9 @@
                     <PagerStyle Font-Size="Larger" Font-Underline="True" HorizontalAlign="Center" VerticalAlign="Middle" />
 
                 </asp:GridView>
-              
+
             </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+
+</asp:Content>
