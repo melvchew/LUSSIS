@@ -44,7 +44,6 @@ namespace LUSSIS
             Session["Err"] = ""; //Peter
             Session["AddItemlist"] = null; //HU XIAOXI
             Session["View"] = ""; //HU XIAOXI
-
             Session["empId"] = null; //Phong
             Session["storeEmpId"] = null; //Phong
         }
