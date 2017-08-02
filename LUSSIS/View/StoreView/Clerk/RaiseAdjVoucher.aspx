@@ -6,19 +6,12 @@
 
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="../../../content/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="../../../content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/content/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="~/content/bootstrap.min.css" />
 </head>
 
 <body>
     <form id="form1" runat="server">
-
-        <!-- <span class="label label-default">Default</span>
-<span class="label label-primary">Primary</span>
-<span class="label label-success">Success</span>
-<span class="label label-info">Info</span>
-<span class="label label-danger">Danger</span>
-        -->
 
         <asp:PlaceHolder ID="PlaceHolder1" runat="server">
             <div class="container-fluid">
@@ -45,7 +38,7 @@
                     <div class="col-md-3">
                         <asp:DropDownList ID="ItemsList1" Width="250" CssClass="btn btn-default dropdown-toggle" runat="server"></asp:DropDownList></div>
                     <div class="col-md-2">
-                        <asp:TextBox ID="txtQtyAdj1" CssClass="form-control" runat="server" AutoPostBack="True" Width="100px"></asp:TextBox></div>
+                        <asp:TextBox ID="txtQtyAdj1" CssClass="form-control qntyAdj" runat="server" AutoPostBack="True" Width="100px"></asp:TextBox></div>
                     <div class="col-md-3">
                         <asp:TextBox ID="txtReasons1" CssClass="form-control" runat="server" Width="300px"></asp:TextBox></div>
                     <div class="col-md-3">
@@ -71,11 +64,42 @@
         <br />
         <div class="col-md-9"></div>
         <div class="col-md-3">
-            <asp:Button ID="Button1" runat="server" Class="btn btn-default" OnClick="Button1_Click" Text="Calc" />
+            <asp:Button ID="Button1" runat="server" Class="btn btn-default" style="display:none" OnClick="Button1_Click" Text="Calc" />
+            <button ID="calculatebtn" runat="server" class="btn btn-default">Calc</button>
             <asp:Button ID="Submitbtn" runat="server" Class="btn btn-default" Text="Submit" OnClick="Submitbtn_Click" />
-            <asp:Button ID="Cancelbtn" runat="server" Class="btn btn-default" Text="Cancel" />
         </div>
         <asp:Label ID="Label2" runat="server"></asp:Label>
     </form>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+
+            $('.qntyAdj').keydown(function (event) {
+                return (((event.which > 47) && (event.which < 58)) || (event.which == 13) || (event.keyCode == 8) || (event.keyCode >= 96 && event.keyCode <= 105));
+            });
+
+            $("#calculatebtn").click(function (e) {
+                var errCount = 0;
+                e.preventDefault();
+                $(".qntyAdj").each(function () {
+                    if ($(this).val() === "" || isNaN($(this).val())) {
+                        errCount = errCount + 1;
+                    }
+                });
+                
+
+                if (errCount > 0) {
+                    alert("Please fill all the box");
+                }
+                if (errCount == 0) {
+                    $("#Button1").click();
+                    $("#Submitbtn").css("display", "block");
+                }
+
+            });
+        });
+    </script>
 </body>
 </html>

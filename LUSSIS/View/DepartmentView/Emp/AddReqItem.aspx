@@ -19,7 +19,7 @@
         <br />
     
     </div>
-        <asp:GridView ID="gvAddReqItems" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-striped" >
+        <asp:GridView ID="gvAddReqItems" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-bordered" >
             <Columns>
                 <asp:TemplateField HeaderText="Item Name">
                     <EditItemTemplate>
@@ -49,7 +49,7 @@
             </Columns>
         </asp:GridView>
         <asp:Button ID="btdAddItem" runat="server" Text="Add Items" OnClick="btdAddItem_Click" CssClass="btn btn-success pull-right" />
-        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="btn btn-danger col-lg-offset-10" />
+        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="btn btn-danger pull-left" />
     </form>
         </div>
     </div>

@@ -17,7 +17,7 @@ namespace LUSSIS.View
 
             if (User.Identity.IsAuthenticated) // if the user is already logged in
             {
-                Response.Redirect("~/AccessDenied.aspx");
+                Response.Redirect("~/View/AccessDenied.aspx");
             }
         }
 

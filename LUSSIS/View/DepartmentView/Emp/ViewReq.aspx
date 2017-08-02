@@ -7,13 +7,28 @@
     <title></title>
     <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body>
-<form id="frmViewReq" runat="server">
-<div>
 
-        <asp:Label ID="labl_ViewReq" runat="server" Text="Requisition Details"></asp:Label>
-        <br />
+    <style type="text/css">
+#t01 {
+     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+     width:100%;
+     border-collapse:collapse;
+}
+#t01 td,th{
+      font-size:1em;
+      border:1px solid #808080;
+      padding:3px 7px 2px 7px;
+}
+#t01 td{color:lightgray;}
+</style>
+
+</head>
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form id="frmViewReq" runat="server">
+<div>
+    <h1 style="text-align: center">Requisition Details</h1>
         <br />
         <asp:Literal ID="Lite_ReqStatus" runat="server"></asp:Literal>  
         <br />  
@@ -22,7 +37,7 @@
                 <asp:Literal ID="Lite_ReqDate" runat="server"></asp:Literal>  
         <br /> 
 
-        <asp:GridView ID="gvDisReqItem" runat="server" Width="454px" AutoGenerateColumns="False">
+        <asp:GridView ID="gvDisReqItem" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered">
             <Columns>
                 <asp:TemplateField HeaderText="Item Discription">
                     <ItemTemplate>
@@ -57,7 +72,10 @@
         </asp:GridView>
    
     </div>
-        <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" />
+        <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CssClass="btn btn-primary pull-right"/>
     </form>
+        </div>
+    </div>
+
 </body>
 </html>

@@ -7,6 +7,21 @@
     <title></title>
     <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <style type="text/css">
+#t01 {
+     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+     width:100%;
+     border-collapse:collapse;
+}
+#t01 td,th{
+      font-size:1em;
+      border:1px solid #808080;
+      padding:3px 7px 2px 7px;
+}
+#t01 td{color:lightgray;}
+</style>
+
 </head>
 <body class="container-fluid">
     <div class="row">
@@ -27,7 +42,7 @@
             OnRowEditing="gvReqItem_RowEditing" 
             OnRowCancelingEdit="gvReqItem_RowCancelingEdit" 
             OnRowUpdating="gvReqItem_RowUpdating" EnableViewState="true" 
-            AllowPaging="true" OnPageIndexChanging="gvReqItem_PageIndexChanging" CssClass="table table-striped">
+            AllowPaging="true" OnPageIndexChanging="gvReqItem_PageIndexChanging" CssClass="table table-bordered">
             <Columns>
 
 
@@ -82,9 +97,9 @@
 
         <asp:Button ID="btn_CancelReq" runat="server" Text="Cancel Requisition" 
             OnClick="btn_CancelReq_Click" 
-            OnClientClick="return confirm('Are you sure to cancel the requisition?')" CssClass="btn btn-danger"/>
+            OnClientClick="return confirm('Are you sure to cancel the requisition?')" CssClass="btn btn-danger pull-right"/>
         <br /><br />
-        <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CssClass="btn btn-primary" />
+        <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" CssClass="btn btn-primary pull-right" />
     </form>
         </div>
     </div>

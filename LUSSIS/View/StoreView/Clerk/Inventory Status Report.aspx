@@ -14,17 +14,14 @@
             <h3 style="text-align: center">Inventory Status Report</h3>
         </div>
         <div class="row" style="margin-bottom: 1em">
-            <div class="col-lg-7 col-lg-offset-7">
+            <div class="col-lg-6 col-lg-offset-1">
                 <div class="input-group">
-                    <span >
-                        <asp:Label ID="Label7" runat="server" Visible="False" Cssclass="form-control-static" ForeColor="Lime"></asp:Label>
-                    </span>
                     <asp:Button ID="Button1" runat="server" Text="Low Stock Items" OnClick="Button1_Click" CssClass="pull-right btn btn-default" />
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-10 col-lg-offset-1">
                 <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center" AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" AllowSorting="True" AllowPaging="True" CssClass="table table-hover table-bordered">
                     <Columns>
                         <asp:TemplateField HeaderText="Description">

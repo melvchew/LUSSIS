@@ -19,8 +19,11 @@ namespace LUSSIS.View.DepartmentView.Head
         
         Requisition req;
         Employee emp;
+
+
         //Employee boss;
-        int bossid;
+        Employee boss;
+        //int bossid;
         //Department dept;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,7 +31,8 @@ namespace LUSSIS.View.DepartmentView.Head
 
 
             //Get Employee Object of boss
-            bossid = 1;
+            //bossid = 1;
+            boss = rmBLL.GetEmpByID(Convert.ToInt32(Session["empId"]));
             //get user ID from session
 
             //Create Requisition object with ID pass from previous page
@@ -59,13 +63,13 @@ namespace LUSSIS.View.DepartmentView.Head
             //Get comments
             req.ApproverComments = TextBox_HeadComment.Text;
             //Approve requisition
-            rBLL.ApproveReq(req, bossid);
+            rBLL.ApproveReq(req, boss.EmpId);
 
             //Send Notification
             eBLL.SendRequisitionStatusUpdate(emp, req);
 
             //Direct to ViewPendingRequisition
-            Response.Redirect("ViewPendingRequisition.aspx");
+            Response.Redirect("ViewPendingReq.aspx");
 
         }
 
@@ -74,13 +78,13 @@ namespace LUSSIS.View.DepartmentView.Head
             //Get Comments
             req.ApproverComments = TextBox_HeadComment.Text;
             //Reject requisition
-            rBLL.RejectReq(req, bossid);
+            rBLL.RejectReq(req, boss.EmpId);
 
             //Send Notification
             eBLL.SendRequisitionStatusUpdate(emp, req);
 
             //Direct to ViewPendingRequisition
-            Response.Redirect("ViewPendingRequisition.aspx");
+            Response.Redirect("ViewPendingReq.aspx");
 
         }
     }

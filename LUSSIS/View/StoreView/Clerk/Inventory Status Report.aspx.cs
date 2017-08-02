@@ -68,7 +68,6 @@ namespace LUSSIS.View.StoreView.Clerk
             l1= report.GetLowStock();
             if (l1.Count != 0)
             {
-                Label7.Visible = false;
                 GridView1.DataSource = l1;
                 GridView1.DataBind();
                 for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
@@ -78,8 +77,7 @@ namespace LUSSIS.View.StoreView.Clerk
             }
             else
             {
-                Label7.Visible = true;
-                Label7.Text = "There is no Low Stock Item";
+                HttpContext.Current.Response.Write("<script>alert('There is no Low Stock Item')</script>");
                 
             }
            

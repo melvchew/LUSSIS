@@ -21,7 +21,7 @@
                      Department Representative
                 </div>
                 <div class="col-sm-9">
-                    <asp:DropDownList ID="ddDeptRepre" CssClass="form-control" runat="server" Width="300px"></asp:DropDownList><br />
+                    <asp:DropDownList ID="ddDeptRepre" CssClass="form-control" runat="server" Width="300px"></asp:DropDownList><br /><br />
                 </div>
                 <div class="col-sm-3">
                      Current Acting Head

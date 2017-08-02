@@ -1,101 +1,95 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateSuppliers.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.UpdateSuppliers" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterStore.Master" CodeBehind="UpdateSuppliers.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.UpdateSuppliers" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../../../Content/bootstrap.min.css" />
+    <script src="../../../Scripts/bootstrap.min.js"></script>
+    <script src="../../../Scripts/jquery-1.9.1.min.js"></script>
+    <link href="../../../Style/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
-    <title></title>
-</head>
-<body class="container-fluid">
-    <form id="form1" runat="server">
-        <div class="container-fluid">
-            <h3 style="text-align: center">Edit Suppliers List</h3>
-        </div>
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container" style="margin-top: 50px; margin-bottom: 20px;">
         <div class="row">
-            <div class="col-lg-12">
-                <asp:GridView ID="GridView1" runat="server" Width="100%" AutoGenerateColumns="False" AllowPaging="True" PageSize="12"
-                    OnRowEditing="OnRowEditing" OnRowCancelingEdit="OnRowCancelingEdit" OnRowUpdating="OnRowUpdating" CssClass="table table-hover table-bordered">
-                    <Columns>
-                        <asp:TemplateField HeaderText="SupplierId">
-                            <EditItemTemplate>
-                                <asp:Label ID="Label8" runat="server" Text='<%# Eval("SupplierId") %>'></asp:Label>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label8" runat="server" Text='<%# Bind("SupplierId") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Company Name">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="Textbox7" runat="server" Text='<%# Eval("CompanyName") %>'></asp:TextBox>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label7" runat="server" Text='<%# Bind("CompanyName") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Contact Person">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="Textbox6" runat="server" Text='<%# Eval("ContactPerson") %>'></asp:TextBox>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label6" runat="server" Text='<%# Bind("ContactPerson") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Phone No">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="Textbox5" runat="server" Text='<%# Eval("Phone") %>'></asp:TextBox>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label5" runat="server" Text='<%# Bind("Phone") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Fax No">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="Textbox4" runat="server" Text='<%# Eval("Fax") %>'></asp:TextBox>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("Fax") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Address">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="Textbox3" runat="server" TextMode="MultiLine" Text='<%# Eval("Address") %>'></asp:TextBox>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("Address") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Email">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="Textbox2" runat="server" Text='<%# Eval("Email") %>'></asp:TextBox>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("Email") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Gst No ">
-                            <EditItemTemplate>
-                                <asp:TextBox ID="Textbox1" runat="server" Text='<%# Eval("GstNo") %>'></asp:TextBox>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("GstNo") %>'></asp:Label>
-                            </ItemTemplate>
-                        </asp:TemplateField>
+            <div class="col-lg-12" style="text-align: center">
+                <h3>Add New Supplier</h3>
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
 
-                        <asp:TemplateField ShowHeader="False">
-                            <EditItemTemplate>
-                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
-                                &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
-                            </EditItemTemplate>
-                            <ItemTemplate>
-                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>
+                    <div class="col-sm-4">
+                        <label for="lblSupplierId">SupplierID</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*Company Name can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="*SupplierID must be captial letter" ControlToValidate="TextBox1" ValidationExpression="^[A-Z]+$"></asp:RegularExpressionValidator>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="lblCompanyName">Company Name</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*Company Name can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="lblContactPerson">Contact Person</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="lblPhoneNo">Phone No</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="TextBox4" TextMode="Number" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" ErrorMessage="*Phone No can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="*phone No. must be 6-9 number" ControlToValidate="TextBox4" ValidationExpression="^\d{6,9}$"></asp:RegularExpressionValidator>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="lblFaxNo">Fax No</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="TextBox5" TextMode="Number" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="*FAX No. must be 6-9 number" ControlToValidate="TextBox5" ValidationExpression="^\d{6,9}$"></asp:RegularExpressionValidator>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="lblAddress">Address</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox6" ErrorMessage="*Address can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="lblEmail">Email</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="TextBox7" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox7" ErrorMessage="*Email can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="*worng email address" ControlToValidate="TextBox7" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="lblGST No">GST No</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox8" ErrorMessage="*GSTNo can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                    </div>
+                </div>
             </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+        <div class="row" style="margin-bottom: 1em">
+            <div class="col-lg-6 col-lg-offset-2">
+                <div class="input-group">
+                    <asp:Button ID="Button2" runat="server" Text="Update" CssClass="btn btn-warning" OnClick="Button2_Click" />
+                    <span class="input-group-btn">
+                        <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_Click" CssClass="btn btn-danger" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    </asp:Content>
+   
