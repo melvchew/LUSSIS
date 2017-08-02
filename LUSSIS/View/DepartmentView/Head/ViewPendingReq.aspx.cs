@@ -17,15 +17,16 @@ namespace LUSSIS.View.DepartmentView.Head
         StockManagementBLL sBLL = new StockManagementBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Label_PageTitle.Text = "Pending Requisitions";
+            Label_PageTitle.Text = "Pending Requisitions";
 
             try
             {
                 //Get User Data from Session, Create User object
-                //Employee head = s.GetEmpByID(SessionParam)
+                
+                Employee head = rmBLL.GetEmpByID(Convert.ToInt32(Session["empId"]));
                 //Create Dept object using User object
-                //Department dept = s.GetDeptByUser(head);
-                Department dept = rmBLL.GetDeptByID(1); //hardcoded
+                Department dept = rmBLL.GetDeptByUser(head);
+                //Department dept = rmBLL.GetDeptByID(1); //hardcoded
                 //Department dept = s.GetDeptByID(Session.Param)
 
                 //Get List of employees
@@ -33,7 +34,10 @@ namespace LUSSIS.View.DepartmentView.Head
 
                 //Get Pending requisitions based on department
                 List<Requisition> Lreq = rBLL.GetPendingReqByDepartment(dept);
-
+                if(!Lreq.Any())
+                {
+                    Label_PageTitle.Text = "There are no Pending Requisitions";
+                }
                 //Bind Data from Lreq to Grid View
                 GridView_VPR.DataSource = Lreq.Select(o => new { ReqId = o.ReqId, SubmitDate = o.SubmitDate, Name = Lemp.FirstOrDefault(x => x.EmpId == o.EmpId).Name });
                 GridView_VPR.DataBind();
