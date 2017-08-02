@@ -22,7 +22,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <asp:GridView ID="gvDisReqItem" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered">
+                    <asp:GridView ID="gvDisReqItem" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped">
                         <Columns>
                             <asp:TemplateField HeaderText="Item Discription">
                                 <ItemTemplate>

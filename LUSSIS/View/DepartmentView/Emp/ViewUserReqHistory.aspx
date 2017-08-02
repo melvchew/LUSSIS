@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <asp:GridView ID="gvReqHistory" runat="server" AutoGenerateColumns="False" OnRowCommand="gvReqHistory_RowCommand"
-                        AllowPaging="True" OnPageIndexChanging="gvReqHistory_PageIndexChanging" CssClass="table table-bordered">
+                        AllowPaging="True" OnPageIndexChanging="gvReqHistory_PageIndexChanging" CssClass="table table-bordered table-striped">
                         <Columns>
                             <asp:BoundField HeaderText="Requisition ID" DataField="ReqId" />
 

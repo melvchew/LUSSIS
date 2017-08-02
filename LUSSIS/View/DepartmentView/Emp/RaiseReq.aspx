@@ -11,7 +11,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <asp:GridView ID="gvNewReqItem" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-bordered">
+                    <asp:GridView ID="gvNewReqItem" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-bordered table-striped">
                         <Columns>
                             <asp:TemplateField HeaderText="Item Name">
                                 <ItemTemplate>

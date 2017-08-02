@@ -11,7 +11,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <asp:GridView CssClass="table table-bordered" ID="GridView_VPR" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1">
+                    <asp:GridView CssClass="table table-bordered table-striped" ID="GridView_VPR" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1">
                         <Columns>
 
                             <asp:BoundField DataField="ReqId" HeaderText="Requisition ID" />

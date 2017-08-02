@@ -36,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <asp:GridView ID="GridView1" runat="server" CssClass="table-bordered table" Width="100%">
+                    <asp:GridView ID="GridView1" runat="server" CssClass="table-bordered table table-striped" Width="100%">
                     </asp:GridView>
                 </div>
             </div>
