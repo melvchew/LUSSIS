@@ -23,7 +23,7 @@
                 <asp:Literal ID="Lite_ReqDate" runat="server"></asp:Literal>  
         <br /> 
      
-        <asp:GridView ID="gvDisReqItem" runat="server" AutoGenerateColumns="False" CssClass="table table-striped">
+        <asp:GridView ID="gvDisReqItem" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered">
             <Columns>
                 <asp:TemplateField HeaderText="Item Discription">
                     <ItemTemplate>

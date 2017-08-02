@@ -69,7 +69,6 @@ namespace LUSSIS.View.DepartmentView.Emp
                     {
                         int itemId =
                             Convert.ToInt32(gvReqItem.DataKeys[row.RowIndex].Value);
-                        //Labl_Test.Text = itemId.ToString();
                         lreqItems.Add(context.RequisitionItems.Where(ri => ri.ReqId == rid && ri.ItemId == itemId).ToList().First());
                     }
                 }
@@ -77,7 +76,6 @@ namespace LUSSIS.View.DepartmentView.Emp
                 if (lreqItems.Count != 0)
                 {
                     rs.DeleteReqItems(lreqItems);
-                    //Labl_Test.Text = "del successfully!";
                 }
                 else
                 {

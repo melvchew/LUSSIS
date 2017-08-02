@@ -31,7 +31,7 @@
 
     </div>
         <asp:GridView ID="gvCatalog" runat="server" AutoGenerateColumns="False" 
-            AllowPaging="true" OnPageIndexChanging="gvCatalog_PageIndexChanging" DataKeyNames="ItemId" CssClass="table table-striped">
+            AllowPaging="true" OnPageIndexChanging="gvCatalog_PageIndexChanging" DataKeyNames="ItemId" CssClass="table table-bordered">
             <Columns>
                 <asp:TemplateField HeaderText="Item Name">
                     <EditItemTemplate>
