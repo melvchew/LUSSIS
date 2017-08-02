@@ -19,7 +19,7 @@
         <br />
     
     </div>
-        <asp:GridView ID="gvAddReqItems" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-striped" >
+        <asp:GridView ID="gvAddReqItems" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-bordered" >
             <Columns>
                 <asp:TemplateField HeaderText="Item Name">
                     <EditItemTemplate>
