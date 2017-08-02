@@ -29,11 +29,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover"></asp:GridView>
+                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered"></asp:GridView>
                 </div>
                 <div class="col-lg-1"></div>
             </div>
         </div>
+        <asp:Button ID="btnBack" runat="server" Text="Back to Home Page" OnClick="btnBack_Click" CssClass="btn btn-primary center-block" />
     </form>
 </body>
 </html>

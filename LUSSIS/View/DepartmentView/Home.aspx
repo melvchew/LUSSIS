@@ -1,6 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterStore.Master" CodeBehind="Home.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Home" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/jquery-1.9.1.js"></script>
+    <link href="../Style/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
 
-<!DOCTYPE html>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+</asp:Content>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

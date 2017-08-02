@@ -1,18 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateProduct.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.UpdateProduct" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterStore.Master" AutoEventWireup="true" CodeBehind="UpdateProduct.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.UpdateProduct" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../../../Content/bootstrap.min.css" />
+    <script src="../../../Scripts/bootstrap.min.js"></script>
+    <script src="../../../Scripts/jquery-1.9.1.min.js"></script>
+    <link href="../../../Style/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="container">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container" style="margin-top: 50px; margin-bottom:20px;">
             <div class="row">
                 <div class="col-sm-12" style="text-align: center">
                     <h2>Update Product</h2>
@@ -46,6 +44,7 @@
                             <asp:TextBox ID="txtStockBalance" CssClass="form-control" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtStockBalance" ErrorMessage="Stock Balance is Required"></asp:RequiredFieldValidator>
                             <asp:RangeValidator ID="RangeValidator7" runat="server" ControlToValidate="txtStockBalance" ErrorMessage="Stock Balance must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator>
+                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtStockBalance" ErrorMessage="Stock Balance is required."></asp:RequiredFieldValidator>
                         </div>
                         <div class="col-sm-4">
                             <p>Reorder Level</p>
@@ -54,6 +53,7 @@
                             <asp:TextBox ID="txtReorderLvl" CssClass="form-control" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtReorderLvl" ErrorMessage="Reorder Level is Required"></asp:RequiredFieldValidator>
                             <asp:RangeValidator ID="RangeValidator8" runat="server" ControlToValidate="txtReorderLvl" ErrorMessage="Reorder Level must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator>
+                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtReorderLvl" ErrorMessage="Reorder Level is required"></asp:RequiredFieldValidator>
                         </div>
                         <div class="col-sm-4">
                             <p>Reorder Quantity</p>
@@ -62,6 +62,7 @@
                             <asp:TextBox ID="txtReorderQty" CssClass="form-control" runat="server"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtReorderQty" ErrorMessage="Reorder Quantity is Required"></asp:RequiredFieldValidator>
                             <asp:RangeValidator ID="RangeValidator9" runat="server" ControlToValidate="txtReorderQty" ErrorMessage="Reorder Quantity must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator>
+                        &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtReorderQty" ErrorMessage="Reorder Quantity is required"></asp:RequiredFieldValidator>
                         </div>
                         <div class="col-sm-4">
                             <p>Unit of Measure</p>
@@ -128,7 +129,7 @@
                             <asp:Label ID="lblError" ForeColor="Red" runat="server"></asp:Label><br />
                         </div>
                         <div class="col-sm-12" style="text-align: right">
-                            <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="UPDATE" OnClick="Button1_Click" /></div>
+                            <asp:Button ID="Button1" CssClass="btn pull-right" runat="server" Text="UPDATE" OnClick="Button1_Click" /></div>
                     </div>
                 </div>
 
@@ -136,6 +137,6 @@
 
             </div>
         </div>
-    </form>
-</body>
-</html>
+    
+</asp:Content>
+
