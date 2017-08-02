@@ -21,13 +21,12 @@ namespace LUSSIS.View.DepartmentView.Emp
             {
                 List<Item> litems = (List<Item>)Session["AddItemlist"];
                 this.BindGrid(litems);
+                
             }
-
         }
 
         private void BindGrid(List<Item> litems)
         {
-
             using (context = new LUSSdb())
             {
                 gvNewReqItem.DataSource = litems;

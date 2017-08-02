@@ -58,20 +58,25 @@ namespace LUSSIS.View.DepartmentView.Emp
         {
             if (e.CommandName == "reqDetails")
             {
-                int index = Convert.ToInt32(e.CommandArgument);
+                using(context=new LUSSdb())
+                {
+                    int index = Convert.ToInt32(e.CommandArgument);
+                    int empid = Convert.ToInt32(Session["empId"]);
+                    Employee emp = context.Employees.Where(em => em.EmpId == empid).First();
 
-                String loginName = "Odelia Halm"; //need to connect to login!!!!
+                    String loginName = emp.Name;
 
-                GridViewRow row = gvDeptReq.Rows[index];
-                int ReqId = Int32.Parse(row.Cells[0].Text);
-                Session["View"] = "dept";
-                if (row.Cells[2].Text == "PENDING" && row.Cells[1].Text == loginName)
-                    Response.Redirect("ManageReq.aspx?rid=" + ReqId);
-                else if (row.Cells[2].Text == "CANCELLED" || (row.Cells[2].Text == "PENDING" && row.Cells[1].Text != loginName))
-                    Response.Redirect("ViewReq.aspx?rid=" + ReqId);
-                else
-                    Response.Redirect("ViewReqConfirm.aspx?rid=" + ReqId);
-            }
+                    GridViewRow row = gvDeptReq.Rows[index];
+                    int ReqId = Int32.Parse(row.Cells[0].Text);
+                    Session["View"] = "dept";
+                    if (row.Cells[2].Text == "PENDING" && row.Cells[1].Text == loginName)
+                        Response.Redirect("ManageReq.aspx?rid=" + ReqId);
+                    else if (row.Cells[2].Text == "CANCELLED" || (row.Cells[2].Text == "PENDING" && row.Cells[1].Text != loginName))
+                        Response.Redirect("ViewReq.aspx?rid=" + ReqId);
+                    else
+                        Response.Redirect("ViewReqConfirm.aspx?rid=" + ReqId);
+                }
+            }       
         }
 
         protected void gvDeptReq_PageIndexChanging(object sender, GridViewPageEventArgs e)

@@ -7,6 +7,21 @@
     <title></title>
     <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
+
+<style type="text/css">
+#t01 {
+     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+     width:100%;
+     border-collapse:collapse;
+}
+#t01 td,th{
+      font-size:1em;
+      border:1px solid #808080;
+      padding:3px 7px 2px 7px;
+}
+#t01 td{color:lightgray;}
+</style>
+
 </head>
 <body class="container-fluid">
     <div class="row">
