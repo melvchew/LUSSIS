@@ -83,7 +83,7 @@
     </div>
         <div class="row" style="margin-bottom: 1em">
             <div class="col-lg-6 col-lg-offset-2">
-                <div class="input-group">
+                <div class="input-group-btn">
                     <asp:Button ID="Button2" runat="server" Text="Update" CssClass="btn btn-warning" OnClick="Button2_Click" />
                     <span class="input-group-btn">
                         <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_Click" CssClass="btn btn-danger" />

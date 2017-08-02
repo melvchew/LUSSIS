@@ -7,9 +7,8 @@
     <link href="../../../Style/main.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
-
-
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="margin-top: 50px; margin-bottom: 20px;">
         <div class="row">
@@ -81,12 +80,15 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-1 col-lg-offset-1">
-            <asp:Button ID="Button1" runat="server" Text="Clear All" CssClass="btn pull-right" OnClick="Button1_Click" />
-        </div>
-        <div class="col-lg-1">
-            <asp:Button ID="Button2" runat="server" Text="Add" CssClass="btn pull-right" OnClick="Button2_Click" />
+    <div class="row" style="margin-bottom: 1em">
+        <div class="col-lg-12">
+            <div class="col-sm-3">
+                <asp:Button ID="Button1" runat="server" Text="Clear All" CssClass="btn pull-right" OnClick="Button1_Click" />
+            </div>
+            <div class="col-sm-4">
+                <asp:Button ID="Button2" runat="server" Text="Add" CssClass="btn pull-right" OnClick="Button2_Click" />
+            </div>
+
         </div>
     </div>
 </asp:Content>
