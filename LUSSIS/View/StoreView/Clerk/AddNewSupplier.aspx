@@ -35,7 +35,7 @@
                 </div>
                 <div>
                     <label for="lblPhoneNo">Phone No</label>
-                    <asp:TextBox ID="TextBox4" Textmode="Number" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:TextBox ID="TextBox4" TextMode="Number" runat="server" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" ErrorMessage="*Phone No can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="*phone No. must be 6-9 number" ControlToValidate="TextBox4" ValidationExpression="^\d{6,9}$"></asp:RegularExpressionValidator>
                 </div>
@@ -58,6 +58,7 @@
                 <div>
                     <label for="lblGST No">GST No</label>
                     <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox8" ErrorMessage="*GSTNo can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                 </div>
             </div>
         </div>

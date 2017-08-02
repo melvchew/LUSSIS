@@ -57,6 +57,7 @@
                 <div>
                     <label for="lblGST No">GST No</label>
                     <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox8" ErrorMessage="*GSTNo can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                 </div>
             </div>
         </div>
