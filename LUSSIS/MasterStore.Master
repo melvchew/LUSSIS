@@ -11,6 +11,28 @@
     <link href="<%= Page.ResolveUrl("~/Style/main.css") %>" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#t01
+  {
+  width:100%;
+  border-collapse:collapse;
+  }
+
+#t01 th
+  {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  }
+
+#t01 td 
+  {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  color:#808080;
+  }
+</style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
