@@ -166,7 +166,7 @@ namespace LUSSIS.View
                                 {
                                     Roles.AddUserToRole(id.Name, "DeptEmp");
                                     Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
-                                    Response.Redirect("~/View/DepartmentView/Home.aspxx");
+                                    Response.Redirect("~/View/DepartmentView/Home.aspx");
                                     break;
                                 }
 
