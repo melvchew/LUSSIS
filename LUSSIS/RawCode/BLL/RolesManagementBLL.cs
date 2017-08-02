@@ -132,6 +132,27 @@ namespace LUSSIS.RawCode.BLL
             }
         }
 
+        public void CheckExistingAH()
+        {
+            List<Department> LDept = context.Departments.ToList<Department>();
+            foreach (Department dept in LDept)
+            {
+                DateTime today = new DateTime();
+                if (dept.AHEndDate != null)
+                {
+                    if (DateTime.Compare((DateTime)dept.AHEndDate, today) < 0)
+                    {
+                        dept.ActingHead = null;
+                        dept.AHEndDate = null;
+                        dept.AHStartDate = null;
+                    }
+                }
+
+
+            }
+            context.SaveChanges();
+        }
+
 
     }
 }

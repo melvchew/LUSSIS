@@ -36,6 +36,10 @@ namespace LUSSIS
         {
             EmailBLL email = new EmailBLL();
             email.SendEmailsToClerk();
+
+            //Melvin added
+            LUSSIS.RawCode.BLL.RolesManagementBLL rmBLL = new LUSSIS.RawCode.BLL.RolesManagementBLL();
+            rmBLL.CheckExistingAH();
         }
 
         protected void Session_Start(object sender, EventArgs e)
