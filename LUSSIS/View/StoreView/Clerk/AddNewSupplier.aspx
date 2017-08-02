@@ -7,9 +7,8 @@
     <link href="../../../Style/main.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
-
-
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container" style="margin-top: 50px; margin-bottom: 20px;">
         <div class="row">
@@ -44,16 +43,14 @@
                         <label for="lblPhoneNo">Phone No</label>
                     </div>
                     <div class="col-sm-8">
-                        <asp:TextBox ID="TextBox4" TextMode="Number" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" ErrorMessage="*Phone No can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="*phone No. must be 6-9 number" ControlToValidate="TextBox4" ValidationExpression="^\d{6,9}$"></asp:RegularExpressionValidator>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4 ">
                         <label for="lblFaxNo">Fax No</label>
                     </div>
                     <div class="col-sm-8">
-                        <asp:TextBox ID="TextBox5" TextMode="Number" runat="server" CssClass="form-control"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="*FAX No. must be 6-9 number" ControlToValidate="TextBox5" ValidationExpression="^\d{6,9}$"></asp:RegularExpressionValidator>
+                        <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                     <div class="col-sm-4">
                         <label for="lblAddress">Address</label>
@@ -80,13 +77,16 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-1 col-lg-offset-1">
-            <asp:Button ID="Button1" runat="server" Text="Clear All" CssClass="btn pull-right" OnClick="Button1_Click" />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-sm-3">
+                    <asp:Button ID="Button1" runat="server" Text="Clear All" CssClass="btn pull-right" OnClick="Button1_Click" />
+                </div>
+                <div class="col-sm-4">
+                    <asp:Button ID="Button2" runat="server" Text="Add" CssClass="btn pull-right" OnClick="Button2_Click" />
+                </div>
+            </div>
         </div>
-        <div class="col-lg-1">
-            <asp:Button ID="Button2" runat="server" Text="Add" CssClass="btn pull-right" OnClick="Button2_Click" />
-        </div>
     </div>
+
 </asp:Content>

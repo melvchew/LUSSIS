@@ -1,17 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditSuppliers.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.EditSuppliers" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterStore.Master" CodeBehind="EditSuppliers.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.EditSuppliers" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../../../Content/bootstrap.min.css" />
+    <script src="../../../Scripts/bootstrap.min.js"></script>
+    <script src="../../../Scripts/jquery-1.9.1.min.js"></script>
+    <link href="../../../Style/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
-    <title></title>
-</head>
-<body class="container-fluid">
-    <form id="form1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div class="container" style="margin-top: 50px; margin-bottom: 20px">
 
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <div class="row" style="margin-bottom: 1em">
+        <div class="row">
             <div class="col-lg-6 col-lg-offset-6">
                 <div class="input-group">
                     <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" placeholder="Company name"></asp:TextBox>
@@ -50,7 +50,5 @@
             </div>
 
         </div>
-
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>
