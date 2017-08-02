@@ -18,6 +18,7 @@ namespace LUSSIS.View.DepartmentView.Rep
         {
             ManageCollectionPointBLL mcp = new ManageCollectionPointBLL();
          
+             
             //// 1. Department ID 2. Disbursement ID => get in Session
             int count = 0;
             HttpContext.Current.Session["DepartmentId"] = 1; // assign value to session variable
