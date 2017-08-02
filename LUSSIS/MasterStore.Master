@@ -5,12 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel="stylesheet" href="<%= Page.ResolveUrl("~/Content/bootstrap.min.css") %>" />
+    <script src="<%= Page.ResolveUrl("~/Scripts/jquery-1.9.1.min.js") %>"></script>
+    <script src="<%= Page.ResolveUrl("~/Scripts/bootstrap.min.js") %>"></script>
+    <link href="<%= Page.ResolveUrl("~/Style/main.css") %>" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-       <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -21,64 +27,201 @@
                     <a class="navbar-brand" href="#">Logic University</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
-                        <% if(HttpContext.Current.User.IsInRole("StoreClerk")) { %>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">PRODUCT</a></li>
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/EditSuppliers.aspx") %>" class="separator">SUPPLIER</a></li>
+                    <% if (HttpContext.Current.User.IsInRole("StoreClerk"))
+                        { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">STATIONARY REQUISTION<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Retrieval List</a></li>
                             </ul>
-                    
-                        <% } if (HttpContext.Current.User.IsInRole("StoreManager")) { %>
-                                <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#myPage">HOME</a></li>
-                                <li><a href="#band">BAND</a></li>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PRODUCT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Products</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Add New Product</a></li>
                             </ul>
-                           
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SUPPLIER<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Suppliers</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Add New Supplier</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADJUSTMENT VOUCHER<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Raise Adjustment Voucher</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Adjustment Vouchers</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">REPORT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Trend Analysis</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Inventory Status Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/logout.aspx") %>">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
-                        <% } if (HttpContext.Current.User.IsInRole("StoreSupervisor")) { %>
-                                <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#myPage">HOME</a></li>
-                                <li><a href="#band">BAND</a></li>
-                                <li><a href="#tour">TOUR</a></li>
-                                <li><a href="#contact">CONTACT</a></li>
-                            </ul>
-                     <% } if (HttpContext.Current.User.IsInRole("DeptActingHead")) { %>
-                                <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#myPage">HOME</a></li>
-                                <li><a href="#band">BAND</a></li>
-                                <li><a href="#tour">TOUR</a></li>
-                                <li><a href="#contact">CONTACT</a></li>
-                            </ul>
-                     <% } if (HttpContext.Current.User.IsInRole("DeptEmp")) { %>
-                                <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#myPage">HOME</a></li>
-                                <li><a href="#band">BAND</a></li>
-                                <li><a href="#tour">TOUR</a></li>
-                                <li><a href="#contact">CONTACT</a></li>
-                            </ul>
-                     <% } if (HttpContext.Current.User.IsInRole("DeptHead")) { %>
-                                <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#myPage">HOME</a></li>
-                                <li><a href="#band">BAND</a></li>
-                                <li><a href="#tour">TOUR</a></li>
-                                <li><a href="#contact">CONTACT</a></li>
-                            </ul>
-                     <% } if (HttpContext.Current.User.IsInRole("DeptRep")) { %>
-                                <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#myPage">HOME</a></li>
-                                <li><a href="#band">BAND</a></li>
-                                <li><a href="#tour">TOUR</a></li>
-                                <li><a href="#contact">CONTACT</a></li>
-                            </ul>
+                    <% }
+                        if (HttpContext.Current.User.IsInRole("StoreManager"))
+                        { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#myPage">HOME</a></li>
+                        <li><a href="#band">BAND</a></li>
+                    </ul>
 
-                        <% }  %>
+
+                    <% }
+                        if (HttpContext.Current.User.IsInRole("StoreSupervisor"))
+                        { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">STATIONARY REQUISTION<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Retrieval List</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PRODUCT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Products</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Add New Product</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SUPPLIER<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Suppliers</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Add New Supplier</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADJUSTMENT VOUCHER<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Raise Adjustment Voucher</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Adjustment Vouchers</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Approve/Reject Adjustment Vouchers</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">REPORT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Trend Analysis</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Inventory Status Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/logout.aspx") %>">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <% }
+                        if (HttpContext.Current.User.IsInRole("DeptActingHead"))
+                        { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">STATIONARY REQUISTION<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Head/ViewPendingReq.aspx") %>">Approve/Reject Requisition</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/logout.aspx") %>">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <% }
+                        if (HttpContext.Current.User.IsInRole("DeptEmp"))
+                        { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">STATIONARY REQUISTION<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Emp/RaiseReq.aspx") %>">Raise Requisition</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Emp/ViewDeptReqHistory.aspx") %>">View Department Requisition History</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Emp/ViewUserReqHistory.aspx") %>">View Own Requisition History</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/logout.aspx") %>">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <% }
+                        if (HttpContext.Current.User.IsInRole("DeptHead"))
+                        { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">STATIONARY REQUISTION<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Head/ViewPendingReq.aspx") %>">Approve/Reject Requisition</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DELEGATE<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Head/DelegateRole.aspx") %>">Roles</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/logout.aspx") %>">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <% }
+                        if (HttpContext.Current.User.IsInRole("DeptRep"))
+                        { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">STATIONARY REQUISTION<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Emp/RaiseReq.aspx") %>">Raise Requisition</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Emp/ViewDeptReqHistory.aspx") %>">View Department Requisition History</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Emp/ViewUserReqHistory.aspx") %>">View Own Requisition History</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">REPRESENTATIVE<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Rep/ViewCollectionItems.aspx") %>">View Collection Items</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/DepartmentView/Rep/ChangeCollectionPoint.aspx") %>">Change Collection Point</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/logout.aspx") %>">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <% }  %>
                 </div>
             </div>
         </nav>
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
     </form>
 </body>
 </html>
