@@ -28,18 +28,17 @@ namespace LUSSIS.View.DepartmentView.Emp
         private void BindGrid(List<Item> litems)
         {
             int rid = Int32.Parse(Request.QueryString["rid"]);
+                using (context = new LUSSdb())
+                {
 
-            using (context = new LUSSdb())
-            {
+                    gvCatalog.DataSource = litems;
 
-                gvCatalog.DataSource = litems;
+                    gvCatalog.DataBind();
 
-                gvCatalog.DataBind();
+                    droplistItemCategory.DataSource = rs.GetCategory();
 
-                droplistItemCategory.DataSource = rs.GetCategory();
-
-                droplistItemCategory.DataBind();
-            }
+                    droplistItemCategory.DataBind();
+                }
         }
 
         protected void gvCatalog_PageIndexChanging(object sender, GridViewPageEventArgs e)
