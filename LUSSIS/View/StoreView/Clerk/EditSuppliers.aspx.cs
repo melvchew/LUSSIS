@@ -42,11 +42,6 @@ namespace LUSSIS.View.StoreView.Clerk
                     GridView1.DataSource = l1;
                     GridView1.DataBind();
                 }
-                else
-                {
-                    Label9.Visible = true;
-                    Label9.Text = "There is no matching item";
-                }
             }
 
 
