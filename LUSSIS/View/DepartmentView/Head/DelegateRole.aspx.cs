@@ -18,14 +18,18 @@ namespace LUSSIS.View.DepartmentView.Head
                 int empid = Convert.ToInt32(Session["empId"]);
                 RolesManagementBLL b = new RolesManagementBLL();
                 int depid = b.getDepartmentID(empid);
-                ddActingHead.DataSource = b.getEmployeeListByDept(depid);//ID depends on login user
+                List<Employee> actinghead = b.getEmployeeListByDept(depid);
+                actinghead.Remove(b.getCurrentActingHead(depid));
+                actinghead.Remove(b.getCurrentDeptRep(depid));
+                actinghead.Remove(b.getCurrentHead(depid));
+                ddActingHead.DataSource = actinghead;//ID depends on login user
                 ddActingHead.DataTextField = "Name";
                 ddActingHead.DataValueField = "EmpId";
                 ddActingHead.DataBind();
                 ddActingHead.Items.Insert(0, new ListItem(String.Empty, string.Empty));
                 ddActingHead.SelectedIndex = 0;
 
-                ddDeptRepre.DataSource = b.getEmployeeListByDept(depid);//ID depends on login user
+                ddDeptRepre.DataSource = actinghead;//ID depends on login user
                 ddDeptRepre.DataTextField = "Name";
                 ddDeptRepre.DataValueField = "EmpId";
                 ddDeptRepre.DataBind();

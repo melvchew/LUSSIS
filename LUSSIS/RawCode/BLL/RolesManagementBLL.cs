@@ -67,6 +67,17 @@ namespace LUSSIS.RawCode.BLL
             return e;
 
         }
+        public Employee getCurrentHead(int id)
+        {
+            context = new LUSSdb();
+            var employee = (from x in context.Employees
+                            join i in context.Departments
+                            on x.EmpId equals i.DeptHead
+                            where i.DeptId == id
+                            select x).FirstOrDefault();
+            Employee e = (Employee)employee;
+            return e;
+        }
 
         //--------------------------------------------------------------------------------------------------------------------
 
