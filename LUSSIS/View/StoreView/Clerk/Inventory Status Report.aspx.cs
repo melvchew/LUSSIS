@@ -34,7 +34,7 @@ namespace LUSSIS.View.StoreView.Clerk
                     string reorderLevel = (GridView1.Rows[i].FindControl("Label6") as Label).Text;
                     if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
                     {
-                        GridView1.Rows[i].BackColor = System.Drawing.Color.Green;
+                        GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
                     }
                 }
             }
@@ -56,7 +56,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
                 {
 
-                    GridView1.Rows[i].BackColor = System.Drawing.Color.Green;
+                    GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
                 }
             }
         }
@@ -72,7 +72,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 GridView1.DataBind();
                 for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
                 {
-                    GridView1.Rows[i].BackColor = System.Drawing.Color.Green;
+                    GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
                 }
             }
             else
