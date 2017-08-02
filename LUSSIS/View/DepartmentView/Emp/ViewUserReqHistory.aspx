@@ -22,7 +22,6 @@
 
                         </Columns>
                         <EmptyDataTemplate>
-                            <table border="1" id="t01">
                                 <tr>
                                     <th>Requisition ID</th>
                                     <th>Status</th>
@@ -33,7 +32,6 @@
                                     <td>empty</td>
                                     <td>empty</td>
                                 </tr>
-                            </table>
                         </EmptyDataTemplate>
                     </asp:GridView>
                 </div>

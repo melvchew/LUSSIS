@@ -14,7 +14,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body  style="background-color: #eee">
+<body style="background-color: #eee">
     <form id="form1" runat="server">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
@@ -24,7 +24,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Logic University</a>
+                    <% if (HttpContext.Current.User.IsInRole("StoreClerk") || HttpContext.Current.User.IsInRole("StoreSupervisor") ||
+                              HttpContext.Current.User.IsInRole("StoreManager"))
+                        { %>
+                    <a class="navbar-brand" href="<%= Page.ResolveUrl("~/View/StoreView/Home.aspx") %>">Logic University</a>
+                    <%}
+                    else
+                    { %>
+                    <a class="navbar-brand" href="<%= Page.ResolveUrl("~/View/DepartmentView/Home.aspx") %>">Logic University</a>
+                    <%} %>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <% if (HttpContext.Current.User.IsInRole("StoreClerk"))
