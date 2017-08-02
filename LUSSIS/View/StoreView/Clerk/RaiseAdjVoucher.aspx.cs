@@ -49,7 +49,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 //txtQtyAdj.Text = "Adj" + counter;
                 txtQtyAdj.Width = 100;
                 txtQtyAdj.AutoPostBack = true;
-                txtQtyAdj.CssClass = "form-control";
+                txtQtyAdj.CssClass = "form-control qntyAdj";
                 PlaceHolder3.Controls.Add(txtQtyAdj);
                 //---TextBox Reason
                 TextBox txtReason = new TextBox();
@@ -82,7 +82,11 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void AddNewRowLinkBtn_Click1(object sender, EventArgs e)
         {
-            Button1.Visible = true;
+
+
+            calculatebtn.Visible = true;
+            Submitbtn.Visible = false;
+
             counter++;
             //-- DropDownList Box
             DropDownList d = new DropDownList();
@@ -100,7 +104,7 @@ namespace LUSSIS.View.StoreView.Clerk
             txtQtyAdj.ID = "txtQtyAdj" + counter;
             //txtQtyAdj.Text = "Adj" + counter;
             txtQtyAdj.Width = 100;
-            txtQtyAdj.CssClass = "form-control";
+            txtQtyAdj.CssClass = "form-control qntyAdj";
             PlaceHolder3.Controls.Add(txtQtyAdj);
             //---TextBox Reason
             TextBox txtReason = new TextBox();
@@ -125,7 +129,6 @@ namespace LUSSIS.View.StoreView.Clerk
         protected void Page_Load(object sender, EventArgs e)
         {
             Submitbtn.Visible = false;
-            Button1.Visible = true;
             if (!IsPostBack)
             {
                 ItemsList1.DataSource = vm.getItems();
@@ -169,6 +172,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 inr++;
             }
             Response.Write("<script>alert('Voucher ID = " + adj.VoucherId + " is raised successfully')</script>");
+            Response.Redirect("~/View/StoreView/Home.aspx");
         }
 
         public void textbox_textchange(object sender, EventArgs e)
@@ -207,18 +211,18 @@ namespace LUSSIS.View.StoreView.Clerk
                         str = "txtValue" + i;
                         tb = (TextBox)PlaceHolder1.FindControl(str);
                         tb.Text = calValue(itemId, adjQty);
-                        Button1.Visible = false;
+                        calculatebtn.Visible = false;
                         Submitbtn.Visible = true;
                     }
-                    else
-                    {
-                        Response.Write("<script>alert('Please Enter Numeric Data')</script>");
-                    }
+                    //else
+                    //{
+                    //    Response.Write("<script>alert('Please Enter Numeric Data')</script>");
+                    //}
                 }
-                else
-                {
-                    Response.Write("<script>alert('Please Enter Valid Data')</script>");
-                }
+                //else
+                //{
+                //    Response.Write("<script>alert('Please Enter Valid Data')</script>");
+                //}
             }
         }
     }
