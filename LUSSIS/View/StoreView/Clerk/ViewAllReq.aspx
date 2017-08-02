@@ -11,8 +11,8 @@
 <body>
     <form id="viewRequisitions" runat="server">
         <div class="row">
-            <div class="col-md-9 col-lg-offset-3">
-                <h1 class="col-md-10 col-lg-offset-2">View Requisitions</h1>
+            <div class="center-block">
+                <h1 >View Requisitions</h1>
                 
                 <asp:DropDownList ID="DropDownList1" CssClass="col-lg-offset-3" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
 
@@ -34,6 +34,7 @@
                 <div class="col-lg-1"></div>
             </div>
         </div>
+        <asp:Button ID="btnBack" runat="server" Text="Back to Home Page" OnClick="btnBack_Click" CssClass="btn btn-primary center-block" />
     </form>
 </body>
 </html>

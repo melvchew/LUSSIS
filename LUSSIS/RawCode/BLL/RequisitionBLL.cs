@@ -20,7 +20,7 @@ namespace LUSSIS.RawCode.BLL
             try
             {
                 LUSSdb context = new LUSSdb();
-                return context.Items.ToList();
+                return context.Items.Where(i => i.IsCataloged==true).ToList();
             }
             catch (Exception exp)
             {
