@@ -65,7 +65,7 @@ namespace LUSSIS.View.DepartmentView.Head
             eBLL.SendRequisitionStatusUpdate(emp, req);
 
             //Direct to ViewPendingRequisition
-            Response.Redirect("ViewPendingRequisition.aspx");
+            Response.Redirect("ViewPendingReq.aspx");
 
         }
 
@@ -80,7 +80,7 @@ namespace LUSSIS.View.DepartmentView.Head
             eBLL.SendRequisitionStatusUpdate(emp, req);
 
             //Direct to ViewPendingRequisition
-            Response.Redirect("ViewPendingRequisition.aspx");
+            Response.Redirect("ViewPendingReq.aspx");
 
         }
     }
