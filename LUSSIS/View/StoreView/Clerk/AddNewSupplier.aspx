@@ -6,6 +6,8 @@
 <head runat="server">
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <title></title>
 </head>
 <body class="container-fluid">
@@ -39,7 +41,7 @@
                 <div>
                     <label for="lblFaxNo">Fax No</label>
                     <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control"></asp:TextBox>
-                   
+
                 </div>
                 <div>
                     <label for="lblAddress">Address</label>
@@ -50,7 +52,7 @@
                     <label for="lblEmail">Email</label>
                     <asp:TextBox ID="TextBox7" runat="server" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox7" ErrorMessage="*Email can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                  
+
                 </div>
                 <div>
                     <label for="lblGST No">GST No</label>
