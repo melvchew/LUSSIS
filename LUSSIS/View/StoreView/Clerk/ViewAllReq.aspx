@@ -11,8 +11,8 @@
 <body>
     <form id="viewRequisitions" runat="server">
         <div class="row">
-            <div class="center-block">
-                <h1 >View Requisitions</h1>
+            <div class="col-md-9 col-lg-offset-3">
+                <h1 class="col-md-10 col-lg-offset-2">View Requisitions</h1>
                 
                 <asp:DropDownList ID="DropDownList1" CssClass="col-lg-offset-3" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AppendDataBoundItems="True" AutoPostBack="True">
 
@@ -29,7 +29,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover"></asp:GridView>
+                    <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered"></asp:GridView>
                 </div>
                 <div class="col-lg-1"></div>
             </div>
