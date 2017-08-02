@@ -256,7 +256,7 @@ namespace LUSSIS.RawCode.BLL
                 }
                 else
                 {
-                    litem = context.Items.Where(i => i.Description.Trim().ToLower().Contains(itemName)).ToList();//Contains == like %value%
+                    litem = context.Items.Where(i => i.Description.Trim().ToLower().Contains(itemName) && i.IsCataloged == true).ToList();//Contains == like %value%
                 }
 
                 return litem;
@@ -283,7 +283,7 @@ namespace LUSSIS.RawCode.BLL
                 }
                 else
                 {
-                    litem = context.Items.Where(i => i.Category == category).ToList();
+                    litem = context.Items.Where(i => i.Category == category && i.IsCataloged==true).ToList();
                 }
                 return litem;
             }
