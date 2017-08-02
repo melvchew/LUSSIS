@@ -17,8 +17,6 @@ namespace LUSSIS.View.DepartmentView.Emp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //String ReqId = Request.QueryString["rid"];
-            //Literal1.Text="Reqsition ID: "+ReqId;
             if (!IsPostBack)
             {
                 List<Item> litems = rs.GetCatalog();

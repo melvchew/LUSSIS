@@ -19,7 +19,7 @@
         <br /><br />
 
         <asp:GridView ID="gvReqHistory" runat="server" AutoGenerateColumns="False" OnRowCommand="gvReqHistory_RowCommand" 
-            AllowPaging="True" OnPageIndexChanging="gvReqHistory_PageIndexChanging" CssClass="table table-striped">
+            AllowPaging="True" OnPageIndexChanging="gvReqHistory_PageIndexChanging" CssClass="table table-bordered">
             <Columns>
                 <asp:BoundField HeaderText="Requisition ID" DataField="ReqId" />
                                       

@@ -102,7 +102,6 @@ namespace LUSSIS.View.DepartmentView.Emp
                     {
                         int itemId =
                             Convert.ToInt32(gvNewReqItem.DataKeys[row.RowIndex].Value);
-                        //Labl_Test.Text = itemId.ToString();
                         litems.Add(context.Items.Where(i => i.ItemId == itemId).ToList().First());
                     }
                 }

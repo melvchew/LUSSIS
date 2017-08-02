@@ -24,7 +24,7 @@
     
     </div>
         <asp:GridView ID="gvDeptReq" runat="server" AutoGenerateColumns="False" OnRowCommand="gvDeptReq_RowCommand" 
-            AllowPaging="true" OnPageIndexChanging="gvDeptReq_PageIndexChanging" CssClass="table table-striped">
+            AllowPaging="true" OnPageIndexChanging="gvDeptReq_PageIndexChanging" CssClass="table table-bordered">
             <Columns>
                 <asp:BoundField HeaderText="Requisition ID" DataField="ReqId"/>
                 <asp:BoundField HeaderText="Employee Name" DataField="Employee.Name"/>

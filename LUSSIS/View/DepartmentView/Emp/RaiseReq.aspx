@@ -16,7 +16,7 @@
         <h1 style="text-align: center">Raise New Requisition</h1>
                         <br /><br />    
     </div>
-        <asp:GridView ID="gvNewReqItem" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-striped" >
+        <asp:GridView ID="gvNewReqItem" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-bordered" >
             <Columns>
                 <asp:TemplateField HeaderText="Item Name">
                     <ItemTemplate>

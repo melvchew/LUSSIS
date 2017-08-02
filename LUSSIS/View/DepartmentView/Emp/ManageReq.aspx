@@ -27,7 +27,7 @@
             OnRowEditing="gvReqItem_RowEditing" 
             OnRowCancelingEdit="gvReqItem_RowCancelingEdit" 
             OnRowUpdating="gvReqItem_RowUpdating" EnableViewState="true" 
-            AllowPaging="true" OnPageIndexChanging="gvReqItem_PageIndexChanging" CssClass="table table-striped">
+            AllowPaging="true" OnPageIndexChanging="gvReqItem_PageIndexChanging" CssClass="table table-bordered">
             <Columns>
 
 
