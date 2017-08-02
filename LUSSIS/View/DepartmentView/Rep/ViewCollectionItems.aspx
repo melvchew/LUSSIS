@@ -55,10 +55,10 @@
 
                     </div>
                     <div class="col-md-12" style="height:10px"></div>
-                    <div class="col-md-12">
+                    <%--<div class="col-md-12">
                         Total Quantity :<asp:Label ID="Label5" runat="server"></asp:Label>
                         <asp:Label ID="Label6" runat="server"></asp:Label>
-                    </div>
+                    </div>--%>
 
                 </div>
 

@@ -51,24 +51,40 @@ namespace LUSSIS.RawCode.BLL
             cp.CollectionPointId = cpId;
             context.SaveChanges();
         }
-        public Disbursement GetDisbursementByID(int id)
+        //public Disbursement GetDisbursementByID(int id)
+        //{
+        //    return context.Disbursements.Where(x => x.DisbursementId == id).First<Disbursement>();
+        //}
+        public List<RequisitionItem> GetCollectionItems(Disbursement dis)
         {
-            return context.Disbursements.Where(x => x.DisbursementId == id).First<Disbursement>();
-        }
-
-        public List<String> GetCollectionItemList(DateTime disDate, Department dep)
-        {
-            List<String> list = new List<String>();
-            Disbursement d = new Disbursement();
-            d = context.Disbursements.FirstOrDefault(x => x.DisburseDate == disDate && x.Department.DeptId == dep.DeptId);
-            foreach (var item in d.DisburseReqItems)
+            List<String> ListItem = null;
+            int count = 0;
+            List<Requisition> req = context.Requisitions.Where(x => x.Status == ((int)ReqStatus.APPROVED).ToString()).ToList<Requisition>();
+            foreach (Requisition i in req)
             {
-                list.Add(item.Item.Description);
-                list.Add(item.RetrieveQty.ToString());
-                list.Add(item.Item.Unit);
+                foreach(RequisitionItem j in i.RequisitionItems)
+                {
+                   ListItem.Add(j.Item.Description);
+                   ListItem.Add(j.Quantity.ToString());
+                   ListItem.Add(j.Item.Unit);
+                }
             }
-            return list;
-        }
+            return new List<RequisitionItem>();
+         }
+
+        //public List<String> GetCollectionItemList(DateTime disDate, Department dep)
+        //{
+        //    List<String> list = new List<String>();
+        //    Disbursement d = new Disbursement();
+        //    d = context.Disbursements.FirstOrDefault(x => x.DisburseDate == disDate && x.Department.DeptId == dep.DeptId);
+        //    foreach (var item in d.DisburseReqItems)
+        //    {
+        //        list.Add(item.Item.Description);
+        //        list.Add(item.RetrieveQty.ToString());
+        //        list.Add(item.Item.U nit);
+        //    }
+        //    return list;
+       // }
 
 
         public void SendChangeNotification(Department dept, int deptId)
@@ -100,5 +116,16 @@ namespace LUSSIS.RawCode.BLL
             }
         }
 
+
+        public List<RequisitionItem> GetAllApprovedRequsitionItemsByDepartment(Department dep)
+        {
+
+            //List <Requisition> req = context.Requisitions.Where(x => x.Status == ((ReqStatus.APPROVED).ToString()) && x.Employee.DeptId == dep.DeptId).ToList<Requisition>();
+
+            List<RequisitionItem> reqitems = context.RequisitionItems.Where(y => y.Requisition.Status == ((ReqStatus.APPROVED).ToString()) && y.Requisition.Employee.DeptId == dep.DeptId).ToList();
+
+            return reqitems;
+        }
+
     }
-}
+} 
