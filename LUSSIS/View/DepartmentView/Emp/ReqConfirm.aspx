@@ -1,31 +1,22 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReqConfirm.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Emp.ReqConfirm" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterStore.Master" AutoEventWireup="true" CodeBehind="ReqConfirm.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Emp.ReqConfirm" %>
+
 <%-- Made by Hu Xiaoxi(Team5) --%>
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body class="container-fluid">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <form id="frmReqComfirm" runat="server">
-    <div>
-    
-        <asp:Literal ID="litaConfirm" runat="server"></asp:Literal>
-        <br />
-        <br />
-    
-    </div>
-        <asp:Label ID="lablConfirm" runat="server" Text="Your department head will be notified via email of your requisition."></asp:Label>
-        <br />
-        <br />
-        <asp:Button ID="btnHome" runat="server" Text="Return to Home Page" OnClick="btnHome_Click" CssClass="btn btn-primary pull-left" />
-
-    </form>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container-fluid">
+        <div class="placeholder">
+            <div class="row">
+                <h3>Requisition Successful</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p><asp:Literal ID="litaConfirm" runat="server"></asp:Literal></p>
+                    <asp:Label ID="lablConfirm" runat="server" Text="Your department head will be notified via email of your requisition."></asp:Label>
+                    <p></p>
+                    <asp:Button ID="btnHome" runat="server" Text="Return to Home Page" OnClick="btnHome_Click" CssClass="btn btn-primary pull-left" />
+                </div>
+            </div>
         </div>
     </div>
-</body>
-</html>
+</asp:Content>

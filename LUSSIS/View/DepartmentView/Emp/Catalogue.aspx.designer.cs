@@ -13,13 +13,13 @@ namespace LUSSIS.View.DepartmentView.Emp {
     public partial class Catalogue {
         
         /// <summary>
-        /// frmCatalogue control.
+        /// droplistItemCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frmCatalogue;
+        protected global::System.Web.UI.WebControls.DropDownList droplistItemCategory;
         
         /// <summary>
         /// txtBoxSearchItem control.
@@ -38,15 +38,6 @@ namespace LUSSIS.View.DepartmentView.Emp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearchItem;
-        
-        /// <summary>
-        /// droplistItemCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList droplistItemCategory;
         
         /// <summary>
         /// gvCatalog control.
