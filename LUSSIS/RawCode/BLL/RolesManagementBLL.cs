@@ -137,7 +137,7 @@ namespace LUSSIS.RawCode.BLL
             List<Department> LDept = context.Departments.ToList<Department>();
             foreach (Department dept in LDept)
             {
-                DateTime today = new DateTime();
+                DateTime today = DateTime.Today;
                 if (dept.AHEndDate != null)
                 {
                     if (DateTime.Compare((DateTime)dept.AHEndDate, today) < 0)
