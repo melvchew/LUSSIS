@@ -196,6 +196,7 @@
     <Content Include="View\StoreView\Supervisor\AdjVoucherBelow250.aspx" />
     <Content Include="View\StoreView\Clerk\UpdateSuppliers.aspx" />
     <Content Include="View\StoreView\Supervisor\AdjVoucherBelow250Detail.aspx" />
+    <Content Include="View\StoreView\Supervisor\ManageCollectionPoint.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -580,6 +581,13 @@
     </Compile>
     <Compile Include="View\StoreView\Supervisor\AdjVoucherBelow250Detail.aspx.designer.cs">
       <DependentUpon>AdjVoucherBelow250Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Supervisor\ManageCollectionPoint.aspx.cs">
+      <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Supervisor\ManageCollectionPoint.aspx.designer.cs">
+      <DependentUpon>ManageCollectionPoint.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

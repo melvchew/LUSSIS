@@ -18,7 +18,8 @@
         <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/View/StoreView/Clerk/UploadExcel.aspx">Upload Excel</asp:HyperLink>    <br />
         <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/View/StoreView/Clerk/TrendAnalysis.aspx">Generate Trend Analysis</asp:HyperLink>    <br />
         <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/View/StoreView/Manager/AdjVoucher.aspx">View pending adj voucher (Manager)</asp:HyperLink>    <br />
-        <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/View/StoreView/Manager/AdjVoucherBelow250.aspx">View pending adj voucher (Supervisor)</asp:HyperLink>    <br />
+        <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/View/StoreView/Supervisor/AdjVoucherBelow250.aspx">View pending adj voucher (Supervisor)</asp:HyperLink>    <br />
+        <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/View/StoreView/Supervisor/ManageCollectionPoint.aspx">Manage collection points</asp:HyperLink>    <br />
         <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/View/Logout.aspx">Log Out</asp:HyperLink>
     </div>
     </form>
