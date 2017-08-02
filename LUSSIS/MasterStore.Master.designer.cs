@@ -10,7 +10,7 @@
 namespace LUSSIS {
     
     
-    public partial class MasterPage {
+    public partial class MasterStore {
         
         /// <summary>
         /// head control.

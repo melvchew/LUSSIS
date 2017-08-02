@@ -1,20 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddNewProduct.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.AddNewProduct" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterStore.Master" AutoEventWireup="true" CodeBehind="AddNewProduct.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.AddNewProduct" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../../../Content/bootstrap.min.css" />
+    <script src="../../../Scripts/bootstrap.min.js"></script>
+    <script src="../../../Scripts/jquery-1.9.1.min.js"></script>
+    <link href="../../../Style/main.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css" />
-        <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
-</head>
-<body>
-    <form id="form1" runat="server">
-     <div class="container">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+ <div class="container" style="margin-top: 50px; margin-bottom: 20px">
         <div class="row">
-            <div class="col-sm-12" style="text-align:center"><h2>Add New Product</h2></div>
+            <div class="col-sm-12" style="text-align:center;"><h2>Add New Product</h2></div>
             <div class="col-sm-7">
                 <div class="row">
                     <div class="col-sm-4">
@@ -42,7 +40,7 @@
                     </div>
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtStockBalance" CssClass="form-control" runat="server"></asp:TextBox>
-                        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtStockBalance" ErrorMessage="Stock Balance must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator>
+                        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtStockBalance" ErrorMessage="Stock Balance must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator><asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtStockBalance" runat="server" ErrorMessage="Stock Balance is required"></asp:RequiredFieldValidator>
                     </div>
                     <div class="col-sm-4">
                         <p>Reorder Level</p>
@@ -50,6 +48,7 @@
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtReorderLevel" CssClass="form-control" runat="server"></asp:TextBox>
                         <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="txtReorderLevel" ErrorMessage="Reorder Level must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtReorderLevel" ErrorMessage="Reorder level is required"></asp:RequiredFieldValidator>
                     </div>
                      <div class="col-sm-4">
                         <p>Reorder Quantity</p>
@@ -57,6 +56,7 @@
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtReorderQty" CssClass="form-control" runat="server"></asp:TextBox>
                         <asp:RangeValidator ID="RangeValidator3" runat="server" ControlToValidate="txtReorderQty" ErrorMessage="Reorder Qty must be Numeric" MaximumValue="99999" MinimumValue="0"></asp:RangeValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtReorderQty" ErrorMessage="Reorder Qty is required"></asp:RequiredFieldValidator>
                     </div>
                      <div class="col-sm-4">
                         <p>Unit of Measure</p>
@@ -117,7 +117,7 @@
                         <asp:CheckBox ID="cbIsCataloged"  runat="server" />
                     </div>
                     <div class="col-sm-12"> <asp:Label ID="lblerror" ForeColor="Red" runat="server"></asp:Label><br /></div>
-                    <div class="col-sm-12" style="text-align: right"> <asp:Button ID="btnAdd" CssClass="btn btn-primary" runat="server" OnClick="btnAdd_Click" Text="Add" /></div>
+                    <div class="col-sm-12" style="text-align: right"> <asp:Button ID="btnAdd" CssClass="btn pull-right" runat="server" OnClick="btnAdd_Click" Text="Add" /></div>
                 </div>
             </div>
             
@@ -125,6 +125,6 @@
             
         </div>
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+
+

@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterStore.master.cs" Inherits="LUSSIS.MasterStore" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+       <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Logic University</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                        <% if(HttpContext.Current.User.IsInRole("StoreClerk")) { %>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">PRODUCT</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/EditSuppliers.aspx") %>" class="separator">SUPPLIER</a></li>
+                            </ul>
+                    
+                        <% } if (HttpContext.Current.User.IsInRole("StoreManager")) { %>
+                                <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#myPage">HOME</a></li>
+                                <li><a href="#band">BAND</a></li>
+                            </ul>
+                           
+
+                        <% } if (HttpContext.Current.User.IsInRole("StoreSupervisor")) { %>
+                                <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#myPage">HOME</a></li>
+                                <li><a href="#band">BAND</a></li>
+                                <li><a href="#tour">TOUR</a></li>
+                                <li><a href="#contact">CONTACT</a></li>
+                            </ul>
+                     <% } if (HttpContext.Current.User.IsInRole("DeptActingHead")) { %>
+                                <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#myPage">HOME</a></li>
+                                <li><a href="#band">BAND</a></li>
+                                <li><a href="#tour">TOUR</a></li>
+                                <li><a href="#contact">CONTACT</a></li>
+                            </ul>
+                     <% } if (HttpContext.Current.User.IsInRole("DeptEmp")) { %>
+                                <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#myPage">HOME</a></li>
+                                <li><a href="#band">BAND</a></li>
+                                <li><a href="#tour">TOUR</a></li>
+                                <li><a href="#contact">CONTACT</a></li>
+                            </ul>
+                     <% } if (HttpContext.Current.User.IsInRole("DeptHead")) { %>
+                                <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#myPage">HOME</a></li>
+                                <li><a href="#band">BAND</a></li>
+                                <li><a href="#tour">TOUR</a></li>
+                                <li><a href="#contact">CONTACT</a></li>
+                            </ul>
+                     <% } if (HttpContext.Current.User.IsInRole("DeptRep")) { %>
+                                <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#myPage">HOME</a></li>
+                                <li><a href="#band">BAND</a></li>
+                                <li><a href="#tour">TOUR</a></li>
+                                <li><a href="#contact">CONTACT</a></li>
+                            </ul>
+
+                        <% }  %>
+                </div>
+            </div>
+        </nav>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
