@@ -53,5 +53,10 @@ namespace LUSSIS.View.StoreView.Clerk
                 Label2.Text = "";
 
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/StoreView/Home.aspx");
+        }
     }
 }
