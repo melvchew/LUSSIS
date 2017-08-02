@@ -60,17 +60,17 @@ namespace LUSSIS.Store
                 if (fileExtOK)
                 {
                     savePath += FileUpload1.FileName;
-                    try
+                    //try
                     {
                         FileUpload1.PostedFile.SaveAs(savePath);
                         lbFileSubmit.Text = FileUpload1.FileName + " ready for transfer.";
                         Session["xlPath"] = savePath; //To pass to btnTransfer_Click()
                         btnTransfer.Enabled = true;
                     }
-                    catch
-                    {
-                        lbStatus.Text = "File upload failed. Please try again.";
-                    }
+                    //catch
+                    //{
+                    //    lbStatus.Text = "File upload failed. Please try again.";
+                    //}
                 }
                 else
                 {
