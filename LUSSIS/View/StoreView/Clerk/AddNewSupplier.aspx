@@ -14,7 +14,7 @@
             <div class="col-lg-6 col-lg-offset-4">
                 <h3>Add New Supplier</h3>
             </div>
-          
+
             <div class="col-lg-8 col-lg-offset-1">
                 <div class="form-group">
                     <label for="lblSupplierId">SupplierID</label>
@@ -39,6 +39,7 @@
                 <div>
                     <label for="lblFaxNo">Fax No</label>
                     <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control"></asp:TextBox>
+                   
                 </div>
                 <div>
                     <label for="lblAddress">Address</label>
@@ -49,6 +50,7 @@
                     <label for="lblEmail">Email</label>
                     <asp:TextBox ID="TextBox7" runat="server" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox7" ErrorMessage="*Email can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                  
                 </div>
                 <div>
                     <label for="lblGST No">GST No</label>

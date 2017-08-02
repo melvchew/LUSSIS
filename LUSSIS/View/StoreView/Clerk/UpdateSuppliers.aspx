@@ -16,7 +16,6 @@
             <div class="col-lg-6 col-lg-offset-4">
                 <h3>Update Supplier</h3>
             </div>
-
             <div class="col-lg-8 col-lg-offset-1">
                 <div class="form-group">
                     <label for="lblSupplierId">SupplierID</label>
@@ -58,13 +57,15 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-             <div class="col-lg-6 col-lg-offset-1">
-                <div class="col-lg-2">
-                <asp:Button ID="Button2" runat="server" Text="Update" CssClass="btn btn-warning col-lg-12" OnClick="Button2_Click" />
+        <div class="row" style="margin-bottom: 1em">
+            <div class="col-lg-6 col-lg-offset-2">
+                <div class="input-group">
+                    <asp:Button ID="Button2" runat="server" Text="Update" CssClass="btn btn-warning" OnClick="Button2_Click" />
+                    <span class="input-group-btn">
+                        <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_Click" CssClass="btn btn-danger" />
+                    </span>
+                </div>
             </div>
-            </div>
-            
         </div>
     </form>
 </body>

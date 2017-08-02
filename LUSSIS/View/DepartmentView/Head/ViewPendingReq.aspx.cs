@@ -22,10 +22,11 @@ namespace LUSSIS.View.DepartmentView.Head
             try
             {
                 //Get User Data from Session, Create User object
-                //Employee head = s.GetEmpByID(SessionParam)
+                
+                Employee head = rmBLL.GetEmpByID(Convert.ToInt32(Session["empId"]));
                 //Create Dept object using User object
-                //Department dept = s.GetDeptByUser(head);
-                Department dept = rmBLL.GetDeptByID(1); //hardcoded
+                Department dept = rmBLL.GetDeptByUser(head);
+                //Department dept = rmBLL.GetDeptByID(1); //hardcoded
                 //Department dept = s.GetDeptByID(Session.Param)
 
                 //Get List of employees
