@@ -46,7 +46,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             {
                 if (Session["AddItemlist"] != null)
                 {
-                    int empid = 4;
+                    int empid = Convert.ToInt32(Session["empId"]);
                     Employee emp = context.Employees.Where(em => em.EmpId == empid).ToList().First();
                     Requisition req = rs.CreateReq(emp, txtBoxComment.Text);
 
@@ -60,14 +60,13 @@ namespace LUSSIS.View.DepartmentView.Emp
                         int qty = Convert.ToInt32(qtyStr);
                         rs.AddReqItems(req, i, qty);
                     }
-
+                    Session["AddItemlist"] = null;
                     Response.Redirect("ReqConfirm.aspx?rid=" + req.ReqId);
                 }
                 else
                 {
                     Response.Write(" <script language=JavaScript> alert('Need to add at least one item!!!!'); </script>");
                 }
-                Session["AddItemlist"] = null;
             }
         }
 

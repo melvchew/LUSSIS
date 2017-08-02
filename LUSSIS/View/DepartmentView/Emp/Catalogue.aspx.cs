@@ -105,18 +105,28 @@ namespace LUSSIS.View.DepartmentView.Emp
                     }
                 }
 
-                if (litems.Count != 0)
+                if (litems.Count != 0) //check if choose items or not
                 {
-                    if (rid == 0)
+                    if (rid == 0)  //0 -- new requisition
                     {
-                        List<Item> listsession = (List<Item>)Session["AddItemlist"];
-                        foreach (Item i in litems)
+                        List<Item> listsession = new List<Item>();
+                        if (Session["AddItemlist"] != null)   //Not the first time to add items
                         {
-                            if (rs.CheckSameItem(i, listsession))
+                            listsession = (List<Item>)Session["AddItemlist"];
+                        foreach (Item i in litems)
                             {
-                                listsession.Add(i);
+                                if (rs.CheckSameItem(i, listsession))   //check duplicated items
+                                {
+                                    listsession.Add(i);   //add different items
+                                }
                             }
                         }
+                        else
+                        {
+                            foreach (Item i in litems)
+                                listsession.Add(i);   //1st add items
+                        }
+
                         Session["AddItemlist"] = listsession;
 
                         Response.Redirect("RaiseReq.aspx");
