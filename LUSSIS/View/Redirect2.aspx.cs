@@ -13,6 +13,15 @@ namespace LUSSIS
 {
     public partial class Redirect2 : System.Web.UI.Page
     {
+        string empId;
+        Employee emp;
+        Department dept;
+        int deptRepId;
+        int? actingheadID;
+        string r;
+        string ah;
+        DateTime? ahStartDate;
+        DateTime? ahEndDate;
         protected void Page_Load(object sender, EventArgs e)
         {
             LUSSdb context = new LUSSdb();
@@ -21,15 +30,8 @@ namespace LUSSIS
 
             IIdentity id = User.Identity;
             dynamic profile = ProfileBase.Create(id.Name);
-            int empId = Convert.ToInt32(Session["empId"]);
-            Employee emp = context.Employees.Where(x => x.EmpId == empId).First();
-            Department dept = context.Departments.Where(x => x.DeptId == emp.DeptId).First();
-            int deptRepId = dept.DeptRep;
-            int? actingheadID = dept.ActingHead;
-            string r = Convert.ToString(deptRepId);
-            string ah = Convert.ToString(actingheadID);
-            DateTime? ahStartDate = dept.AHStartDate;
-            DateTime? ahEndDate = dept.AHEndDate;
+            
+            
 
             if (User.IsInRole("StoreClerk") ||
                 User.IsInRole("StoreManager") ||
@@ -45,9 +47,18 @@ namespace LUSSIS
                   User.IsInRole("DeptActingHead"))
             {
                 Session["empId"] = profile.empId;
-
-
+                empId = profile.empId;
+                int i = Convert.ToInt32(empId);
+                emp = context.Employees.Where(x => x.EmpId == i).First();
+                dept = context.Departments.Where(x => x.DeptId == emp.DeptId).First();
+                deptRepId = dept.DeptRep;
+                actingheadID = dept.ActingHead;
+                r = Convert.ToString(deptRepId);
+                ah = Convert.ToString(actingheadID);
+                ahStartDate = dept.AHStartDate;
+                ahEndDate = dept.AHEndDate;
             }
+            
 
             if (Session["empId"] == null && Session["storeEmpId"] == null)
                 Response.Redirect("Login.aspx");
