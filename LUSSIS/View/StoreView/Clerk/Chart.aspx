@@ -20,9 +20,9 @@
                 <div class="col-md-12">
                     <asp:Chart ID="Chart1" runat="server">
                         <Series>
-                            <asp:Series Name="Series1"></asp:Series>
-                            <asp:Series Name="Series2"></asp:Series>
-                            <asp:Series Name="Series3"></asp:Series>
+                            <asp:Series Name="Series1" IsValueShownAsLabel="True"></asp:Series>
+                            <asp:Series Name="Series2" IsValueShownAsLabel="True"></asp:Series>
+                            <asp:Series Name="Series3" IsValueShownAsLabel="True"></asp:Series>
                         </Series>
                         <ChartAreas>
                             <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
