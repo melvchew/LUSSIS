@@ -28,16 +28,16 @@
                         <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="*Company Name can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" >
                         <label for="lblContactPerson">Contact Person</label>
                     </div>
                     <div class="col-sm-8">
                         <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="margin-top: 27px;">
                         <label for="lblPhoneNo">Phone No</label>
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-8" style="margin-top: 27px;">
                         <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" ErrorMessage="*Phone No can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="*input number or space character" ControlToValidate="TextBox4" ValidationExpression="^[ 0-9]*$"></asp:RegularExpressionValidator>
