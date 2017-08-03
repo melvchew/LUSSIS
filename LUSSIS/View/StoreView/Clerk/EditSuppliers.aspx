@@ -25,7 +25,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="8"
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="6"
                     OnPageIndexChanging="GridView1_PageIndexChanging" CssClass="table table-striped table-bordered" OnRowEditing="GridView1_RowEditing">
                     <Columns>
                          <asp:BoundField DataField="SupplierId" ShowHeader="false">
