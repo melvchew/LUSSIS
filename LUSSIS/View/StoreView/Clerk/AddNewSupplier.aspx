@@ -60,7 +60,7 @@
                         <label for="lblEmail">Email</label>
                     </div>
                     <div class="col-sm-8">
-                        <asp:TextBox ID="TextBox7" TextMode="Email" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="TextBox7" runat="server" TextMode="Email" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox7" ErrorMessage="*Email can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="*worng email address" ControlToValidate="TextBox7" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     </div>

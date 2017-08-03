@@ -31,7 +31,7 @@ namespace LUSSIS.View.StoreView.Supervisor
         protected void gvVoucher_RowEditing(object sender, GridViewEditEventArgs e)
         {
             String id = gvVoucher.Rows[e.NewEditIndex].Cells[0].Text;
-            Response.Redirect("AdjustmentVoucherDetailBelow250.aspx?id=" + id);
+            Response.Redirect("AdjVoucherBelow250Detail.aspx?id=" + id);
         }
     }
 }
