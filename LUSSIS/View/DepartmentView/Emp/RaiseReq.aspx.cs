@@ -113,7 +113,7 @@ namespace LUSSIS.View.DepartmentView.Emp
                         var item = list.Where(l => l.ItemId == i.ItemId).First();
                         list.Remove(item);
                     }
-                    Session["AddItemlist"] = list;
+                        Session["AddItemlist"] = list;
                 }
                 else
                 {
@@ -121,6 +121,8 @@ namespace LUSSIS.View.DepartmentView.Emp
                 }
                 litems = (List<Item>)Session["AddItemlist"];
                 this.BindGrid(litems);
+                if(litems.Count==0)
+                    Session["AddItemlist"]=null;
             }
         }
 

@@ -8,7 +8,9 @@ using System.Web.UI;
 using System.Web.UI.DataVisualization.Charting;
 using System.Web.UI.WebControls;
 using LUSSIS.RawCode.BLL;
+using System.Globalization;
 
+//by Phong
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class Chart : System.Web.UI.Page
@@ -29,12 +31,13 @@ namespace LUSSIS.View.StoreView.Clerk
             {
 
                 //take data from view
-                query = "SELECT distinct ItemID, SubmitMonth, sum([1]) as [1], sum([2]) as [2], sum([3]) as [3]"
+                query = "SELECT distinct ItemID, SubmitMonth, year(SubmitDate), month(SubmitDate), sum([1]) as [1], sum([2]) as [2], sum([3]) as [3]"
                     + ",  sum([4]) as [4], sum([5])as [5], sum([6]) as [6],  sum([7]) as [7], sum([8]) as [8], sum([9]) as [9], sum([10]) as [10]"
                     + " FROM TransposedRequisitionReport where ItemID=" + Request.QueryString["ItemId"]
                    + " and SubmitDate between '" + Request.QueryString["From"]
                    + "' and '" + Request.QueryString["To"]
-                   + "' group by month(SubmitDate), year(SubmitDate), ItemID, SubmitMonth";
+                   + "' group by month(SubmitDate), year(SubmitDate), ItemID, SubmitMonth"
+                   + " order by year(SubmitDate), month(SubmitDate)";
                 conn = new SqlConnection("Data Source=(local);Initial Catalog=LUSSdb;Integrated Security=True");
                 cmd = new SqlCommand(query, conn);
 
@@ -49,12 +52,14 @@ namespace LUSSIS.View.StoreView.Clerk
 
             else if (Request.QueryString["ReportBy"] == "Cost (In SGD)")
             {
-                query = "SELECT distinct ItemID, SubmitMonth, sum([1]) as [1], sum([2]) as [2], sum([3]) as [3]"
+                query = "SELECT distinct ItemID, SubmitMonth, year(SubmitDate), month(SubmitDate), sum([1]) as [1], sum([2]) as [2], sum([3]) as [3]"
                     + ",  sum([4]) as [4], sum([5])as [5], sum([6]) as [6],  sum([7]) as [7], sum([8]) as [8], sum([9]) as [9], sum([10]) as [10]"
                     + " FROM TransposedRequisitionReportByCost where ItemID=" + Request.QueryString["ItemId"]
                    + " and SubmitDate between '" + Request.QueryString["From"]
                    + "' and '" + Request.QueryString["To"]
-                   + "' group by month(SubmitDate), year(SubmitDate), ItemID, SubmitMonth";
+                   + "' group by month(SubmitDate), year(SubmitDate), ItemID, SubmitMonth"
+                   + " order by year(SubmitDate), month(SubmitDate)";
+
                 conn = new SqlConnection("Data Source=(local);Initial Catalog=LUSSdb;Integrated Security=True");
                 cmd = new SqlCommand(query, conn);
 
@@ -86,11 +91,22 @@ namespace LUSSIS.View.StoreView.Clerk
 
                 Chart1.Series[0].XValueMember = dt.Columns["SubmitMonth"].ToString();
                 Chart1.Series[0].YValueMembers = dt.Columns[Request.QueryString["Dept1"]].ToString();
+                //string monthList = dt.Columns["SubmitMonth"].ToString();
+                //var sortedMonths = monthList
+                //                    .Select(x => new { Name = x, Sort = DateTime.ParseExact(x, "mm-yyyy", CultureInfo.InvariantCulture) })
+                //                    .OrderBy(x => x.Sort)
+                //                    .Select(x => x.Name)
+                //                    .ToList();
+                
+                //Chart1.Series[0].Sort(PointSortOrder.Ascending, "X");
+                
 
                 Chart1.Series[1].XValueMember = dt.Columns["SubmitMonth"].ToString();
+                //Chart1.Series[1].Sort(PointSortOrder.Ascending, "X");
                 Chart1.Series[1].YValueMembers = dt.Columns[Request.QueryString["Dept2"]].ToString();
 
                 Chart1.Series[2].XValueMember = dt.Columns["SubmitMonth"].ToString();
+                //Chart1.Series[2].Sort(PointSortOrder.Ascending, "X");
                 Chart1.Series[2].YValueMembers = dt.Columns[Request.QueryString["Dept3"]].ToString();
 
                 Chart1.DataBind();

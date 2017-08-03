@@ -27,8 +27,8 @@
                     <asp:GridView ID="gvReqItem" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId"
                         OnRowEditing="gvReqItem_RowEditing"
                         OnRowCancelingEdit="gvReqItem_RowCancelingEdit"
-                        OnRowUpdating="gvReqItem_RowUpdating" EnableViewState="true"
-                        AllowPaging="true" OnPageIndexChanging="gvReqItem_PageIndexChanging" CssClass="table table-bordered  table-striped">
+                        OnRowUpdating="gvReqItem_RowUpdating"
+                        AllowPaging="True" OnPageIndexChanging="gvReqItem_PageIndexChanging" CssClass="table table-bordered  table-striped">
                         <Columns>
 
 
@@ -40,7 +40,12 @@
 
                             <asp:TemplateField HeaderText="Quantity">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Quantity") %>'></asp:TextBox>
+                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Quantity") %>' TextMode="Number"
+                                        onkeyup="this.value = this.value.slice(0, 6)" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="reqfieldValidQty" runat="server" 
+                                        ControlToValidate="TextBox2" ErrorMessage="RequiredFieldValidator" 
+                                        ForeColor="Red" ValidationGroup="EditValidationControls">Quantity is required!</asp:RequiredFieldValidator>
+                                    <asp:Label runat="server" ID="lblerror" Text="" ForeColor="Red"></asp:Label>
                                 </EditItemTemplate>
                                 <ItemTemplate>
                                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("Quantity") %>'></asp:Label>
@@ -56,7 +61,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
 
-                            <asp:CommandField ShowEditButton="True" CausesValidation="false" />
+                            <asp:CommandField ShowEditButton="True" CausesValidation="false" ValidationGroup="EditValidationControls" />
                         </Columns>
 
                         <EmptyDataTemplate>
