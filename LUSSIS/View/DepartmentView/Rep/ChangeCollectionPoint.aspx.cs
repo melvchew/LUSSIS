@@ -56,6 +56,11 @@ namespace LUSSIS.View.DepartmentView.Rep
             mcp.SendChangeNotification(new Department(), curDeptId);
             //s.notification(s.getEmployees());
         }
+
+        protected void Cancelbtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/DepartmentView/Home.aspx");
+        }
     }
 }
 

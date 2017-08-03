@@ -36,8 +36,8 @@ namespace LUSSIS.View.StoreView.Clerk
                 DropDownList d = new DropDownList();
                 d.ID = "ItemsList" + counter;
                 d.DataSource = vm.getItems();
-                d.Width = 250;
-                d.CssClass = "btn btn-default";
+                d.Width = 260;
+                d.CssClass = "form-control";
                 d.DataBind();
                 d.DataTextField = "Description";
                 d.DataValueField = "ItemId";
@@ -47,7 +47,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 TextBox txtQtyAdj = new TextBox();
                 txtQtyAdj.ID = "txtQtyAdj" + counter;
                 //txtQtyAdj.Text = "Adj" + counter;
-                txtQtyAdj.Width = 100;
+                txtQtyAdj.Width = 260;
                 txtQtyAdj.AutoPostBack = true;
                 txtQtyAdj.CssClass = "form-control qntyAdj";
                 PlaceHolder3.Controls.Add(txtQtyAdj);
@@ -55,14 +55,14 @@ namespace LUSSIS.View.StoreView.Clerk
                 TextBox txtReason = new TextBox();
                 txtReason.ID = "txtReason" + counter;
                 //txtReason.Text = "Reason" + counter;
-                txtReason.Width = 300;
+                txtReason.Width = 355;
                 txtReason.CssClass = "form-control";
                 PlaceHolder4.Controls.Add(txtReason);
                 //---TextBox Value
                 TextBox txtValue = new TextBox();
                 txtValue.ID = "txtValue" + counter;
                 //txtValue.Text = "Value" + counter;
-                txtValue.Width = 100;
+                txtValue.Width = 160;
                 txtValue.ReadOnly = true;
                 txtValue.CssClass = "form-control";
                 PlaceHolder5.Controls.Add(txtValue);
@@ -92,8 +92,8 @@ namespace LUSSIS.View.StoreView.Clerk
             DropDownList d = new DropDownList();
             d.ID = "ItemsList" + counter;
             d.DataSource = vm.getItems();
-            d.Width = 250;
-            d.CssClass = "btn btn-default";
+            d.Width = 260;
+            d.CssClass = "form-control";
             d.DataBind();
             d.DataTextField = "Description";
             d.DataValueField = "ItemId";
@@ -103,21 +103,21 @@ namespace LUSSIS.View.StoreView.Clerk
             TextBox txtQtyAdj = new TextBox();
             txtQtyAdj.ID = "txtQtyAdj" + counter;
             //txtQtyAdj.Text = "Adj" + counter;
-            txtQtyAdj.Width = 100;
+            txtQtyAdj.Width = 260;
             txtQtyAdj.CssClass = "form-control qntyAdj";
             PlaceHolder3.Controls.Add(txtQtyAdj);
             //---TextBox Reason
             TextBox txtReason = new TextBox();
             txtReason.ID = "txtReason" + counter;
             //txtReason.Text = "Reason" + counter;
-            txtReason.Width = 300;
+            txtReason.Width = 355;
             txtReason.CssClass = "form-control";
             PlaceHolder4.Controls.Add(txtReason);
             //---TextBox Value
             TextBox txtValue = new TextBox();
             txtValue.ID = "txtValue" + counter;
             //txtValue.Text = "Value" + counter;
-            txtValue.Width = 100;
+            txtValue.Width = 160;
             txtValue.ReadOnly = true;
             txtValue.CssClass = "form-control";
             PlaceHolder5.Controls.Add(txtValue);
