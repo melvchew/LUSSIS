@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
         <div class="placeholder">
@@ -40,17 +41,18 @@
                     From Date
                 </div>
                 <div class="col-sm-9">
-                    <asp:TextBox ID="txtFromDate" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox><br />
+                    <asp:TextBox ID="txtFromDate" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox><br />
                 </div>
                 <div class="col-sm-3">
                     To Date
                 </div>
                 <div class="col-sm-9">
-                    <asp:TextBox ID="txtToDate" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox><br />
+                    <asp:TextBox ID="txtToDate" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox><br />
                 </div>
 
                 <div class="col-sm-12">
-                    <asp:Label ID="lblerror" ForeColor="Red" runat="server"></asp:Label></div>
+                    <asp:Label ID="lblerror" ForeColor="Red" runat="server"></asp:Label>
+                </div>
                 <br />
                 <div class="col-sm-3">
                 </div>
@@ -59,4 +61,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </asp:Content>

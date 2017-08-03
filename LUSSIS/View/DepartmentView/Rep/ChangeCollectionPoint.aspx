@@ -43,7 +43,7 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <asp:Button ID="Cancelbtn" runat="server" CssClass="btn" Text="Cancel" />
+                    <asp:Button ID="Cancelbtn" runat="server" CssClass="btn" Text="Cancel" OnClick="Cancelbtn_Click" />
                 </div>
                 <div class="col-md-3">
                     <asp:Button ID="Submitbtn" runat="server" CssClass="btn" Text="Save" OnClick="Submitbtn_Click" />

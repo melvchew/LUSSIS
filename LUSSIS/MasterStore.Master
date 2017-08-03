@@ -45,7 +45,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <% if (HttpContext.Current.User.IsInRole("StoreClerk") || HttpContext.Current.User.IsInRole("StoreSupervisor") ||
-                                HttpContext.Current.User.IsInRole("StoreManager"))
+                                  HttpContext.Current.User.IsInRole("StoreManager"))
                         { %>
                     <a class="navbar-brand" href="<%= Page.ResolveUrl("~/View/StoreView/Home.aspx") %>">Logic University</a>
                     <%}
