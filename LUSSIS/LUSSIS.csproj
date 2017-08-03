@@ -162,6 +162,9 @@
     <Content Include="Style\main.css" />
     <Content Include="View\DepartmentView\Head\ViewPendingReq.aspx" />
     <Content Include="View\DepartmentView\Home.aspx" />
+    <Content Include="View\StoreView\Clerk\OrderForms.aspx" />
+    <Content Include="View\StoreView\Clerk\OrderItems.aspx" />
+    <Content Include="View\StoreView\Clerk\OrderList.aspx" />
     <Content Include="View\StoreView\Clerk\UploadExcel.aspx" />
     <Content Include="View\AccessDenied.aspx" />
     <Content Include="View\createuser.aspx" />
@@ -338,6 +341,27 @@
     </Compile>
     <Compile Include="View\DepartmentView\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\OrderForms.aspx.cs">
+      <DependentUpon>OrderForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\OrderForms.aspx.designer.cs">
+      <DependentUpon>OrderForms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\OrderItems.aspx.cs">
+      <DependentUpon>OrderItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\OrderItems.aspx.designer.cs">
+      <DependentUpon>OrderItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\OrderList.aspx.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\StoreView\Clerk\OrderList.aspx.designer.cs">
+      <DependentUpon>OrderList.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\StoreView\Clerk\UploadExcel.aspx.cs">
       <DependentUpon>UploadExcel.aspx</DependentUpon>

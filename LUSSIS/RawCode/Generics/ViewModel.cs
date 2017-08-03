@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LUSSIS.RawCode.DAL;
 
 namespace LUSSIS.RawCode.Generics
 {
@@ -79,5 +80,17 @@ namespace LUSSIS.RawCode.Generics
             set { SubmitDate = value; }
         }
 
+    }
+    public class OrderListItem
+    {
+        public PurchaseOrderItem PurchaseOrderItem { get; set; }
+        public Supplier Supplier { get; set; }
+    }
+
+    public class ConsolidatedDisbursementItem
+    {
+        public Item Item { get; set; }
+        public int AmountRetrieved { get; set; }
+        public int AmountDisbursed { get; set; }
     }
 }

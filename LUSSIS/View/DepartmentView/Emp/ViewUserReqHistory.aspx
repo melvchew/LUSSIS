@@ -17,7 +17,7 @@
                             <asp:BoundField HeaderText="Requisition ID" DataField="ReqId" />
 
                             <asp:BoundField HeaderText="Status" DataField="Status" />
-                            <asp:BoundField HeaderText="Requisition Date" DataField="SubmitDate" />
+                            <asp:BoundField HeaderText="Requisition Date" DataField="SubmitDate" DataFormatString="{0:d}" />
                             <asp:ButtonField Text="details" ButtonType="Link" CommandName="reqDetails" />
 
                         </Columns>

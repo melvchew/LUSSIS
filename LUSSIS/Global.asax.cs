@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using LUSSIS.RawCode.DAL;
-using LUSSIS.RawCode.BLL.data.ZhangJinshan;
+using LUSSIS.RawCode.BLL;
+using LUSSIS.RawCode.Generics;
 
 namespace LUSSIS
 {
@@ -48,6 +49,9 @@ namespace LUSSIS
             Session["Err"] = ""; //Peter
             Session["AddItemlist"] = null; //HU XIAOXI
             Session["View"] = ""; //HU XIAOXI
+            Session["empId"] = null; //Phong
+            Session["storeEmpId"] = null; //Phong
+            Session["OrderList"] = new List<OrderListItem>(); //Zach
             Session["empId"] = ""; //Phong
             Session["storeEmpId"] = ""; //Phong
         }
