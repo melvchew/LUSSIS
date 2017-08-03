@@ -1,62 +1,62 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DelegateRole.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Head.DelegateRole" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterStore.Master" AutoEventWireup="true" CodeBehind="DelegateRole.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Head.DelegateRole" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-     <div class="container">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container-fluid">
+        <div class="placeholder">
             <div class="row">
-                <div class="col-sm-12" style="text-align:center"><h2>Delegate Roles</h2></div>
+                <h3>Delegate Roles</h3>
+            </div>
+            <div class="row">
                 <div class="col-sm-3">
                     Current Department Representative
                 </div>
                 <div class="col-sm-9">
-                    <asp:Label ID="lblCurrentDeptRep"  runat="server" Width="300px"></asp:Label><br /><br />
+                    <asp:Label ID="lblCurrentDeptRep" runat="server"></asp:Label><br />
+                    <br />
                 </div>
                 <div class="col-sm-3">
-                     Department Representative
+                    Department Representative
                 </div>
                 <div class="col-sm-9">
-                    <asp:DropDownList ID="ddDeptRepre" CssClass="form-control" runat="server" Width="300px"></asp:DropDownList><br />
+                    <asp:DropDownList ID="ddDeptRepre" CssClass="form-control" runat="server"></asp:DropDownList><br />
+                    <br />
                 </div>
                 <div class="col-sm-3">
-                     Current Acting Head
+                    Current Acting Head
                 </div>
                 <div class="col-sm-9">
-                    <asp:Label ID="lblCurrentActingHead" runat="server" Width="300px"></asp:Label><br /><br />
+                    <asp:Label ID="lblCurrentActingHead" runat="server"></asp:Label><br />
+                    <br />
                 </div>
                 <div class="col-sm-3">
                     Acting Head
                 </div>
                 <div class="col-sm-9">
-                     <asp:DropDownList ID="ddActingHead" CssClass="form-control" runat="server" Width="300px"></asp:DropDownList><br />
+                    <asp:DropDownList ID="ddActingHead" CssClass="form-control" runat="server"></asp:DropDownList><br />
                 </div>
                 <div class="col-sm-3">
-                     From Date
+                    From Date
                 </div>
                 <div class="col-sm-9">
-                     <asp:TextBox ID="txtFromDate" CssClass="form-control" runat="server" TextMode="Date" Width="300px"></asp:TextBox><br />
+                    <asp:TextBox ID="txtFromDate" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox><br />
                 </div>
                 <div class="col-sm-3">
                     To Date
                 </div>
                 <div class="col-sm-9">
-                     <asp:TextBox ID="txtToDate" CssClass="form-control" runat="server" TextMode="Date" Width="300px"></asp:TextBox><br />
+                    <asp:TextBox ID="txtToDate" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox><br />
                 </div>
-                
-                <div class="col-sm-12"> <asp:Label ID="lblerror" ForeColor="Red" runat="server"></asp:Label></div><br />
-                <div class="col-sm-3">
 
+                <div class="col-sm-12">
+                    <asp:Label ID="lblerror" ForeColor="Red" runat="server"></asp:Label></div>
+                <br />
+                <div class="col-sm-3">
                 </div>
                 <div class="col-sm-9">
-                    <asp:Button ID="btnSave" CssClass="btn btn-primary" runat="server" OnClick="btnSave_Click" Text="Delegate" />
+                    <asp:Button ID="btnSave" CssClass="btn" runat="server" OnClick="btnSave_Click" Text="Delegate" />
                 </div>
             </div>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

@@ -11,6 +11,7 @@ namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class RaiseAdjVoucher : System.Web.UI.Page
     {
+
         VoucherManagementBLL vm = new VoucherManagementBLL();
         // get employee Id using Login Session
         int empId = 7;
@@ -48,7 +49,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 //txtQtyAdj.Text = "Adj" + counter;
                 txtQtyAdj.Width = 100;
                 txtQtyAdj.AutoPostBack = true;
-                txtQtyAdj.CssClass = "form-control";
+                txtQtyAdj.CssClass = "form-control qntyAdj";
                 PlaceHolder3.Controls.Add(txtQtyAdj);
                 //---TextBox Reason
                 TextBox txtReason = new TextBox();
@@ -65,28 +66,8 @@ namespace LUSSIS.View.StoreView.Clerk
                 txtValue.ReadOnly = true;
                 txtValue.CssClass = "form-control";
                 PlaceHolder5.Controls.Add(txtValue);
-
-                Literal lt = new Literal();
-                lt.Text = "<br/>";
-                PlaceHolder5.Controls.Add(lt);
-
             }
         }
-
-        //private void TxtQtyAdj_TextChanged(object sender, EventArgs e)
-        //{
-        //    //int value = Convert.ToInt32(((TextBox)sender).Text);
-        //    //Label2.Text = "AAAA";
-        //}
-
-        //protected void QtyAdj1_TextChanged(object sender, EventArgs e)
-        //{
-        //    //Response.Write("Hello");
-        //    //Label2.Text = ((TextBox)sender).Text;
-        //    int id = Convert.ToInt32(ItemsList1.SelectedValue);
-        //    int dItem = Convert.ToInt32(this.txtQtyAdj1.Text);
-        //    txtValue1.Text = calValue(id, dItem);
-        //}
 
         public String calValue(int id, int dItem)
         {
@@ -99,11 +80,13 @@ namespace LUSSIS.View.StoreView.Clerk
             return TotAdjValue.ToString();
         }
 
-        protected void AddTextBox(object sender, EventArgs e)
-        { }
         protected void AddNewRowLinkBtn_Click1(object sender, EventArgs e)
         {
-            Button1.Visible = true;
+
+
+            calculatebtn.Visible = true;
+            Submitbtn.Visible = false;
+
             counter++;
             //-- DropDownList Box
             DropDownList d = new DropDownList();
@@ -121,7 +104,7 @@ namespace LUSSIS.View.StoreView.Clerk
             txtQtyAdj.ID = "txtQtyAdj" + counter;
             //txtQtyAdj.Text = "Adj" + counter;
             txtQtyAdj.Width = 100;
-            txtQtyAdj.CssClass = "form-control";
+            txtQtyAdj.CssClass = "form-control qntyAdj";
             PlaceHolder3.Controls.Add(txtQtyAdj);
             //---TextBox Reason
             TextBox txtReason = new TextBox();
@@ -139,22 +122,13 @@ namespace LUSSIS.View.StoreView.Clerk
             txtValue.CssClass = "form-control";
             PlaceHolder5.Controls.Add(txtValue);
 
-            Literal lt = new Literal();
-            lt.Text = "<br/>";
-            PlaceHolder5.Controls.Add(lt);
-
             controlsList.Add(txtQtyAdj.ID);
-            //controlsList.Add(d.ID);
-            //controlsList.Add(txtReason.ID);
-            //controlsList.Add(txtValue.ID);
-
             ViewState["controlsList"] = controlsList;
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             Submitbtn.Visible = false;
-            Button1.Visible = true;
             if (!IsPostBack)
             {
                 ItemsList1.DataSource = vm.getItems();
@@ -165,14 +139,9 @@ namespace LUSSIS.View.StoreView.Clerk
             }
         }
 
-        protected void AddNewRowLinkBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
-             StoreEmployee se = vm.getStoreEmployeeById(empId);
+            StoreEmployee se = vm.getStoreEmployeeById(empId);
             vm.RaiseVoucher(empId, date, status, txtReasons1.Text);
             InvAdjVoucher adj = vm.getAdjVocherIdByDate(date);
             TextBox tb = new TextBox();
@@ -184,22 +153,26 @@ namespace LUSSIS.View.StoreView.Clerk
             {
                 if (inr <= counter)
                 {
+                    decimal value = 0;
                     str = "txtQtyAdj" + inr;
                     tb = (TextBox)ctr.FindControl(str);
                     str = "ItemsList" + inr;
                     ddl = (DropDownList)ctr.FindControl(str);
                     itemId = Convert.ToInt32(ddl.SelectedValue);
                     adjQty = Convert.ToInt32(tb.Text);
+                    str = "txtValue" + inr;
+                    tb = (TextBox)ctr.FindControl(str);
+                    value = Convert.ToDecimal(tb.Text);
                     vm.AddRaiseAdjItem(adj.VoucherId, itemId, adjQty);
+                    if (value > 250)
+                    {
+                        vm.sendnotification(se, adj.VoucherId, itemId);
+                    }
                 }
                 inr++;
             }
             Response.Write("<script>alert('Voucher ID = " + adj.VoucherId + " is raised successfully')</script>");
-            if (totAmt > 250)
-            {
-                vm.sendnotification(se, adj.VoucherId);
-            }
-            //Label2.Text = adj.VoucherId.ToString();
+            Response.Redirect("~/View/StoreView/Home.aspx");
         }
 
         public void textbox_textchange(object sender, EventArgs e)
@@ -211,33 +184,6 @@ namespace LUSSIS.View.StoreView.Clerk
             //int dItem = Convert.ToInt32(this.QtyAdj3.Text);
             //Value3.Text = calValue(id,dItem);
         }
-
-        //public void createControls(int Count)
-        //{
-        //    DropDownList d = new DropDownList();
-        //    d.ID = "ItemsLst" + count;
-        //    d.DataSource = c.getItems();
-        //    d.DataBind();
-        //    d.DataTextField = "Description";
-        //    d.DataValueField = "ItemId";
-        //    d.DataBind();
-        //    form1.Controls.Add(d);
-
-        //    TextBox AdjQ = new TextBox();
-        //    AdjQ.ID = "QtyAdj" + count;
-        //    AdjQ.TextChanged += new EventHandler(textbox_textchange);
-        //    form1.Controls.Add(AdjQ);
-
-        //    TextBox r = new TextBox();
-        //    r.ID = "Reasons" + count;
-        //    form1.Controls.Add(r);
-
-        //    TextBox v = new TextBox();
-        //    v.ID = "Value" + count;
-        //    form1.Controls.Add(v);
-
-        //    form1.Controls.Add(new LiteralControl("<br /><br />"));
-        //}
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -265,18 +211,18 @@ namespace LUSSIS.View.StoreView.Clerk
                         str = "txtValue" + i;
                         tb = (TextBox)PlaceHolder1.FindControl(str);
                         tb.Text = calValue(itemId, adjQty);
-                        Button1.Visible = false;
+                        calculatebtn.Visible = false;
                         Submitbtn.Visible = true;
                     }
-                    else
-                    {
-                        Response.Write("<script>alert('Please Enter Numeric Data')</script>");
-                    }
+                    //else
+                    //{
+                    //    Response.Write("<script>alert('Please Enter Numeric Data')</script>");
+                    //}
                 }
-                else
-                {
-                    Response.Write("<script>alert('Please Enter Valid Data')</script>");
-                }
+                //else
+                //{
+                //    Response.Write("<script>alert('Please Enter Valid Data')</script>");
+                //}
             }
         }
     }

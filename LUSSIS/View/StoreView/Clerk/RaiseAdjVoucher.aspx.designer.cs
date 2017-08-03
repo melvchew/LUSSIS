@@ -13,15 +13,6 @@ namespace LUSSIS.View.StoreView.Clerk {
     public partial class RaiseAdjVoucher {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// PlaceHolder1 control.
         /// </summary>
         /// <remarks>
@@ -121,6 +112,15 @@ namespace LUSSIS.View.StoreView.Clerk {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
+        /// calculatebtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton calculatebtn;
+        
+        /// <summary>
         /// Submitbtn control.
         /// </summary>
         /// <remarks>
@@ -128,15 +128,6 @@ namespace LUSSIS.View.StoreView.Clerk {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Submitbtn;
-        
-        /// <summary>
-        /// Cancelbtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Cancelbtn;
         
         /// <summary>
         /// Label2 control.

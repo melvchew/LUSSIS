@@ -36,16 +36,18 @@ namespace LUSSIS
         {
             EmailBLL email = new EmailBLL();
             email.SendEmailsToClerk();
+
+            //Melvin added
+            LUSSIS.RawCode.BLL.RolesManagementBLL rmBLL = new LUSSIS.RawCode.BLL.RolesManagementBLL();
+            rmBLL.CheckExistingAH();
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
             Session["xlPath"] = ""; //Peter
             Session["Err"] = ""; //Peter
-            Session["Suppliers"] = new List<Supplier>();//Zhang Jinshan Add
             Session["AddItemlist"] = null; //HU XIAOXI
             Session["View"] = ""; //HU XIAOXI
-
             Session["empId"] = null; //Phong
             Session["storeEmpId"] = null; //Phong
         }

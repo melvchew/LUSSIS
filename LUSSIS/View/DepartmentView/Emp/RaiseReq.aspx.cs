@@ -21,13 +21,12 @@ namespace LUSSIS.View.DepartmentView.Emp
             {
                 List<Item> litems = (List<Item>)Session["AddItemlist"];
                 this.BindGrid(litems);
+                
             }
-
         }
 
         private void BindGrid(List<Item> litems)
         {
-
             using (context = new LUSSdb())
             {
                 gvNewReqItem.DataSource = litems;
@@ -102,7 +101,6 @@ namespace LUSSIS.View.DepartmentView.Emp
                     {
                         int itemId =
                             Convert.ToInt32(gvNewReqItem.DataKeys[row.RowIndex].Value);
-                        //Labl_Test.Text = itemId.ToString();
                         litems.Add(context.Items.Where(i => i.ItemId == itemId).ToList().First());
                     }
                 }

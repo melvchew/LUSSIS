@@ -14,14 +14,16 @@ namespace LUSSIS.View.DepartmentView.Rep
         //Session ID needed for current dept
 
         static int curDeptId;
+        RolesManagementBLL rm = new RolesManagementBLL();
         ManageCollectionPointBLL mcp = new ManageCollectionPointBLL();
         Department dept = new Department();
         static int cpId = 1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpContext.Current.Session["DepartmentId"] = 1;
-            curDeptId = Convert.ToInt32(Session["DepartmentId"]);
+            Employee emp = rm.GetEmpByID(Convert.ToInt32(Session["empId"]));
+            Department dep = rm.GetDeptByUser(emp);
+            curDeptId = dep.DeptId;
             dept = mcp.GetCurrentDeptById(curDeptId);
             getCurrentCollectionPoint(dept.CollectionPointId);
         }
