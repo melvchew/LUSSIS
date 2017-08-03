@@ -20,8 +20,8 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <asp:Label ID="Label3" runat="server" Text="Showing requisitions from: All Departments"></asp:Label>
-                    <asp:Label ID="Label4" runat="server" Text="" ForeColor="Red"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="Showing requisitions from: All Departments"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="" ForeColor="Red"></asp:Label>
                 </div>
             </div>
             <div class="row">

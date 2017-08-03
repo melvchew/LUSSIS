@@ -60,6 +60,7 @@
                         </Columns>
 
                         <EmptyDataTemplate>
+                            <table class="table table-bordered table-striped" id="t01">
                             <tr>
                                 <th>Item Discription</th>
                                 <th>Quantity</th>
@@ -70,6 +71,7 @@
                                 <td>empty</td>
                                 <td>empty</td>
                             </tr>
+                            </table>
                         </EmptyDataTemplate>
                     </asp:GridView>
                 </div>
