@@ -25,7 +25,7 @@ namespace LUSSIS.View.DepartmentView.Emp
 
                 Lite_ReqStatus.Text = "Requisition Status: " + req.Status;
                 Lite_ReqId.Text = "Requisition ID: " + req.ReqId;
-                Lite_ReqDate.Text = "Requisition Date: " + String.Format("{0:F}", req.SubmitDate.ToString());
+                Lite_ReqDate.Text = "Requisition Date: " + String.Format("{0:D}", req.SubmitDate);
 
                 List<RequisitionItem> lReqItems = rs.GetReqItems(req);
 
