@@ -40,7 +40,8 @@
 
                             <asp:TemplateField HeaderText="Quantity">
                                 <EditItemTemplate>
-                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Quantity") %>'></asp:TextBox>
+                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Quantity") %>' TextMode="Number"
+                                        onkeyup="this.value = this.value.slice(0, 6)" ></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="reqfieldValidQty" runat="server" 
                                         ControlToValidate="TextBox2" ErrorMessage="RequiredFieldValidator" 
                                         ForeColor="Red" ValidationGroup="EditValidationControls">Quantity is required!</asp:RequiredFieldValidator>
