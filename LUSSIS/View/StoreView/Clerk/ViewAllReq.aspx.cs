@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using LUSSIS.RawCode.BLL;
 using LUSSIS.RawCode.DAL;
 
+//by Phong
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class ViewAllReq : System.Web.UI.Page
