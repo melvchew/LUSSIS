@@ -48,8 +48,8 @@ namespace LUSSIS
             Session["Err"] = ""; //Peter
             Session["AddItemlist"] = null; //HU XIAOXI
             Session["View"] = ""; //HU XIAOXI
-            Session["empId"] = null; //Phong
-            Session["storeEmpId"] = null; //Phong
+            Session["empId"] = ""; //Phong
+            Session["storeEmpId"] = ""; //Phong
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -85,6 +85,8 @@ namespace LUSSIS
             {
                 System.IO.File.Delete((string)Session["xlPath"]);
             } //Peter
+            Session["empId"] = ""; //Phong
+            Session["storeEmpId"] = ""; //Phong
         }
 
         protected void Application_End(object sender, EventArgs e)

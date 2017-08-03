@@ -30,104 +30,111 @@ namespace LUSSIS
 
             IIdentity id = User.Identity;
             dynamic profile = ProfileBase.Create(id.Name);
-            
-            
 
-            if (User.IsInRole("StoreClerk") ||
-                User.IsInRole("StoreManager") ||
-                User.IsInRole("StoreSupervisor"))
-            {
-                Session["storeEmpId"] = profile.empId;
 
-            }
-
-            else if (User.IsInRole("DeptEmp") ||
-                User.IsInRole("DeptRep") ||
-                 User.IsInRole("DeptHead") ||
-                  User.IsInRole("DeptActingHead"))
-            {
-                Session["empId"] = profile.empId;
-                empId = profile.empId;
-                int i = Convert.ToInt32(empId);
-                emp = context.Employees.Where(x => x.EmpId == i).First();
-                dept = context.Departments.Where(x => x.DeptId == emp.DeptId).First();
-                deptRepId = dept.DeptRep;
-                actingheadID = dept.ActingHead;
-                r = Convert.ToString(deptRepId);
-                ah = Convert.ToString(actingheadID);
-                ahStartDate = dept.AHStartDate;
-                ahEndDate = dept.AHEndDate;
-            }
-            
-
-            if (Session["empId"] == null && Session["storeEmpId"] == null)
-                Response.Redirect("Login.aspx");
-
-            else
-            {
-
-                if (User.IsInRole("StoreClerk"))
+            //try {
+                if (User.IsInRole("StoreClerk") ||
+                    User.IsInRole("StoreManager") ||
+                    User.IsInRole("StoreSupervisor"))
                 {
-                    Response.Redirect("~/View/StoreView/Home.aspx");
+                    Session["storeEmpId"] = profile.empId;
+
                 }
-                else if (User.IsInRole("StoreManager"))
+
+                else if (User.IsInRole("DeptEmp") ||
+                    User.IsInRole("DeptRep") ||
+                     User.IsInRole("DeptHead") ||
+                      User.IsInRole("DeptActingHead"))
                 {
-                    Response.Redirect("~/View/StoreView/Home.aspx");
+                    Session["empId"] = profile.empId;
+                    empId = profile.empId;
+                    string s = empId;
+                    int i = Convert.ToInt32(empId);
+                    emp = context.Employees.Where(x => x.EmpId == i).First();
+                    dept = context.Departments.Where(x => x.DeptId == emp.DeptId).First();
+                    deptRepId = dept.DeptRep;
+                    actingheadID = dept.ActingHead;
+                    r = Convert.ToString(deptRepId);
+                    ah = Convert.ToString(actingheadID);
+                    ahStartDate = dept.AHStartDate;
+                    ahEndDate = dept.AHEndDate;
                 }
-                else if (User.IsInRole("StoreSupervisor"))
+
+
+                if (Session["empId"] == null && Session["storeEmpId"] == null)
+                    Response.Redirect("Login.aspx");
+
+                else
                 {
-                    Response.Redirect("~/View/StoreView/Home.aspx");
-                }
-                else if (User.IsInRole("DeptEmp"))
-                {
-                    if (r != profile.empId && actingheadID == null)
+
+                    if (User.IsInRole("StoreClerk"))
                     {
-                        Response.Redirect("~/View/DepartmentView/Home.aspx");
+                        Response.Redirect("~/View/StoreView/Home.aspx");
                     }
-                    //DateTime? startDate = dept.AHStartDate;
-                    //DateTime? endDate = dept.AHEndDate;
-                    else if (r == profile.empId)
+                    else if (User.IsInRole("StoreManager"))
                     {
-                        Roles.AddUserToRole(id.Name, "DeptRep");
-                        Roles.RemoveUserFromRole(id.Name, "DeptEmp");
-                        Response.Redirect("~/View/DepartmentView/Home.aspx");
+                        Response.Redirect("~/View/StoreView/Home.aspx");
                     }
-                    else if (ah == profile.empId)
+                    else if (User.IsInRole("StoreSupervisor"))
                     {
-                        if (DateTime.Today >= ahStartDate)
+                        Response.Redirect("~/View/StoreView/Home.aspx");
+                    }
+                    else if (User.IsInRole("DeptEmp"))
+                    {
+                        if (r != profile.empId && actingheadID == null)
                         {
-                            Roles.AddUserToRole(id.Name, "DeptActingHead");
+                            Response.Redirect("~/View/DepartmentView/Home.aspx");
+                        }
+                        //DateTime? startDate = dept.AHStartDate;
+                        //DateTime? endDate = dept.AHEndDate;
+                        else if (r == profile.empId)
+                        {
+                            Roles.AddUserToRole(id.Name, "DeptRep");
                             Roles.RemoveUserFromRole(id.Name, "DeptEmp");
                             Response.Redirect("~/View/DepartmentView/Home.aspx");
                         }
-                    }
-                    else
-                        Response.Redirect("~/View/DepartmentView/Home.aspx");
-                }
-                else if (User.IsInRole("DeptActingHead"))
-                {
-                    if (actingheadID == null || ah != profile.empId || DateTime.Today > ahEndDate)
-                    {
-                        Roles.AddUserToRole(id.Name, "DeptEmp");
-                        Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
+                        else if (ah == profile.empId)
+                        {
+                            if (DateTime.Today >= ahStartDate)
+                            {
+                                Roles.AddUserToRole(id.Name, "DeptActingHead");
+                                Roles.RemoveUserFromRole(id.Name, "DeptEmp");
 
+                            }
+                            Response.Redirect("~/View/DepartmentView/Home.aspx");
+                        }
+                        else
+                            Response.Redirect("~/View/DepartmentView/Home.aspx");
                     }
-                    Response.Redirect("~/View/DepartmentView/Home.aspx");
-                }
-                else if (User.IsInRole("DeptRep"))
-                {
-                    if (deptRepId != profile.empId)
+                    else if (User.IsInRole("DeptActingHead"))
                     {
-                        Roles.AddUserToRole(id.Name, "DeptEmp");
-                        Roles.RemoveUserFromRole(id.Name, "DeptRep");
+                        if (actingheadID == null || ah != profile.empId || DateTime.Today > ahEndDate)
+                        {
+                            Roles.AddUserToRole(id.Name, "DeptEmp");
+                            Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
+
+                        }
+                        Response.Redirect("~/View/DepartmentView/Home.aspx");
                     }
-                    Response.Redirect("~/View/DepartmentView/Home.aspx");
+                    else if (User.IsInRole("DeptRep"))
+                    {
+                        if (r != profile.empId)
+                        {
+                            Roles.AddUserToRole(id.Name, "DeptEmp");
+                            Roles.RemoveUserFromRole(id.Name, "DeptRep");
+                        }
+                        Response.Redirect("~/View/DepartmentView/Home.aspx");
+                    }
+                    else if (User.IsInRole("DeptHead"))
+                    {
+                        Response.Redirect("~/View/DepartmentView/Home.aspx");
+                    }
                 }
-                else if (User.IsInRole("DeptHead"))
-                {
-                    Response.Redirect("~/View/DepartmentView/Home.aspx");
-                }
-           }
-        }
+            }
+            //catch
+            //{
+            //    Response.Redirect("~/View/login.aspx");
+            //}
+        //}
     }
 }
