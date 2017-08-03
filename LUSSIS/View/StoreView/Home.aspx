@@ -8,31 +8,330 @@
             <div class="row">
                 <h3>Store Home Page</h3>
             </div>
-            <span>Logged in user(Session["storeEmpId"]) = </span>
-            <asp:Literal ID="litEmpId" runat="server"></asp:Literal>
-            <br />
-            <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/View/StoreView/Clerk/ViewAllReq.aspx">View Requisitions</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/View/StoreView/Clerk/AddNewSupplier.aspx">Add New Supplier</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/View/StoreView/Clerk/EditSuppliers.aspx">Edit Supplier</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/View/StoreView/Clerk/Inventory Status Report.aspx">Inventory Status Report</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/View/StoreView/Clerk/RaiseAdjVoucher.aspx">Raise Adj Voucher</asp:HyperLink><br />
-            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/View/StoreView/Clerk/UploadExcel.aspx">Upload Excel</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/View/StoreView/Clerk/TrendAnalysis.aspx">Generate Trend Analysis</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/View/StoreView/Clerk/ProductList.aspx">Manage Product List</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/View/StoreView/Manager/AdjVoucher.aspx">View pending adj voucher (Manager)</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/View/StoreView/Supervisor/AdjVoucherBelow250.aspx">View pending adj voucher (Supervisor)</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/View/StoreView/Supervisor/ManageCollectionPoint.aspx">Manage collection points</asp:HyperLink>
-            <br />
-            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/View/Logout.aspx">Log Out</asp:HyperLink>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-6">
+                    <span class="pull-right">Welcome, <b>Low Zhi Yong Peter</b>!
+                    </span>
+                </div>
+            </div>
+            <% if (HttpContext.Current.User.IsInRole("StoreClerk"))
+                { %>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="infocard">
+                        <div class="title">
+                            <h4>Items Retrieval List</h4>
+                            <div class="imgbox">
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>You have a total of 30 items that are needed to be delivered.</p>
+                            <p></p>
+                            <div class="col-lg-12">
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Clips Double 1"</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Envelope Brown (3"x6")</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Envelope White (3"x6") w/ Window</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exercise Book (100 pg)</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>File Separator</td>
+                                        <td>8</td>
+                                    </tr>
+                                </table>
+                                <div>
+                                    <a class="pull-right" href="#">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="infocard">
+                        <div class="title">
+                            <h4>Low Stock Items</h4>
+                            <div class="imgbox">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>You have a total of 8 items that are low on stock.</p>
+                            <p></p>
+                            <div class="col-lg-12">
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Envelope Brown (5"x7")</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>File-Blue Plain</td>
+                                        <td>22</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Highlighter Pink</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pad Postit Memo 1"x2"</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pencil 2B with Eraser End</td>
+                                        <td>11</td>
+                                    </tr>
+                                </table>
+                                <div>
+                                    <a class="pull-right" href="#">View Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }
+                else if (HttpContext.Current.User.IsInRole("StoreSupervisor"))
+                { %>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="infocard">
+                        <div class="title">
+                            <h4>Items Retrieval List</h4>
+                            <div class="imgbox">
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>You have a total of 30 items that are needed to be delivered.</p>
+                            <p></p>
+                            <div class="col-lg-12">
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Clips Double 1"</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Envelope Brown (3"x6")</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Envelope White (3"x6") w/ Window</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exercise Book (100 pg)</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>File Separator</td>
+                                        <td>8</td>
+                                    </tr>
+                                </table>
+                                <div>
+                                    <a class="pull-right" href="#">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="infocard">
+                        <div class="title">
+                            <h4>Low Stock Items</h4>
+                            <div class="imgbox">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>You have a total of 8 items that are low on stock.</p>
+                            <p></p>
+                            <div class="col-lg-12">
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Envelope Brown (5"x7")</td>
+                                        <td>12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>File-Blue Plain</td>
+                                        <td>22</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Highlighter Pink</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pad Postit Memo 1"x2"</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pencil 2B with Eraser End</td>
+                                        <td>11</td>
+                                    </tr>
+                                </table>
+                                <div>
+                                    <a class="pull-right" href="#">View Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="infocard">
+                        <div class="title">
+                            <h4>Pending Adjustment Vouchers</h4>
+                            <div class="imgbox">
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>You have a total of 4 pending adjustment vouchers that need approval.</p>
+                            <p></p>
+                            <div class="col-lg-12">
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th>Raised By</th>
+                                        <th>Submitted Date</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Kellia Penlington</td>
+                                        <td>08/15/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Cobbing</td>
+                                        <td>08/16/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cheryl Skiplorne</td>
+                                        <td>08/16/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Caren Guild</td>
+                                        <td>08/16/2017</td>
+                                    </tr>
+                                </table>
+                                <div>
+                                    <a class="pull-right" href="#">View Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }
+                else if (HttpContext.Current.User.IsInRole("StoreManager"))
+                { %>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="infocard">
+                        <div class="title">
+                            <h4>Pending Adjustment Vouchers</h4>
+                            <div class="imgbox">
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>You have a total of 4 pending adjustment vouchers that need approval.</p>
+                            <p></p>
+                            <div class="col-lg-12">
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th>Raised By</th>
+                                        <th>Submitted Date</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Kellia Penlington</td>
+                                        <td>08/15/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Cobbing</td>
+                                        <td>08/16/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cheryl Skiplorne</td>
+                                        <td>08/16/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Caren Guild</td>
+                                        <td>08/16/2017</td>
+                                    </tr>
+                                </table>
+                                <div>
+                                    <a class="pull-right" href="#">View Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="infocard">
+                        <div class="title">
+                            <h4>Pending Purchase Orders</h4>
+                            <div class="imgbox">
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <p>You have a total of 3 pending purchase orders that need approval.</p>
+                            <p></p>
+                            <div class="col-lg-12">
+                                <table class="table table-striped table-bordered">
+                                    <tr>
+                                        <th>Raised By</th>
+                                        <th>Submitted Date</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Kellia Penlington</td>
+                                        <td>08/15/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Cobbing</td>
+                                        <td>08/16/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cheryl Skiplorne</td>
+                                        <td>08/16/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Caren Guild</td>
+                                        <td>08/16/2017</td>
+                                    </tr>
+                                </table>
+                                <div>
+                                    <a class="pull-right" href="#">View Report</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
         </div>
     </div>
 </asp:Content>
