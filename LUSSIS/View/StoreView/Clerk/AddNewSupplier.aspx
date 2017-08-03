@@ -45,12 +45,14 @@
                     <div class="col-sm-8">
                         <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" ErrorMessage="*Phone No can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="*input number or space character" ControlToValidate="TextBox4" ValidationExpression="^[ 0-9]*$"></asp:RegularExpressionValidator>
                     </div>
                     <div class="col-sm-4 ">
                         <label for="lblFaxNo">Fax No</label>
                     </div>
                     <div class="col-sm-8">
                         <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ErrorMessage="*input number or space character" ControlToValidate="TextBox5" ValidationExpression="^[ 0-9]*$"></asp:RegularExpressionValidator>
                     </div>
                     <div class="col-sm-4">
                         <label for="lblAddress">Address</label>
