@@ -13,15 +13,6 @@ namespace LUSSIS.View.DepartmentView.Emp {
     public partial class ViewReq {
         
         /// <summary>
-        /// frmViewReq control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frmViewReq;
-        
-        /// <summary>
         /// Lite_ReqStatus control.
         /// </summary>
         /// <remarks>

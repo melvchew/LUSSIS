@@ -11,7 +11,7 @@ namespace LUSSIS.View.StoreView
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //litEmpId.Text = Session["storeEmpId"].ToString();
+            litEmpId.Text = Session["storeEmpId"].ToString();
         }
     }
 }

@@ -1,30 +1,31 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadExcel.aspx.cs" Inherits="LUSSIS.Store.UploadExcel" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterStore.Master" AutoEventWireup="true" CodeBehind="UploadExcel.aspx.cs" Inherits="LUSSIS.Store.UploadExcel" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-        <asp:FileUpload ID="FileUpload1" runat="server" />
-        <br />
-        <br />
-        <asp:Label ID="lbFileSubmit" runat="server"></asp:Label>
-        <br />
-        <br />
-        <asp:Button ID="btnUpload" runat="server" Text="Upload File" OnClick="btnUpload_Click" />
-        &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnTransfer" runat="server" Text="Transfer Data" OnClick="btnTransfer_Click" />
-        <br />
-        <br />
-        <asp:Label ID="lbStatus" runat="server"></asp:Label>
-        <br />
-
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container-fluid">
+        <div class="placeholder">
+            <div class="row">
+                <h3>Upload Product From Excel</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
+                </div>
+                <div class="col-md-12">
+                    <asp:Label ID="lbFileSubmit" runat="server"></asp:Label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <asp:Button ID="btnUpload" CssClass="btn" runat="server" Text="Upload File" OnClick="btnUpload_Click" />
+                    <asp:Button ID="btnTransfer" CssClass="btn" runat="server" Text="Transfer Data" OnClick="btnTransfer_Click" />
+                </div>
+                <div class="col-md-12">
+                    <asp:Label ID="lbStatus" runat="server"></asp:Label>
+                </div>
+            </div>
+        </div>
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
