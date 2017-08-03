@@ -18,7 +18,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center" AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" AllowSorting="True" AllowPaging="True" CssClass="table table-striped table-bordered">
+                    <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center" AutoGenerateColumns="False" OnPageIndexChanging="GridView1_PageIndexChanging" AllowSorting="True" AllowPaging="True" CssClass="table table-striped table-bordered" PageSize="8">
                         <Columns>
                             <asp:TemplateField HeaderText="Description">
                                 <EditItemTemplate>
