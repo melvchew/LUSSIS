@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.Security;
 using LUSSIS.RawCode.DAL;
 
+//by Phong
 namespace LUSSIS.View
 {
     public partial class Redirect : System.Web.UI.Page

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+//by Phong
 namespace LUSSIS.View
 {
     public partial class Logout : System.Web.UI.Page

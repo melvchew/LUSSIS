@@ -71,16 +71,12 @@
                             <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox8" ErrorMessage="*GSTNo can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="col-sm-3">
-                        <asp:Button ID="Button1" runat="server" Text="Clear All" CssClass="btn pull-right" OnClick="Button1_Click" />
-                    </div>
-                    <div class="col-sm-4">
-                        <asp:Button ID="Button2" runat="server" Text="Add" CssClass="btn pull-right" OnClick="Button2_Click" />
+                        <div class="col-sm-3">
+                            <asp:Button ID="Button1" runat="server" Text="Clear All" CssClass="btn pull-right" OnClick="Button1_Click" />
+                        </div>
+                        <div class="col-sm-4">
+                            <asp:Button ID="Button2" runat="server" Text="Add" CssClass="btn pull-right" OnClick="Button2_Click" />
+                        </div>
                     </div>
                 </div>
             </div>
