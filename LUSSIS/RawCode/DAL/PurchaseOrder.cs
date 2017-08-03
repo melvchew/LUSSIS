@@ -33,9 +33,9 @@ namespace LUSSIS.RawCode.DAL
         public string EmpComments { get; set; }
         public string ApproverComments { get; set; }
     
-        public virtual StoreEmployee StoreEmployee { get; set; }
-        public virtual StoreEmployee StoreEmployee1 { get; set; }
-        public virtual StoreEmployee StoreEmployee2 { get; set; }
+        public virtual StoreEmployee OrderStoreEmployee { get; set; }
+        public virtual StoreEmployee ApproveStoreEmployee { get; set; }
+        public virtual StoreEmployee ReceiveStoreEmployee { get; set; }
         public virtual Supplier Supplier { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PurchaseOrderItem> PurchaseOrderItems { get; set; }

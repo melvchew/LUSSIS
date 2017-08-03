@@ -1052,9 +1052,9 @@ warning 6002: The table/view 'LUSSdb.dbo.TransposedRequisitionReportByCost' does
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EmpComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ApproverComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="StoreEmployee" Relationship="Self.FK_PurchaseOrder_StoreEmployee" FromRole="PurchaseOrder" ToRole="StoreEmployee" />
-          <NavigationProperty Name="StoreEmployee1" Relationship="Self.FK_PurchaseOrder_StoreEmployee1" FromRole="PurchaseOrder" ToRole="StoreEmployee" />
-          <NavigationProperty Name="StoreEmployee2" Relationship="Self.FK_PurchaseOrder_StoreEmployee2" FromRole="PurchaseOrder" ToRole="StoreEmployee" />
+          <NavigationProperty Name="OrderStoreEmployee" Relationship="Self.FK_PurchaseOrder_StoreEmployee" FromRole="PurchaseOrder" ToRole="StoreEmployee" />
+          <NavigationProperty Name="ApproveStoreEmployee" Relationship="Self.FK_PurchaseOrder_StoreEmployee1" FromRole="PurchaseOrder" ToRole="StoreEmployee" />
+          <NavigationProperty Name="ReceiveStoreEmployee" Relationship="Self.FK_PurchaseOrder_StoreEmployee2" FromRole="PurchaseOrder" ToRole="StoreEmployee" />
           <NavigationProperty Name="Supplier" Relationship="Self.FK_PurchaseOrder_Supplier" FromRole="PurchaseOrder" ToRole="Supplier" />
           <NavigationProperty Name="PurchaseOrderItems" Relationship="Self.FK_PurchaseOrderItem_PurchaseOrder" FromRole="PurchaseOrder" ToRole="PurchaseOrderItem" />
         </EntityType>
