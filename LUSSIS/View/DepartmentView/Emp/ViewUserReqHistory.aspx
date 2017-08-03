@@ -1,67 +1,46 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewUserReqHistory.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Emp.ViewUserReqHistory" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterStore.Master" AutoEventWireup="true" CodeBehind="ViewUserReqHistory.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Emp.ViewUserReqHistory" %>
+
 <%-- Made by Hu Xiaoxi(Team5) --%>
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container-fluid">
+        <div class="placeholder">
+            <div class="row">
+                <h3>Personal Requisition History</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <asp:GridView ID="gvReqHistory" runat="server" AutoGenerateColumns="False" OnRowCommand="gvReqHistory_RowCommand"
+                        AllowPaging="True" OnPageIndexChanging="gvReqHistory_PageIndexChanging" CssClass="table table-bordered table-striped">
+                        <Columns>
+                            <asp:BoundField HeaderText="Requisition ID" DataField="ReqId" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <link href="../../../Content/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
+                            <asp:BoundField HeaderText="Status" DataField="Status" />
+                            <asp:BoundField HeaderText="Requisition Date" DataField="SubmitDate" />
+                            <asp:ButtonField Text="details" ButtonType="Link" CommandName="reqDetails" />
 
-    <style type="text/css">
-#t01 {
-     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-     width:100%;
-     border-collapse:collapse;
-}
-#t01 td,th{
-      font-size:1em;
-      border:1px solid #808080;
-      padding:3px 7px 2px 7px;
-}
-#t01 td{color:lightgray;}
-</style>
-
-</head>
-<body class="container-fluid">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <form id="frmViewUserReqHistory" runat="server">
-                <div>
-            <h1 style="text-align: center">Personal Requisition History</h1>
-        <br />
+                        </Columns>
+                        <EmptyDataTemplate>
+                                <tr>
+                                    <th>Requisition ID</th>
+                                    <th>Status</th>
+                                    <th>Requisition Date</th>
+                                </tr>
+                                <tr>
+                                    <td>empty</td>
+                                    <td>empty</td>
+                                    <td>empty</td>
+                                </tr>
+                        </EmptyDataTemplate>
+                    </asp:GridView>
                 </div>
-        <br /><br />
-
-        <asp:GridView ID="gvReqHistory" runat="server" AutoGenerateColumns="False" OnRowCommand="gvReqHistory_RowCommand" 
-            AllowPaging="True" OnPageIndexChanging="gvReqHistory_PageIndexChanging" CssClass="table table-bordered">
-            <Columns>
-                <asp:BoundField HeaderText="Requisition ID" DataField="ReqId" />
-                                      
-                <asp:BoundField HeaderText="Status" DataField="Status" />
-                <asp:BoundField HeaderText="Requisition Date" DataField="SubmitDate" />
-                <asp:ButtonField Text="details" ButtonType="Link" CommandName="reqDetails"/>
-
-            </Columns>
-            <EmptyDataTemplate>
-                <table border="1" id="t01">
-                    <tr>
-                        <th>Requisition ID</th>
-                        <th>Status</th>
-                        <th>Requisition Date</th>
-                    </tr>
-                    <tr>
-                        <td>empty</td>
-                        <td>empty</td>
-                        <td>empty</td>
-                    </tr>
-                </table>
-            </EmptyDataTemplate>
-        </asp:GridView>
-    <asp:Button ID="btnBack" runat="server" Text="Back to Home Page" OnClick="btnBack_Click" CssClass="btn btn-primary pull-right"/>
-    </form>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <asp:Button ID="btnBack" runat="server" Text="Back to Home Page" OnClick="btnBack_Click" CssClass="btn" />
+                </div>
+            </div>
         </div>
     </div>
-
-</body>
-</html>
+</asp:Content>

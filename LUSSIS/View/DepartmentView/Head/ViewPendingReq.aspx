@@ -1,25 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewPendingReq.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Head.ViewPendingReq" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterStore.Master" AutoEventWireup="true" CodeBehind="ViewPendingReq.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Head.ViewPendingReq" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    
-    <link rel="stylesheet" href="../../../Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../../Content/bootstrap-theme.min.css.map" />
-</head>
-<body>
-
-    <form id="form1" runat="server">
-        <div class="container-fluid">
-            <div>
-                <div class="col-lg-12">
-                    <asp:Label ID="Label_PageTitle" runat="server" Text="Label"></asp:Label>
-                </div>
-
-                <div class="col-lg-12">
-                    <asp:GridView ID="GridView_VPR" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container-fluid">
+        <div class="placeholder">
+            <div class="row">
+                <h3>
+                    <asp:Label ID="Label_PageTitle" runat="server" Text="Label"></asp:Label></h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <asp:GridView CssClass="table table-bordered table-striped" ID="GridView_VPR" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged1">
                         <Columns>
 
                             <asp:BoundField DataField="ReqId" HeaderText="Requisition ID" />
@@ -39,11 +31,8 @@
                         </Columns>
 
                     </asp:GridView>
-
                 </div>
-
             </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+</asp:Content>

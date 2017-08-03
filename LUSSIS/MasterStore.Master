@@ -11,10 +11,33 @@
     <link href="<%= Page.ResolveUrl("~/Style/main.css") %>" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+<%-- Add by Cornelia,using in Emp page --%>
+<style type="text/css">
+#t01
+  {
+  width:100%;
+  border-collapse:collapse;
+  }
+
+#t01 th
+  {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  }
+
+#t01 td 
+  {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  color:#808080;
+  }
+</style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body  style="background-color: #eee">
+<body style="background-color: #eee">
     <form id="form1" runat="server">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
@@ -24,7 +47,15 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Logic University</a>
+                    <% if (HttpContext.Current.User.IsInRole("StoreClerk") || HttpContext.Current.User.IsInRole("StoreSupervisor") ||
+                              HttpContext.Current.User.IsInRole("StoreManager"))
+                        { %>
+                    <a class="navbar-brand" href="<%= Page.ResolveUrl("~/View/StoreView/Home.aspx") %>">Logic University</a>
+                    <%}
+                    else
+                    { %>
+                    <a class="navbar-brand" href="<%= Page.ResolveUrl("~/View/DepartmentView/Home.aspx") %>">Logic University</a>
+                    <%} %>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <% if (HttpContext.Current.User.IsInRole("StoreClerk"))
@@ -33,14 +64,14 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">STATIONARY REQUISTION<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Retrieval List</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ViewAllReq.aspx") %>">View Retrieval List</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PRODUCT<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Products</a></li>
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Add New Product</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/AddNewProduct.aspx") %>">Add New Product</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -53,14 +84,14 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADJUSTMENT VOUCHER<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Raise Adjustment Voucher</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/RaiseAdjVoucher.aspx") %>">Raise Adjustment Voucher</a></li>
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Adjustment Vouchers</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">REPORT<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Trend Analysis</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/TrendAnalysis.aspx") %>">Trend Analysis</a></li>
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/Inventory Status Report.aspx") %>">Inventory Status Report</a></li>
                             </ul>
                         </li>
@@ -75,9 +106,26 @@
                     <% }
                         if (HttpContext.Current.User.IsInRole("StoreManager"))
                         { %>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#myPage">HOME</a></li>
-                        <li><a href="#band">BAND</a></li>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADJUSTMENT VOUCHER<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Manager/AdjVoucher.aspx") %>">Approve/Reject Adjustment Vouchers</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">REPORT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/TrendAnalysis.aspx") %>">Trend Analysis</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/Inventory Status Report.aspx") %>">Inventory Status Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ACCOUNT<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/logout.aspx") %>">Log Out</a></li>
+                            </ul>
+                        </li>
                     </ul>
 
 
@@ -88,36 +136,40 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">STATIONARY REQUISTION<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Retrieval List</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ViewAllReq.aspx") %>">View Retrieval List</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PRODUCT<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Products</a></li>
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Add New Product</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/AddNewProduct.aspx") %>">Add New Product</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SUPPLIER<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Suppliers</a></li>
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Add New Supplier</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/EditSuppliers.aspx") %>">View Suppliers</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/AddNewSupplier.aspx") %>">Add New Supplier</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADJUSTMENT VOUCHER<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Raise Adjustment Voucher</a></li>
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Adjustment Vouchers</a></li>
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Approve/Reject Adjustment Vouchers</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Supervisor/AdjVoucherBelow250.aspx") %>">Approve/Reject Adjustment Vouchers</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">COLLECTION POINTS<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Supervisor/ManageCollectionPoint.aspx") %>">Manage Collection Point</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">REPORT<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Trend Analysis</a></li>
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">Inventory Status Report</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/TrendAnalysis.aspx") %>">Trend Analysis</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/Inventory Status Report.aspx") %>">Inventory Status Report</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

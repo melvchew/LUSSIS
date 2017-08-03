@@ -1,85 +1,81 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TrendAnalysis.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.TrendAnalysis" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterStore.Master" AutoEventWireup="true" CodeBehind="TrendAnalysis.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.TrendAnalysis" %>
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <style>
-        table {
-            margin: 0 auto;
-        }
-        tr{
-  padding-bottom: 5em;
-        }
-    </style>
-    <form id="form1" runat="server">
-    <div style="vertical-align:middle;text-align:center;">
-        <h1>Compare Item Requisitions Among Departments</h1>
-        <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
-        <br />
-        <br />
-        <table>
-            <tr><td>Item</td>
-                <td><asp:DropDownList ID="ddlItems" runat="server"></asp:DropDownList></td></tr>
-            <tr><td>Report Period</td><td>
-                From 
-                    <asp:DropDownList ID="ddlFrom" runat="server" DataTextFormatString="{0:MMM-yyyy}"></asp:DropDownList>
-                To <asp:DropDownList ID="ddlTo" runat="server" DataTextFormatString="{0:MMM-yyyy}"></asp:DropDownList>
-                     </td>
-            </tr>
-            <tr><td>Department 1 </td>
-                  <td> <asp:DropDownList ID="ddlDept1" runat="server" ></asp:DropDownList></td>
-       
-            </tr>
-             <tr><td>Department 2 </td>
-                  <td>   <asp:DropDownList ID="ddlDept2" runat="server">
-                      
-                         </asp:DropDownList>
-                      
-                  </td>
-       
-            </tr>
-             <tr><td>Department 3 </td>
-                  <td> <asp:DropDownList ID="ddlDept3" runat="server" >
-
-            
-
-                       </asp:DropDownList></td>
-       
-            </tr>
-            <tr><td>Report By</td>
-        <td><asp:RadioButtonList ID="RadioButtonList1" align="center" runat="server">
-        <asp:ListItem text="Quantity" Selected="True" Value="Quantity" />
-                    <asp:ListItem text="Cost (In SGD)" Value="Cost (In SGD)" />
-            </asp:RadioButtonList>
-            </td>
-        </tr>
-            <tr><td></td>
-
-                <td>
-                    &nbsp;</td>
-
-            </tr>
-                <tr>
-                    <td></td>
-
-                    <td>
-                        <asp:Button ID="btnReport" runat="server" Text="Generate Report" OnClick="Button1_Click" />
-
-                    </td>
-
-                </tr>
-        
-            </table>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="containter-fluid">
+        <div class="placeholder">
+            <div class="row">
+                <h3>Trend Analysis Report</h3>
+                <asp:Label ID="Label1" runat="server" ForeColor="Red"></asp:Label>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    Item
+                </div>
+                <div class="col-md-10">
+                    <asp:DropDownList ID="ddlItems" CssClass="form-control" runat="server"></asp:DropDownList>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    Report Period
+                </div>
+                <div class="col-md-5">
+                    <asp:DropDownList ID="ddlFrom" CssClass="form-control" runat="server" DataTextFormatString="{0:MMM-yyyy}"></asp:DropDownList>
+                </div>
+                <div class="col-md-5">
+                    <asp:DropDownList ID="ddlTo" CssClass="form-control" runat="server" DataTextFormatString="{0:MMM-yyyy}"></asp:DropDownList>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    Department 1
+                </div>
+                <div class="col-md-10">
+                    <asp:DropDownList ID="ddlDept1" CssClass="form-control" runat="server"></asp:DropDownList>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    Department 2
+                </div>
+                <div class="col-md-10">
+                    <asp:DropDownList ID="ddlDept2" CssClass="form-control" runat="server">
+                    </asp:DropDownList>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    Department 3
+                </div>
+                <div class="col-md-10">
+                    <asp:DropDownList ID="ddlDept3" CssClass="form-control" runat="server">
+                    </asp:DropDownList>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    Report By
+                </div>
+                <div class="col-md-10">
+                    <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                        <asp:ListItem Text="Quantity" Selected="True" Value="Quantity" />
+                        <asp:ListItem Text="Cost (In SGD)" Value="Cost (In SGD)" />
+                    </asp:RadioButtonList>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <asp:Button ID="btnReport" CssClass="btn" runat="server" Text="Generate Report" OnClick="Button1_Click" />
+                </div>
+            </div>
+        </div>
     </div>
-        
 
-        
-    </form>
-</body>
-</html>
+
+
+</asp:Content>
