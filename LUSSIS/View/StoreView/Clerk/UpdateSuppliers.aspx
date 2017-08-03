@@ -44,7 +44,7 @@
                         <label for="lblPhoneNo">Phone No</label>
                     </div>
                     <div class="col-sm-8" style="margin-top: 27px;">
-                        <asp:TextBox ID="TextBox4" runat="server"  CssClass="form-control" MaxLength="10"></asp:TextBox>
+                        <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" ErrorMessage="*Phone No can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="*input number or space character" ControlToValidate="TextBox4" ValidationExpression="^[ 0-9]*$"></asp:RegularExpressionValidator>
                     </div>
@@ -77,16 +77,12 @@
                         <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox8" ErrorMessage="*GSTNo can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="col-sm-3">
-                    <asp:Button ID="Button2" runat="server" Text="Update" CssClass="btn btn-warning" OnClick="Button2_Click" />
-                </div>
-                <div class="col-sm-4">
-                    <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_Click" CssClass="btn btn-danger" />
+                    <div class="col-sm-4">
+                        <asp:Button ID="Button2" runat="server" Text="Update" CssClass="btn btn-warning" OnClick="Button2_Click" />
+                    </div>
+                    <div class="col-sm-5">
+                        <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_Click" CssClass="btn btn-danger" />
+                    </div>
                 </div>
             </div>
         </div>
