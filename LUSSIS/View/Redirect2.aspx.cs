@@ -24,7 +24,7 @@ namespace LUSSIS
             int empId = Convert.ToInt32(Session["empId"]);
             Employee emp = context.Employees.Where(x => x.EmpId == empId).First();
             Department dept = context.Departments.Where(x => x.DeptId == emp.DeptId).First();
-            int? deptRepId = dept.DeptRep;
+            int deptRepId = dept.DeptRep;
             int? actingheadID = dept.ActingHead;
             string r = Convert.ToString(deptRepId);
             string ah = Convert.ToString(actingheadID);
@@ -69,7 +69,7 @@ namespace LUSSIS
                 }
                 else if (User.IsInRole("DeptEmp"))
                 {
-                    if (deptRepId == null & actingheadID == null)
+                    if (r != profile.empId && actingheadID == null)
                     {
                         Response.Redirect("~/View/DepartmentView/Home.aspx");
                     }
