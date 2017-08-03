@@ -48,19 +48,33 @@ namespace LUSSIS.View.DepartmentView.Emp
                     int empid = Convert.ToInt32(Session["empId"]);
                     Employee emp = context.Employees.Where(em => em.EmpId == empid).ToList().First();
                     Requisition req = rs.CreateReq(emp, txtBoxComment.Text);
+                    int flag = 0;
 
                     List<Item> litems = (List<Item>)Session["AddItemlist"];
 
                     foreach (GridViewRow row in gvNewReqItem.Rows)
                     {
-                        int itemid = Convert.ToInt32(gvNewReqItem.DataKeys[row.RowIndex].Value.ToString());
-                        Item i = context.Items.Where(it => it.ItemId == itemid).ToList().First();
                         string qtyStr = (row.FindControl("txtBoxQty") as TextBox).Text;
                         int qty = Convert.ToInt32(qtyStr);
-                        rs.AddReqItems(req, i, qty);
+                        if (qty <= 0)
+                            flag++;
                     }
-                    Session["AddItemlist"] = null;
-                    Response.Redirect("ReqConfirm.aspx?rid=" + req.ReqId);
+
+                    if(flag > 0)
+                        Response.Write(" <script language=JavaScript> alert('The quantity should be positive integer.'); </script>");
+                    else
+                    {
+                        foreach (GridViewRow row in gvNewReqItem.Rows)
+                        {
+                            int itemid = Convert.ToInt32(gvNewReqItem.DataKeys[row.RowIndex].Value.ToString());
+                            Item i = context.Items.Where(it => it.ItemId == itemid).ToList().First();
+                            string qtyStr = (row.FindControl("txtBoxQty") as TextBox).Text;
+                            int qty = Convert.ToInt32(qtyStr);
+                            rs.AddReqItems(req, i, qty);
+                        }
+                        Session["AddItemlist"] = null;
+                        Response.Redirect("ReqConfirm.aspx?rid=" + req.ReqId);
+                    }
                 }
                 else
                 {
@@ -113,16 +127,22 @@ namespace LUSSIS.View.DepartmentView.Emp
                         var item = list.Where(l => l.ItemId == i.ItemId).First();
                         list.Remove(item);
                     }
+
+                    this.BindGrid(list);
+
+                    if (list.Count == 0)
+                    {
+                        Session["AddItemlist"] = null;
+                    }
+                    else
+                    {
                         Session["AddItemlist"] = list;
+                    }
                 }
                 else
                 {
-                    Response.Write(" <script language=JavaScript> alert('No Item remove!!!!'); </script>");
+                    Response.Write(" <script language=JavaScript> alert('No Item is chosen.'); </script>");
                 }
-                litems = (List<Item>)Session["AddItemlist"];
-                this.BindGrid(litems);
-                if(litems.Count==0)
-                    Session["AddItemlist"]=null;
             }
         }
 

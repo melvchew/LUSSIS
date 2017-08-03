@@ -19,7 +19,6 @@ namespace LUSSIS.View.DepartmentView.Emp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int rid = Int32.Parse(Request.QueryString["rid"]);
             if (!IsPostBack)
             {
                 this.BindGrid();
@@ -43,6 +42,7 @@ namespace LUSSIS.View.DepartmentView.Emp
         protected void btdAddItem_Click(object sender, EventArgs e)
         {
             int rid = Int32.Parse(Request.QueryString["rid"]);
+            int flag = 0;
             using (context = new LUSSdb())
             {
                 List<Item> litems = (List<Item>)Session["AddItemlist"];
@@ -53,17 +53,32 @@ namespace LUSSIS.View.DepartmentView.Emp
                     lqty.Add(gvAddReqItems.DataKeys[row.RowIndex].Value.ToString(), (row.FindControl("TextBox3") as TextBox).Text);
                 }
 
-                foreach (Item i in litems)
+                foreach(String value in lqty.Values)
                 {
-                    string itemid = i.ItemId.ToString();
-                    int qty = Convert.ToInt32(lqty[itemid]);
-                    Requisition req = context.Requisitions.Where(r => r.ReqId == rid).ToList().First();
-                    rs.AddReqItems(req, i, qty);
+                    int v = Int32.Parse(value);
+                    if (v<=0)
+                    {
+                        flag++;
+                    }
                 }
 
-                Session["AddItemlist"] = null;
-                Response.Redirect("ManageReq.aspx?rid=" + rid);
+                if (flag == 0)
+                {
+                    foreach (Item i in litems)
+                    {
+                        string itemid = i.ItemId.ToString();
+                        int qty = Convert.ToInt32(lqty[itemid]);
+                        Requisition req = context.Requisitions.Where(r => r.ReqId == rid).ToList().First();
+                        rs.AddReqItems(req, i, qty);
+                    }
 
+                    Session["AddItemlist"] = null;
+                    Response.Redirect("ManageReq.aspx?rid=" + rid);
+                }
+                else
+                {
+                    Response.Write(" <script language=JavaScript> alert('The quantity should be positive integer.'); </script>");
+                }
             }
 
         }

@@ -124,11 +124,16 @@ namespace LUSSIS.View.DepartmentView.Emp
                 int itemId = Convert.ToInt32(gvReqItem.DataKeys[e.RowIndex].Value);
                 GridViewRow row = gvReqItem.Rows[e.RowIndex];
                 int quantity = Convert.ToInt32((row.FindControl("TextBox2") as TextBox).Text);
-                //Labl_Test.Text = quantity.ToString();
-
-                rs.UpdateReqItems(reqId, itemId, quantity);
-                gvReqItem.EditIndex = -1;
-                this.BindGrid();
+                if (quantity <= 0)
+                {
+                    Response.Write(" <script language=JavaScript> alert('The quantity should be positive integer.'); </script>");
+                }
+                else
+                {
+                    rs.UpdateReqItems(reqId, itemId, quantity);
+                    gvReqItem.EditIndex = -1;
+                    this.BindGrid();
+                }
             }
                
         }
