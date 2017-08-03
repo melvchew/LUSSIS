@@ -135,6 +135,7 @@
     <None Include="Properties\PublishProfiles\Luss.pubxml" />
     <None Include="Properties\PublishProfiles\LUSSTest.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="View\Redirect2.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -317,6 +318,13 @@
     </Compile>
     <Compile Include="RawCode\Generics\enums.cs" />
     <Compile Include="RawCode\Generics\ViewModel.cs" />
+    <Compile Include="View\Redirect2.aspx.cs">
+      <DependentUpon>Redirect2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Redirect2.aspx.designer.cs">
+      <DependentUpon>Redirect2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\DepartmentView\Head\ViewPendingReq.aspx.cs">
       <DependentUpon>ViewPendingReq.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
