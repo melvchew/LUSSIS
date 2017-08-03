@@ -28,7 +28,10 @@
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AllowPaging="True" PageSize="8"
                     OnPageIndexChanging="GridView1_PageIndexChanging" CssClass="table table-striped table-bordered" OnRowEditing="GridView1_RowEditing">
                     <Columns>
-                        <asp:BoundField DataField="SupplierId" HeaderText="Supplier Id" />
+                         <asp:BoundField DataField="SupplierId" ShowHeader="false">
+                            <ItemStyle CssClass="hide" />
+                            <HeaderStyle CssClass="hide" />
+                        </asp:BoundField>
                         <asp:BoundField DataField="CompanyName" HeaderText="Company Name" />
                         <asp:BoundField DataField="ContactPerson" HeaderText="	Contact Person" />
                         <asp:BoundField DataField="Phone" HeaderText="Phone No" />
