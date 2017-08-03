@@ -42,7 +42,7 @@ namespace LUSSIS.View.StoreView.Manager
             iav.Status = "APPROVED";
             b.updateAdjVoucher(iav);
             string msg = "Request has been Approved";
-            Response.Redirect("AdjustmentVoucher.aspx?message=" + msg);
+            Response.Redirect("AdjVoucher.aspx?message=" + msg);
         }
 
         protected void btnReject_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace LUSSIS.View.StoreView.Manager
             iav.Status = "REJECTED";
             b.updateAdjVoucher(iav);
             string msg = "Request has been Rejected";
-            Response.Redirect("AdjustmentVoucher.aspx?message=" + msg);
+            Response.Redirect("AdjVoucher.aspx?message=" + msg);
         }
     }
 }

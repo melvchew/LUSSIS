@@ -113,16 +113,24 @@ namespace LUSSIS.View.DepartmentView.Emp
 
         protected void gvReqItem_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            int reqId = Int32.Parse(Request.QueryString["rid"]);
-            int itemId = Convert.ToInt32(gvReqItem.DataKeys[e.RowIndex].Value);
-            GridViewRow row = gvReqItem.Rows[e.RowIndex];
-            int quantity = Convert.ToInt32((row.FindControl("TextBox2") as TextBox).Text);
-            //Labl_Test.Text = quantity.ToString();
 
-            rs.UpdateReqItems(reqId, itemId, quantity);
+            if ((gvReqItem.Rows[e.RowIndex].FindControl("TextBox2") as TextBox).Text == "")
+            {
+                (gvReqItem.Rows[e.RowIndex].FindControl("lblerror") as Label).Text = "Quantity is required!";
+            }
+            else
+            {
+                int reqId = Int32.Parse(Request.QueryString["rid"]);
+                int itemId = Convert.ToInt32(gvReqItem.DataKeys[e.RowIndex].Value);
+                GridViewRow row = gvReqItem.Rows[e.RowIndex];
+                int quantity = Convert.ToInt32((row.FindControl("TextBox2") as TextBox).Text);
+                //Labl_Test.Text = quantity.ToString();
 
-            gvReqItem.EditIndex = -1;
-            this.BindGrid();
+                rs.UpdateReqItems(reqId, itemId, quantity);
+                gvReqItem.EditIndex = -1;
+                this.BindGrid();
+            }
+               
         }
 
         protected void gvReqItem_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)

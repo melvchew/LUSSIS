@@ -11,7 +11,6 @@ namespace LUSSIS.View.DepartmentView
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            litEmpId.Text = Session["empId"].ToString();
         }
     }
 }

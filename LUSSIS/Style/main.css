@@ -81,6 +81,45 @@ h3 {
     border-bottom: 1px solid #ddd;
     padding-bottom: 5px;
 }
-.row{
+
+.row {
     margin-bottom: 20px;
 }
+
+.infocard {
+    background-color: #fff;
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 400px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+    .infocard .title {
+        border-bottom: 1px solid #ddd;
+        padding: 0;
+        margin: 0;
+    }
+
+        .infocard .title h4 {
+            display: inline-block;
+            width: 89%;
+        }
+
+        .infocard .title .imgbox {
+            width: 10%;
+            height: 100%;
+            margin: auto;
+            display: inline-block;
+            text-align: center;
+            border-left: 1px solid #ddd;
+        }
+
+            .infocard .title .imgbox span {
+                margin: auto;
+            }
+    .infocard .body{
+        padding: 10px;
+    }

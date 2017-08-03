@@ -64,7 +64,7 @@
                                         <asp:RequiredFieldValidator ID="AnswerRequired" runat="server" ControlToValidate="Answer" ErrorMessage="Security answer is required." ToolTip="Security answer is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
-                                                                <tr>
+                                                             <tr>
                                     <td>Employee ID
                                     </td>
                                     <td>

@@ -16,7 +16,7 @@
                     <asp:Button ID="Button1" CssClass="btn pull-left" runat="server" Text="Add New Product" OnClick="Button1_Click" />
                 </div>
                 <div class="col-sm-4">
-                    <asp:Button ID="Button2" CssClass="btn pull-right" runat="server" Text="Import" />
+                    <%--<asp:Button ID="Button2" CssClass="btn pull-right" runat="server" Text="Import" />--%>
                 </div>
                 <div class="col-sm-6">
                     <div class="input-group">
@@ -30,7 +30,7 @@
             </div>
         <div class="row">
             <div class="col-sm-12">
-                <asp:GridView ID="gvProductList" runat="server" CssClass="table table-bordered table-striped" AutoGenerateColumns="false" OnRowEditing="gvProductList_RowEditing" AllowPaging="True" OnPageIndexChanging="gvProductList_PageIndexChanging">
+                <asp:GridView ID="gvProductList" runat="server" CssClass="table table-bordered table-striped" AutoGenerateColumns="false" OnRowEditing="gvProductList_RowEditing" AllowPaging="True" OnPageIndexChanging="gvProductList_PageIndexChanging" PageSize="8">
                     <Columns>
                         <asp:BoundField DataField="ItemId" ShowHeader="false">
                             <ItemStyle CssClass="hide" />
