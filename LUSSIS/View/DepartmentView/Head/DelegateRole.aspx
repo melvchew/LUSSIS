@@ -1,7 +1,37 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterStore.Master" AutoEventWireup="true" CodeBehind="DelegateRole.aspx.cs" Inherits="LUSSIS.View.DepartmentView.Head.DelegateRole" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        $(document).ready(function () {
+            $("#ContentPlaceHolder1_txtFromDate").datepicker({
+                dateFormat: 'dd/mm/yy',
+                onSelect: function (date) {
+                    var dt1 = $('#ContentPlaceHolder1_txtFromDate').datepicker('getDate');
+                    var dt2 = $('#ContentPlaceHolder1_txtToDate').datepicker('getDate');
+                    if (dt1 > dt2) {
+                        $('#ContentPlaceHolder1_txtToDate').datepicker('setDate', dt1);
+                    }
+                    $('#ContentPlaceHolder1_txtToDate').datepicker('option', 'minDate', dt1);
+                }
+            });
+
+            $("#ContentPlaceHolder1_txtToDate").datepicker({
+                dateFormat: "dd/mm/yy",
+                minDate: $('#ContentPlaceHolder1_txtFromDate').datepicker('getDate'),
+                onClose: function () {
+                    var dt1 = $('#ContentPlaceHolder1_txtFromDate').datepicker('getDate');
+                    var dt2 = $('#ContentPlaceHolder1_txtToDate').datepicker('getDate');
+                    //check to prevent a user from entering a date below date of dt1
+                    if (dt2 <= dt1) {
+                        var minDate = $('#ContentPlaceHolder1_txtToDate').datepicker('option', 'minDate');
+                        $('#ContentPlaceHolder1_txtToDate').datepicker('setDate', minDate);
+                    }
+                }
+            });
+        });
+    </script>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
         <div class="placeholder">
@@ -40,17 +70,18 @@
                     From Date
                 </div>
                 <div class="col-sm-9">
-                    <asp:TextBox ID="txtFromDate" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox><br />
+                    <asp:TextBox ID="txtFromDate" CssClass="form-control" runat="server"></asp:TextBox><br />
                 </div>
                 <div class="col-sm-3">
                     To Date
                 </div>
                 <div class="col-sm-9">
-                    <asp:TextBox ID="txtToDate" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox><br />
+                    <asp:TextBox ID="txtToDate" CssClass="form-control" runat="server"></asp:TextBox><br />
                 </div>
 
                 <div class="col-sm-12">
-                    <asp:Label ID="lblerror" ForeColor="Red" runat="server"></asp:Label></div>
+                    <asp:Label ID="lblerror" ForeColor="Red" runat="server"></asp:Label>
+                </div>
                 <br />
                 <div class="col-sm-3">
                 </div>
@@ -59,4 +90,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </asp:Content>
