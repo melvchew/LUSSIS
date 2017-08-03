@@ -62,6 +62,12 @@ namespace LUSSIS.View.DepartmentView.Head
         {
             //Get comments
             req.ApproverComments = TextBox_HeadComment.Text;
+            if(req.ApproverComments.Length > 50)
+            {
+                //string comments = "Comments is too long!";
+                HttpContext.Current.Response.Write("<script>alert('Comments are too long!')</script>");
+                return;
+            }
             //Approve requisition
             rBLL.ApproveReq(req, boss.EmpId);
 
@@ -75,8 +81,14 @@ namespace LUSSIS.View.DepartmentView.Head
 
         protected void Button_Reject_Click(object sender, EventArgs e)
         {
-            //Get Comments
+            //Get comments
             req.ApproverComments = TextBox_HeadComment.Text;
+            if (req.ApproverComments.Length > 50)
+            {
+                //string comments = "Comments is too long!";
+                HttpContext.Current.Response.Write("<script>alert('Comments are too long!')</script>");
+                return;
+            }
             //Reject requisition
             rBLL.RejectReq(req, boss.EmpId);
 
