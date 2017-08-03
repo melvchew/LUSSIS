@@ -45,9 +45,9 @@
                         <EmptyDataTemplate>
                             <table class="table table-bordered table-striped"  id="t01">
                                 <tr>
-                                    <th>Item Discription</th>
+                                    <th>Item Description</th>
                                     <th>Quantity</th>
-                                    <th>Deliveried</th>
+                                    <th>Delivered</th>
                                 </tr>
                                 <tr>
                                     <td>empty</td>
