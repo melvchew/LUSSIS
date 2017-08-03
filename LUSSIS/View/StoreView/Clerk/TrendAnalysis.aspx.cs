@@ -8,7 +8,9 @@ using System.Data.SqlClient;
 using System.Configuration;
 using LUSSIS.RawCode.DAL;
 using LUSSIS.RawCode.BLL;
+using System.Globalization;
 
+//by Phong
 namespace LUSSIS.View.StoreView.Clerk
 {
     public partial class TrendAnalysis : System.Web.UI.Page
@@ -38,11 +40,17 @@ namespace LUSSIS.View.StoreView.Clerk
                 {
                     //populate list of months
                     monthList = trendAnalysisBizLogic.getSubmitMonthList();
-
-                    ddlFrom.DataSource = monthList;
+                    var sortedMonths = monthList
+                                        .Select(x => new { Name = x, Sort = DateTime.ParseExact(x, "mm-yyyy", CultureInfo.InvariantCulture) })
+                                        .OrderBy(x => x.Sort)
+                                        .Select(x => x.Name)
+                                        .ToList();
+                    //ddlFrom.DataSource = monthList;
+                    ddlFrom.DataSource = sortedMonths;
                     ddlFrom.DataBind();
 
-                    ddlTo.DataSource = monthList;
+                    //ddlTo.DataSource = monthList;
+                    ddlTo.DataSource = sortedMonths;
                     ddlTo.DataBind();
 
 
