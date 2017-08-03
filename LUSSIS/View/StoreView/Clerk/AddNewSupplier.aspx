@@ -1,22 +1,17 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterStore.Master" CodeBehind="AddNewSupplier.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.AddNewSupplier" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../../../Content/bootstrap.min.css" />
-    <script src="../../../Scripts/bootstrap.min.js"></script>
-    <script src="../../../Scripts/jquery-1.9.1.min.js"></script>
-    <link href="../../../Style/main.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container" style="margin-top: 50px; margin-bottom: 20px;">
-        <div class="row">
-            <div class="col-lg-12" style="text-align: center">
+    <div class="container-fluid">
+        <div class="placeholder">
+            <div class="row">
                 <h3>Add New Supplier</h3>
             </div>
-            <div class="col-sm-7">
-                <div class="row">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
 
                     <div class="col-sm-4">
                         <label for="lblSupplierId">SupplierID</label>
