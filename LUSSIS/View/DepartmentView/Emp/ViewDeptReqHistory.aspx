@@ -33,6 +33,7 @@
                             <asp:ButtonField Text="details" ButtonType="Link" CommandName="reqDetails" />
                         </Columns>
                         <EmptyDataTemplate>
+                            <table class="table table-bordered table-striped" id="t01">
                                 <tr>
                                     <th>Requisition ID</th>
                                     <th>Employee Name</th>
@@ -45,6 +46,7 @@
                                     <td>No data</td>
                                     <td>No data</td>
                                 </tr>
+                                </table>
                         </EmptyDataTemplate>
                     </asp:GridView>
                 </div>

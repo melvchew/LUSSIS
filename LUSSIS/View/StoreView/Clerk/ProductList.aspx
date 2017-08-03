@@ -16,7 +16,7 @@
                     <asp:Button ID="Button1" CssClass="btn pull-left" runat="server" Text="Add New Product" OnClick="Button1_Click" />
                 </div>
                 <div class="col-sm-4">
-                    <asp:Button ID="Button2" CssClass="btn pull-right" runat="server" Text="Import" />
+                    <%--<asp:Button ID="Button2" CssClass="btn pull-right" runat="server" Text="Import" />--%>
                 </div>
                 <div class="col-sm-6">
                     <div class="input-group">

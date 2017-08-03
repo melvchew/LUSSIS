@@ -43,17 +43,18 @@
                             </asp:TemplateField>
                         </Columns>
                         <EmptyDataTemplate>
-
-                            <tr>
-                                <td>Item Name</td>
-                                <td>Unit of Measurement</td>
-                                <td>Quantity</td>
-                            </tr>
-                            <tr>
-                                <td>empty</td>
-                                <td>empty</td>
-                                <td>empty</td>
-                            </tr>
+                            <table class="table table-bordered table-striped"  id="t01">
+                                <tr>
+                                    <th>Item Discription</th>
+                                    <th>Quantity</th>
+                                    <th>Deliveried</th>
+                                </tr>
+                                <tr>
+                                    <td>empty</td>
+                                    <td>empty</td>
+                                    <td>empty</td>
+                                </tr>
+                            </table>
                         </EmptyDataTemplate>
                     </asp:GridView>
                 </div>

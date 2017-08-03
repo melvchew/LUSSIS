@@ -43,7 +43,7 @@
                             </asp:TemplateField>
                         </Columns>
                         <EmptyDataTemplate>
-                            <table border="1" id="t01">
+                            <table class="table table-bordered table-striped"  id="t01">
                                 <tr>
                                     <th>Item Discription</th>
                                     <th>Quantity</th>
