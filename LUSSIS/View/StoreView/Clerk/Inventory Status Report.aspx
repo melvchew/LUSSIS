@@ -14,7 +14,7 @@
                 <div class="col-sm-2">
                     <asp:Button ID="Button1" runat="server" Text="Low Stock Items" OnClick="Button1_Click" CssClass="btn pull-left" Width="150px" />
                 </div>
-                 <div class="col-sm-4">
+                <div class="col-sm-4">
                     <%--<asp:Button ID="Button2" CssClass="btn pull-right" runat="server" Text="Import" />--%>
                 </div>
                 <div class="col-sm-6">
@@ -72,11 +72,8 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
-
                         <PagerSettings Mode="NumericFirstLast" />
-
                         <PagerStyle Font-Size="Larger" Font-Underline="True" HorizontalAlign="Center" VerticalAlign="Middle" />
-
                     </asp:GridView>
 
                 </div>
