@@ -29,6 +29,7 @@ namespace LUSSIS.View.StoreView.Clerk
         {
             if (TextBox1.Text == "")
             {
+                Label9.Visible = false;
                 GridView1.DataSource = s.FindAllSuppliers();
                 GridView1.DataBind();
             }
@@ -41,6 +42,11 @@ namespace LUSSIS.View.StoreView.Clerk
                 {
                     GridView1.DataSource = l1;
                     GridView1.DataBind();
+                }
+                else
+                {
+                    Label9.Visible = true;
+                    Label9.Text = "There is no item matched";
                 }
             }
 
