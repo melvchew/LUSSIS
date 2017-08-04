@@ -50,7 +50,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             using (context = new LUSSdb())
             {
                 rs.CancelReq(context.Requisitions.Where(r => r.ReqId == rid).ToList().First());
-                Response.Write(" <script language=JavaScript> alert('Cancelled successful!'); </script>");
+                Response.Write(" <script language=JavaScript> alert('Cancelled successfully!'); </script>");
             }
             Response.Redirect("ViewReq.aspx?rid=" + rid);
         }
@@ -60,9 +60,11 @@ namespace LUSSIS.View.DepartmentView.Emp
             using (context = new LUSSdb())
             {
                 List<RequisitionItem> lreqItems = new List<RequisitionItem>();
+                int rows = 0;
                 foreach (GridViewRow row in gvReqItem.Rows)
                 {
                     int rid = Int32.Parse(Request.QueryString["rid"]);
+                    rows++;
                     // Access the CheckBox
                     CheckBox cb = (CheckBox)row.FindControl("ItemSelector");
                     if (cb != null && cb.Checked == true)
@@ -73,13 +75,17 @@ namespace LUSSIS.View.DepartmentView.Emp
                     }
                 }
 
-                if (lreqItems.Count != 0)
+                if (lreqItems.Count != 0 && lreqItems.Count < rows)
                 {
                     rs.DeleteReqItems(lreqItems);
                 }
-                else
+                else if(lreqItems.Count == 0)
                 {
-                    Response.Write(" <script language=JavaScript> alert('No Items del!!!!'); </script>");
+                    Response.Write(" <script language=JavaScript> alert('No Item is removed.'); </script>");
+                }
+                else if(lreqItems.Count == rows)
+                {
+                    Response.Write(" <script language=JavaScript> alert('Can not remove all the Items.'); </script>");
                 }
                 this.BindGrid();
             }
