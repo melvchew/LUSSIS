@@ -1,6 +1,13 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterStore.Master" CodeBehind="OrderList.aspx.cs" Inherits="LUSSIS.View.StoreView.Clerk.OrderList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../../../Content/themes/base/jquery-ui.min.css" />
+    <script src="../../../Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+  $( function() {
+      $(".datepicker").datepicker({ minDate: 0, maxDate: "+1M +10D", dateFormat: 'dd-mm-yy' });
+  } );
+  </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
@@ -13,7 +20,8 @@
                     <label class="pull-right">Expected Delivery Date: </label>
                 </div>
                 <div class="col-md-3">
-                    <asp:TextBox ID="txtExpectedDate" CssClass="form-control" TextMode="Date" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtExpectedDate" CssClass="form-control datepicker" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtExpectedDate" ErrorMessage="Please choose expected date." ForeColor="Red"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <div class="row">

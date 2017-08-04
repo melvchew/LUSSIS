@@ -18,7 +18,7 @@
                     Request Date :
                 <asp:Label ID="lbldate" runat="server"></asp:Label><br />
                 </div>
-                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-12">
                     <asp:GridView ID="gvItemList" CssClass="table table-bordered table-striped" GridLines="None" runat="server" AutoGenerateColumns="false">
@@ -34,7 +34,8 @@
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <asp:TextBox ID="txtcomment" placeholder="Comment" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox><br />
+                    <asp:TextBox ID="txtcomment" placeholder="Comment" CssClass="form-control" runat="server" 
+                        TextMode="MultiLine" onkeyup="this.value = this.value.slice(0, 250)"></asp:TextBox><br />
                 </div>
             </div>
             <div class="row">
