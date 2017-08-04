@@ -29,11 +29,11 @@
                     <asp:GridView ID="GridView1" runat="server" CssClass="table table-bordered table-striped"></asp:GridView>
                 </div>
             </div>
-            <div class="row">
+            <%--<div class="row">
                 <div class="col-md-2">
                     <asp:Button ID="btnBack" runat="server" Text="Back to Home Page" OnClick="btnBack_Click" CssClass="btn" />
                 </div>
-            </div>
+            </div>--%>
         </div>
     </div>
     

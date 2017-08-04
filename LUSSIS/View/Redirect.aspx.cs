@@ -16,23 +16,10 @@ namespace LUSSIS.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //IIdentity id = User.Identity;
-            //dynamic profile = ProfileBase.Create(id.Name);
-            //Session["EmpId"] = profile.empId;
-
-
-            //Login log = (Login)Login1.FindControl("Login1");
-            //TextBox txtLogin = (TextBox)log.FindControl("UserName");
-            //if (txtLogin != null)
-            //{
-            //    MembershipUser mu = (Membership.GetUser(txtLogin.Text));
-            //    if (mu.IsApproved)
-            //    {
-            //Session["UserID"] = mu.ProviderUserKey.ToString();
-            LUSSdb context = new LUSSdb();
+           LUSSdb context = new LUSSdb();
 
             //List<Department> deptList = trendAnalysisBizLogic.getDepartmentList();
-            var query = context.Departments.Select(x => x.DeptRep).ToList();
+            //var query = context.Departments.Select(x => x.DeptRep).ToList();
             IIdentity id = User.Identity;
             dynamic profile = ProfileBase.Create(id.Name);
             List<int> deptRepList = context.Departments.Select(x => x.DeptRep).ToList<int>();
@@ -52,27 +39,29 @@ namespace LUSSIS.View
             }
 
             List<DateTime?> queryStartDate = deptList.Select(x => x.AHStartDate).ToList<DateTime?>();
-            List<DateTime> ahStartDateList = new List<DateTime>();
+            List<DateTime?> ahStartDateList = new List<DateTime?>();
 
-            foreach (DateTime? d in queryStartDate)
+            foreach (DateTime? sd in queryStartDate)
             {
-                if (d.HasValue)
+                if (sd.HasValue)
                 {
-                    string start = d.ToString();
-                    if (start != null)
-                        ahStartDateList.Add(DateTime.Parse(start));
+                    //string start = d.ToString();
+                    //if (start != null)
+                    //ahStartDateList.Add(DateTime.Parse(sd));
+                    ahStartDateList.Add(sd);
                 }
             }
             List<DateTime?> queryEndDate = deptList.Select(x => x.AHEndDate).ToList<DateTime?>();
-            List<DateTime> ahEndDateList = new List<DateTime>();
+            List<DateTime?> ahEndDateList = new List<DateTime?>();
 
-            foreach (DateTime? d in queryStartDate)
+            foreach (DateTime? ed in queryStartDate)
             {
-                if (d.HasValue)
+                if (ed.HasValue)
                 {
-                    string end = d.ToString();
-                    if (end != null)
-                        ahEndDateList.Add(DateTime.Parse(end));
+                    //string end = d.ToString();
+                    //if (end != null)
+                        //ahEndDateList.Add(DateTime.Parse(end));
+                    ahEndDateList.Add(ed);
                 }
             }
 
@@ -154,34 +143,42 @@ namespace LUSSIS.View
                 }
                 else if (User.IsInRole("DeptActingHead"))
                 {
-                    foreach (string ah in deptActingHeadList)
+                    if (deptActingHeadList.Count == 0)
                     {
-                        string s = ah.ToString();
-                        if (s == profile.empId)
-                        {
-
-                            foreach (DateTime ed in ahEndDateList)
-                            {
-                                //remove from role and restore Employee role if delegation has expired
-                                if (DateTime.Today > ed)
-                                {
-                                    Roles.AddUserToRole(id.Name, "DeptEmp");
-                                    Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
-                                    Response.Redirect("~/View/DepartmentView/Home.aspx");
-                                    break;
-                                }
-
-                            }
-                            //keep Acting Head role if today's date is before or equals to end date
-                            Response.Redirect("~/View/DepartmentView/home.aspx");
-                        }
-                        //if another person has been delegated as Acting Head
-                        else
-                            Roles.AddUserToRole(id.Name, "DeptEmp");
+                        Roles.AddUserToRole(id.Name, "DeptEmp");
                         Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
                         Response.Redirect("~/View/DepartmentView/Home.aspx");
                     }
+                    else
+                    {
+                        foreach (string ah in deptActingHeadList)
+                        {
+                            string s = ah.ToString();
+                            if (s == profile.empId)
+                            {
 
+                                foreach (DateTime ed in ahEndDateList)
+                                {
+                                    //remove from role and restore Employee role if delegation has expired
+                                    if (DateTime.Today > ed)
+                                    {
+                                        Roles.AddUserToRole(id.Name, "DeptEmp");
+                                        Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
+                                        Response.Redirect("~/View/DepartmentView/Home.aspx");
+                                        break;
+                                    }
+
+                                }
+                                //keep Acting Head role if today's date is before or equals to end date
+                                Response.Redirect("~/View/DepartmentView/home.aspx");
+                            }
+                            //if another person has been delegated as Acting Head
+                            else
+                            Roles.AddUserToRole(id.Name, "DeptEmp");
+                            Roles.RemoveUserFromRole(id.Name, "DeptActingHead");
+                            Response.Redirect("~/View/DepartmentView/Home.aspx");
+                        }
+                    }
 
                 }
                 else if (User.IsInRole("DeptRep"))
@@ -211,7 +208,7 @@ namespace LUSSIS.View
                 else
                 {
                     Response.Write("Role not assigned yet");
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("~/View/Logout.aspx");
                 }
             }
         }
