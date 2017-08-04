@@ -81,7 +81,7 @@
                         <asp:Button ID="Button2" runat="server" Text="Update" CssClass="btn btn-warning" OnClick="Button2_Click" />
                     </div>
                     <div class="col-sm-5">
-                        <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_Click" CssClass="btn btn-danger" />
+                        <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_Click" CssClass="btn btn-danger" CausesValidation="false" />
                     </div>
                 </div>
             </div>
