@@ -32,7 +32,8 @@ namespace LUSSIS
             dynamic profile = ProfileBase.Create(id.Name);
 
 
-            //try {
+            try
+            {
                 if (User.IsInRole("StoreClerk") ||
                     User.IsInRole("StoreManager") ||
                     User.IsInRole("StoreSupervisor"))
@@ -49,7 +50,7 @@ namespace LUSSIS
                     Session["empId"] = profile.empId;
                     empId = profile.empId;
                     string s = empId;
-                    int i = Convert.ToInt32(empId);
+                    int? i = Convert.ToInt32(empId);
                     emp = context.Employees.Where(x => x.EmpId == i).First();
                     dept = context.Departments.Where(x => x.DeptId == emp.DeptId).First();
                     deptRepId = dept.DeptRep;
@@ -79,33 +80,6 @@ namespace LUSSIS
                     {
                         Response.Redirect("~/View/StoreView/Home.aspx");
                     }
-                    else if (User.IsInRole("DeptEmp"))
-                    {
-                        if (r != profile.empId && actingheadID == null)
-                        {
-                            Response.Redirect("~/View/DepartmentView/Home.aspx");
-                        }
-                        //DateTime? startDate = dept.AHStartDate;
-                        //DateTime? endDate = dept.AHEndDate;
-                        else if (r == profile.empId)
-                        {
-                            Roles.AddUserToRole(id.Name, "DeptRep");
-                            Roles.RemoveUserFromRole(id.Name, "DeptEmp");
-                            Response.Redirect("~/View/DepartmentView/Home.aspx");
-                        }
-                        else if (ah == profile.empId)
-                        {
-                            if (DateTime.Today >= ahStartDate)
-                            {
-                                Roles.AddUserToRole(id.Name, "DeptActingHead");
-                                Roles.RemoveUserFromRole(id.Name, "DeptEmp");
-
-                            }
-                            Response.Redirect("~/View/DepartmentView/Home.aspx");
-                        }
-                        else
-                            Response.Redirect("~/View/DepartmentView/Home.aspx");
-                    }
                     else if (User.IsInRole("DeptActingHead"))
                     {
                         if (actingheadID == null || ah != profile.empId || DateTime.Today > ahEndDate)
@@ -125,16 +99,44 @@ namespace LUSSIS
                         }
                         Response.Redirect("~/View/DepartmentView/Home.aspx");
                     }
+                    else if (User.IsInRole("DeptEmp"))
+                    {
+                        if (r != profile.empId && actingheadID == null)
+                        {
+                            Response.Redirect("~/View/DepartmentView/Home.aspx");
+                        }
+                        //DateTime? startDate = dept.AHStartDate;
+                        //DateTime? endDate = dept.AHEndDate;
+                        else if (r == profile.empId)
+                        {
+                            Roles.AddUserToRole(id.Name, "DeptRep");
+                            Roles.RemoveUserFromRole(id.Name, "DeptEmp");
+                            //Response.Redirect("~/View/DepartmentView/Home.aspx");
+                        }
+                        else if (ah == profile.empId)
+                        {
+                            if (DateTime.Today >= ahStartDate)
+                            {
+                                Roles.AddUserToRole(id.Name, "DeptActingHead");
+                                Roles.RemoveUserFromRole(id.Name, "DeptEmp");
+
+                            }
+                            Response.Redirect("~/View/DepartmentView/Home.aspx");
+                        }
+                        else
+                            Response.Redirect("~/View/DepartmentView/Home.aspx");
+                    }
+                    
                     else if (User.IsInRole("DeptHead"))
                     {
                         Response.Redirect("~/View/DepartmentView/Home.aspx");
                     }
                 }
-            }
-            //catch
-            //{
-            //    Response.Redirect("~/View/login.aspx");
-            //}
-        //}
+        }
+        catch
+        {
+            Response.Redirect("~/View/logout.aspx");
+        }
+}
     }
 }
