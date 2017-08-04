@@ -69,8 +69,13 @@
                     </asp:GridView>
 
                 </div>
+
+                <div class="col-sm-4">
+                    <asp:Button ID="Button2" runat="server" Text="Back" Visible="false" CssClass="btn" OnClick="Button2_Click" />
+                </div>
             </div>
         </div>
+
     </div>
 
 </asp:Content>
