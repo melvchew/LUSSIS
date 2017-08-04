@@ -31,6 +31,7 @@ namespace LUSSIS.View.StoreView.Manager
             lblStatus.Text = po.Status;
             lblOrderBy.Text = po.OrderStoreEmployee.Name;
             lblComments.Text = po.ApproverComments;
+            lblExpectedDate.Text = po.ExpectedDate.Value.Date.ToString("d");
             gvOrderDetails.DataSource = bll.GetPurchaseOrderItems(orderId);
             gvOrderDetails.DataBind();
 

@@ -31,7 +31,8 @@
             text-align: center;
             vertical-align: middle;
         }
-        .btnLogin{
+
+        .btnLogin {
             width: 100%;
             margin-top: 20px;
         }
@@ -69,15 +70,19 @@
                                 </div>
                                 <div class="col-md-6 col-md-offset-3">
                                     <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" CssClass="btn btnLogin" ValidationGroup="Login1" />
-                                </div>                 
-                                <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                </div>
+                                <div class="col-md-12">
+                                    <span style="color: red"><asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal></span>
+                                </div>
                             </LayoutTemplate>
                             <LoginButtonStyle CssClass="btn" />
                             <TextBoxStyle CssClass="form-control" />
                             <TitleTextStyle CssClass="control-label" />
                         </asp:Login>
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Login1" ForeColor="Red" />
                     </div>
+                </div>
+                <div class="row">
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Login1" ForeColor="Red" />
                 </div>
             </div>
         </div>
