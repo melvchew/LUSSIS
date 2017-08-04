@@ -101,5 +101,32 @@ namespace LUSSIS.View.StoreView.Clerk
                 }
             }
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                Label9.Visible = false;
+                GridView1.DataSource = report.FindAllItems();
+                GridView1.DataBind();
+            }
+            else
+            {
+                Label9.Visible = false;
+                List<Item> l1 = new List<Item>();
+                l1 = report.SearchItemByDescription(txtSearch.Text);
+                if (l1.Count != 0)
+                {
+                    GridView1.DataSource = l1;
+                    GridView1.DataBind();
+                }
+                else
+                {
+                    Label9.Visible = true;
+                    Label9.Text = "There is no item matched";
+                }
+            }
+
+        }
     }
 }
