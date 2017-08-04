@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="input-group">
-                        <asp:Button ID="Button1" runat="server" Text="Low Stock Items" OnClick="Button1_Click" CssClass="btn" />
+                        <asp:Button ID="Button1" runat="server" Text="Low Stock Items" OnClick="Button1_Click" CssClass="btn" Width="150px" />
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="col-sm-4">
-                    <asp:Button ID="Button2" runat="server" Text="Back" Visible="false" CssClass="btn" OnClick="Button2_Click" />
+                    <asp:Button ID="Button2" runat="server" Text="Back" Visible="false" CssClass="btn" OnClick="Button2_Click" Width="150px" />
                 </div>
             </div>
         </div>
