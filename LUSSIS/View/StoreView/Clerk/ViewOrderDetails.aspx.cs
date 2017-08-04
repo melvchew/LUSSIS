@@ -29,7 +29,7 @@ namespace LUSSIS.View.StoreView.Clerk
             lblSupplier.Text = po.Supplier.CompanyName;
             lblStatus.Text = po.Status;
             lblOrderBy.Text = po.OrderStoreEmployee.Name;
-            lblExpectedDate.Text = po.ExpectedDate.Value.Date.ToString();
+            lblExpectedDate.Text = po.ExpectedDate.Value.Date.ToString("d");
             gvOrderDetails.DataSource = bll.GetPurchaseOrderItems(orderId);
             gvOrderDetails.DataBind();
 

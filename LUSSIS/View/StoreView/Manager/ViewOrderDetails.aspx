@@ -73,7 +73,8 @@
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    Manager Comments:<asp:TextBox CssClass="form-control" ID="txtComments" runat="server"></asp:TextBox>
+                    Manager Comments:<asp:TextBox CssClass="form-control" ID="txtComments" runat="server" 
+                        onkeyup="this.value = this.value.slice(0, 250)" TextMode="MultiLine" ></asp:TextBox>
                     <asp:Label ID="lblComments" runat="server"></asp:Label>
                 </div>
                 <div class="col-md-4 pull-right text-right">

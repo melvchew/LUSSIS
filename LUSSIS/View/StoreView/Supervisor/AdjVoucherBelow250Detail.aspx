@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterStore.Master" AutoEventWireup="true" CodeBehind="AdjVoucherBelow250Detail.aspx.cs" Inherits="LUSSIS.View.StoreView.Supervisor.AdjVoucherBelow250Detail" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterStore.Master" CodeBehind="AdjVoucherBelow250Detail.aspx.cs" Inherits="LUSSIS.View.StoreView.Supervisor.AdjVoucherBelow250Detail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -7,6 +7,7 @@
     <div class="container-fluid">
         <div class="placeholder">
             <div class="row">
+
                 <h3>Request Details</h3>
             </div>
             <div class="row">
@@ -18,10 +19,10 @@
                     Request Date :
                 <asp:Label ID="lbldate" runat="server"></asp:Label><br />
                 </div>
-                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <asp:GridView ID="gvItemList" CssClass="table table-bordered table-striped" GridLines="None" runat="server" AutoGenerateColumns="false">
+                    <asp:GridView ID="gvItemList" CssClass="table table-bordered" GridLines="None" runat="server" AutoGenerateColumns="false">
                         <Columns>
                             <asp:BoundField DataField="Category" HeaderText="Category" />
                             <asp:BoundField DataField="Description" HeaderText="Description" />
@@ -45,5 +46,5 @@
             </div>
         </div>
     </div>
+    </div>
 </asp:Content>
-

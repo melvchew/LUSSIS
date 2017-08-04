@@ -24,7 +24,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Order Date">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblOrderDate" runat="server" Text='<%# Eval("OrderDate") %>'></asp:Label>
+                                    <asp:Label ID="lblOrderDate" runat="server" Text='<%# Convert.ToDateTime(Eval("OrderDate")).ToShortDateString() %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Order By">

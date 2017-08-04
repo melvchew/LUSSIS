@@ -8,12 +8,23 @@
         <div class="placeholder">
             <div class="row">
                 <h3>Inventory Status Report</h3>
+                <asp:Label ID="Label9" runat="server" Visible="False" ForeColor="#FF6600"></asp:Label>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-sm-2">
+                    <asp:Button ID="Button1" runat="server" Text="Low Stock Items" OnClick="Button1_Click" CssClass="btn pull-left" Width="150px" />
+                </div>
+                 <div class="col-sm-4">
+                    <%--<asp:Button ID="Button2" CssClass="btn pull-right" runat="server" Text="Import" />--%>
+                </div>
+                <div class="col-sm-6">
                     <div class="input-group">
-                        <asp:Button ID="Button1" runat="server" Text="Low Stock Items" OnClick="Button1_Click" CssClass="btn" />
+                        <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Search By Description"></asp:TextBox>
+                        <span class="input-group-btn">
+                            <asp:Button ID="btnSearch" CssClass="btn pull-right" runat="server" Text="Search" OnClick="btnSearch_Click" />
+                        </span>
                     </div>
+                    <!-- /input-group -->
                 </div>
             </div>
             <div class="row">
@@ -69,8 +80,13 @@
                     </asp:GridView>
 
                 </div>
+
+                <div class="col-sm-4">
+                    <asp:Button ID="Button2" runat="server" Text="Back" Visible="false" CssClass="btn" OnClick="Button2_Click" Width="150px" />
+                </div>
             </div>
         </div>
+
     </div>
 
 </asp:Content>

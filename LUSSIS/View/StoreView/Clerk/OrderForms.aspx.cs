@@ -29,8 +29,10 @@ namespace LUSSIS.View.StoreView.Clerk
             {
                 List<OrderListItem> orderList = (List<OrderListItem>)Session["OrderList"];
                 string[] date = Request["expectedDate"].Split('-');
-                DateTime expectedDate = new DateTime(Convert.ToInt32(date[0]), Convert.ToInt32(date[1]), Convert.ToInt32(date[2]));
-                poList = bll.GenerateOrderForms(orderList, bll.GetStoreEmployeeList()[5], expectedDate);
+                DateTime expectedDate = new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0]));
+                int empId = Convert.ToInt32(Session["storeEmpId"]);
+                StoreEmployee currentStoreEmp = bll.GetStoreEmployeeList().FirstOrDefault(x => x.StoreEmpId == empId);
+                poList = bll.GenerateOrderForms(orderList, currentStoreEmp, expectedDate);
             }
 
             repPurchaseOrderForm.DataSource = poList;
@@ -80,8 +82,10 @@ namespace LUSSIS.View.StoreView.Clerk
 
             List<OrderListItem> orderList = (List<OrderListItem>)Session["OrderList"];
             string[] date = Request["expectedDate"].Split('-');
-            DateTime expectedDate = new DateTime(Convert.ToInt32(date[0]), Convert.ToInt32(date[1]), Convert.ToInt32(date[2]));
-            List<PurchaseOrder> poList = bll.GenerateOrderForms(orderList, bll.GetStoreEmployeeList()[5], expectedDate);
+            DateTime expectedDate = new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0]));
+            int empId = Convert.ToInt32(Session["storeEmpId"]);
+            StoreEmployee currentStoreEmp = bll.GetStoreEmployeeList().FirstOrDefault(x => x.StoreEmpId == empId);
+            List<PurchaseOrder> poList = bll.GenerateOrderForms(orderList, currentStoreEmp, expectedDate);
 
             poList = bll.SubmitPurchaseOrders(poList);
 

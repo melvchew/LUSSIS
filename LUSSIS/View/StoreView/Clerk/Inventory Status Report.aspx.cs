@@ -64,6 +64,7 @@ namespace LUSSIS.View.StoreView.Clerk
         //get low stock items
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Button2.Visible = true;
             List<Item> l1 = new List<Item>();
             l1= report.GetLowStock();
             if (l1.Count != 0)
@@ -81,6 +82,51 @@ namespace LUSSIS.View.StoreView.Clerk
                 
             }
            
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Button2.Visible =false;
+            GridView1.DataSource = report.GetAllStockStatus();
+            GridView1.DataBind();
+
+            for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
+            {
+                string stockBalance = (GridView1.Rows[i].FindControl("Label5") as Label).Text;
+                string reorderLevel = (GridView1.Rows[i].FindControl("Label6") as Label).Text;
+                if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
+                {
+
+                    GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
+                }
+            }
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                Label9.Visible = false;
+                GridView1.DataSource = report.FindAllItems();
+                GridView1.DataBind();
+            }
+            else
+            {
+                Label9.Visible = false;
+                List<Item> l1 = new List<Item>();
+                l1 = report.SearchItemByDescription(txtSearch.Text);
+                if (l1.Count != 0)
+                {
+                    GridView1.DataSource = l1;
+                    GridView1.DataBind();
+                }
+                else
+                {
+                    Label9.Visible = true;
+                    Label9.Text = "There is no item matched";
+                }
+            }
+
         }
     }
 }
