@@ -120,6 +120,44 @@ namespace LUSSIS.RawCode.BLL
 
             return l2;
         }
+        //fuzzy query item by Description
+        public List<Item> SearchItemByDescription(string name)
+        {
+            List<Item> v = new List<Item>();
+            if (name != null)
+            {
+                try
+                {
+                    using (context = new LUSSdb())
+                    {
+                        v = context.Items.Where(s => s.Description.Contains(name)).ToList();
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
 
+            }
+            return v;
+        }
+        //find all items
+       public List<Item> FindAllItems()
+        {
+            List<Item> v = new List<Item>();
+            try
+            {
+                using (context = new LUSSdb())
+                {
+                    v = context.Items.ToList();
+                }
+
+            }
+            catch (Exception e)
+            {
+                throw (e);
+            }
+            return v;
+        }
     }
 }
