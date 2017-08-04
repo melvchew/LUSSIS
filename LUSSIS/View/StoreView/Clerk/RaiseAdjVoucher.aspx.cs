@@ -82,9 +82,7 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void AddNewRowLinkBtn_Click1(object sender, EventArgs e)
         {
-
-
-            calculatebtn.Visible = true;
+            //calculatebtn.Visible = true;
             Submitbtn.Visible = false;
 
             counter++;
@@ -187,7 +185,6 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
             TextBox tb = new TextBox();
             DropDownList ddl = new DropDownList();
             String str = "";
@@ -211,18 +208,18 @@ namespace LUSSIS.View.StoreView.Clerk
                         str = "txtValue" + i;
                         tb = (TextBox)PlaceHolder1.FindControl(str);
                         tb.Text = calValue(itemId, adjQty);
-                        calculatebtn.Visible = false;
+                        //calculatebtn.Visible = false;
                         Submitbtn.Visible = true;
                     }
-                    //else
-                    //{
-                    //    Response.Write("<script>alert('Please Enter Numeric Data')</script>");
-                    //}
+                    else
+                    {
+                        Response.Write("<script>alert('Please Enter Numeric Data')</script>");
+                    }
                 }
-                //else
-                //{
-                //    Response.Write("<script>alert('Please Enter Valid Data')</script>");
-                //}
+                else
+                {
+                    Response.Write("<script>alert('Please Enter Valid Data')</script>");
+                }
             }
         }
     }
