@@ -28,18 +28,24 @@ namespace LUSSIS.View.StoreView.Clerk
                     HttpContext.Current.Response.Write(ex);
                 }
 
-                for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
-                {
-                    string stockBalance = (GridView1.Rows[i].FindControl("Label5") as Label).Text;
-                    string reorderLevel = (GridView1.Rows[i].FindControl("Label6") as Label).Text;
-                    if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
-                    {
-                        GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
-                    }
-                }
+                MakeLowStockChangeColor(GridView1.Rows.Count);
             }
 
 
+        }
+        //make low stock row change color
+        protected void MakeLowStockChangeColor(int m)
+        {
+            for (int i = 0; i < m; i++)
+            {
+                string stockBalance = (GridView1.Rows[i].FindControl("Label5") as Label).Text;
+                string reorderLevel = (GridView1.Rows[i].FindControl("Label6") as Label).Text;
+                if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
+                {
+
+                    GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
+                }
+            }
         }
         //Page changing
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -49,17 +55,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 GridView1.DataSource = report.GetAllStockStatus();
                 GridView1.PageIndex = e.NewPageIndex;
                 GridView1.DataBind();
-
-                for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
-                {
-                    string stockBalance = (GridView1.Rows[i].FindControl("Label5") as Label).Text;
-                    string reorderLevel = (GridView1.Rows[i].FindControl("Label6") as Label).Text;
-                    if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
-                    {
-
-                        GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
-                    }
-                }
+                MakeLowStockChangeColor(GridView1.Rows.Count);
             }
             else
             {
@@ -71,16 +67,7 @@ namespace LUSSIS.View.StoreView.Clerk
                     GridView1.PageIndex = e.NewPageIndex;
                     GridView1.DataBind();
                 }
-                for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
-                {
-                    string stockBalance = (GridView1.Rows[i].FindControl("Label5") as Label).Text;
-                    string reorderLevel = (GridView1.Rows[i].FindControl("Label6") as Label).Text;
-                    if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
-                    {
-
-                        GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
-                    }
-                }
+                MakeLowStockChangeColor(GridView1.Rows.Count);
             }
 
         }
@@ -113,17 +100,7 @@ namespace LUSSIS.View.StoreView.Clerk
             Button2.Visible = false;
             GridView1.DataSource = report.GetAllStockStatus();
             GridView1.DataBind();
-
-            for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
-            {
-                string stockBalance = (GridView1.Rows[i].FindControl("Label5") as Label).Text;
-                string reorderLevel = (GridView1.Rows[i].FindControl("Label6") as Label).Text;
-                if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
-                {
-
-                    GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
-                }
-            }
+            MakeLowStockChangeColor(GridView1.Rows.Count);
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -133,16 +110,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 Label9.Visible = false;
                 GridView1.DataSource = report.FindAllItems();
                 GridView1.DataBind();
-                for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
-                {
-                    string stockBalance = (GridView1.Rows[i].FindControl("Label5") as Label).Text;
-                    string reorderLevel = (GridView1.Rows[i].FindControl("Label6") as Label).Text;
-                    if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
-                    {
-
-                        GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
-                    }
-                }
+                MakeLowStockChangeColor(GridView1.Rows.Count);
             }
             else
             {
@@ -151,19 +119,9 @@ namespace LUSSIS.View.StoreView.Clerk
                 l1 = report.SearchItemByDescription(txtSearch.Text);
                 if (l1.Count != 0)
                 {
-
                     GridView1.DataSource = l1;
                     GridView1.DataBind();
-                    for (int i = 0; i <= GridView1.Rows.Count - 1; i++)
-                    {
-                        string stockBalance = (GridView1.Rows[i].FindControl("Label5") as Label).Text;
-                        string reorderLevel = (GridView1.Rows[i].FindControl("Label6") as Label).Text;
-                        if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
-                        {
-
-                            GridView1.Rows[i].BackColor = System.Drawing.Color.YellowGreen;
-                        }
-                    }
+                    MakeLowStockChangeColor(GridView1.Rows.Count);
                 }
                 else
                 {
