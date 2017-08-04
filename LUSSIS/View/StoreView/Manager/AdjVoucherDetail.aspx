@@ -18,7 +18,7 @@
                     Request Date :
                 <asp:Label ID="lbldate" runat="server"></asp:Label><br />
                 </div>
-                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-12">
                     <asp:GridView ID="gvItemList" CssClass="table table-bordered table-striped" GridLines="None" runat="server" AutoGenerateColumns="false">
