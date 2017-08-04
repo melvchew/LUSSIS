@@ -29,8 +29,8 @@ namespace LUSSIS.View.StoreView.Clerk
         {
             if (TextBox1.Text == "")
             {
-                Label9.Visible = true;
-                Label9.Text = "Please input companyname!";
+                GridView1.DataSource = s.FindAllSuppliers();
+                GridView1.DataBind();
             }
             else
             {
