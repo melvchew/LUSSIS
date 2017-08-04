@@ -44,12 +44,12 @@ namespace LUSSIS.View.StoreView.Clerk
             sp.Email = TextBox7.Text;
             sp.GstNo = TextBox8.Text;
             s.UpdateSupplier(sp);
-            Response.Redirect("EditSuppliers.aspx?");
+            Response.Redirect("EditSuppliers.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("EditSuppliers.aspx?");
+            Response.Redirect("EditSuppliers.aspx");
         }
     }
 }

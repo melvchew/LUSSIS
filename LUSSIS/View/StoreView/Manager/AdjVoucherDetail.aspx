@@ -34,7 +34,8 @@
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <asp:TextBox ID="txtcomment" placeholder="Comment" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox><br />
+                    <asp:TextBox ID="txtcomment" placeholder="Comment" CssClass="form-control" runat="server" 
+                        TextMode="MultiLine" onkeyup="this.value = this.value.slice(0, 250)"></asp:TextBox><br />
                 </div>
             </div>
             <div class="row">

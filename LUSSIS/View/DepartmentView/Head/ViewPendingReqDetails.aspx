@@ -56,7 +56,8 @@
                     Comments
                 </div>
                 <div class="col-sm-8">
-                    <asp:TextBox CssClass="form-control" ID="TextBox_HeadComment" runat="server"></asp:TextBox>
+                    <asp:TextBox CssClass="form-control" ID="TextBox_HeadComment" runat="server" 
+                        TextMode="MultiLine" onkeyup="this.value = this.value.slice(0, 250)"></asp:TextBox>
 
                 </div>
             </div>
