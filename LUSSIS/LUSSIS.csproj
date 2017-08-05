@@ -282,6 +282,7 @@
     <Compile Include="RawCode\BLL\data\ZhangJinshan\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\data\ZhangJinshan\StockManagementBLL.cs" />
     <Compile Include="RawCode\BLL\EmailBLL.cs" />
+    <Compile Include="RawCode\BLL\HomePageBLL.cs" />
     <Compile Include="RawCode\BLL\ManageCollectionPointBLL.cs" />
     <Compile Include="RawCode\BLL\ReportBLL.cs" />
     <Compile Include="RawCode\BLL\RequisitionBLL.cs" />

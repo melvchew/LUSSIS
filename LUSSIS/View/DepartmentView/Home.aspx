@@ -10,7 +10,8 @@
             </div>
             <div class="row">
                 <div class="col-md-6 col-md-offset-6">
-                    <span class="pull-right">Welcome, <b>Low Zhi Yong Peter</b>!
+                    <span class="pull-right">Welcome, <b>
+                        <asp:Label ID="lblUserName" runat="server" Text="Label"></asp:Label></b>!
                     </span>
                 </div>
             </div>
@@ -26,9 +27,10 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p>You have a total of 30 items that are undelivered.</p>
+                            <p>You have a total of <asp:Literal ID="deptEmpUndelTotal" runat="server"></asp:Literal> items that are undelivered.</p>
                             <p></p>
                             <div class="col-lg-12">
+                                <asp:GridView ID="gvDeptEmpUndelItems" runat="server"></asp:GridView>
                                 <table class="table table-striped table-bordered">
                                     <tr>
                                         <th>Description</th>
