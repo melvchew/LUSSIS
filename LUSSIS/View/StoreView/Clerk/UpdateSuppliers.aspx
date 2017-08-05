@@ -24,13 +24,11 @@
                     </div>
                     <div class="col-sm-8">
                         <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" ReadOnly="True" MaxLength="255"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*Company Name can't be null" ForeColor="Red" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="*SupplierID must be captial letter" ForeColor="Red" ControlToValidate="TextBox1" ValidationExpression="^[A-Z]+$"></asp:RegularExpressionValidator>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" style="margin-top: 27px;">
                         <label for="lblCompanyName">Company Name</label>
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-8" style="margin-top: 27px;">
                         <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ForeColor="Red" ErrorMessage="*Company Name can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     </div>
