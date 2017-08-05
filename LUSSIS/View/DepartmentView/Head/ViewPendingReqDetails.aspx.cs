@@ -53,7 +53,7 @@ namespace LUSSIS.View.DepartmentView.Head
 
             //Bind the text of the label using req obj
             Label_RaisedBy.Text = Lemp.FirstOrDefault(x => x.EmpId == req.EmpId).Name;
-            Label_ReqDate.Text = req.SubmitDate.ToString();
+            Label_ReqDate.Text = String.Format("{0:D}", req.SubmitDate);
             Label_ReqID.Text = req.ReqId.ToString();
             Label_EmpComments.Text = req.EmpComments;
         }
