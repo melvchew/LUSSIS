@@ -23,19 +23,19 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3">
-                        <asp:DropDownList ID="ItemsList1" CssClass="form-control dropdown-toggle" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="ItemsList1" CssClass="form-control dropdown-toggle" runat="server"></asp:DropDownList><br />
                         <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
                     </div>
                     <div class="col-md-3">
-                        <asp:TextBox ID="txtQtyAdj1" CssClass="form-control qntyAdj" runat="server" AutoPostBack="True"></asp:TextBox>
+                        <asp:TextBox ID="txtQtyAdj1" CssClass="form-control qntyAdj" runat="server" AutoPostBack="True"></asp:TextBox><br />
                         <asp:PlaceHolder ID="PlaceHolder3" runat="server"></asp:PlaceHolder>
                     </div>
                     <div class="col-md-4">
-                        <asp:TextBox ID="txtReasons1" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtReasons1" CssClass="form-control" runat="server"></asp:TextBox><br />
                         <asp:PlaceHolder ID="PlaceHolder4" runat="server"></asp:PlaceHolder>
                     </div>
                     <div class="col-md-2">
-                        <asp:TextBox ID="txtValue1" CssClass="form-control" runat="server" ReadOnly="true"></asp:TextBox>
+                        <asp:TextBox ID="txtValue1" CssClass="form-control" runat="server" ReadOnly="true"></asp:TextBox><br />
                         <asp:PlaceHolder ID="PlaceHolder5" runat="server"></asp:PlaceHolder>
                     </div>
                 </div>
