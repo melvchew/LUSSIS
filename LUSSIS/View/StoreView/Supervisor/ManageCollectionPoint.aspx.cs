@@ -17,7 +17,7 @@ namespace LUSSIS.View.StoreView.Supervisor
         ManageCollectionPointBLL mcp = new ManageCollectionPointBLL();
 
         //------------Validation Starts
-        public void validate(String cpEmp, String nEmp,String nEmp1)
+        public void validate(String cpEmp, String nEmp, String nEmp1)
         {
             DropDownList d = new DropDownList();
             DropDownList d1 = new DropDownList();
@@ -30,18 +30,21 @@ namespace LUSSIS.View.StoreView.Supervisor
             d.ForeColor = System.Drawing.Color.DimGray;
             d1.ForeColor = System.Drawing.Color.DimGray;
             d2.ForeColor = System.Drawing.Color.DimGray;
-
+            Submitbtn.Enabled = true;
             if (d.SelectedValue == d1.SelectedValue)
             {
                 d.ForeColor = System.Drawing.Color.Red;
                 d1.ForeColor = System.Drawing.Color.Red;
                 Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
+                Submitbtn.Enabled = false;
                 return;
-            }else if (d.SelectedValue == d2.SelectedValue)
+            }
+            else if (d.SelectedValue == d2.SelectedValue)
             {
                 d.ForeColor = System.Drawing.Color.Red;
                 d2.ForeColor = System.Drawing.Color.Red;
                 Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
+                Submitbtn.Enabled = false;
                 return;
             }
 
@@ -183,30 +186,16 @@ namespace LUSSIS.View.StoreView.Supervisor
 
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
-            //Validate on assign store Clerk to the collection Point
             try
             {
-                if (StationeryStoreAdministrationBuilding.SelectedValue == MedicalSchool.SelectedValue ||
-                    StationeryStoreAdministrationBuilding.SelectedValue == ScienceSchool.SelectedValue ||
-                    MedicalSchool.SelectedValue == ScienceSchool.SelectedValue ||
-                    ManagementSchool.SelectedValue == EngineeringSchool.SelectedValue ||
-                    ManagementSchool.SelectedValue == UniversityHospital.SelectedValue ||
-                    EngineeringSchool.SelectedValue == UniversityHospital.SelectedValue)
-                {
-                    Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-                    return;
-                }
-                else
-                {
-                    //Update Database
+                //Update Database
                 mcp.UpdateStoreEmployeeInDisbursement(cp1, StationeryStoreAdministrationBuilding.SelectedValue);
-                    mcp.UpdateStoreEmployeeInDisbursement(cp2, ManagementSchool.SelectedValue);
-                    mcp.UpdateStoreEmployeeInDisbursement(cp3, MedicalSchool.SelectedValue);
-                    mcp.UpdateStoreEmployeeInDisbursement(cp4, EngineeringSchool.SelectedValue);
-                    mcp.UpdateStoreEmployeeInDisbursement(cp5, ScienceSchool.SelectedValue);
-                    mcp.UpdateStoreEmployeeInDisbursement(cp6, UniversityHospital.SelectedValue);
-                    Response.Write("<script>alert('Updated Successfully')</script>");
-                }
+                mcp.UpdateStoreEmployeeInDisbursement(cp2, ManagementSchool.SelectedValue);
+                mcp.UpdateStoreEmployeeInDisbursement(cp3, MedicalSchool.SelectedValue);
+                mcp.UpdateStoreEmployeeInDisbursement(cp4, EngineeringSchool.SelectedValue);
+                mcp.UpdateStoreEmployeeInDisbursement(cp5, ScienceSchool.SelectedValue);
+                mcp.UpdateStoreEmployeeInDisbursement(cp6, UniversityHospital.SelectedValue);
+                Response.Write("<script>alert('Updated Successfully')</script>");
             }
             catch (Exception excep)
             {
