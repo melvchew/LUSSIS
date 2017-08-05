@@ -17,39 +17,7 @@ namespace LUSSIS.View.StoreView.Supervisor
         ManageCollectionPointBLL mcp = new ManageCollectionPointBLL();
 
         //------------Validation Starts
-        public void validate(String cpEmp, String nEmp, String nEmp1)
-        {
-            DropDownList d = new DropDownList();
-            DropDownList d1 = new DropDownList();
-            DropDownList d2 = new DropDownList();
-
-            d = (DropDownList)PlaceHolder1.FindControl(cpEmp);
-            d1 = (DropDownList)PlaceHolder1.FindControl(nEmp);
-            d2 = (DropDownList)PlaceHolder1.FindControl(nEmp1);
-
-            d.ForeColor = System.Drawing.Color.DimGray;
-            d1.ForeColor = System.Drawing.Color.DimGray;
-            d2.ForeColor = System.Drawing.Color.DimGray;
-            Submitbtn.Enabled = true;
-            if (d.SelectedValue == d1.SelectedValue)
-            {
-                d.ForeColor = System.Drawing.Color.Red;
-                d1.ForeColor = System.Drawing.Color.Red;
-                Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-                Submitbtn.Enabled = false;
-                return;
-            }
-            else if (d.SelectedValue == d2.SelectedValue)
-            {
-                d.ForeColor = System.Drawing.Color.Red;
-                d2.ForeColor = System.Drawing.Color.Red;
-                Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-                Submitbtn.Enabled = false;
-                return;
-            }
-
-        }
-
+ 
         protected void StationeryStoreAdministrationBuilding_SelectedIndexChanged(object sender, EventArgs e)
         {
             validate("StationeryStoreAdministrationBuilding", "MedicalSchool", "ScienceSchool");
@@ -79,6 +47,63 @@ namespace LUSSIS.View.StoreView.Supervisor
         {
             validate("UniversityHospital", "ManagementSchool", "EngineeringSchool");
         }
+
+        public void validate(String cpEmp, String nEmp, String nEmp1)
+        {
+            DropDownList d = new DropDownList();
+            DropDownList d1 = new DropDownList();
+            DropDownList d2 = new DropDownList();
+
+            d = (DropDownList)PlaceHolder1.FindControl(cpEmp);
+            d1 = (DropDownList)PlaceHolder1.FindControl(nEmp);
+            d2 = (DropDownList)PlaceHolder1.FindControl(nEmp1);
+            
+            if (d.SelectedValue == d1.SelectedValue && d.SelectedValue == d2.SelectedValue)
+            {
+                d.ForeColor = System.Drawing.Color.Red;
+                d1.ForeColor = System.Drawing.Color.Red;
+                d2.ForeColor = System.Drawing.Color.Red;
+                Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
+                Submitbtn.Enabled = false;
+                return;
+            }
+            else if (d.SelectedValue == d1.SelectedValue)
+            {
+                d2.ForeColor = System.Drawing.Color.DimGray;
+                d.ForeColor = System.Drawing.Color.Red;
+                d1.ForeColor = System.Drawing.Color.Red;
+                Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
+                Submitbtn.Enabled = false;
+                return;
+            }
+            else if (d.SelectedValue == d2.SelectedValue)
+            {
+                d1.ForeColor = System.Drawing.Color.DimGray;
+                d.ForeColor = System.Drawing.Color.Red;
+                d2.ForeColor = System.Drawing.Color.Red;
+                Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
+                Submitbtn.Enabled = false;
+                return;
+            }
+            else if (d1.SelectedValue == d2.SelectedValue)
+            {
+                d.ForeColor = System.Drawing.Color.DimGray;
+                d1.ForeColor = System.Drawing.Color.Red;
+                d2.ForeColor = System.Drawing.Color.Red;
+                Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
+                Submitbtn.Enabled = false;
+                return;
+            }
+            else
+            {
+                d.ForeColor = System.Drawing.Color.DimGray;
+                d1.ForeColor = System.Drawing.Color.DimGray;
+                d2.ForeColor = System.Drawing.Color.DimGray;
+                Submitbtn.Enabled = true;
+            }
+
+        }
+
         //------------Validation Ends
         LUSSdb context = new LUSSdb();
         CollectionPoint d = new CollectionPoint();
