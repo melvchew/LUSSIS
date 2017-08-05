@@ -125,16 +125,18 @@ namespace LUSSIS.RawCode.BLL
 
         public void SendEmailsToClerk()
         {
-            int send_hour = 12;//hour of sending email
-            int send_minute = 54;//minute of sending email
+            int send_hour = 15;//hour of sending email
+            int send_minute = 38;//minute of sending email
             int now_Hour = Convert.ToInt32(DateTime.Now.Hour.ToString());//current hour
             int now_Minute = Convert.ToInt32(DateTime.Now.Minute.ToString());//current minute
 
             if (((now_Hour == send_hour) && (now_Minute > send_minute)) && ((now_Hour == send_hour) && (now_Minute <= send_minute + 1)))//judge the sending time
             {
-                List<String> em = GetEmailAddress();
-                if (GetLowStock())
-                {
+                List<Item> items = new List<Item>();
+                items = GetLowStock();
+                if (items.Count!=0)
+                {   //get all the Clerk emails
+                    List<String> em = GetEmailAddress();
                     //send email to clerks
                     System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
                     System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
@@ -146,7 +148,7 @@ namespace LUSSIS.RawCode.BLL
                     {
                         System.Net.Mail.MailMessage mm = new System.Net.Mail.MailMessage("lusissa44@gmail.com", em[j]);
                         mm.Subject = "Low Stock Information";
-                        mm.Body = "some items are low stock";
+                        mm.Body = SetEmailBody();
                         client.Send(mm);
                     }
                 }
@@ -173,25 +175,38 @@ namespace LUSSIS.RawCode.BLL
         }
 
         //get low stock 
-        public bool GetLowStock()
+        public List<Item> GetLowStock()
         {
-            bool low = false;
 
-            using (context = new LUSSdb())
+            List<Item> items = new List<Item>();
+
+            using (LUSSdb entities = new LUSSdb())
             {
 
-                List<Item> l2 = context.Items.ToList();
+                List<Item> l2 = entities.Items.ToList();
                 for (int i = 0; i < l2.Count; i++)
                 {
-                    if (((Item)l2[i]).StockBalance < ((Item)l2[i]).ReorderLvl)
+                    if (l2[i].StockBalance < l2[i].ReorderLvl)
                     {
-                        low = true;
-                        break;
+                        items.Add(l2[i]);
                     }
                 }
             }
+            return items;
+        }
 
-            return low;
+        //set email body
+        public string SetEmailBody()
+        {
+            string s = null;
+            List<Item> items = new List<Item>();
+            items = GetLowStock();
+            for (int i = 0; i < items.Count; i++)
+            {
+                s = s + items[i].Description + "\r\n";
+            }
+
+            return ("There are" + " " + items.Count + " " + "items which are low stock:" + "\r\n" + s);
         }
 
     }

@@ -22,15 +22,6 @@ namespace LUSSIS.View.StoreView.Clerk {
         protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
         
         /// <summary>
-        /// AddNewRowLinkBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AddNewRowLinkBtn;
-        
-        /// <summary>
         /// ItemsList1 control.
         /// </summary>
         /// <remarks>
@@ -103,6 +94,24 @@ namespace LUSSIS.View.StoreView.Clerk {
         protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder5;
         
         /// <summary>
+        /// AddNewRowLinkBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton AddNewRowLinkBtn;
+        
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
@@ -110,15 +119,6 @@ namespace LUSSIS.View.StoreView.Clerk {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// calculatebtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton calculatebtn;
         
         /// <summary>
         /// Submitbtn control.
@@ -137,5 +137,14 @@ namespace LUSSIS.View.StoreView.Clerk {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// TextBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
     }
 }

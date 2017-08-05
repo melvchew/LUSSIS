@@ -49,7 +49,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/View/Redirect.aspx" OnLoggingIn="Login1_LoggingIn">
+                        <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/View/Redirect2.aspx" OnLoggingIn="Login1_LoggingIn">
                             <InstructionTextStyle CssClass="control-label" />
                             <LayoutTemplate>
                                 <div class="form-group">
