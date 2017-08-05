@@ -87,7 +87,9 @@
                 </div>
                 <div class="row">
                     <div class="col-md-5 pull-right text-right">
-                        <asp:TextBox ID="txtRecievedDate" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox><br />
+                        <asp:TextBox ID="txtRecievedDate" CssClass="form-control" runat="server" TextMode="Date"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtRecievedDate" ErrorMessage="Please enter received date." Visible="False"></asp:RequiredFieldValidator>
+                        <br />
                         <asp:Label ID="lblRecievedDate" runat="server" Text="Label"></asp:Label>
                     </div>
                 </div>
@@ -125,6 +127,8 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
+                        <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="CustomValidator" Visible="False"></asp:CustomValidator>
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server"  ForeColor="Red"/>
                     </div>
                 </div>
                 <div class="row">

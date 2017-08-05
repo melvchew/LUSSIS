@@ -87,7 +87,7 @@ namespace LUSSIS.View.StoreView.Manager
             PurchaseOrder po = bll.GetPurchaseOrder(orderId);
             po.ApproverComments = txtComments.Text;
             bll.RejectPurchaseOrder(po, bll.GetStoreEmployeeList()[2]);
-            Response.Redirect("ViewOrders.aspx");
+            Response.Redirect("ViewOrder.aspx");
         }
 
         protected void btnApprove_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace LUSSIS.View.StoreView.Manager
             PurchaseOrder po = bll.GetPurchaseOrder(orderId);
             po.ApproverComments = txtComments.Text;
             bll.ApprovePurchaseOrder(po, bll.GetStoreEmployeeList()[2]);
-            Response.Redirect("ViewOrders.aspx");
+            Response.Redirect("ViewOrder.aspx");
         }
     }
 }
