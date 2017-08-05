@@ -44,6 +44,8 @@
                 </div>
                 <asp:Label ID="Label2" runat="server"></asp:Label>
             </div>
+                                        <asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox><br />
+
            </asp:PlaceHolder>
         </div>
     </div>

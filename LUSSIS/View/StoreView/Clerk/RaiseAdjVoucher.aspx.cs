@@ -20,7 +20,7 @@ namespace LUSSIS.View.StoreView.Clerk
         DateTime date = DateTime.Today;
         static Boolean calc = false;
         static decimal totAmt = 0;
-
+        static Boolean subBtnPressedOnce = true;
         List<String> controlsList = new List<string>();
         int counter = 1;
 
@@ -146,28 +146,33 @@ namespace LUSSIS.View.StoreView.Clerk
             }
         }
 
+        
+
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
+            if (subBtnPressedOnce)
+            {
+                vm.RaiseVoucher(empId, date, status, txtReasons1.Text);
+            }
+            subBtnPressedOnce = false;
             StoreEmployee se = vm.getStoreEmployeeById(empId);
-            vm.RaiseVoucher(empId, date, status, txtReasons1.Text);
             InvAdjVoucher adj = vm.getAdjVocherIdByDate(date);
             TextBox tb = new TextBox();
             DropDownList ddl = new DropDownList();
             int itemId = 0, adjQty = 0;
-            int inr = 1; String str = "";
-            Control ctr = new Control();
+            String str = "";
+            Control ctr = this.Page.Form.FindControl("ContentPlaceHolder1");
             for (int i= 1; i <= counter;i++)
             {
-                //if (inr <= counter)
-                //{
+                TextBox1.Text = counter.ToString();
                     decimal value = 0;
-                    str = "txtQtyAdj" + inr;
+                    str = "txtQtyAdj" + i;
                     tb = (TextBox)ctr.FindControl(str);
-                    str = "ItemsList" + inr;
+                    str = "ItemsList" + i;
                     ddl = (DropDownList)ctr.FindControl(str);
                     itemId = Convert.ToInt32(ddl.SelectedValue);
                     adjQty = Convert.ToInt32(tb.Text);
-                    str = "txtValue" + inr;
+                    str = "txtValue" + i;
                     tb = (TextBox)ctr.FindControl(str);
                     value = Convert.ToDecimal(tb.Text);
                     vm.AddRaiseAdjItem(adj.VoucherId, itemId, adjQty);
@@ -175,11 +180,9 @@ namespace LUSSIS.View.StoreView.Clerk
                     {
                         vm.sendnotification(se, adj.VoucherId, itemId);
                     }
-                //}
-                //inr++;
             }
             Response.Write("<script>alert('Voucher ID = " + adj.VoucherId + " is raised successfully')</script>");
-            Response.Redirect("~/View/StoreView/Home.aspx");
+            //Response.Redirect("~/View/StoreView/Home.aspx");
         }
 
         public void textbox_textchange(object sender, EventArgs e)
