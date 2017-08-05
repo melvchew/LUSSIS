@@ -12,7 +12,9 @@ namespace LUSSIS.View.DepartmentView.Emp
 {
     public partial class Catalogue : System.Web.UI.Page
     {
+        //EF model
         LUSSdb context;
+        //BLL methods
         RequisitionBLL rs = new RequisitionBLL();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +26,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
-
+        //Bind the data to gridview and dropdownlist
         private void BindGrid(List<Item> litems)
         {
             int rid = Int32.Parse(Request.QueryString["rid"]);
@@ -41,6 +43,7 @@ namespace LUSSIS.View.DepartmentView.Emp
                 }
         }
 
+        //Change page in gridview
         protected void gvCatalog_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvCatalog.PageIndex = e.NewPageIndex;
@@ -48,10 +51,12 @@ namespace LUSSIS.View.DepartmentView.Emp
             string itemname = txtBoxSearchItem.Text;
             List<Item> litems = new List<Item>();
 
+            //Change DataSource after searching by Item name 
             if (itemname != "" && itemname != "Please Enter the Item name")
             {
                 litems = rs.SearchItemByName(itemname);
             }
+            //Change DataSource after searching by Item category
             else if (category != "")
             {
                 litems = rs.SearchItemByCategory(category);
@@ -64,6 +69,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             droplistItemCategory.Text = category;
         }
 
+        //Choose/Inverse all items in gv table
         protected void chkAllItem_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox chkall = (CheckBox)gvCatalog.HeaderRow.FindControl("chkAllItem");
@@ -83,6 +89,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Add the chosen Items to requisition
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             int rid = Int32.Parse(Request.QueryString["rid"]);
@@ -95,9 +102,7 @@ namespace LUSSIS.View.DepartmentView.Emp
                     CheckBox cb = (CheckBox)row.FindControl("chkAddItem");
                     if (cb != null && cb.Checked == true)
                     {
-                        int itemId =
-                            Convert.ToInt32(gvCatalog.DataKeys[row.RowIndex].Value);
-                        //Labl_Test.Text = itemId.ToString();
+                        int itemId = Convert.ToInt32(gvCatalog.DataKeys[row.RowIndex].Value);
                         litems.Add(context.Items.Where(i => i.ItemId == itemId).ToList().First());
                     }
                 }
@@ -121,29 +126,32 @@ namespace LUSSIS.View.DepartmentView.Emp
                         else
                         {
                             foreach (Item i in litems)
-                                listsession.Add(i);   //1st add items
+                                listsession.Add(i);   //The first time to add items
                         }
 
                         Session["AddItemlist"] = listsession;
 
                         Response.Redirect("RaiseReq.aspx");
                     }
-                    else
+                    else  //Add items to PENDING requisition
                     {
                         Session["AddItemlist"] = litems;
 
                         Response.Redirect("AddReqItem.aspx?rid=" + rid);
                     }
                 }
-                else
+                else   //Do not choose any items
                 {
                     Response.Write(" <script language=JavaScript> alert('No Items Added!!!!'); </script>");
                 }
+
+                //Re-bind data to gridview
                 List<Item> allItems = rs.GetCatalog();
                 this.BindGrid(allItems);
             }
         }
 
+        //Change the searching item category
         protected void droplistItemCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             string category = droplistItemCategory.SelectedItem.Text;
@@ -153,29 +161,31 @@ namespace LUSSIS.View.DepartmentView.Emp
             txtBoxSearchItem.Text = "";
         }
 
+        //Seach the item(By name)
         protected void btnSearchItem_Click(object sender, EventArgs e)
         {
             string itemName = txtBoxSearchItem.Text;
-            if (itemName != "Please Enter the Item name")
+            if (itemName != "Please Enter the Item name") //Item name exist
             {
                 List<Item> litems = rs.SearchItemByName(itemName);
                 this.BindGrid(litems);
             }
-            else
+            else //default search
             {
                 List<Item> litems = rs.GetCatalog();
                 this.BindGrid(litems);
             }
         }
 
+        //cancel adding Items
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             int rid = Int32.Parse(Request.QueryString["rid"]);
-            if (rid == 0)
+            if (rid == 0)  //0 -- new requisition
             {
                 Response.Redirect("RaiseReq.aspx");
             }
-            else
+            else   //go back to Manage Requisition page with the req id
             {
                 Response.Redirect("ManageReq.aspx?rid=" + rid);
             }

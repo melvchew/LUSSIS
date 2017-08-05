@@ -12,7 +12,9 @@ namespace LUSSIS.View.DepartmentView.Emp
 {
     public partial class RaiseReq : System.Web.UI.Page
     {
+        //EF model
         LUSSdb context;
+        //BLL methods
         RequisitionBLL rs = new RequisitionBLL();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -25,6 +27,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Bind the data to gridview and dropdownlist
         private void BindGrid(List<Item> litems)
         {
             using (context = new LUSSdb())
@@ -34,20 +37,20 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Add items
         protected void btnAddNewItem_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Catalogue.aspx?rid=0");
+            Response.Redirect("Catalogue.aspx?rid=0"); //0 -- new requisition
         }
 
+        //Submit the new requisition
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             using (context = new LUSSdb())
             {
-                if (Session["AddItemlist"] != null)
+                if (Session["AddItemlist"] != null) //check if choose items or not
                 {
-                    int empid = Convert.ToInt32(Session["empId"]);
-                    Employee emp = context.Employees.Where(em => em.EmpId == empid).ToList().First();
-                    Requisition req = rs.CreateReq(emp, txtBoxComment.Text);
+                    //flag to count the negative int
                     int flag = 0;
 
                     List<Item> litems = (List<Item>)Session["AddItemlist"];
@@ -60,10 +63,15 @@ namespace LUSSIS.View.DepartmentView.Emp
                             flag++;
                     }
 
-                    if(flag > 0)
+                    if(flag > 0) //Has negative quantity
                         Response.Write(" <script language=JavaScript> alert('The quantity should be positive integer.'); </script>");
-                    else
+                    else  
                     {
+                        //No negative quantity
+                        int empid = Convert.ToInt32(Session["empId"]);
+                        Employee emp = context.Employees.Where(em => em.EmpId == empid).ToList().First();
+                        Requisition req = rs.CreateReq(emp, txtBoxComment.Text);
+
                         foreach (GridViewRow row in gvNewReqItem.Rows)
                         {
                             int itemid = Convert.ToInt32(gvNewReqItem.DataKeys[row.RowIndex].Value.ToString());
@@ -83,6 +91,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Choose/Inverse all items in gv table
         protected void chkAllItem_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox chkall = (CheckBox)gvNewReqItem.HeaderRow.FindControl("chkAllItem");
@@ -102,6 +111,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Remove the items
         protected void btnRemove_Click(object sender, EventArgs e)
         {
             using (context = new LUSSdb())
@@ -146,6 +156,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Cancel raise requisition
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Session["AddItemlist"] = null;
