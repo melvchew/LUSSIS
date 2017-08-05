@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-sm-10">
                             <asp:TextBox ID="txtStockBalance" CssClass="form-control" runat="server"></asp:TextBox>
-                            <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtStockBalance" ErrorMessage="Stock Balance must be Numeric" MaximumValue="99999" MinimumValue="0" ForeColor="Red"></asp:RangeValidator><asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtStockBalance" runat="server" ErrorMessage="Stock Balance is required"></asp:RequiredFieldValidator>
+                            <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="txtStockBalance" ErrorMessage="Stock Balance must be Numeric" MaximumValue="99999" MinimumValue="0" ForeColor="Red"></asp:RangeValidator><asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="txtStockBalance" runat="server" ErrorMessage="Stock Balance is required" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                         <div class="col-sm-2">
                             <p>Reorder Level</p>
