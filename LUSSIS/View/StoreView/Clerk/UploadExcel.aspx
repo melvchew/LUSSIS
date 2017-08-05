@@ -23,7 +23,7 @@
                     <asp:Button ID="btnTransfer" CssClass="btn" runat="server" Text="Transfer Data" OnClick="btnTransfer_Click" />
                 </div>
                 <div class="col-md-12">
-                    <asp:Label ID="lbStatus" runat="server"></asp:Label>
+                    <asp:Label ID="lbStatus" runat="server" ForeColor="Red"></asp:Label>
                 </div>
             </div>
         </div>
