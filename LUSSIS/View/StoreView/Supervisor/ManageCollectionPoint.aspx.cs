@@ -15,131 +15,99 @@ namespace LUSSIS.View.StoreView.Supervisor
         static int cp1, cp2, cp3, cp4, cp5, cp6;
 
         ManageCollectionPointBLL mcp = new ManageCollectionPointBLL();
-        //public void validate(int curSelEmp, int fixedEmp)
-        //{
-        //    if (StationeryStoreAdministrationBuilding.SelectedValue == MedicalSchool.SelectedValue)
-        //    {
-        //        StationeryStoreAdministrationBuilding.ForeColor = System.Drawing.Color.Red;
-        //        MedicalSchool.ForeColor = System.Drawing.Color.Red;
-        //        Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        StationeryStoreAdministrationBuilding.ForeColor = System.Drawing.Color.Black;
-        //        MedicalSchool.ForeColor = System.Drawing.Color.Black;
-        //    }
-        //}
-        //protected void StationeryStoreAdministrationBuilding_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (StationeryStoreAdministrationBuilding.SelectedValue == MedicalSchool.SelectedValue)
-        //    {
-        //        StationeryStoreAdministrationBuilding.ForeColor = System.Drawing.Color.Red;
-        //        MedicalSchool.ForeColor = System.Drawing.Color.Red;
-        //        Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        StationeryStoreAdministrationBuilding.ForeColor = System.Drawing.Color.Black;
-        //        MedicalSchool.ForeColor = System.Drawing.Color.Black;
-        //    }
-        //    if (StationeryStoreAdministrationBuilding.SelectedValue == ScienceSchool.SelectedValue)
-        //    {
-        //        StationeryStoreAdministrationBuilding.ForeColor = System.Drawing.Color.Red;
-        //        ScienceSchool.ForeColor = System.Drawing.Color.Red;
-        //        Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        StationeryStoreAdministrationBuilding.ForeColor = System.Drawing.Color.Black;
-        //        ScienceSchool.ForeColor = System.Drawing.Color.Black;
-        //    }
 
-        //}
+        //------------Validation Starts
+ 
+        protected void StationeryStoreAdministrationBuilding_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validate("StationeryStoreAdministrationBuilding", "MedicalSchool", "ScienceSchool");
+        }
 
-        //protected void ManagementSchool_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (ManagementSchool.SelectedValue == EngineeringSchool.SelectedValue ||
-        //            ManagementSchool.SelectedValue == UniversityHospital.SelectedValue)
-        //    {
-        //        Label2.ForeColor = System.Drawing.Color.Red;
-        //        Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        Label2.ForeColor = System.Drawing.Color.Black;
-        //    }
-        //}
+        protected void ManagementSchool_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validate("ManagementSchool", "EngineeringSchool", "UniversityHospital");
+        }
 
-        //protected void MedicalSchool_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (StationeryStoreAdministrationBuilding.SelectedValue == MedicalSchool.SelectedValue ||
-        //            MedicalSchool.SelectedValue == ScienceSchool.SelectedValue)
-        //    {
-        //        Label2.ForeColor = System.Drawing.Color.Red;
-        //        Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        Label2.ForeColor = System.Drawing.Color.Black;
-        //    }
-        //}
+        protected void MedicalSchool_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validate("MedicalSchool", "StationeryStoreAdministrationBuilding", "ScienceSchool");
+        }
 
-        //protected void EngineeringSchool_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (
-        //            ManagementSchool.SelectedValue == EngineeringSchool.SelectedValue ||
-        //            EngineeringSchool.SelectedValue == UniversityHospital.SelectedValue)
-        //    {
-        //        Label2.ForeColor = System.Drawing.Color.Red;
-        //        Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        Label2.ForeColor = System.Drawing.Color.Black;
-        //    }
-        //}
+        protected void EngineeringSchool_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validate("EngineeringSchool", "ManagementSchool", "UniversityHospital");
+        }
 
-        //protected void ScienceSchool_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (StationeryStoreAdministrationBuilding.SelectedValue == ScienceSchool.SelectedValue ||
-        //            MedicalSchool.SelectedValue == ScienceSchool.SelectedValue)
-        //    {
-        //        Label2.ForeColor = System.Drawing.Color.Red;
-        //        Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        Label2.ForeColor = System.Drawing.Color.Black;
-        //    }
-        //}
+        protected void ScienceSchool_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validate("ScienceSchool", "StationeryStoreAdministrationBuilding", "MedicalSchool");
+        }
 
-        //protected void UniversityHospital_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (ManagementSchool.SelectedValue == UniversityHospital.SelectedValue ||
-        //            EngineeringSchool.SelectedValue == UniversityHospital.SelectedValue)
-        //    {
-        //        Label2.ForeColor = System.Drawing.Color.Red;
-        //        Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        Label2.ForeColor = System.Drawing.Color.Black;
-        //    }
-        //}
+        protected void UniversityHospital_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            validate("UniversityHospital", "ManagementSchool", "EngineeringSchool");
+        }
 
+        public void validate(String cpEmp, String nEmp, String nEmp1)
+        {
+            DropDownList d = new DropDownList();
+            DropDownList d1 = new DropDownList();
+            DropDownList d2 = new DropDownList();
+
+            d = (DropDownList)PlaceHolder1.FindControl(cpEmp);
+            d1 = (DropDownList)PlaceHolder1.FindControl(nEmp);
+            d2 = (DropDownList)PlaceHolder1.FindControl(nEmp1);
+            
+            if (d.SelectedValue == d1.SelectedValue && d.SelectedValue == d2.SelectedValue)
+            {
+                d.ForeColor = System.Drawing.Color.Red;
+                d1.ForeColor = System.Drawing.Color.Red;
+                d2.ForeColor = System.Drawing.Color.Red;
+                Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
+                Submitbtn.Enabled = false;
+                return;
+            }
+            else if (d.SelectedValue == d1.SelectedValue)
+            {
+                d2.ForeColor = System.Drawing.Color.DimGray;
+                d.ForeColor = System.Drawing.Color.Red;
+                d1.ForeColor = System.Drawing.Color.Red;
+                Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
+                Submitbtn.Enabled = false;
+                return;
+            }
+            else if (d.SelectedValue == d2.SelectedValue)
+            {
+                d1.ForeColor = System.Drawing.Color.DimGray;
+                d.ForeColor = System.Drawing.Color.Red;
+                d2.ForeColor = System.Drawing.Color.Red;
+                Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
+                Submitbtn.Enabled = false;
+                return;
+            }
+            else if (d1.SelectedValue == d2.SelectedValue)
+            {
+                d.ForeColor = System.Drawing.Color.DimGray;
+                d1.ForeColor = System.Drawing.Color.Red;
+                d2.ForeColor = System.Drawing.Color.Red;
+                Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
+                Submitbtn.Enabled = false;
+                return;
+            }
+            else
+            {
+                d.ForeColor = System.Drawing.Color.DimGray;
+                d1.ForeColor = System.Drawing.Color.DimGray;
+                d2.ForeColor = System.Drawing.Color.DimGray;
+                Submitbtn.Enabled = true;
+            }
+
+        }
+
+        //------------Validation Ends
         LUSSdb context = new LUSSdb();
         CollectionPoint d = new CollectionPoint();
         List<CollectionPoint> list = new List<CollectionPoint>();
-
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -243,30 +211,16 @@ namespace LUSSIS.View.StoreView.Supervisor
 
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
-            //Validate if store clerk is assigned properly
             try
             {
-                if (StationeryStoreAdministrationBuilding.SelectedValue == MedicalSchool.SelectedValue ||
-                    StationeryStoreAdministrationBuilding.SelectedValue == ScienceSchool.SelectedValue ||
-                    MedicalSchool.SelectedValue == ScienceSchool.SelectedValue ||
-                    ManagementSchool.SelectedValue == EngineeringSchool.SelectedValue ||
-                    ManagementSchool.SelectedValue == UniversityHospital.SelectedValue ||
-                    EngineeringSchool.SelectedValue == UniversityHospital.SelectedValue)
-                {
-                    Response.Write("<script>alert('Store Employee Cannot be in different place at the same time!')</script>");
-                    return;
-                }
-                else
-                {
-                    //Update Database
+                //Update Database
                 mcp.UpdateStoreEmployeeInDisbursement(cp1, StationeryStoreAdministrationBuilding.SelectedValue);
-                    mcp.UpdateStoreEmployeeInDisbursement(cp2, ManagementSchool.SelectedValue);
-                    mcp.UpdateStoreEmployeeInDisbursement(cp3, MedicalSchool.SelectedValue);
-                    mcp.UpdateStoreEmployeeInDisbursement(cp4, EngineeringSchool.SelectedValue);
-                    mcp.UpdateStoreEmployeeInDisbursement(cp5, ScienceSchool.SelectedValue);
-                    mcp.UpdateStoreEmployeeInDisbursement(cp6, UniversityHospital.SelectedValue);
-                    Response.Write("<script>alert('Updated Successfully')</script>");
-                }
+                mcp.UpdateStoreEmployeeInDisbursement(cp2, ManagementSchool.SelectedValue);
+                mcp.UpdateStoreEmployeeInDisbursement(cp3, MedicalSchool.SelectedValue);
+                mcp.UpdateStoreEmployeeInDisbursement(cp4, EngineeringSchool.SelectedValue);
+                mcp.UpdateStoreEmployeeInDisbursement(cp5, ScienceSchool.SelectedValue);
+                mcp.UpdateStoreEmployeeInDisbursement(cp6, UniversityHospital.SelectedValue);
+                Response.Write("<script>alert('Updated Successfully')</script>");
             }
             catch (Exception excep)
             {

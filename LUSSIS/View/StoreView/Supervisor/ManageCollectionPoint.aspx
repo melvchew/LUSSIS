@@ -5,6 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
+        <asp:PlaceHolder ID="PlaceHolder1" runat="server">
         <div class="placeholder">
             <div class="row">
                 <h3>Manage Store Clerk At Collection Point</h3>
@@ -28,7 +29,7 @@
                     <asp:Label ID="CPT1" runat="server" Text="Label"></asp:Label>
                 </div>
                 <div class="col-md-4">
-                    <asp:DropDownList ID="StationeryStoreAdministrationBuilding" runat="server" CssClass="form-control admin " AutoPostBack="false"><%-- OnSelectedIndexChanged="StationeryStoreAdministrationBuilding_SelectedIndexChanged">--%>
+                    <asp:DropDownList ID="StationeryStoreAdministrationBuilding" runat="server" CssClass="form-control admin " AutoPostBack="true" OnSelectedIndexChanged="StationeryStoreAdministrationBuilding_SelectedIndexChanged">
                     </asp:DropDownList>
                 </div>
             </div>
@@ -40,7 +41,7 @@
                     <asp:Label ID="CPT2" runat="server" Text="Label"></asp:Label>
                 </div>
                 <div class="col-md-4">
-                    <asp:DropDownList ID="ManagementSchool" runat="server" CssClass="form-control management" AutoPostBack="false"><%-- OnSelectedIndexChanged="ManagementSchool_SelectedIndexChanged">--%>
+                    <asp:DropDownList ID="ManagementSchool" runat="server" CssClass="form-control management" AutoPostBack="true" OnSelectedIndexChanged="ManagementSchool_SelectedIndexChanged">
                     </asp:DropDownList>
                 </div>
             </div>
@@ -52,7 +53,7 @@
                     <asp:Label ID="CPT3" runat="server" Text="Label"></asp:Label>
                 </div>
                 <div class="col-md-4">
-                    <asp:DropDownList ID="MedicalSchool" runat="server" CssClass="form-control medical " AutoPostBack="false"><%-- OnSelectedIndexChanged="MedicalSchool_SelectedIndexChanged">--%>
+                    <asp:DropDownList ID="MedicalSchool" runat="server" CssClass="form-control medical " AutoPostBack="true" OnSelectedIndexChanged="MedicalSchool_SelectedIndexChanged">
                     </asp:DropDownList>
                 </div>
             </div>
@@ -64,7 +65,7 @@
                     <asp:Label ID="CPT4" runat="server" Text="Label"></asp:Label>
                 </div>
                 <div class="col-md-4">
-                    <asp:DropDownList ID="EngineeringSchool" runat="server" CssClass="form-control engineering " AutoPostBack="false"><%-- OnSelectedIndexChanged="EngineeringSchool_SelectedIndexChanged">--%>
+                    <asp:DropDownList ID="EngineeringSchool" runat="server" CssClass="form-control engineering " AutoPostBack="true" OnSelectedIndexChanged="EngineeringSchool_SelectedIndexChanged">
                     </asp:DropDownList>
                 </div>
             </div>
@@ -76,7 +77,7 @@
                     <asp:Label ID="CPT5" runat="server" Text="Label"></asp:Label>
                 </div>
                 <div class="col-md-4">
-                    <asp:DropDownList ID="ScienceSchool" runat="server" CssClass="form-control science " AutoPostBack="false"><%-- OnSelectedIndexChanged="ScienceSchool_SelectedIndexChanged">--%>
+                    <asp:DropDownList ID="ScienceSchool" runat="server" CssClass="form-control science " AutoPostBack="true" OnSelectedIndexChanged="ScienceSchool_SelectedIndexChanged">
                     </asp:DropDownList>
                 </div>
             </div>
@@ -88,7 +89,7 @@
                     <asp:Label ID="CPT6" runat="server" Text="Label"></asp:Label>
                 </div>
                 <div class="col-md-4">
-                    <asp:DropDownList ID="UniversityHospital" runat="server" CssClass="form-control hospital " AutoPostBack="false"> <%--OnSelectedIndexChanged="UniversityHospital_SelectedIndexChanged">--%>
+                    <asp:DropDownList ID="UniversityHospital" runat="server" CssClass="form-control hospital " AutoPostBack="true" OnSelectedIndexChanged="UniversityHospital_SelectedIndexChanged">
                     </asp:DropDownList>
                 </div>
             </div>
@@ -98,5 +99,6 @@
                 </div>
             </div>
         </div>
+      </asp:PlaceHolder>
     </div>
 </asp:Content>
