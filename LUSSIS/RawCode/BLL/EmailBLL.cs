@@ -125,16 +125,17 @@ namespace LUSSIS.RawCode.BLL
 
         public void SendEmailsToClerk()
         {
-            int send_hour = 12;//hour of sending email
-            int send_minute = 54;//minute of sending email
+            int send_hour = 14;//hour of sending email
+            int send_minute = 18;//minute of sending email
             int now_Hour = Convert.ToInt32(DateTime.Now.Hour.ToString());//current hour
             int now_Minute = Convert.ToInt32(DateTime.Now.Minute.ToString());//current minute
 
             if (((now_Hour == send_hour) && (now_Minute > send_minute)) && ((now_Hour == send_hour) && (now_Minute <= send_minute + 1)))//judge the sending time
             {
-                List<String> em = GetEmailAddress();
+                
                 if (GetLowStock())
-                {
+                {   //get all the Clerk emails
+                    List<String> em = GetEmailAddress();
                     //send email to clerks
                     System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
                     System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
