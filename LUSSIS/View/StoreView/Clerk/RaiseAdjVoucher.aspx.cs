@@ -44,12 +44,13 @@ namespace LUSSIS.View.StoreView.Clerk
                 d.DataBind();
                 PlaceHolder2.Controls.Add(d);
                 PlaceHolder2.Controls.Add(new LiteralControl("<br/>"));
+                d.Focus();
                 //---TextBox Adjustement Quantity
                 TextBox txtQtyAdj = new TextBox();
                 txtQtyAdj.ID = "txtQtyAdj" + counter;
                 //txtQtyAdj.Text = "Adj" + counter;
                 txtQtyAdj.Width = 260;
-                txtQtyAdj.AutoPostBack = true;
+                //txtQtyAdj.AutoPostBack = true;
                 txtQtyAdj.CssClass = "form-control qntyAdj";
                 PlaceHolder3.Controls.Add(txtQtyAdj);
                 PlaceHolder3.Controls.Add(new LiteralControl("<br/>"));
@@ -102,6 +103,7 @@ namespace LUSSIS.View.StoreView.Clerk
             d.DataBind();
             PlaceHolder2.Controls.Add(d);
             PlaceHolder2.Controls.Add(new LiteralControl("<br/>"));
+            d.Focus();
             //---TextBox Adjustment Quantity
             TextBox txtQtyAdj = new TextBox();
             txtQtyAdj.ID = "txtQtyAdj" + counter;
@@ -153,11 +155,11 @@ namespace LUSSIS.View.StoreView.Clerk
             DropDownList ddl = new DropDownList();
             int itemId = 0, adjQty = 0;
             int inr = 1; String str = "";
-
-            foreach (Control ctr in PlaceHolder1.Controls)
+            Control ctr = new Control();
+            for (int i= 1; i <= counter;i++)
             {
-                if (inr <= counter)
-                {
+                //if (inr <= counter)
+                //{
                     decimal value = 0;
                     str = "txtQtyAdj" + inr;
                     tb = (TextBox)ctr.FindControl(str);
@@ -173,8 +175,8 @@ namespace LUSSIS.View.StoreView.Clerk
                     {
                         vm.sendnotification(se, adj.VoucherId, itemId);
                     }
-                }
-                inr++;
+                //}
+                //inr++;
             }
             Response.Write("<script>alert('Voucher ID = " + adj.VoucherId + " is raised successfully')</script>");
             Response.Redirect("~/View/StoreView/Home.aspx");
