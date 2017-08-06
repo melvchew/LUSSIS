@@ -75,9 +75,18 @@ namespace LUSSIS.View.StoreView.Clerk
                     }
                 }
             }
-            Session["OrderList"] = orderList;
+            if (orderList.Count == 0)
+            {
+                Response.Write(" <script language=JavaScript> alert('Need to choose at least one item.'); </script>");
+                return;
+            }
+            else
+            {
+                Session["OrderList"] = orderList;
 
-            Response.Redirect("OrderList.aspx");
+                Response.Redirect("OrderList.aspx");
+            }
+
         }
 
         protected void gvItems_PageIndexChanging(object sender, GridViewPageEventArgs e)
