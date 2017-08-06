@@ -13,6 +13,7 @@ namespace LUSSIS.View.StoreView.Clerk
     public partial class ViewOrderDetails : System.Web.UI.Page
     {
         StockManagementBLL bll = new StockManagementBLL();
+        EmailBLL ebll = new EmailBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
