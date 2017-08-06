@@ -18,6 +18,7 @@ namespace LUSSIS.RawCode.Generics
         private string unit;
         private decimal price;
         private int qty;
+        private string empComment;
 
         public int VoucherID
         {
@@ -53,6 +54,11 @@ namespace LUSSIS.RawCode.Generics
         {
             get { return price; }
             set { price = value; }
+        }
+        public string EmpComment
+        {
+            get { return empComment; }
+            set { empComment = value; }
         }
     }
 

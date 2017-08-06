@@ -22,7 +22,7 @@ namespace LUSSIS.RawCode.BLL
                                    on iav.VoucherId equals ia.VoucherId
                                join i in context.Items
                                on ia.ItemId equals i.ItemId
-                               join e in context.Employees on iav.RaiseBy equals e.EmpId
+                               join e in context.StoreEmployees on iav.RaiseBy equals e.StoreEmpId
                                where iav.Status == "PENDING"
                                where i.Supplier1Price * ia.Quantity < 250
                                select new
@@ -53,7 +53,7 @@ namespace LUSSIS.RawCode.BLL
                                    on iav.VoucherId equals ia.VoucherId
                                join i in context.Items
                                on ia.ItemId equals i.ItemId
-                               join e in context.Employees on iav.RaiseBy equals e.EmpId
+                               join e in context.StoreEmployees on iav.RaiseBy equals e.StoreEmpId
                                where iav.Status == "PENDING"
 
                                select new
@@ -93,7 +93,8 @@ namespace LUSSIS.RawCode.BLL
                                 Description = i.Description,
                                 Quantity = ai.Quantity,
                                 Unit = i.Unit,
-                                Price = ((i.Supplier1Price+i.Supplier2Price+i.Supplier3Price)/3)*ai.Quantity
+                                Price = ((i.Supplier1Price + i.Supplier2Price + i.Supplier3Price) / 3) * ai.Quantity,
+                                EmpComment = av.EmpComments
                             }).ToList();
             foreach (var i in itemlist)
             {
@@ -105,6 +106,7 @@ namespace LUSSIS.RawCode.BLL
                 ai.Qty = i.Quantity;
                 ai.Unit = i.Unit;
                 ai.Price = Math.Round(Convert.ToDecimal(i.Price), 2);
+                ai.EmpComment = i.EmpComment;
                 list.Add(ai);
 
             }
@@ -155,7 +157,6 @@ namespace LUSSIS.RawCode.BLL
                 i.VoucherId = voucherId;
                 i.ItemId = itemId;
                 i.Quantity = adjQty;
-
                 context.InvAdjItems.Add(i);
                 context.SaveChanges();
             }
@@ -182,13 +183,11 @@ namespace LUSSIS.RawCode.BLL
             {
                 Console.WriteLine("Exception : " + e.Message);
             }
-            //  InvAdjVoucher test = ctx.InvAdjVouchers.Where(x => x.VoucherId == 1).First<InvAdjVoucher>();
-            //  List<InvAdjVoucher> listA = ctx.InvAdjVouchers.Where(x => x.Status == "Pending").ToList<InvAdjVoucher>();
         }
 
         public InvAdjVoucher getAdjVocherIdByDate(DateTime date)
         {
-            return context.InvAdjVouchers.Where(x => x.SubmitDate == date).First<InvAdjVoucher>();
+            return context.InvAdjVouchers.Where(x => x.SubmitDate == date).OrderByDescending(x => x.VoucherId).Take(1).FirstOrDefault();
         }
 
         public StoreEmployee getStoreEmployeeById(int empId)

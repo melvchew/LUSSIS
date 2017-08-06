@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Logic University Stationery System</title>
     <link rel="stylesheet" href="<%= Page.ResolveUrl("~/Content/bootstrap.min.css") %>" />
     <script src="<%= Page.ResolveUrl("~/Scripts/jquery-1.12.4.min.js") %>"></script>
     <script src="<%= Page.ResolveUrl("~/Scripts/bootstrap.min.js") %>"></script>
@@ -69,6 +69,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Products</a></li>
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/AddNewProduct.aspx") %>">Add New Product</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/UploadExcel.aspx") %>">Upload Excel</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -82,7 +83,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PURCHASE ORDER<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/OrderItems.aspx") %>">Raise New Purchase Orders</a></li>
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ViewOrder.aspx") %>">Recieve Orders</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ViewOrder.aspx") %>">Receive Orders</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -153,6 +154,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Products</a></li>
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/AddNewProduct.aspx") %>">Add New Product</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/UploadExcel.aspx") %>">Upload Excel</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

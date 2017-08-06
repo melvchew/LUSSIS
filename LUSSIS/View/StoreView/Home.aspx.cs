@@ -4,13 +4,40 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LUSSIS.RawCode.BLL;
+using LUSSIS.RawCode.DAL;
+using LUSSIS.RawCode.Generics;
 
 namespace LUSSIS.View.StoreView
 {
     public partial class Home : System.Web.UI.Page
     {
+        HomePageBLL bll = new HomePageBLL();
         protected void Page_Load(object sender, EventArgs e)
         {
+            int eId = Convert.ToInt32(Session["storeEmpId"]);
+            Employee currentEmp = bll.GetDeptEmployee(eId);
+            lblUserName.Text = currentEmp.Name;
+
+            if (User.IsInRole("StoreClerk"))
+            {
+                List<Item> itemList = bll.GetLowStock();
+                litClerkLowStockTotal.Text = itemList.Count.ToString();
+
+                gvClerkLowStock.DataSource = itemList.Take(5).ToList();
+                gvClerkLowStock.DataBind();
+
+                List<RequisitionItem> reqItemList = bll.GetApprovedRequisitionItems();
+                litClerkReqItemTotal.Text = reqItemList.Select(x => x.Quantity).Sum().ToString();
+
+                gvClerkReqItem.DataSource = reqItemList.GroupBy(x => x.Item).Select(g => new
+                {
+                    Item = g.Key,
+                    Quantity = g.Sum(x => x.Quantity)
+                });
+                gvClerkReqItem.DataBind();
+
+            }
         }
     }
 }

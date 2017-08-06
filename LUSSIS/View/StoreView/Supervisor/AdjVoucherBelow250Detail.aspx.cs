@@ -25,6 +25,7 @@ namespace LUSSIS.View.StoreView.Supervisor
                     List<AdjustmentItem> list = b.getAdjustmentItemByID(id);
                     lblrequestID.Text = list[0].VoucherID.ToString();
                     lbldate.Text = list[0].SubmitDate.ToShortDateString();
+                    lblEmpComment.Text = list[0].EmpComment.ToString();
 
                 }
             }

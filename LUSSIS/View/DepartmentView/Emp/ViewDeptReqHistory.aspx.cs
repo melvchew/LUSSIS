@@ -74,9 +74,12 @@ namespace LUSSIS.View.DepartmentView.Emp
                     GridViewRow row = gvDeptReq.Rows[index];
                     int ReqId = Int32.Parse(row.Cells[0].Text);
                     Session["View"] = "dept";
-                    if (row.Cells[2].Text == "PENDING" && row.Cells[1].Text == loginName)
+
+                    string status = (row.Cells[2].FindControl("Label1") as Label).Text;
+
+                    if (status == "PENDING" && row.Cells[1].Text == loginName)
                         Response.Redirect("ManageReq.aspx?rid=" + ReqId);
-                    else if (row.Cells[2].Text == "CANCELLED" || (row.Cells[2].Text == "PENDING" && row.Cells[1].Text != loginName))
+                    else if (status == "CANCELLED" || status== "REJECTED" || (status == "PENDING" && row.Cells[1].Text != loginName))
                         Response.Redirect("ViewReq.aspx?rid=" + ReqId);
                     else
                         Response.Redirect("ViewReqConfirm.aspx?rid=" + ReqId);

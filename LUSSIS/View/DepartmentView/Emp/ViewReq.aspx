@@ -24,7 +24,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <asp:GridView ID="gvDisReqItem" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped">
+                    <asp:GridView ID="gvDisReqItem" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped" PageSize="8">
                         <Columns>
                             <asp:TemplateField HeaderText="Item Discription">
                                 <ItemTemplate>
@@ -56,6 +56,8 @@
                                 </tr>
                             </table>
                         </EmptyDataTemplate>
+                        <PagerSettings Mode="NumericFirstLast" />
+                        <PagerStyle Font-Size="Larger" Font-Underline="True" HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:GridView>
                 </div>
             </div>
