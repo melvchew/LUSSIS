@@ -22,7 +22,7 @@ namespace LUSSIS.RawCode.BLL
                                    on iav.VoucherId equals ia.VoucherId
                                join i in context.Items
                                on ia.ItemId equals i.ItemId
-                               join e in context.Employees on iav.RaiseBy equals e.EmpId
+                               join e in context.StoreEmployees on iav.RaiseBy equals e.StoreEmpId
                                where iav.Status == "PENDING"
                                where i.Supplier1Price * ia.Quantity < 250
                                select new
@@ -53,7 +53,7 @@ namespace LUSSIS.RawCode.BLL
                                    on iav.VoucherId equals ia.VoucherId
                                join i in context.Items
                                on ia.ItemId equals i.ItemId
-                               join e in context.Employees on iav.RaiseBy equals e.EmpId
+                               join e in context.StoreEmployees on iav.RaiseBy equals e.StoreEmpId
                                where iav.Status == "PENDING"
 
                                select new
