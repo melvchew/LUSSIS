@@ -53,6 +53,16 @@ namespace LUSSIS.View.DepartmentView.Emp
                     //flag to count the negative int
                     int flag = 0;
 
+                    //Melvin Added
+                    //Send Email Notification
+                    EmailBLL ebll = new EmailBLL();
+                    RolesManagementBLL rmbll = new RolesManagementBLL();
+                    Department dept = rmbll.GetDeptByUser(emp);
+                    ebll.SendRequisitionNotification(emp, req, dept);
+                    //Melvin Added End
+
+
+
                     List<Item> litems = (List<Item>)Session["AddItemlist"];
 
                     foreach (GridViewRow row in gvNewReqItem.Rows)

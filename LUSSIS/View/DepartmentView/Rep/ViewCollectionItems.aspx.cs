@@ -58,29 +58,6 @@ namespace LUSSIS.View.DepartmentView.Rep
             }
             GridView1.DataSource = dt;
             GridView1.DataBind();
-
-
-
-            //List<Requisition> approvedRequsitionFor = mcp.GetAllApprovedRequsitions();
-            //DateTime date = (DateTime)d.DisburseDate;
-
-
-            //Label1.Text =  dep.CollectionPoint.CollectionTime + " AM";
-            //Label3.Text = dep.CollectionPoint.StoreEmployee.Name;
-            //Label4.Text = dep.CollectionPoint.StoreEmployee.Phone;
-            //int j = 0;
-            //DataTable dt = new DataTable();
-            //List<String> list = mcp.GetCollectionItemList(date, dep);
-            //dt.Columns.AddRange(new DataColumn[4] { new DataColumn("#"), new DataColumn("Item Description"), new DataColumn("Quantity"), new DataColumn("Unit") });
-            //for (int i = 0; i < list.Count / 3; i++)
-            //{
-            //    dt.Rows.Add(i + 1, list.ElementAt(j), list.ElementAt(j + 1), list.ElementAt(j + 2));
-            //    count = count + Convert.ToInt32(list.ElementAt(j + 1));
-            //    j = j + 3;
-            //}
-            //GridView1.DataSource = dt;
-            //GridView1.DataBind();
-            //Label5.Text = count.ToString();
         }
     }
 

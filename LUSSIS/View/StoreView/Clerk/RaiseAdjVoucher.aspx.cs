@@ -18,9 +18,10 @@ namespace LUSSIS.View.StoreView.Clerk
         static int count = 2;
         String status = "PENDING";
         DateTime date = DateTime.Today;
+        DateTime tdate = DateTime.Now.Date.AddDays(-1);  
         static Boolean calc = false;
         static decimal totAmt = 0;
-
+        static int subBtnPressedCount = 1;
         List<String> controlsList = new List<string>();
         int counter = 1;
 
@@ -43,14 +44,17 @@ namespace LUSSIS.View.StoreView.Clerk
                 d.DataValueField = "ItemId";
                 d.DataBind();
                 PlaceHolder2.Controls.Add(d);
+                PlaceHolder2.Controls.Add(new LiteralControl("<br/>"));
+                d.Focus();
                 //---TextBox Adjustement Quantity
                 TextBox txtQtyAdj = new TextBox();
                 txtQtyAdj.ID = "txtQtyAdj" + counter;
                 //txtQtyAdj.Text = "Adj" + counter;
                 txtQtyAdj.Width = 260;
-                txtQtyAdj.AutoPostBack = true;
+                //txtQtyAdj.AutoPostBack = true;
                 txtQtyAdj.CssClass = "form-control qntyAdj";
                 PlaceHolder3.Controls.Add(txtQtyAdj);
+                PlaceHolder3.Controls.Add(new LiteralControl("<br/>"));
                 //---TextBox Reason
                 TextBox txtReason = new TextBox();
                 txtReason.ID = "txtReason" + counter;
@@ -58,6 +62,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 txtReason.Width = 355;
                 txtReason.CssClass = "form-control";
                 PlaceHolder4.Controls.Add(txtReason);
+                PlaceHolder4.Controls.Add(new LiteralControl("<br/>"));
                 //---TextBox Value
                 TextBox txtValue = new TextBox();
                 txtValue.ID = "txtValue" + counter;
@@ -66,6 +71,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 txtValue.ReadOnly = true;
                 txtValue.CssClass = "form-control";
                 PlaceHolder5.Controls.Add(txtValue);
+                PlaceHolder5.Controls.Add(new LiteralControl("<br/>"));
             }
         }
 
@@ -83,7 +89,6 @@ namespace LUSSIS.View.StoreView.Clerk
         protected void AddNewRowLinkBtn_Click1(object sender, EventArgs e)
         {
             //calculatebtn.Visible = true;
-            Submitbtn.Visible = false;
 
             counter++;
             //-- DropDownList Box
@@ -97,6 +102,8 @@ namespace LUSSIS.View.StoreView.Clerk
             d.DataValueField = "ItemId";
             d.DataBind();
             PlaceHolder2.Controls.Add(d);
+            PlaceHolder2.Controls.Add(new LiteralControl("<br/>"));
+            d.Focus();
             //---TextBox Adjustment Quantity
             TextBox txtQtyAdj = new TextBox();
             txtQtyAdj.ID = "txtQtyAdj" + counter;
@@ -104,6 +111,7 @@ namespace LUSSIS.View.StoreView.Clerk
             txtQtyAdj.Width = 260;
             txtQtyAdj.CssClass = "form-control qntyAdj";
             PlaceHolder3.Controls.Add(txtQtyAdj);
+            PlaceHolder3.Controls.Add(new LiteralControl("<br/>"));
             //---TextBox Reason
             TextBox txtReason = new TextBox();
             txtReason.ID = "txtReason" + counter;
@@ -111,6 +119,7 @@ namespace LUSSIS.View.StoreView.Clerk
             txtReason.Width = 355;
             txtReason.CssClass = "form-control";
             PlaceHolder4.Controls.Add(txtReason);
+            PlaceHolder4.Controls.Add(new LiteralControl("<br/>"));
             //---TextBox Value
             TextBox txtValue = new TextBox();
             txtValue.ID = "txtValue" + counter;
@@ -119,14 +128,13 @@ namespace LUSSIS.View.StoreView.Clerk
             txtValue.ReadOnly = true;
             txtValue.CssClass = "form-control";
             PlaceHolder5.Controls.Add(txtValue);
-
+            PlaceHolder5.Controls.Add(new LiteralControl("<br/>"));
             controlsList.Add(txtQtyAdj.ID);
             ViewState["controlsList"] = controlsList;
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Submitbtn.Visible = false;
             if (!IsPostBack)
             {
                 ItemsList1.DataSource = vm.getItems();
@@ -137,28 +145,37 @@ namespace LUSSIS.View.StoreView.Clerk
             }
         }
 
+        
+
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
+            String EmpCmts = "";
+            if ("" != txtEmpCmt.Text)
+            {
+                EmpCmts = txtEmpCmt.Text;
+            }
+            if (1 == subBtnPressedCount)
+            {
+                vm.RaiseVoucher(empId, date, status, EmpCmts);
+            }
+            subBtnPressedCount++;
             StoreEmployee se = vm.getStoreEmployeeById(empId);
-            vm.RaiseVoucher(empId, date, status, txtReasons1.Text);
             InvAdjVoucher adj = vm.getAdjVocherIdByDate(date);
             TextBox tb = new TextBox();
             DropDownList ddl = new DropDownList();
             int itemId = 0, adjQty = 0;
-            int inr = 1; String str = "";
-
-            foreach (Control ctr in PlaceHolder1.Controls)
+            String str = "";
+            Control ctr = this.Page.Form.FindControl("ContentPlaceHolder1");
+            for (int i= 1; i <= counter;i++)
             {
-                if (inr <= counter)
-                {
                     decimal value = 0;
-                    str = "txtQtyAdj" + inr;
+                    str = "txtQtyAdj" + i;
                     tb = (TextBox)ctr.FindControl(str);
-                    str = "ItemsList" + inr;
+                    str = "ItemsList" + i;
                     ddl = (DropDownList)ctr.FindControl(str);
                     itemId = Convert.ToInt32(ddl.SelectedValue);
                     adjQty = Convert.ToInt32(tb.Text);
-                    str = "txtValue" + inr;
+                    str = "txtValue" + i;
                     tb = (TextBox)ctr.FindControl(str);
                     value = Convert.ToDecimal(tb.Text);
                     vm.AddRaiseAdjItem(adj.VoucherId, itemId, adjQty);
@@ -166,11 +183,9 @@ namespace LUSSIS.View.StoreView.Clerk
                     {
                         vm.sendnotification(se, adj.VoucherId, itemId);
                     }
-                }
-                inr++;
             }
             Response.Write("<script>alert('Voucher ID = " + adj.VoucherId + " is raised successfully')</script>");
-            Response.Redirect("~/View/StoreView/Home.aspx");
+            //Response.Redirect("~/View/StoreView/Home.aspx");
         }
 
         public void textbox_textchange(object sender, EventArgs e)
@@ -209,7 +224,6 @@ namespace LUSSIS.View.StoreView.Clerk
                         tb = (TextBox)PlaceHolder1.FindControl(str);
                         tb.Text = calValue(itemId, adjQty);
                         //calculatebtn.Visible = false;
-                        Submitbtn.Visible = true;
                     }
                     else
                     {

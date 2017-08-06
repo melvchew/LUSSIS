@@ -24,6 +24,16 @@ namespace LUSSIS.RawCode.BLL
             return context.StoreEmployees.Where(x => x.Position == "Clerk").ToList();
         }
 
+        public List<StoreEmployee> getListedEmployees(int empId)
+        {
+            return context.StoreEmployees.Where(x => x.Position == "Clerk" && x.StoreEmpId != empId).ToList();
+        }
+
+        public List<CollectionPoint> getEmployeeCollectionPoints(int empId)
+        {
+            return context.CollectionPoints.Where(x => x.StoreEmpId == empId).ToList();
+        }
+
         public CollectionPoint getCurStoreEmplyeeInDisbursement(int cpId)
         {
             return context.CollectionPoints.Where(x => x.CollectionPointId == cpId).First<CollectionPoint>();
@@ -51,10 +61,7 @@ namespace LUSSIS.RawCode.BLL
             cp.CollectionPointId = cpId;
             context.SaveChanges();
         }
-        //public Disbursement GetDisbursementByID(int id)
-        //{
-        //    return context.Disbursements.Where(x => x.DisbursementId == id).First<Disbursement>();
-        //}
+
         public List<RequisitionItem> GetCollectionItems(Disbursement dis)
         {
             List<String> ListItem = null;
@@ -71,21 +78,6 @@ namespace LUSSIS.RawCode.BLL
             }
             return new List<RequisitionItem>();
          }
-
-        //public List<String> GetCollectionItemList(DateTime disDate, Department dep)
-        //{
-        //    List<String> list = new List<String>();
-        //    Disbursement d = new Disbursement();
-        //    d = context.Disbursements.FirstOrDefault(x => x.DisburseDate == disDate && x.Department.DeptId == dep.DeptId);
-        //    foreach (var item in d.DisburseReqItems)
-        //    {
-        //        list.Add(item.Item.Description);
-        //        list.Add(item.RetrieveQty.ToString());
-        //        list.Add(item.Item.U nit);
-        //    }
-        //    return list;
-       // }
-
 
         public void SendChangeNotification(Department dept, int deptId)
         {
@@ -119,11 +111,8 @@ namespace LUSSIS.RawCode.BLL
 
         public List<RequisitionItem> GetAllApprovedRequsitionItemsByDepartment(Department dep)
         {
-
             //List <Requisition> req = context.Requisitions.Where(x => x.Status == ((ReqStatus.APPROVED).ToString()) && x.Employee.DeptId == dep.DeptId).ToList<Requisition>();
-
             List<RequisitionItem> reqitems = context.RequisitionItems.Where(y => y.Requisition.Status == ((ReqStatus.APPROVED).ToString()) && y.Requisition.Employee.DeptId == dep.DeptId).ToList();
-
             return reqitems;
         }
 

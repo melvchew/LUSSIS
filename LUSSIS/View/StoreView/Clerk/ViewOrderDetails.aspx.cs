@@ -149,11 +149,22 @@ namespace LUSSIS.View.StoreView.Clerk
             {
                 int itemId = Convert.ToInt32((row.FindControl("hfItemId") as HiddenField).Value);
                 PurchaseOrderItem poi = orderItemList.FirstOrDefault(x => x.POId == orderId && x.ItemId == itemId);
+                TextBox tb = (row.FindControl("txtRecievedQty") as TextBox);
+                int delQty = 0;
+                bool result = Int32.TryParse(tb.Text, out delQty);
+                if(!result)
+                {
+                    CustomValidator1.IsValid = false;
+                    CustomValidator1.ErrorMessage = "Please enter recieved quantities. (Number only)";
+                    return;
+                }
                 poi.DeliverQty = Convert.ToInt32((row.FindControl("txtRecievedQty") as TextBox).Text);
                 poi.Comments = (row.FindControl("txtRemark") as TextBox).Text;
             }
 
             bll.ReceivePurchaseOrder(po, bll.GetStoreEmployeeList()[5]);
+
+            BindData(po.POId);
         }
     }
 }
