@@ -151,12 +151,33 @@ namespace LUSSIS.RawCode.BLL
         {
             try
             {
+                List<InvAdjItem> lItem = context.InvAdjItems.Where(x => x.VoucherId == voucherId).ToList<InvAdjItem>();
                 InvAdjItem i = new InvAdjItem();
-                i.VoucherId = voucherId;
-                i.ItemId = itemId;
-                i.Quantity = adjQty;
+                if (lItem.Count != 0)
+                {
+                    foreach(InvAdjItem ia in lItem)
+                    {
+                        if(ia.ItemId == itemId)
+                        {
+                            ia.Quantity = ia.Quantity + adjQty;
+                        }
+                        else
+                        {
+                            i.VoucherId = voucherId;
+                            i.ItemId = itemId;
+                            i.Quantity = adjQty;
+                            context.InvAdjItems.Add(i);
+                        }
+                    }
+                }
+                else
+                {
+                    i.VoucherId = voucherId;
+                    i.ItemId = itemId;
+                    i.Quantity = adjQty;
 
-                context.InvAdjItems.Add(i);
+                    context.InvAdjItems.Add(i);
+                }
                 context.SaveChanges();
             }
             catch (Exception e)
