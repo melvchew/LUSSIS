@@ -29,7 +29,7 @@
                         <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
                     </div>
                     <div class="col-md-3">
-                        <asp:TextBox ID="txtQtyAdj1" CssClass="form-control qntyAdj" runat="server" AutoPostBack="false"></asp:TextBox><br />
+                        <asp:TextBox ID="txtQtyAdj1" CssClass="form-control qntyAdj" TextMode="number" runat="server" AutoPostBack="false"></asp:TextBox><br />
                         <asp:PlaceHolder ID="PlaceHolder3" runat="server"></asp:PlaceHolder>
                     </div>
                     <div class="col-md-4">

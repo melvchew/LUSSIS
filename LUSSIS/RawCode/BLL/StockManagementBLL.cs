@@ -614,6 +614,7 @@ namespace LUSSIS.RawCode.BLL
             //PurchaseOrder po = context.PurchaseOrders.FirstOrDefault(x => x.POId == purchaseOrder.POId);
             purchaseOrder.Status = PurchaseOrderStatus.RECIEVED.ToString();
             purchaseOrder.ReceiveBy = emp.StoreEmpId;
+            purchaseOrder.ReceiveDate = System.DateTime.Now;
             //Add the received items to stock balance
             foreach (var item in purchaseOrder.PurchaseOrderItems)
             {

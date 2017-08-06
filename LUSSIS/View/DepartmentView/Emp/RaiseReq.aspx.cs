@@ -50,6 +50,16 @@ namespace LUSSIS.View.DepartmentView.Emp
                     Requisition req = rs.CreateReq(emp, txtBoxComment.Text);
                     int flag = 0;
 
+                    //Melvin Added
+                    //Send Email Notification
+                    EmailBLL ebll = new EmailBLL();
+                    RolesManagementBLL rmbll = new RolesManagementBLL();
+                    Department dept = rmbll.GetDeptByUser(emp);
+                    ebll.SendRequisitionNotification(emp, req, dept);
+                    //Melvin Added End
+
+
+
                     List<Item> litems = (List<Item>)Session["AddItemlist"];
 
                     foreach (GridViewRow row in gvNewReqItem.Rows)

@@ -93,4 +93,10 @@ namespace LUSSIS.RawCode.Generics
         public int AmountRetrieved { get; set; }
         public int AmountDisbursed { get; set; }
     }
+
+    public class ConsolidateItem
+    {
+        public Item Item { get; set; }
+        public int Qty { get; set; }
+    }
 }
