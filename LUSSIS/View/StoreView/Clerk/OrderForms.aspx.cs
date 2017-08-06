@@ -88,7 +88,8 @@ namespace LUSSIS.View.StoreView.Clerk
             List<PurchaseOrder> poList = bll.GenerateOrderForms(orderList, currentStoreEmp, expectedDate);
 
             poList = bll.SubmitPurchaseOrders(poList);
-
+            EmailBLL eBLL = new EmailBLL();
+            eBLL.SendNewPurchoseOrderNotification(currentStoreEmp, poList);
             BindRepeater(poList);
 
             btnConfirm.Visible = false;

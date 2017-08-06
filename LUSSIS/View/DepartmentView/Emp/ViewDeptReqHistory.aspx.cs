@@ -15,6 +15,11 @@ namespace LUSSIS.View.DepartmentView.Emp
         LUSSdb context;
         RequisitionBLL rs = new RequisitionBLL();
 
+        protected string ChangeStatus(string status)
+        {
+            return rs.ChangeStatus(status);
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

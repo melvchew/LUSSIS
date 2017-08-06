@@ -83,6 +83,44 @@ namespace LUSSIS.RawCode.BLL
 
         //Melvin
         //LUSSdb ctx = new LUSSdb();
+        public Boolean AppointRep(Department dept)
+        {
+            try
+            {
+               
+                Department d = context.Departments.Where(x => x.DeptId == dept.DeptId).FirstOrDefault();
+                d.DeptRep = dept.DeptRep;
+                d.ActingHead = dept.ActingHead;
+                //d.AHStartDate = dept.AHStartDate;
+                //d.AHEndDate = dept.AHEndDate;
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+        public Boolean AppointAH(Department dept)
+        {
+            try
+            {
+               
+                Department d = context.Departments.Where(x => x.DeptId == dept.DeptId).FirstOrDefault();
+                d.DeptRep = dept.DeptRep;
+                d.ActingHead = dept.ActingHead;
+                d.AHStartDate = dept.AHStartDate;
+                d.AHEndDate = dept.AHEndDate;
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
         public Employee GetEmpByID(int id)
         {
             {

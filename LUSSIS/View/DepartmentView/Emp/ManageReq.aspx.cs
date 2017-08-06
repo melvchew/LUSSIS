@@ -12,7 +12,9 @@ namespace LUSSIS.View.DepartmentView.Emp
 {
     public partial class ManageReq : System.Web.UI.Page
     {
+        //EF model
         LUSSdb context;
+        //BLL methods
         RequisitionBLL rs = new RequisitionBLL();
 
 
@@ -24,6 +26,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Bind the data to gridview and Literals
         private void BindGrid()
         {
             int rid = Int32.Parse(Request.QueryString["rid"]);
@@ -31,7 +34,8 @@ namespace LUSSIS.View.DepartmentView.Emp
             using (context = new LUSSdb())
             {
                 Requisition req = context.Requisitions.Where(r => r.ReqId == rid).ToList().First();
-
+                
+                //Requisition details
                 Lite_ReqStatus.Text = "Requisition Status: " + req.Status;
                 Lite_ReqId.Text = "Requisition ID: " + req.ReqId;
                 Lite_ReqDate.Text = "Requisition Date: " + String.Format("{0:D}", req.SubmitDate);
@@ -44,17 +48,22 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Cancel the PENDING requisition
         protected void btn_CancelReq_Click(object sender, EventArgs e)
         {
             int rid = Int32.Parse(Request.QueryString["rid"]);
             using (context = new LUSSdb())
             {
                 rs.CancelReq(context.Requisitions.Where(r => r.ReqId == rid).ToList().First());
-                Response.Write(" <script language=JavaScript> alert('Cancelled successfully!'); </script>");
+                Response.Write(" <script language=JavaScript> alert('Requisition has been cancelled.'); </script>");
             }
+
+            //Go to View requisition page
+            //can not manage the CANCELLED requisition 
             Response.Redirect("ViewReq.aspx?rid=" + rid);
         }
 
+        //Remove reqItems from requisition
         protected void btn_Remov_Click(object sender, EventArgs e)
         {
             using (context = new LUSSdb())
@@ -74,15 +83,17 @@ namespace LUSSIS.View.DepartmentView.Emp
                         lreqItems.Add(context.RequisitionItems.Where(ri => ri.ReqId == rid && ri.ItemId == itemId).ToList().First());
                     }
                 }
-
+                //If remove items num between zero to all
                 if (lreqItems.Count != 0 && lreqItems.Count < rows)
                 {
                     rs.DeleteReqItems(lreqItems);
                 }
-                else if(lreqItems.Count == 0)
+                //Can not remove zero item
+                else if (lreqItems.Count == 0)
                 {
                     Response.Write(" <script language=JavaScript> alert('No Item is removed.'); </script>");
                 }
+                //Can not remove all the items
                 else if(lreqItems.Count == rows)
                 {
                     Response.Write(" <script language=JavaScript> alert('Can not remove all the Items.'); </script>");
@@ -91,7 +102,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
-
+        //Choose/Inverse all items in gv table
         protected void AllItems_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox chkall = (CheckBox)gvReqItem.HeaderRow.FindControl("AllItems");
@@ -111,15 +122,17 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Edit requisitionItem quantity
         protected void gvReqItem_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvReqItem.EditIndex = e.NewEditIndex;
             this.BindGrid();
         }
 
+        //update requisitionItem quantity
         protected void gvReqItem_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-
+            //Qty num is null
             if ((gvReqItem.Rows[e.RowIndex].FindControl("TextBox2") as TextBox).Text == "")
             {
                 (gvReqItem.Rows[e.RowIndex].FindControl("lblerror") as Label).Text = "Quantity is required!";
@@ -130,7 +143,8 @@ namespace LUSSIS.View.DepartmentView.Emp
                 int itemId = Convert.ToInt32(gvReqItem.DataKeys[e.RowIndex].Value);
                 GridViewRow row = gvReqItem.Rows[e.RowIndex];
                 int quantity = Convert.ToInt32((row.FindControl("TextBox2") as TextBox).Text);
-                if (quantity <= 0)
+
+                if (quantity <= 0)  //Has negative quantity
                 {
                     Response.Write(" <script language=JavaScript> alert('The quantity should be positive integer.'); </script>");
                 }
@@ -144,26 +158,28 @@ namespace LUSSIS.View.DepartmentView.Emp
                
         }
 
+        //Cancel edit requisitionItem quantity
         protected void gvReqItem_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             gvReqItem.EditIndex = -1;
             this.BindGrid();
         }
 
-
-
+        //Add new requisition items
         protected void btn_Add_Click(object sender, EventArgs e)
         {
             String rid = Request.QueryString["rid"];
             Response.Redirect("Catalogue.aspx?rid=" + rid);
         }
 
+        //Change page in gridview
         protected void gvReqItem_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvReqItem.PageIndex = e.NewPageIndex;
             this.BindGrid();
         }
 
+        //Go back to previous page
         protected void btnBack_Click(object sender, EventArgs e)
         {
             if ((String)Session["View"] == "dept")

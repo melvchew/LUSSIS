@@ -15,6 +15,7 @@ namespace LUSSIS.RawCode.BLL
 
         //Made by Hu Xiaoxi(Team5)
 
+        //Get All Items in Catalog
         public List<Item> GetCatalog()
         {
             try
@@ -356,6 +357,20 @@ namespace LUSSIS.RawCode.BLL
                 return true;
             }
 
+        }
+
+        //Change status showing in dept page
+        public String ChangeStatus(string status)
+        {
+            if(status== "PARTIAL")
+            {
+                status = "APPROVED";
+            }
+            else if(status == "DELIVERED")
+            {
+                status = "COLLECTED";
+            }
+            return status;
         }
 
         //----------------------------------------------------------------------------------------------------------------

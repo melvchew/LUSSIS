@@ -23,7 +23,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             {
                 Requisition req = context.Requisitions.Where(r => r.ReqId == rid).ToList().First();
 
-                Lite_ReqStatus.Text = "Requisition Status: " + req.Status;
+                Lite_ReqStatus.Text = "Requisition Status: " + rs.ChangeStatus(req.Status);
                 Lite_ReqId.Text = "Requisition ID: " + req.ReqId;
                 Lite_ReqDate.Text = "Requisition Date: " + String.Format("{0:D}", req.SubmitDate);
 
