@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <asp:GridView ID="gvReqHistory" runat="server" AutoGenerateColumns="False" OnRowCommand="gvReqHistory_RowCommand"
-                        AllowPaging="True" OnPageIndexChanging="gvReqHistory_PageIndexChanging" CssClass="table table-bordered table-striped">
+                        AllowPaging="True" OnPageIndexChanging="gvReqHistory_PageIndexChanging" CssClass="table table-bordered table-striped" PageSize="8">
                         <Columns>
                             <asp:BoundField HeaderText="Requisition ID" DataField="ReqId" />
 
@@ -39,6 +39,8 @@
                                 </tr>
                                 </table>
                         </EmptyDataTemplate>
+                        <PagerSettings Mode="NumericFirstLast" />
+                        <PagerStyle Font-Size="Larger" Font-Underline="True" HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:GridView>
                 </div>
             </div>

@@ -51,9 +51,11 @@ namespace LUSSIS.View.DepartmentView.Emp
                 GridViewRow row = gvReqHistory.Rows[index];
                 int ReqId = Int32.Parse(row.Cells[0].Text);
                 Session["View"] = "own";
-                if (row.Cells[1].Text == "PENDING")
+                string status = (row.Cells[1].FindControl("Label1") as Label).Text;
+
+                if (status == "PENDING")
                     Response.Redirect("ManageReq.aspx?rid=" + ReqId);
-                else if (row.Cells[1].Text == "CANCELLED")
+                else if (status == "CANCELLED" || status == "REJECTED")
                     Response.Redirect("ViewReq.aspx?rid=" + ReqId);
                 else
                     Response.Redirect("ViewReqConfirm.aspx?rid=" + ReqId);

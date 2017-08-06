@@ -34,6 +34,11 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-sm-12">
+                    <p><b>Employee Comment:</b> <asp:Literal ID="lblEmpComment" runat="server"></asp:Literal></p>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-6">
                     <asp:TextBox ID="txtcomment" placeholder="Comment" CssClass="form-control" runat="server" TextMode="MultiLine"></asp:TextBox><br />
                 </div>

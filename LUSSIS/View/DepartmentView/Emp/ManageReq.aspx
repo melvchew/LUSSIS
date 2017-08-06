@@ -28,7 +28,7 @@
                         OnRowEditing="gvReqItem_RowEditing"
                         OnRowCancelingEdit="gvReqItem_RowCancelingEdit"
                         OnRowUpdating="gvReqItem_RowUpdating"
-                        AllowPaging="True" OnPageIndexChanging="gvReqItem_PageIndexChanging" CssClass="table table-bordered  table-striped">
+                        AllowPaging="True" OnPageIndexChanging="gvReqItem_PageIndexChanging" CssClass="table table-bordered  table-striped" PageSize="8">
                         <Columns>
 
 
@@ -78,6 +78,8 @@
                             </tr>
                             </table>
                         </EmptyDataTemplate>
+                        <PagerSettings Mode="NumericFirstLast" />
+                        <PagerStyle Font-Size="Larger" Font-Underline="True" HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:GridView>
                 </div>
             </div>
