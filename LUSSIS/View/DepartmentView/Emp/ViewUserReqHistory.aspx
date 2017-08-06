@@ -16,7 +16,11 @@
                         <Columns>
                             <asp:BoundField HeaderText="Requisition ID" DataField="ReqId" />
 
-                            <asp:BoundField HeaderText="Status" DataField="Status" />
+                            <asp:TemplateField HeaderText="Status">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# ChangeStatus((string)Eval("Status")) %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField HeaderText="Requisition Date" DataField="SubmitDate" DataFormatString="{0:d}" />
                             <asp:ButtonField Text="details" ButtonType="Link" CommandName="reqDetails" />
 

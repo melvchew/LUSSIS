@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -86,6 +87,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -174,12 +177,14 @@
     <Content Include="MasterStore.Master" />
     <None Include="Properties\PublishProfiles\ADLUSSIS.pubxml" />
     <None Include="Properties\PublishProfiles\Luss.pubxml" />
+    <None Include="Properties\PublishProfiles\LUSSIS.pubxml" />
     <None Include="Properties\PublishProfiles\LUSSTest.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="ServiceAndroid.svc" />
     <Content Include="View\Redirect2.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -256,6 +261,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IServiceAndroid.cs" />
     <Compile Include="MasterStore.Master.cs">
       <DependentUpon>MasterStore.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -369,6 +375,9 @@
     </Compile>
     <Compile Include="RawCode\Generics\enums.cs" />
     <Compile Include="RawCode\Generics\ViewModel.cs" />
+    <Compile Include="ServiceAndroid.svc.cs">
+      <DependentUpon>ServiceAndroid.svc</DependentUpon>
+    </Compile>
     <Compile Include="View\Redirect2.aspx.cs">
       <DependentUpon>Redirect2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
