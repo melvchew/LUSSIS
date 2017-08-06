@@ -93,7 +93,7 @@ namespace LUSSIS.RawCode.BLL
                                 Description = i.Description,
                                 Quantity = ai.Quantity,
                                 Unit = i.Unit,
-                                Price = ((i.Supplier1Price+i.Supplier2Price+i.Supplier3Price)/3)*ai.Quantity
+                                Price = ((i.Supplier1Price + i.Supplier2Price + i.Supplier3Price) / 3) * ai.Quantity
                             }).ToList();
             foreach (var i in itemlist)
             {
@@ -151,33 +151,11 @@ namespace LUSSIS.RawCode.BLL
         {
             try
             {
-                List<InvAdjItem> lItem = context.InvAdjItems.Where(x => x.VoucherId == voucherId).ToList<InvAdjItem>();
                 InvAdjItem i = new InvAdjItem();
-                if (lItem.Count != 0)
-                {
-                    foreach(InvAdjItem ia in lItem)
-                    {
-                        if(ia.ItemId == itemId)
-                        {
-                            ia.Quantity = ia.Quantity + adjQty;
-                        }
-                        else
-                        {
-                            i.VoucherId = voucherId;
-                            i.ItemId = itemId;
-                            i.Quantity = adjQty;
-                            context.InvAdjItems.Add(i);
-                        }
-                    }
-                }
-                else
-                {
-                    i.VoucherId = voucherId;
-                    i.ItemId = itemId;
-                    i.Quantity = adjQty;
-
-                    context.InvAdjItems.Add(i);
-                }
+                i.VoucherId = voucherId;
+                i.ItemId = itemId;
+                i.Quantity = adjQty;
+                context.InvAdjItems.Add(i);
                 context.SaveChanges();
             }
             catch (Exception e)
@@ -203,13 +181,11 @@ namespace LUSSIS.RawCode.BLL
             {
                 Console.WriteLine("Exception : " + e.Message);
             }
-            //  InvAdjVoucher test = ctx.InvAdjVouchers.Where(x => x.VoucherId == 1).First<InvAdjVoucher>();
-            //  List<InvAdjVoucher> listA = ctx.InvAdjVouchers.Where(x => x.Status == "Pending").ToList<InvAdjVoucher>();
         }
 
         public InvAdjVoucher getAdjVocherIdByDate(DateTime date)
         {
-            return context.InvAdjVouchers.Where(x => x.SubmitDate == date).First<InvAdjVoucher>();
+            return context.InvAdjVouchers.Where(x => x.SubmitDate == date).OrderByDescending(x => x.VoucherId).Take(1).FirstOrDefault();
         }
 
         public StoreEmployee getStoreEmployeeById(int empId)

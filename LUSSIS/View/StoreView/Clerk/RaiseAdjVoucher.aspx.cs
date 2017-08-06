@@ -18,7 +18,7 @@ namespace LUSSIS.View.StoreView.Clerk
         static int count = 2;
         String status = "PENDING";
         DateTime date = DateTime.Today;
-        DateTime tdate = DateTime.Now.Date.AddDays(-1);  
+        DateTime tdate = DateTime.Now.Date.AddDays(-1);
         static decimal totAmt = 0;
         static int subBtnPressedCount = 1;
         List<String> controlsList = new List<string>();
@@ -136,6 +136,7 @@ namespace LUSSIS.View.StoreView.Clerk
         {
             if (!IsPostBack)
             {
+                subBtnPressedCount = 1;
                 ItemsList1.DataSource = vm.getItems();
                 ItemsList1.DataBind();
                 ItemsList1.DataTextField = "Description";
@@ -144,46 +145,54 @@ namespace LUSSIS.View.StoreView.Clerk
             }
         }
 
-        
-
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
-            String EmpCmts = "";
-            if ("" != txtEmpCmt.Text)
+            int itemId = 0, adjQty = 0;
+            String EmpCmts = "", str = "";
+            TextBox tb = new TextBox();
+            DropDownList ddl = new DropDownList();
+            Control ctr = this.Page.Form.FindControl("ContentPlaceHolder1");
+
+            for (int i = 1; i <= counter; i++)
             {
-                EmpCmts = txtEmpCmt.Text;
+                str = "ItemsList" + i;
+                ddl = (DropDownList)ctr.FindControl(str);
+                EmpCmts = EmpCmts + ddl.SelectedItem.Text + ":";
+                str = "txtReason" + i;
+                tb = (TextBox)ctr.FindControl(str);
+                EmpCmts = EmpCmts + tb.Text + ";";
+                str = "txtValue" + i;
+                tb = (TextBox)ctr.FindControl(str);
+                if (tb.Text == "")
+                {
+                    Response.Write("<script>alert('Press Calculate Button Before Submit')</script>");
+                    return;
+                }
             }
             Label1.Text = subBtnPressedCount.ToString();
-            if (1 == subBtnPressedCount)
-            {
-                vm.RaiseVoucher(empId, date, status, EmpCmts);
-            }
+            vm.RaiseVoucher(empId, date, status, EmpCmts);
             subBtnPressedCount++;
             StoreEmployee se = vm.getStoreEmployeeById(empId);
             InvAdjVoucher adj = vm.getAdjVocherIdByDate(date);
-            TextBox tb = new TextBox();
-            DropDownList ddl = new DropDownList();
-            int itemId = 0, adjQty = 0;
-            String str = "";
-            Control ctr = this.Page.Form.FindControl("ContentPlaceHolder1");
-            Label2.Text = counter.ToString();
-            for (int i= 1; i <= counter;i++)
+
+            Label2.Text = adj.VoucherId.ToString();
+            for (int i = 1; i <= counter; i++)
             {
-                    decimal value = 0;
-                    str = "txtQtyAdj" + i;
-                    tb = (TextBox)ctr.FindControl(str);
-                    str = "ItemsList" + i;
-                    ddl = (DropDownList)ctr.FindControl(str);
-                    itemId = Convert.ToInt32(ddl.SelectedValue);
-                    adjQty = Convert.ToInt32(tb.Text);
-                    str = "txtValue" + i;
-                    tb = (TextBox)ctr.FindControl(str);
-                    value = Convert.ToDecimal(tb.Text);
-                    vm.AddRaiseAdjItem(adj.VoucherId, itemId, adjQty);
-                    if (value > 250)
-                    {
-                        vm.sendnotification(se, adj.VoucherId, itemId);
-                    }
+                decimal value = 0;
+                str = "txtQtyAdj" + i;
+                tb = (TextBox)ctr.FindControl(str);
+                str = "ItemsList" + i;
+                ddl = (DropDownList)ctr.FindControl(str);
+                itemId = Convert.ToInt32(ddl.SelectedValue);
+                adjQty = Convert.ToInt32(tb.Text);
+                str = "txtValue" + i;
+                tb = (TextBox)ctr.FindControl(str);
+                value = Convert.ToDecimal(tb.Text);
+                vm.AddRaiseAdjItem(adj.VoucherId, itemId, adjQty);
+                if (value > 250)
+                {
+                    vm.sendnotification(se, adj.VoucherId, itemId);
+                }
             }
             Response.Write("<script>alert('Voucher ID = " + adj.VoucherId + " is raised successfully')</script>");
             //Response.Redirect("~/View/StoreView/Home.aspx");
@@ -203,10 +212,29 @@ namespace LUSSIS.View.StoreView.Clerk
         {
             TextBox tb = new TextBox();
             DropDownList ddl = new DropDownList();
-            String str = "";
+            DropDownList ddl1 = new DropDownList();
+            String str = "", str1 = "";
             int distance;
             int adjQty = 0, itemId = 0;
             //Label2.Text = (int.TryParse(tb.Text, out distance).ToString());
+            for (int i = 1; i < counter; i++)
+            {
+                str = "ItemsList" + i;
+                ddl = (DropDownList)PlaceHolder1.FindControl(str);
+                for (int j = i + 1; j <= counter; j++)
+                {
+                    str1 = "ItemsList" + j;
+                    ddl1 = (DropDownList)PlaceHolder1.FindControl(str1);
+                    if (ddl.SelectedValue == ddl1.SelectedValue)
+                    {
+                        Response.Write("<script>alert('Same Item Selected in Multiple Times')</script>");
+                        ddl.Focus();
+                        return;
+                    }
+
+                }
+            }
+
             for (int i = 1; i <= counter; i++)
             {
                 str = "txtQtyAdj" + i;

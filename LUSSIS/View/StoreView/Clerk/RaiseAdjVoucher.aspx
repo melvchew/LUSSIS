@@ -35,7 +35,7 @@
                         <asp:PlaceHolder ID="PlaceHolder3" runat="server"></asp:PlaceHolder>
                     </div>
                     <div class="col-md-4">
-                        <asp:TextBox ID="txtReasons1" CssClass="form-control" runat="server"></asp:TextBox><br />
+                        <asp:TextBox ID="txtReason1" CssClass="form-control" runat="server"></asp:TextBox><br />
                         <asp:PlaceHolder ID="PlaceHolder4" runat="server"></asp:PlaceHolder>
                     </div>
                     <div class="col-md-2">
@@ -53,9 +53,6 @@
                         <asp:Button ID="Submitbtn" runat="server" Class="btn btn-default" Text="Submit" OnClick="Submitbtn_Click" />
                     </div>
                 </div>
-                <asp:Label ID="EmpCmts" runat="server" Text="Employee Comments : "/> <br />
-                <asp:TextBox ID="txtEmpCmt" CssClass="form-control" runat="server"></asp:TextBox><br />
-
             </asp:PlaceHolder>
         </div>
     </div>
