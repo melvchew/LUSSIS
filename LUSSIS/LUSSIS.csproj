@@ -177,6 +177,7 @@
     <Content Include="MasterStore.Master" />
     <None Include="Properties\PublishProfiles\ADLUSSIS.pubxml" />
     <None Include="Properties\PublishProfiles\Luss.pubxml" />
+    <None Include="Properties\PublishProfiles\LUSSIS.pubxml" />
     <None Include="Properties\PublishProfiles\LUSSTest.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
