@@ -11,7 +11,7 @@
     <link href="<%= Page.ResolveUrl("~/Style/main.css") %>" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
-    <title></title>
+    <title>Login to Logic University</title>
     <style>
         .placeholder {
             width: 25%;
