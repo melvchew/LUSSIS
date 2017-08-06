@@ -6,8 +6,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
         <div class="placeholder">
-            <asp:Label ID="Label1" runat="server" Text="Label1"></asp:Label>
-            <asp:Label ID="Label2" runat="server" Text="Label1"></asp:Label>
             <asp:PlaceHolder ID="PlaceHolder1" runat="server">
                 <div class="row">
                     <h3><span>Raise Adjustment Voucher</span></h3>
