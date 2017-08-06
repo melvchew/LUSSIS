@@ -53,10 +53,6 @@ namespace LUSSIS.View.DepartmentView.Emp
                     //flag to count the negative int
                     int flag = 0;
 
-
-
-
-
                     List<Item> litems = (List<Item>)Session["AddItemlist"];
 
                     foreach (GridViewRow row in gvNewReqItem.Rows)

@@ -29,7 +29,7 @@ namespace LUSSIS.View.DepartmentView
                 gvDeptEmpUndelItems.DataBind();
 
                 //get pending reqs
-                List<Requisition> pendingReqList = bll.GetPendingRequitions(eId);
+                List<Requisition> pendingReqList = bll.GetPendingRequitions(eId).Take(5).ToList();
                 litDeptEmpPendingToal.Text = pendingReqList.Count.ToString();
 
                 //fill up grid
