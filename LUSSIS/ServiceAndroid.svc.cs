@@ -20,8 +20,9 @@ namespace LUSSIS
         public List<WCFRequisition> ListPending(string id)
         {
             //LUSS ctx = new EF.LUSS();
-            Employee user = rmBLL.GetEmpByID(Convert.ToInt16(id));
-            Department dept = rmBLL.GetDeptByUser(user);
+            //Employee user = rmBLL.GetEmpByID(Convert.ToInt16(id));
+            Department dept = rmBLL.GetDeptByID(Convert.ToInt16(id));
+            //Department dept = rmBLL.GetDeptByUser(user);
             //List<Requisition> Lreq = ctx.Requisitions.Where(x => x.Status == "PENDING").ToList<Requisition>();
             List<Requisition> Lreq = rBLL.GetPendingReqByDepartment(dept);
             List<WCFRequisition> LWCFreq = new List<WCFRequisition>();
