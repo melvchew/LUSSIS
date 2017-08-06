@@ -48,7 +48,7 @@
                                     </EmptyDataTemplate>
                                 </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink1" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Emp/ViewUserReqHistory.aspx" runat="server">View Details</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink1" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Emp/ViewUserReqHistory.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                             </asp:GridView>
                             <div class="col-lg-12">
                                 <div>
-                                    <asp:HyperLink ID="HyperLink2" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Emp/ViewUserReqHistory.aspx" runat="server">View Details</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink2" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Emp/ViewUserReqHistory.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                                     </EmptyDataTemplate>
                                 </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink3" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Home.aspx" runat="server">View Details</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink3" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Home.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +155,7 @@
                             </asp:GridView>
                             <div class="col-lg-12">
                                 <div>
-                                    <asp:HyperLink ID="HyperLink4" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Emp/ViewUserReqHistory.aspx" runat="server">View Details</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink4" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Emp/ViewUserReqHistory.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +200,7 @@
                                     </tr>
                                 </table>
                                 <div>
-                                    <a class="pull-right" href="#">View Details</a>
+                                    <a class="pull-right" href="#">More</a>
                                 </div>
                             </div>
                         </div>
@@ -238,7 +238,7 @@
                                     </Columns>
                                 </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink5" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Head/ViewPendingReq.aspx" runat="server">View Details</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink5" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Head/ViewPendingReq.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -295,7 +295,7 @@
                                     </Columns>
                                 </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink7" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Head/ViewPendingReq.aspx" runat="server">View Details</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink7" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Head/ViewPendingReq.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>

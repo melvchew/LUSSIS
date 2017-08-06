@@ -133,6 +133,7 @@ namespace LUSSIS.View.StoreView.Clerk
             }
 
             Session["OrderList"] = orderList;
+            //Response.Write(" <script language=JavaScript> alert('Order list has been updated.'); </script>");
         }
 
         protected void btnOrder_Click(object sender, EventArgs e)
