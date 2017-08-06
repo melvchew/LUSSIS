@@ -175,6 +175,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="MasterStore.Master" />
+    <Content Include="Files\Excel\Products Template.xlsx" />
     <None Include="Properties\PublishProfiles\ADLUSSIS.pubxml" />
     <None Include="Properties\PublishProfiles\Luss.pubxml" />
     <None Include="Properties\PublishProfiles\LUSSIS.pubxml" />
@@ -718,7 +719,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExcelFiles\" />
-    <Folder Include="Files\" />
     <Folder Include="RawCode\BLL\data\Zwe\" />
     <Folder Include="View\DepartmentView\ActingHead\" />
   </ItemGroup>
