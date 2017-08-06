@@ -195,7 +195,7 @@ namespace LUSSIS.View.StoreView.Clerk
                 }
             }
             Response.Write("<script>alert('Voucher ID = " + adj.VoucherId + " is raised successfully')</script>");
-            //Response.Redirect("~/View/StoreView/Home.aspx");
+            Response.Redirect("~/View/StoreView/Home.aspx");
         }
 
         public void textbox_textchange(object sender, EventArgs e)
