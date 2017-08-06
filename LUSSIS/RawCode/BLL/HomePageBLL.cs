@@ -16,6 +16,11 @@ namespace LUSSIS.RawCode.BLL
             return context.Employees.FirstOrDefault(x => x.EmpId == empId);
         }
 
+        public StoreEmployee GetStoreEmployee(int storeEmpId)
+        {
+            return context.StoreEmployees.FirstOrDefault(x => x.StoreEmpId == storeEmpId);
+        }
+
         public List<Requisition> GetPendingRequitions(int empId = 0, int depId = 0)
         {
             if (empId !=0)

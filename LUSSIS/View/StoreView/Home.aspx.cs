@@ -16,8 +16,8 @@ namespace LUSSIS.View.StoreView
         protected void Page_Load(object sender, EventArgs e)
         {
             int eId = Convert.ToInt32(Session["storeEmpId"]);
-            Employee currentEmp = bll.GetDeptEmployee(eId);
-            lblUserName.Text = currentEmp.Name;
+            StoreEmployee currentStoreEmp = bll.GetStoreEmployee(eId);
+            lblUserName.Text = currentStoreEmp.Name;
 
             if (User.IsInRole("StoreClerk"))
             {
