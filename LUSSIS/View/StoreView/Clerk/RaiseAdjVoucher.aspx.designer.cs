@@ -22,6 +22,15 @@ namespace LUSSIS.View.StoreView.Clerk {
         protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
         
         /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
         /// ItemsList1 control.
         /// </summary>
         /// <remarks>
@@ -94,31 +103,13 @@ namespace LUSSIS.View.StoreView.Clerk {
         protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder5;
         
         /// <summary>
-        /// AddNewRowLinkBtn control.
+        /// Button3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AddNewRowLinkBtn;
-        
-        /// <summary>
-        /// Button2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Button3;
         
         /// <summary>
         /// Submitbtn control.
@@ -130,21 +121,21 @@ namespace LUSSIS.View.StoreView.Clerk {
         protected global::System.Web.UI.WebControls.Button Submitbtn;
         
         /// <summary>
-        /// Label2 control.
+        /// EmpCmts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label EmpCmts;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtEmpCmt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpCmt;
     }
 }

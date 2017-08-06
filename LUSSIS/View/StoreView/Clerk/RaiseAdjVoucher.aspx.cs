@@ -18,9 +18,10 @@ namespace LUSSIS.View.StoreView.Clerk
         static int count = 2;
         String status = "PENDING";
         DateTime date = DateTime.Today;
+        DateTime tdate = DateTime.Now.Date.AddDays(-1);  
         static Boolean calc = false;
         static decimal totAmt = 0;
-        static Boolean subBtnPressedOnce = true;
+        static int subBtnPressedCount = 1;
         List<String> controlsList = new List<string>();
         int counter = 1;
 
@@ -88,7 +89,6 @@ namespace LUSSIS.View.StoreView.Clerk
         protected void AddNewRowLinkBtn_Click1(object sender, EventArgs e)
         {
             //calculatebtn.Visible = true;
-            Submitbtn.Visible = false;
 
             counter++;
             //-- DropDownList Box
@@ -135,7 +135,6 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Submitbtn.Visible = false;
             if (!IsPostBack)
             {
                 ItemsList1.DataSource = vm.getItems();
@@ -150,11 +149,16 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void Submitbtn_Click(object sender, EventArgs e)
         {
-            if (subBtnPressedOnce)
+            String EmpCmts = "";
+            if ("" != txtEmpCmt.Text)
             {
-                vm.RaiseVoucher(empId, date, status, txtReasons1.Text);
+                EmpCmts = txtEmpCmt.Text;
             }
-            subBtnPressedOnce = false;
+            if (1 == subBtnPressedCount)
+            {
+                vm.RaiseVoucher(empId, date, status, EmpCmts);
+            }
+            subBtnPressedCount++;
             StoreEmployee se = vm.getStoreEmployeeById(empId);
             InvAdjVoucher adj = vm.getAdjVocherIdByDate(date);
             TextBox tb = new TextBox();
@@ -164,7 +168,6 @@ namespace LUSSIS.View.StoreView.Clerk
             Control ctr = this.Page.Form.FindControl("ContentPlaceHolder1");
             for (int i= 1; i <= counter;i++)
             {
-                TextBox1.Text = counter.ToString();
                     decimal value = 0;
                     str = "txtQtyAdj" + i;
                     tb = (TextBox)ctr.FindControl(str);
@@ -221,7 +224,6 @@ namespace LUSSIS.View.StoreView.Clerk
                         tb = (TextBox)PlaceHolder1.FindControl(str);
                         tb.Text = calValue(itemId, adjQty);
                         //calculatebtn.Visible = false;
-                        Submitbtn.Visible = true;
                     }
                     else
                     {
