@@ -24,11 +24,15 @@
             <div class="row">
                 <div class="col-md-12">
                     <asp:GridView ID="gvDeptReq" runat="server" AutoGenerateColumns="False" OnRowCommand="gvDeptReq_RowCommand"
-                        AllowPaging="true" OnPageIndexChanging="gvDeptReq_PageIndexChanging" CssClass="table table-bordered table-striped">
+                        AllowPaging="True" OnPageIndexChanging="gvDeptReq_PageIndexChanging" CssClass="table table-bordered table-striped">
                         <Columns>
                             <asp:BoundField HeaderText="Requisition ID" DataField="ReqId" />
                             <asp:BoundField HeaderText="Employee Name" DataField="Employee.Name" />
-                            <asp:BoundField HeaderText="Status" DataField="Status" />
+                            <asp:TemplateField HeaderText="Status">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# ChangeStatus((string)Eval("Status")) %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField HeaderText="Requisition Date" DataField="SubmitDate" DataFormatString="{0:d}"/>
                             <asp:ButtonField Text="details" ButtonType="Link" CommandName="reqDetails" />
                         </Columns>
