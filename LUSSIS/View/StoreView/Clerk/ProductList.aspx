@@ -30,7 +30,9 @@
             </div>
         <div class="row">
             <div class="col-sm-12">
-                <asp:GridView ID="gvProductList" runat="server" CssClass="table table-bordered table-striped" AutoGenerateColumns="false" OnRowEditing="gvProductList_RowEditing" AllowPaging="True" OnPageIndexChanging="gvProductList_PageIndexChanging" PageSize="8">
+                <asp:GridView ID="gvProductList" runat="server" CssClass="table table-bordered table-striped" AutoGenerateColumns="false" 
+                    OnRowEditing="gvProductList_RowEditing" AllowPaging="True" 
+                    OnPageIndexChanging="gvProductList_PageIndexChanging" PageSize="8">
                     <Columns>
                         <asp:BoundField DataField="ItemId" ShowHeader="false">
                             <ItemStyle CssClass="hide" />
@@ -49,6 +51,8 @@
                         </asp:TemplateField>
                         <asp:CommandField ShowEditButton="true" ButtonType="Link" />
                     </Columns>
+                    <PagerSettings Mode="NumericFirstLast" />
+                    <PagerStyle Font-Size="Larger" Font-Underline="True" HorizontalAlign="Center" VerticalAlign="Middle" />
                 </asp:GridView>
             </div>
         </div>

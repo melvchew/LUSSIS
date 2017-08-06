@@ -11,7 +11,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <asp:GridView ID="gvAddReqItems" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-bordered table-striped">
+                    <asp:GridView ID="gvAddReqItems" runat="server" AutoGenerateColumns="False" DataKeyNames="ItemId" CssClass="table table-bordered table-striped" PageSize="8">
                         <Columns>
                             <asp:TemplateField HeaderText="Item Name">
                                 <EditItemTemplate>
@@ -39,6 +39,8 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
+                        <PagerSettings Mode="NumericFirstLast" />
+                        <PagerStyle Font-Size="Larger" Font-Underline="True" HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:GridView>
                 </div>
             </div>

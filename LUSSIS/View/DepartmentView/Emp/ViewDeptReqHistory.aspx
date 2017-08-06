@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <asp:GridView ID="gvDeptReq" runat="server" AutoGenerateColumns="False" OnRowCommand="gvDeptReq_RowCommand"
-                        AllowPaging="True" OnPageIndexChanging="gvDeptReq_PageIndexChanging" CssClass="table table-bordered table-striped">
+                        AllowPaging="True" OnPageIndexChanging="gvDeptReq_PageIndexChanging" CssClass="table table-bordered table-striped" PageSize="8">
                         <Columns>
                             <asp:BoundField HeaderText="Requisition ID" DataField="ReqId" />
                             <asp:BoundField HeaderText="Employee Name" DataField="Employee.Name" />
@@ -52,6 +52,8 @@
                                 </tr>
                                 </table>
                         </EmptyDataTemplate>
+                        <PagerSettings Mode="NumericFirstLast" />
+                        <PagerStyle Font-Size="Larger" Font-Underline="True" HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:GridView>
                 </div>
             </div>

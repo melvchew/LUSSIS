@@ -40,7 +40,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <asp:GridView ID="gvCatalog" runat="server" AutoGenerateColumns="False"
-                        AllowPaging="true" OnPageIndexChanging="gvCatalog_PageIndexChanging" DataKeyNames="ItemId" CssClass="table table-bordered  table-striped">
+                        AllowPaging="true" OnPageIndexChanging="gvCatalog_PageIndexChanging" 
+                        DataKeyNames="ItemId" CssClass="table table-bordered  table-striped" PageSize="8">
                         <Columns>
                             <asp:TemplateField HeaderText="Item Name">
                                 <EditItemTemplate>
@@ -79,6 +80,8 @@
                                 </tr>
                             </table>
                         </EmptyDataTemplate>
+                        <PagerSettings Mode="NumericFirstLast" />
+                        <PagerStyle Font-Size="Larger" Font-Underline="True" HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:GridView>
                 </div>
             </div>
