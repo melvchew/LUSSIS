@@ -364,7 +364,7 @@ namespace LUSSIS.RawCode.BLL
         {
             if(status== "PARTIAL")
             {
-                status = "APPROVED";
+                status = "INCOMPLETE";
             }
             else if(status == "DELIVERED")
             {

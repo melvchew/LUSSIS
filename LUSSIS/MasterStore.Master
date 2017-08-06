@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Logic University Stationery System</title>
     <link rel="stylesheet" href="<%= Page.ResolveUrl("~/Content/bootstrap.min.css") %>" />
     <script src="<%= Page.ResolveUrl("~/Scripts/jquery-1.12.4.min.js") %>"></script>
     <script src="<%= Page.ResolveUrl("~/Scripts/bootstrap.min.js") %>"></script>
