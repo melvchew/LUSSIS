@@ -93,7 +93,8 @@ namespace LUSSIS.RawCode.BLL
                                 Description = i.Description,
                                 Quantity = ai.Quantity,
                                 Unit = i.Unit,
-                                Price = ((i.Supplier1Price+i.Supplier2Price+i.Supplier3Price)/3)*ai.Quantity
+                                Price = ((i.Supplier1Price + i.Supplier2Price + i.Supplier3Price) / 3) * ai.Quantity,
+                                EmpComment = av.EmpComments
                             }).ToList();
             foreach (var i in itemlist)
             {
@@ -105,6 +106,7 @@ namespace LUSSIS.RawCode.BLL
                 ai.Qty = i.Quantity;
                 ai.Unit = i.Unit;
                 ai.Price = Math.Round(Convert.ToDecimal(i.Price), 2);
+                ai.EmpComment = i.EmpComment;
                 list.Add(ai);
 
             }
