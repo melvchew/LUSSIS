@@ -15,7 +15,7 @@
                         <Columns>
                             <asp:BoundField DataField="VoucherId" HeaderText="Voucher ID" />
                             <asp:BoundField DataField="SubmitDate" HeaderText="Submit Date" DataFormatString="{0:MM/dd/yyyy}" />
-                            <asp:BoundField DataField="RaiseBy" HeaderText="Raise By" />
+                            <asp:BoundField DataField="RaiseBy" HeaderText="Raised By" />
                             <asp:CommandField ShowEditButton="true" EditText="View Details" ButtonType="Link" />
                         </Columns>
                     </asp:GridView>

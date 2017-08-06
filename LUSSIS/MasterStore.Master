@@ -69,6 +69,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ProductList.aspx") %>">View Products</a></li>
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/AddNewProduct.aspx") %>">Add New Product</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/UploadExcel.aspx") %>">Upload Excel</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -82,7 +83,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PURCHASE ORDER<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/OrderItems.aspx") %>">Raise New Purchase Orders</a></li>
-                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ViewOrder.aspx") %>">Recieve Orders</a></li>
+                                <li><a href="<%= Page.ResolveUrl("~/View/StoreView/Clerk/ViewOrder.aspx") %>">Receive Orders</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

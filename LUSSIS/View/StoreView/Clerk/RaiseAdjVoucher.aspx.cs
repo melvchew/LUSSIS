@@ -19,7 +19,6 @@ namespace LUSSIS.View.StoreView.Clerk
         String status = "PENDING";
         DateTime date = DateTime.Today;
         DateTime tdate = DateTime.Now.Date.AddDays(-1);  
-        static Boolean calc = false;
         static decimal totAmt = 0;
         static int subBtnPressedCount = 1;
         List<String> controlsList = new List<string>();
@@ -154,6 +153,7 @@ namespace LUSSIS.View.StoreView.Clerk
             {
                 EmpCmts = txtEmpCmt.Text;
             }
+            Label1.Text = subBtnPressedCount.ToString();
             if (1 == subBtnPressedCount)
             {
                 vm.RaiseVoucher(empId, date, status, EmpCmts);
@@ -166,6 +166,7 @@ namespace LUSSIS.View.StoreView.Clerk
             int itemId = 0, adjQty = 0;
             String str = "";
             Control ctr = this.Page.Form.FindControl("ContentPlaceHolder1");
+            Label2.Text = counter.ToString();
             for (int i= 1; i <= counter;i++)
             {
                     decimal value = 0;
@@ -228,11 +229,13 @@ namespace LUSSIS.View.StoreView.Clerk
                     else
                     {
                         Response.Write("<script>alert('Please Enter Numeric Data')</script>");
+                        return;
                     }
                 }
                 else
                 {
                     Response.Write("<script>alert('Please Enter Valid Data')</script>");
+                    return;
                 }
             }
         }
