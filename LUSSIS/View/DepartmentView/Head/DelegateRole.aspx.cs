@@ -34,33 +34,36 @@ namespace LUSSIS.View.DepartmentView.Head
                 ddDeptRepre.DataValueField = "EmpId";
                 ddDeptRepre.DataBind();
 
-
-
-                if (b.getCurrentActingHead(depid) != null)
-                {
-                    Employee currentActingHead = b.getCurrentActingHead(depid);//ID depends on login user
-                    lblCurrentActingHead.Text = currentActingHead.Name.ToString();
-                    ddActingHead.SelectedValue = currentActingHead.EmpId.ToString();
-                }
-                else
-                {
-                    lblCurrentActingHead.Text = "There is no Department Acting Head.";
-                }
-                if (b.getCurrentDeptRep(depid) != null)
-                {
-                    Employee currentDeptRep = b.getCurrentDeptRep(depid);//ID depends on login user
-                    lblCurrentDeptRep.Text = currentDeptRep.Name.ToString();
-                    ddDeptRepre.SelectedValue = currentDeptRep.EmpId.ToString();
-                }
-                else
-                {
-                    lblCurrentDeptRep.Text = "There is no Department Representative.";
-                }
-
-
+                setName();
             }
         }
 
+        public void setName()
+        {
+            int empid = Convert.ToInt32(Session["empId"]);
+            RolesManagementBLL b = new RolesManagementBLL();
+            int depid = b.getDepartmentID(empid);
+            if (b.getCurrentActingHead(depid) != null)
+            {
+                Employee currentActingHead = b.getCurrentActingHead(depid);//ID depends on login user
+                lblCurrentActingHead.Text = currentActingHead.Name.ToString();
+                ddActingHead.SelectedValue = currentActingHead.EmpId.ToString();
+            }
+            else
+            {
+                lblCurrentActingHead.Text = "There is no Department Acting Head.";
+            }
+            if (b.getCurrentDeptRep(depid) != null)
+            {
+                Employee currentDeptRep = b.getCurrentDeptRep(depid);//ID depends on login user
+                lblCurrentDeptRep.Text = currentDeptRep.Name.ToString();
+                ddDeptRepre.SelectedValue = currentDeptRep.EmpId.ToString();
+            }
+            else
+            {
+                lblCurrentDeptRep.Text = "There is no Department Representative.";
+            }
+        }
         protected void btnSave_Click(object sender, EventArgs e)
         {
             if (ddActingHead.SelectedValue == ddDeptRepre.SelectedValue)
@@ -101,6 +104,7 @@ namespace LUSSIS.View.DepartmentView.Head
                     if (update)
                     {
                         lblerror.Text = "Delegate Successful";
+                        setName();
                     }
                     else
                     {
@@ -121,6 +125,7 @@ namespace LUSSIS.View.DepartmentView.Head
                 if (update)
                 {
                     lblerror.Text = "Delegate Successful";
+                    setName();
                 }
                 else
                 {
