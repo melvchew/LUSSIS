@@ -11,6 +11,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
+                    <asp:HyperLink ID="HyperLink1" runat="server">Excel Template File</asp:HyperLink>
+                </div>
+                <div class="col-md-12">
                     <asp:FileUpload ID="FileUpload1" runat="server" />
                 </div>
                 <div class="col-md-12">
