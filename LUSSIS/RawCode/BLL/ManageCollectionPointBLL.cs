@@ -98,8 +98,8 @@ namespace LUSSIS.RawCode.BLL
                         client.Credentials = new System.Net.NetworkCredential("lusissa44@gmail.com", "TEAM5!SA44");
                         client.EnableSsl = true;
                         client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        string email = context.StoreEmployees.Where(x => x.StoreEmpId == emp.StoreEmpId).First().ToString();
-                        MailMessage mm = new MailMessage("lusissa44@gmail.com", email);//"eliza.rkz@gmail.com"); //emp.Email);
+                        //string email = context.StoreEmployees.Where(x => x.StoreEmpId == emp.StoreEmpId).First().ToString();
+                        MailMessage mm = new MailMessage("lusissa44@gmail.com", "eliza.rkz@gmail.com"); //emp.Email);
                         mm.Subject = "Collection Point Changed " + dept.DeptName;
                         mm.Body = $"{dept.DeptName} has changed the current collection point to {dept.CollectionPoint.Description}\n\nThis is an auto generated email, please do not reply to this email";
 
