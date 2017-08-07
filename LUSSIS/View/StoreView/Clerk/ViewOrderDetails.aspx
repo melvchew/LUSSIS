@@ -66,8 +66,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3"><a href="#">Download PO Form (pdf)</a></div>
-                <div class="col-md-3"><a class="btn" href="#">Send E-mail to Supplier</a></div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3"></div>
                 <div class="col-md-4 pull-right text-right">
                     Total Amount:
                     <asp:Label ID="lblTotal" runat="server" Text="Label"></asp:Label>
