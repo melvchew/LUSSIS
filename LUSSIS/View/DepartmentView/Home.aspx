@@ -122,7 +122,7 @@
                                     </EmptyDataTemplate>
                                 </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink3" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Home.aspx" runat="server">More</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink3" CssClass="pull-right" NavigateUrl="~/View/DepartmentView/Emp/ViewUserReqHistory.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
