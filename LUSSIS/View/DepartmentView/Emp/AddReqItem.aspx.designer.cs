@@ -22,13 +22,13 @@ namespace LUSSIS.View.DepartmentView.Emp {
         protected global::System.Web.UI.WebControls.GridView gvAddReqItems;
         
         /// <summary>
-        /// btdAddItem control.
+        /// btnAddItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btdAddItem;
+        protected global::System.Web.UI.WebControls.Button btnAddItem;
         
         /// <summary>
         /// btnCancel control.

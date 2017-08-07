@@ -20,6 +20,10 @@ namespace LUSSIS.View.DepartmentView.Emp
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            btn_Add.BackColor = System.Drawing.Color.FromArgb( 255, 39, 174, 96);
+            btn_CancelReq.BackColor = System.Drawing.Color.FromArgb(255, 192, 57, 43);
+            btn_Remov.BackColor= System.Drawing.Color.FromArgb(255, 241, 196, 15);
+
             if (!IsPostBack)
             {
                 this.BindGrid();

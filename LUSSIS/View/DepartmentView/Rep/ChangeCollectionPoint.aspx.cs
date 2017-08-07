@@ -21,6 +21,9 @@ namespace LUSSIS.View.DepartmentView.Rep
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Submitbtn.BackColor = System.Drawing.Color.FromArgb(255, 39, 174, 96);
+            Cancelbtn.BackColor = System.Drawing.Color.FromArgb(255, 192, 57, 43);
+
             Employee emp = rm.GetEmpByID(Convert.ToInt32(Session["empId"]));
             Department dep = rm.GetDeptByUser(emp);
             curDeptId = dep.DeptId;

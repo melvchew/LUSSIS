@@ -19,6 +19,9 @@ namespace LUSSIS.View.DepartmentView.Emp
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            btnSubmit.BackColor = System.Drawing.Color.FromArgb(255, 39, 174, 96);
+            btnRemove.BackColor = System.Drawing.Color.FromArgb(255, 192, 57, 43);
+
             if (!IsPostBack)
             {
                 List<Item> litems = (List<Item>)Session["AddItemlist"];

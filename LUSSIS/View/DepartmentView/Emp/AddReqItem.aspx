@@ -46,7 +46,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <asp:Button ID="btdAddItem" runat="server" Text="Add Items" OnClick="btdAddItem_Click" CssClass="btn pull-right" />
+                    <asp:Button ID="btnAddItem" runat="server" Text="Add Items" OnClick="btdAddItem_Click" CssClass="btn pull-right" />
                     <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="btn pull-left" />
                 </div>
             </div>
