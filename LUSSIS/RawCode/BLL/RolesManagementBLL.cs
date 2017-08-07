@@ -18,10 +18,12 @@ namespace LUSSIS.RawCode.BLL
             context = new LUSSdb();
             return context.Departments.Where(x => x.DeptHead == id).Select(x => x.DeptId).FirstOrDefault<int>();
         }
+        
         public List<Employee> getEmployeeListByDept(int id)
         {
             context = new LUSSdb();
-            return context.Employees.Where(x => x.DeptId == id).ToList<Employee>();
+            int empid = context.Departments.Where(x => x.DeptHead == id).Select(x => x.DeptHead).FirstOrDefault<int>();
+            return context.Employees.Where(x => x.DeptId == id && x.EmpId!= empid).ToList<Employee>();
         }
 
         public Boolean delegateRoles(Department dept)
@@ -90,7 +92,7 @@ namespace LUSSIS.RawCode.BLL
                
                 Department d = context.Departments.Where(x => x.DeptId == dept.DeptId).FirstOrDefault();
                 d.DeptRep = dept.DeptRep;
-                d.ActingHead = dept.ActingHead;
+                //d.ActingHead = dept.ActingHead;
                 //d.AHStartDate = dept.AHStartDate;
                 //d.AHEndDate = dept.AHEndDate;
                 context.SaveChanges();
