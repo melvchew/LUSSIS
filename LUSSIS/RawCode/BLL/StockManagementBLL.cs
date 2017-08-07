@@ -1005,7 +1005,7 @@ namespace LUSSIS.RawCode.BLL
                     int disbursedAmount = totalDisburseAmount > disReqItemList[i].RetrieveQty ? disReqItemList[i].RetrieveQty : totalDisburseAmount;
                     int reqId = disReqItemList[i].ReqId;
                     int itemId = disReqItemList[i].ItemId;
-                    DisburseReqItem disReqItem = context.DisburseReqItems.FirstOrDefault(x => x.ReqId == reqId && x.ItemId == itemId);
+                    DisburseReqItem disReqItem = context.DisburseReqItems.FirstOrDefault(x => x.ReqId == reqId && x.ItemId == itemId && x.Disbursement.DisburseDate == disbursementDate);
 
                     //add the disbursed qty
                     disReqItem.DisburseQty = disbursedAmount;
@@ -1041,6 +1041,98 @@ namespace LUSSIS.RawCode.BLL
 
             context.SaveChanges();
 
+        }
+
+        public void DeleteDisbursement(DateTime disDate)
+        {
+            List<Disbursement> disList = context.Disbursements.Where(x => x.DisburseDate == disDate).ToList();
+            foreach (var dis in disList)
+            {
+                List<DisburseReqItem> disReqList = context.DisburseReqItems.Where(x => x.Disbursement.DisburseDate == disDate).ToList();
+                foreach (var item in disReqList)
+                {
+                    context.DisburseReqItems.Remove(item);
+                }
+                context.Disbursements.Remove(dis);
+                context.SaveChanges();
+            }
+        }
+
+        public bool IsDisbursementListExisted(DateTime disDate)
+        {
+            Disbursement dis = context.Disbursements.FirstOrDefault(x => x.DisburseDate == disDate);
+            if (dis == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public List<Disbursement> GetLatestDisbursements()
+        {
+            List<Disbursement> disList = context.Disbursements.Where(x => x.DisburseDate >= System.DateTime.Now).ToList();
+            List<Disbursement> finalDisList = context.Disbursements.Where(x => x.DisburseDate >= System.DateTime.Now).ToList();
+            foreach (var dis in disList)
+            {
+                int disReqCount = dis.DisburseReqItems.Count;
+                foreach (var disReq in dis.DisburseReqItems)
+                {
+                    if (disReq.DisburseQty != null)
+                    {
+                        disReqCount--;
+                    }
+                }
+                if (disReqCount == 0)
+                {
+                    finalDisList.Remove(dis);
+                }
+            }
+            return finalDisList;
+
+        }
+
+        public List<Disbursement> GetUndeliveredDisbursements(DateTime disDate)
+        {
+            List<Disbursement> disList = context.Disbursements.Where(x => x.DisburseDate == disDate).ToList();
+            List<Disbursement> finalDisList = context.Disbursements.Where(x => x.DisburseDate == disDate).ToList();
+            foreach (var dis in disList)
+            {
+                int disReqCount = dis.DisburseReqItems.Count;
+                foreach (var disReq in dis.DisburseReqItems)
+                {
+                    if (disReq.DisburseQty != null)
+                    {
+                        disReqCount--;
+                    }
+                }
+                if (disReqCount == 0)
+                {
+                    finalDisList.Remove(dis);
+                }
+            }
+            return finalDisList;
+        }
+
+        public void RaiseAdjVoucher(List<ConsolidateItem> conItems, StoreEmployee emp, string reason)
+        {
+            InvAdjVoucher adjV = new InvAdjVoucher();
+            adjV.RaiseBy = emp.StoreEmpId;
+            adjV.Status = "PENDING";
+            adjV.EmpComments = reason;
+            adjV.SubmitDate = System.DateTime.Now;
+            foreach (var item in conItems)
+            {
+                InvAdjItem adji = new InvAdjItem();
+                adji.ItemId = item.Item.ItemId;
+                adji.Quantity = item.Qty;
+                adjV.InvAdjItems.Add(adji);
+            }
+
+            context.InvAdjVouchers.Add(adjV);
+            context.SaveChanges();
         }
 
     }

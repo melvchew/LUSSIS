@@ -185,6 +185,7 @@
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Service.svc" />
     <Content Include="ServiceAndroid.svc" />
     <Content Include="View\Redirect2.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -262,6 +263,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IService.cs" />
     <Compile Include="IServiceAndroid.cs" />
     <Compile Include="MasterStore.Master.cs">
       <DependentUpon>MasterStore.Master</DependentUpon>
@@ -376,6 +378,9 @@
     </Compile>
     <Compile Include="RawCode\Generics\enums.cs" />
     <Compile Include="RawCode\Generics\ViewModel.cs" />
+    <Compile Include="Service.svc.cs">
+      <DependentUpon>Service.svc</DependentUpon>
+    </Compile>
     <Compile Include="ServiceAndroid.svc.cs">
       <DependentUpon>ServiceAndroid.svc</DependentUpon>
     </Compile>

@@ -14,7 +14,7 @@ namespace LUSSIS.View.StoreView.Clerk
 
         VoucherManagementBLL vm = new VoucherManagementBLL();
         // get employee Id using Login Session
-        int empId = 7;
+        int empId;
         static int count = 2;
         String status = "PENDING";
         DateTime date = DateTime.Today;
@@ -26,6 +26,7 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected override void LoadViewState(object savedState)
         {
+            
             base.LoadViewState(savedState);
             controlsList = (List<String>)ViewState["controlsList"];
 
@@ -126,6 +127,7 @@ namespace LUSSIS.View.StoreView.Clerk
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            empId = Convert.ToInt32(Session["storeEmpId"]);
             if (!IsPostBack)
             {
                 subBtnPressedCount = 1;

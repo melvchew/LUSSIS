@@ -34,6 +34,8 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
+                        <PagerSettings Mode="NumericFirstLast" />
+                        <PagerStyle Font-Size="Larger" Font-Underline="True" HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:GridView>
                 </div>
             </div>

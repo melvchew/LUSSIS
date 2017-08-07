@@ -16,8 +16,8 @@ namespace LUSSIS.View.StoreView
         protected void Page_Load(object sender, EventArgs e)
         {
             int eId = Convert.ToInt32(Session["storeEmpId"]);
-            Employee currentEmp = bll.GetDeptEmployee(eId);
-            lblUserName.Text = currentEmp.Name;
+            StoreEmployee currentStoreEmp = bll.GetStoreEmployee(eId);
+            lblUserName.Text = currentStoreEmp.Name;
 
             if (User.IsInRole("StoreClerk"))
             {
@@ -34,9 +34,25 @@ namespace LUSSIS.View.StoreView
                 {
                     Item = g.Key,
                     Quantity = g.Sum(x => x.Quantity)
-                });
+                }).Take(5).ToList();
                 gvClerkReqItem.DataBind();
+            } else if (User.IsInRole("StoreSupervisor"))
+            {
+                List<Item> itemList = bll.GetLowStock();
+                litSupLowStockTotal.Text = itemList.Count.ToString();
 
+                gvSupLowStock.DataSource = itemList.Take(5).ToList();
+                gvSupLowStock.DataBind();
+
+                List<RequisitionItem> reqItemList = bll.GetApprovedRequisitionItems();
+                litSupReqItemTotal.Text = reqItemList.Select(x => x.Quantity).Sum().ToString();
+
+                gvSupReqItem.DataSource = reqItemList.GroupBy(x => x.Item).Select(g => new
+                {
+                    Item = g.Key,
+                    Quantity = g.Sum(x => x.Quantity)
+                }).Take(5).ToList();
+                gvSupReqItem.DataBind();
             }
         }
     }
