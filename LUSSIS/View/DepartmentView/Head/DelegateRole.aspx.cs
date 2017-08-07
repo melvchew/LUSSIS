@@ -19,9 +19,6 @@ namespace LUSSIS.View.DepartmentView.Head
                 RolesManagementBLL b = new RolesManagementBLL();
                 int depid = b.getDepartmentID(empid);
                 List<Employee> actinghead = b.getEmployeeListByDept(depid);
-                actinghead.Remove(b.getCurrentActingHead(depid));
-                actinghead.Remove(b.getCurrentDeptRep(depid));
-                actinghead.Remove(b.getCurrentHead(depid));
                 ddActingHead.DataSource = actinghead;//ID depends on login user
                 ddActingHead.DataTextField = "Name";
                 ddActingHead.DataValueField = "EmpId";
