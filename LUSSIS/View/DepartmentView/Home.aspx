@@ -170,37 +170,11 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p>Your current collection point is Management School.  The collection time is 09:30 am.</p>
+                            <p>Your current collection point is <asp:Literal ID="litRepCP" runat="server"></asp:Literal>.  The collection time is <asp:Literal ID="litRepCPTime" runat="server"></asp:Literal>.</p>
                             <p></p>
                             <div class="col-lg-12">
-                                <table class="table table-striped table-bordered">
-                                    <tr>
-                                        <th>Description</th>
-                                        <th>Quantity</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Clips Double 1"</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Envelope Brown (3"x6")</td>
-                                        <td>5</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Envelope White (3"x6") w/ Window</td>
-                                        <td>5</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Exercise Book (100 pg)</td>
-                                        <td>5</td>
-                                    </tr>
-                                    <tr>
-                                        <td>File Separator</td>
-                                        <td>8</td>
-                                    </tr>
-                                </table>
                                 <div>
-                                    <a class="pull-right" href="#">More</a>
+                                    <asp:HyperLink ID="HyperLink8" CssClass="pull-right" NavigateUrl="~/View/StoreView/Supervisor/ManageCollectionPoint.aspx" runat="server">Manage Collection Point</asp:HyperLink>
                                 </div>
                             </div>
                         </div>

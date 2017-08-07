@@ -53,6 +53,9 @@ namespace LUSSIS.View.StoreView
                     Quantity = g.Sum(x => x.Quantity)
                 }).Take(5).ToList();
                 gvSupReqItem.DataBind();
+
+                
+               
             }
         }
     }
