@@ -33,6 +33,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Bind the data to gridview
         private void BindGrid(Employee emp)
         {
             using (context = new LUSSdb())
@@ -43,6 +44,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //gvReqHistory: ButtonField 'details' click (CommandName="reqDetails")
         protected void gvReqHistory_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "reqDetails")
@@ -62,6 +64,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Change pages in gridview
         protected void gvReqHistory_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             using (context = new LUSSdb())
