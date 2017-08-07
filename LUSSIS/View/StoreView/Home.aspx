@@ -108,14 +108,27 @@
                         </div>
                         <div class="body">
                             <p>
-                                You have a total of items that are needed to be delivered.
+                                You have a total of <asp:Literal ID="litSupReqItemTotal" runat="server"></asp:Literal> items that are needed to be delivered.
                             </p>
                             <p></p>
                             <div class="col-lg-12">
+                                <asp:GridView ID="gvSupReqItem" CssClass="table table-bordered table-striped" runat="server" AutoGenerateColumns="False">
+                                    <Columns>
+                                        <asp:TemplateField HeaderText="Description">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("Item.Description") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Quantity">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("Quantity") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
 
-                                <div>
-                                    <a class="pull-right" href="#">View Details</a>
-                                </div>
+                                </asp:GridView>
+
+                                <asp:HyperLink ID="HyperLink3" CssClass="pull-right" NavigateUrl="~/View/StoreView/Clerk/ViewAllReq.aspx" runat="server">More</asp:HyperLink>
                             </div>
                         </div>
                     </div>
@@ -129,37 +142,25 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p>You have a total of 8 items that are low on stock.</p>
+                            <p>You have a total of <asp:Literal ID="litSupLowStockTotal" runat="server"></asp:Literal> items that are low on stock.</p>
                             <p></p>
                             <div class="col-lg-12">
-                                <table class="table table-striped table-bordered">
-                                    <tr>
-                                        <th>Description</th>
-                                        <th>Quantity</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Envelope Brown (5"x7")</td>
-                                        <td>12</td>
-                                    </tr>
-                                    <tr>
-                                        <td>File-Blue Plain</td>
-                                        <td>22</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Highlighter Pink</td>
-                                        <td>15</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Pad Postit Memo 1"x2"</td>
-                                        <td>6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Pencil 2B with Eraser End</td>
-                                        <td>11</td>
-                                    </tr>
-                                </table>
+                                <asp:GridView ID="gvSupLowStock" CssClass="table table-bordered table-striped" runat="server" AutoGenerateColumns="False">
+                                    <Columns>
+                                        <asp:TemplateField HeaderText="Description">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("Description") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Quantity">
+                                            <ItemTemplate>
+                                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("StockBalance") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
                                 <div>
-                                    <a class="pull-right" href="#">View Report</a>
+                                    <asp:HyperLink ID="HyperLink4" CssClass="pull-right" NavigateUrl="~/View/StoreView/Clerk/Inventory Status Report.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
