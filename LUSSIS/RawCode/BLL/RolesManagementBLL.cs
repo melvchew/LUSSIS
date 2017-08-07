@@ -92,7 +92,7 @@ namespace LUSSIS.RawCode.BLL
                
                 Department d = context.Departments.Where(x => x.DeptId == dept.DeptId).FirstOrDefault();
                 d.DeptRep = dept.DeptRep;
-                d.ActingHead = dept.ActingHead;
+                //d.ActingHead = dept.ActingHead;
                 //d.AHStartDate = dept.AHStartDate;
                 //d.AHEndDate = dept.AHEndDate;
                 context.SaveChanges();
