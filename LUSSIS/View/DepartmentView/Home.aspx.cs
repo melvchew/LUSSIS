@@ -51,6 +51,10 @@ namespace LUSSIS.View.DepartmentView
                 //fill up grid
                 gvDeptRepPendingTotal.DataSource = pendingReqList;
                 gvDeptRepPendingTotal.DataBind();
+
+                CollectionPoint cp = bll.GetCollectionPoint(eId);
+                litRepCP.Text = cp.Description;
+                litRepCPTime.Text = cp.CollectionTime;
             } else if (User.IsInRole("DeptHead"))
             {
                 List<Requisition> pendingReqList = bll.GetPendingRequitions(depId:currentEmp.DeptId);

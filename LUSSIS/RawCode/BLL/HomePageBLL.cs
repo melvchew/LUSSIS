@@ -214,6 +214,12 @@ namespace LUSSIS.RawCode.BLL
 
             return l2;
         }
+
+        public CollectionPoint GetCollectionPoint(int empId)
+        {
+            Employee emp = context.Employees.FirstOrDefault(x => x.EmpId == empId);
+            return emp.Department.CollectionPoint;
+        }
     }
 
 
