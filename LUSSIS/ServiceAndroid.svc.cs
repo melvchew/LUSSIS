@@ -150,10 +150,19 @@ namespace LUSSIS
 
         public WCFEmployee getCurrentActingHead(string departmentID)
         {
-
-            Employee emp = rmBLL.getCurrentActingHead(Convert.ToInt32(departmentID));
-            WCFEmployee wcfemp = WCFEmployee.Make(emp.EmpId, emp.Name, emp.Position, emp.Phone, emp.Email, emp.DeptId);
-            return wcfemp;
+            Department dept = rmBLL.GetDeptByID(Convert.ToInt32(departmentID));
+            if (dept.ActingHead != null)
+            {
+                Employee emp = rmBLL.getCurrentActingHead(Convert.ToInt32(departmentID));
+                WCFEmployee wcfemp = WCFEmployee.Make(emp.EmpId, emp.Name, emp.Position, emp.Phone, emp.Email, emp.DeptId);
+                return wcfemp;
+            }
+            else
+            {
+                WCFEmployee wcfemp2 = WCFEmployee.Make(0, "", "", "", "", 0);
+                return wcfemp2;
+            }
+            
 
         }
 

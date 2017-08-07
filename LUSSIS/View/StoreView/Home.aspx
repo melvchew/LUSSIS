@@ -175,7 +175,7 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p>You have a total of 4 pending adjustment vouchers that need approval.</p>
+                            <p>You have a total of 5 pending adjustment vouchers that need approval.</p>
                             <p></p>
                             <div class="col-lg-12">
                                 <table class="table table-striped table-bordered">
@@ -184,24 +184,28 @@
                                         <th>Submitted Date</th>
                                     </tr>
                                     <tr>
-                                        <td>Kellia Penlington</td>
+                                        <td>Rajkumar Murugesan</td>
                                         <td>08/15/2017</td>
                                     </tr>
                                     <tr>
-                                        <td>John Cobbing</td>
+                                        <td>Zhang Jin Shan</td>
                                         <td>08/16/2017</td>
                                     </tr>
                                     <tr>
-                                        <td>Cheryl Skiplorne</td>
+                                        <td>Kavya Elizabeth James</td>
                                         <td>08/16/2017</td>
                                     </tr>
                                     <tr>
-                                        <td>Caren Guild</td>
+                                        <td>Khin Su Pyae Moe</td>
                                         <td>08/16/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hu Xiao Xi</td>
+                                        <td>08/07/2017</td>
                                     </tr>
                                 </table>
                                 <div>
-                                    <a class="pull-right" href="#">View Report</a>
+                                    <asp:HyperLink ID="HyperLink5" CssClass="pull-right" NavigateUrl="~/View/StoreView/Supervisor/AdjVoucherBelow250.aspx" runat="server">View Report</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +225,7 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p>You have a total of 4 pending adjustment vouchers that need approval.</p>
+                            <p>You have a total of 7 pending adjustment vouchers that need approval.</p>
                             <p></p>
                             <div class="col-lg-12">
                                 <table class="table table-striped table-bordered">
@@ -230,24 +234,28 @@
                                         <th>Submitted Date</th>
                                     </tr>
                                     <tr>
-                                        <td>Kellia Penlington</td>
+                                        <td>Rajkumar Murugesan</td>
                                         <td>08/15/2017</td>
                                     </tr>
                                     <tr>
-                                        <td>John Cobbing</td>
+                                        <td>Zhang Jin Shan</td>
                                         <td>08/16/2017</td>
                                     </tr>
                                     <tr>
-                                        <td>Cheryl Skiplorne</td>
+                                        <td>Kavya Elizabeth James</td>
                                         <td>08/16/2017</td>
                                     </tr>
                                     <tr>
-                                        <td>Caren Guild</td>
+                                        <td>Hu Xiao Xi</td>
+                                        <td>08/16/2017</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Khin Su Pyae Moe</td>
                                         <td>08/16/2017</td>
                                     </tr>
                                 </table>
                                 <div>
-                                    <a class="pull-right" href="#">View Report</a>
+                                    <asp:HyperLink ID="HyperLink6" CssClass="pull-right" NavigateUrl="~/View/StoreView/Manager/AdjVoucher.aspx" runat="server">View Report</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +270,7 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p>You have a total of 3 pending purchase orders that need approval.</p>
+                            <p>You have a total of 2 pending purchase orders that need approval.</p>
                             <p></p>
                             <div class="col-lg-12">
                                 <table class="table table-striped table-bordered">
@@ -271,24 +279,16 @@
                                         <th>Submitted Date</th>
                                     </tr>
                                     <tr>
-                                        <td>Kellia Penlington</td>
-                                        <td>08/15/2017</td>
+                                        <td>ALPHA Office Supplies</td>
+                                        <td>8/1/2017</td>
                                     </tr>
                                     <tr>
-                                        <td>John Cobbing</td>
-                                        <td>08/16/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cheryl Skiplorne</td>
-                                        <td>08/16/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Caren Guild</td>
-                                        <td>08/16/2017</td>
+                                        <td>BANES Shop</td>
+                                        <td>8/7/2017</td>
                                     </tr>
                                 </table>
                                 <div>
-                                    <a class="pull-right" href="#">View Report</a>
+                                    <asp:HyperLink ID="HyperLink7" CssClass="pull-right" NavigateUrl="~/View/StoreView/Manager/ViewOrder.aspx" runat="server">View Report</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
