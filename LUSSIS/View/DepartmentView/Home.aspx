@@ -174,7 +174,7 @@
                             <p></p>
                             <div class="col-lg-12">
                                 <div>
-                                    <asp:HyperLink ID="HyperLink8" CssClass="pull-right" NavigateUrl="~/View/StoreView/Supervisor/ManageCollectionPoint.aspx" runat="server">Manage Collection Point</asp:HyperLink>
+                                    <%--<asp:HyperLink ID="HyperLink8" CssClass="pull-right" NavigateUrl="~/View/StoreView/Supervisor/ManageCollectionPoint.aspx" runat="server">Manage Collection Point</asp:HyperLink>--%>
                                 </div>
                             </div>
                         </div>

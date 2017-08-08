@@ -15,6 +15,7 @@ namespace LUSSIS.View.DepartmentView.Emp
         LUSSdb context;
         RequisitionBLL rs = new RequisitionBLL();
 
+        //Bind the data to gridview and Literals
         protected void Page_Load(object sender, EventArgs e)
         {
             int rid = Int32.Parse(Request.QueryString["rid"]);
@@ -35,11 +36,13 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Get disbursement quantity
         protected int GetDisbursedQty(int reqId, int itemId)
         {
             return rs.GetDisbursedQty(reqId, itemId);
         }
 
+        //Back to prvious page
         protected void btnBack_Click(object sender, EventArgs e)
         {
             if ((String)Session["View"] == "dept")

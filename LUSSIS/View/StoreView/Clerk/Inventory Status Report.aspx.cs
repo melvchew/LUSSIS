@@ -38,8 +38,8 @@ namespace LUSSIS.View.StoreView.Clerk
         {
             for (int i = 0; i < m; i++)
             {
-                string stockBalance = (GridView1.Rows[i].FindControl("Label5") as Label).Text;
-                string reorderLevel = (GridView1.Rows[i].FindControl("Label6") as Label).Text;
+                string stockBalance = (GridView1.Rows[i].FindControl("lblStockBalance") as Label).Text;
+                string reorderLevel = (GridView1.Rows[i].FindControl("lblReorderLvl") as Label).Text;
                 if (Convert.ToInt32(stockBalance) < Convert.ToInt32(reorderLevel))
                 {
 
@@ -73,9 +73,9 @@ namespace LUSSIS.View.StoreView.Clerk
         }
 
         //get low stock items
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnLowStockItems_Click(object sender, EventArgs e)
         {
-            Button2.Visible = true;
+            btnBack.Visible = true;
             List<Item> l1 = new List<Item>();
             l1 = report.GetLowStock();
             if (l1.Count != 0)
@@ -95,14 +95,14 @@ namespace LUSSIS.View.StoreView.Clerk
 
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btnBack_Click(object sender, EventArgs e)
         {
-            Button2.Visible = false;
+            btnBack.Visible = false;
             GridView1.DataSource = report.GetAllStockStatus();
             GridView1.DataBind();
             MakeLowStockChangeColor(GridView1.Rows.Count);
         }
-
+        //search item
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             if (txtSearch.Text == "")

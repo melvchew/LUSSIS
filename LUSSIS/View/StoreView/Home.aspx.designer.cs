@@ -130,6 +130,24 @@ namespace LUSSIS.View.StoreView {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
         
         /// <summary>
+        /// litAdjVoucherBelow250 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litAdjVoucherBelow250;
+        
+        /// <summary>
+        /// gvAdjVoucherBelow250 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvAdjVoucherBelow250;
+        
+        /// <summary>
         /// HyperLink5 control.
         /// </summary>
         /// <remarks>
@@ -139,6 +157,24 @@ namespace LUSSIS.View.StoreView {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink5;
         
         /// <summary>
+        /// litAdjVoucher control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litAdjVoucher;
+        
+        /// <summary>
+        /// gvAdjVoucher control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvAdjVoucher;
+        
+        /// <summary>
         /// HyperLink6 control.
         /// </summary>
         /// <remarks>
@@ -146,6 +182,24 @@ namespace LUSSIS.View.StoreView {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink HyperLink6;
+        
+        /// <summary>
+        /// litViewOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litViewOrder;
+        
+        /// <summary>
+        /// gvViewOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvViewOrder;
         
         /// <summary>
         /// HyperLink7 control.

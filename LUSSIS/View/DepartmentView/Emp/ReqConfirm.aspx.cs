@@ -13,7 +13,9 @@ namespace LUSSIS.View.DepartmentView.Emp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             string rid = Request.QueryString["rid"];
+            //show the requisition id and bulid successfully info
             litaConfirm.Text = "Requisition succeeded, requisition id is " + rid + ". ";
         }
 

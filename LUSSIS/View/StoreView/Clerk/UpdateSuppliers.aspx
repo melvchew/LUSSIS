@@ -23,63 +23,63 @@
                         <label for="lblSupplierId">SupplierID</label>
                     </div>
                     <div class="col-sm-8">
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" ReadOnly="True" MaxLength="255"></asp:TextBox>
+                        <asp:TextBox ID="txtSupplierId" runat="server" CssClass="form-control" ReadOnly="True" MaxLength="255"></asp:TextBox>
                     </div>
                     <div class="col-sm-4" style="margin-top: 27px;">
                         <label for="lblCompanyName">Company Name</label>
                     </div>
                     <div class="col-sm-8" style="margin-top: 27px;">
-                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ForeColor="Red" ErrorMessage="*Company Name can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtCompanyName" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtCompanyName" ForeColor="Red" ErrorMessage="*Company Name can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     </div>
                     <div class="col-sm-4">
                         <label for="lblContactPerson">Contact Person</label>
                     </div>
                     <div class="col-sm-8">
-                        <asp:TextBox ID="TextBox3" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
+                        <asp:TextBox ID="txtContactPerson" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
                     </div>
                     <div class="col-sm-4" style="margin-top: 27px;">
                         <label for="lblPhoneNo">Phone No</label>
                     </div>
                     <div class="col-sm-8" style="margin-top: 27px;">
-                        <asp:TextBox ID="TextBox4" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox4" ForeColor="Red" ErrorMessage="*Phone No can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ForeColor="Red" ErrorMessage="*input number or space character" ControlToValidate="TextBox4" ValidationExpression="^[ 0-9]*$"></asp:RegularExpressionValidator>
+                        <asp:TextBox ID="txtPhoneNo" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtPhoneNo" ForeColor="Red" ErrorMessage="*Phone No can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ForeColor="Red" ErrorMessage="*input number or space character" ControlToValidate="txtPhoneNo" ValidationExpression="^[ 0-9]*$"></asp:RegularExpressionValidator>
                     </div>
                     <div class="col-sm-4">
                         <label for="lblFaxNo">Fax No</label>
                     </div>
                     <div class="col-sm-8">
-                        <asp:TextBox ID="TextBox5" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ForeColor="Red" ErrorMessage="*input number or space character" ControlToValidate="TextBox5" ValidationExpression="^[ 0-9]*$"></asp:RegularExpressionValidator>
+                        <asp:TextBox ID="txtFaxNo" runat="server" CssClass="form-control" MaxLength="10"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ForeColor="Red" ErrorMessage="*input number or space character" ControlToValidate="txtFaxNo" ValidationExpression="^[ 0-9]*$"></asp:RegularExpressionValidator>
                     </div>
                     <div class="col-sm-4">
                         <label for="lblAddress">Address</label>
                     </div>
                     <div class="col-sm-8">
-                        <asp:TextBox ID="TextBox6" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TextBox6" ForeColor="Red" ErrorMessage="*Address can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtAddress" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtAddress" ForeColor="Red" ErrorMessage="*Address can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     </div>
                     <div class="col-sm-4">
                         <label for="lblEmail">Email</label>
                     </div>
                     <div class="col-sm-8">
-                        <asp:TextBox ID="TextBox7" TextMode="Email" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox7" ForeColor="Red" ErrorMessage="*Email can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="*worng email address" ForeColor="Red" ControlToValidate="TextBox7" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                        <asp:TextBox ID="txtEmail" TextMode="Email" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtEmail" ForeColor="Red" ErrorMessage="*Email can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="*worng email address" ForeColor="Red" ControlToValidate="txtEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     </div>
                     <div class="col-sm-4">
                         <label for="lblGST No">GST No</label>
                     </div>
                     <div class="col-sm-8">
-                        <asp:TextBox ID="TextBox8" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox8" ForeColor="Red" ErrorMessage="*GSTNo can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtGSTNo" runat="server" CssClass="form-control" MaxLength="255"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtGSTNo" ForeColor="Red" ErrorMessage="*GSTNo can't be null" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     </div>
                     <div class="col-sm-4">
-                        <asp:Button ID="Button2" runat="server" Text="Update" CssClass="btn btn-warning" OnClick="Button2_Click" />
+                        <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" OnClick="btnUpdate_Click" />
                     </div>
                     <div class="col-sm-5">
-                        <asp:Button ID="Button1" runat="server" Text="Cancel" OnClick="Button1_Click" CssClass="btn btn-danger" CausesValidation="false" />
+                        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="btn btn-danger" CausesValidation="false" />
                     </div>
                 </div>
             </div>

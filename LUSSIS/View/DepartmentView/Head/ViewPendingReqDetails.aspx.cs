@@ -28,7 +28,8 @@ namespace LUSSIS.View.DepartmentView.Head
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Button_Approve.BackColor = System.Drawing.Color.FromArgb(255, 39, 174, 96);
+            Button_Reject.BackColor = System.Drawing.Color.FromArgb(255, 192, 57, 43);
 
             //Get Employee Object of boss
             //bossid = 1;

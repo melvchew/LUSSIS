@@ -19,6 +19,7 @@ namespace LUSSIS.View.DepartmentView.Emp
         {
             int rid = Int32.Parse(Request.QueryString["rid"]);
 
+            //Bind the data to gridview and Literals
             using (context = new LUSSdb())
             {
                 Requisition req = context.Requisitions.Where(r => r.ReqId == rid).ToList().First();
@@ -35,6 +36,7 @@ namespace LUSSIS.View.DepartmentView.Emp
             }
         }
 
+        //Back to prvious page
         protected void btnBack_Click(object sender, EventArgs e)
         {
             if ((String)Session["View"] == "dept")

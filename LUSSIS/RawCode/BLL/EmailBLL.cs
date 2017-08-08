@@ -122,7 +122,7 @@ namespace LUSSIS.RawCode.BLL
 
         //---------------------------------------------------------------------------------------------------------------------
         //Created by Jinshan
-
+        //sent email to clerks
         public void SendEmailsToClerk()
         {
             int send_hour = 9;//hour of sending email
@@ -161,10 +161,17 @@ namespace LUSSIS.RawCode.BLL
         {
             List<StoreEmployee> l1 = new List<StoreEmployee>();
             List<string> l2 = new List<string>();
-            using (context = new LUSSdb())
+            try
             {
-                l1 = context.StoreEmployees.Where(se => se.Position == "Clerk").ToList();
+                using (context = new LUSSdb())
+                {
+                    l1 = context.StoreEmployees.Where(se => se.Position == "Clerk").ToList();
+                }
+            }catch(Exception e)
+            {
+                throw e;
             }
+           
 
             for (int i = 0; i < l1.Count; i++)
             {
@@ -174,7 +181,7 @@ namespace LUSSIS.RawCode.BLL
             return l2;
         }
 
-        //get low stock 
+        //get low stock items
         public List<Item> GetLowStock()
         {
 
