@@ -185,7 +185,7 @@
                                     </Columns>
                                 </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink5" CssClass="pull-right" NavigateUrl="~/View/StoreView/Supervisor/AdjVoucherBelow250.aspx" runat="server">View Report</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink5" CssClass="pull-right" NavigateUrl="~/View/StoreView/Supervisor/AdjVoucherBelow250.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +215,7 @@
                                     </Columns>
                                 </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink6" CssClass="pull-right" NavigateUrl="~/View/StoreView/Manager/AdjVoucher.aspx" runat="server">View Report</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink6" CssClass="pull-right" NavigateUrl="~/View/StoreView/Manager/AdjVoucher.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -240,7 +240,7 @@
                                     </Columns>
                                 </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink7" CssClass="pull-right" NavigateUrl="~/View/StoreView/Manager/ViewOrder.aspx" runat="server">View Report</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink7" CssClass="pull-right" NavigateUrl="~/View/StoreView/Manager/ViewOrder.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
