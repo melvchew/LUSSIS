@@ -22,7 +22,7 @@ namespace LUSSIS
 
             if (success)
             {
-                dynamic profile = ProfileBase.Create("clerk1");
+                dynamic profile = ProfileBase.Create(username);
                 empId = profile.empId;
             }
 
