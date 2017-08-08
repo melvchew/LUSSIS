@@ -65,7 +65,7 @@ namespace LUSSIS.RawCode.BLL
         public List<RequisitionItem> GetCollectionItems(Disbursement dis)
         {
             List<String> ListItem = null;
-            int count = 0;
+
             List<Requisition> req = context.Requisitions.Where(x => x.Status == ((int)ReqStatus.APPROVED).ToString()).ToList<Requisition>();
             foreach (Requisition i in req)
             {
@@ -78,36 +78,6 @@ namespace LUSSIS.RawCode.BLL
             }
             return new List<RequisitionItem>();
          }
-
-        public void SendChangeNotification(Department dept, int deptId)
-        {
-            dept = GetCurrentDeptById(deptId);
-            {
-                List<StoreEmployee> ListStoreEmp = getEmployees();
-
-                if (ListStoreEmp == null)
-                {
-                    //throw Exception;
-                }
-
-                foreach (var emp in ListStoreEmp)
-                {
-                    if (emp != null)
-                    {
-                        SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                        client.Credentials = new System.Net.NetworkCredential("lusissa44@gmail.com", "TEAM5!SA44");
-                        client.EnableSsl = true;
-                        client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        //string email = context.StoreEmployees.Where(x => x.StoreEmpId == emp.StoreEmpId).First().ToString();
-                        MailMessage mm = new MailMessage("lusissa44@gmail.com", "eliza.rkz@gmail.com"); //emp.Email);
-                        mm.Subject = "Collection Point Changed " + dept.DeptName;
-                        mm.Body = $"{dept.DeptName} has changed the current collection point to {dept.CollectionPoint.Description}\n\nThis is an auto generated email, please do not reply to this email";
-
-                        client.Send(mm);
-                    }
-                }
-            }
-        }
 
 
         public List<RequisitionItem> GetAllApprovedRequsitionItemsByDepartment(Department dep)
