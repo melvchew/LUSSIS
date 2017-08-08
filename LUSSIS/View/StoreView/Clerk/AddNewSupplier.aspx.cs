@@ -16,23 +16,16 @@ namespace LUSSIS.View.StoreView.Clerk
         {
 
         }
-
-        protected void Button2_Click(object sender, EventArgs e)
+        //Add new Supplier
+        protected void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (s.CheckSupplierID(TextBox1.Text) == false)
+            if (s.CheckSupplierID(txtSupplierId.Text) == false)
             {
 
-                s.InsertNewSupplier(TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text, TextBox6.Text, TextBox7.Text, TextBox8.Text);
+                s.InsertNewSupplier(txtSupplierId.Text, txtCompanyName.Text, txtContactPerson.Text, txtPhoneNo.Text, txtFaxNo.Text, txtAddress.Text, txtEmail.Text, txtGSTNo.Text);
                 HttpContext.Current.Response.Write("<script>alert('Add successfully!')</script>");
-                TextBox1.Text = "";
-                TextBox2.Text = "";
-                TextBox3.Text = "";
-                TextBox4.Text = "";
-                TextBox5.Text = "";
-                TextBox6.Text = "";
-                TextBox7.Text = "";
-                TextBox8.Text = "";
+                clear();
 
             }
 
@@ -42,17 +35,22 @@ namespace LUSSIS.View.StoreView.Clerk
             }
 
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        //clear content of textbox
+        protected void clear()
         {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-            TextBox5.Text = "";
-            TextBox6.Text = "";
-            TextBox7.Text = "";
-            TextBox8.Text = "";
+            txtSupplierId.Text = "";
+            txtCompanyName.Text = "";
+            txtContactPerson.Text = "";
+            txtPhoneNo.Text = "";
+            txtFaxNo.Text = "";
+            txtAddress.Text = "";
+            txtEmail.Text = "";
+            txtGSTNo.Text = "";
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
         }
     }
 }

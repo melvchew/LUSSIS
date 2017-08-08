@@ -318,7 +318,7 @@ namespace LUSSIS.RawCode.BLL
             }
             return check;
         }
-
+        //get supplier by id
         public Supplier getSupplierbyID(string id)
         {
             context = new LUSSdb();
