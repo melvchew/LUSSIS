@@ -56,8 +56,7 @@ namespace LUSSIS.View.DepartmentView.Rep
             Response.Write("<script>alert('Collection Point Changed Successfully')</script>");
             getChangedCollectionPointTime(cpId);
             getCurrentCollectionPoint(cpId);
-            mcp.SendChangeNotification(new Department(), curDeptId);
-            //s.notification(s.getEmployees());
+
         }
 
         protected void Cancelbtn_Click(object sender, EventArgs e)

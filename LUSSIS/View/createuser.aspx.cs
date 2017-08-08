@@ -18,6 +18,10 @@ namespace LUSSIS.View
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (User.Identity.IsAuthenticated) // if the user is already logged in
+            {
+                Response.Redirect("~/View/AccessDenied.aspx");
+            }
             //context = new LUSSdbEntities();
             //List<Employee> empList = context.Employees.ToList<Employee>();
 
