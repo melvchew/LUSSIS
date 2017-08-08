@@ -17,10 +17,10 @@ namespace LUSSIS
         WCF_ConsolidatedRetrieveItem[] GetRetrieveItems();
         [OperationContract]
         [WebGet(UriTemplate = "/GetConNeededItems/{disDate}", ResponseFormat = WebMessageFormat.Json)]
-        WCF_ConsolidatedRetrieveItem[] GetRetrievedItems(String disDate);
+        WCF_ConsolidatedRetrieveItem[] GetRetrievedItems(string disDate);
 
         [WebGet(UriTemplate = "/IsDisbursementPresent/{disDate}", ResponseFormat = WebMessageFormat.Json)]
-        WCF_IsPresent IsDisbursementPresent(String disDate);
+        WCF_IsPresent IsDisbursementPresent(string disDate);
 
         [OperationContract]
         [WebGet(UriTemplate = "/GetNeededItem/{itemId}", ResponseFormat = WebMessageFormat.Json)]

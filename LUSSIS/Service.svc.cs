@@ -123,7 +123,7 @@ namespace LUSSIS
             {
                 String[] dateData = d.Value.Date.ToShortDateString().Split('/');
 
-                wcfdates[counter] = new WCF_DisbursementDate($"{dateData[1]}-{dateData[0]}-{dateData[2]}");
+                wcfdates[counter] = new WCF_DisbursementDate($"{dateData[0]}-{dateData[1]}-{dateData[2]}");
                 counter++;
             }
             return wcfdates;
