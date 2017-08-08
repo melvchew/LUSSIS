@@ -25,9 +25,9 @@ namespace LUSSIS.View.StoreView.Clerk
         }
 
         //search item by company name
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
-            if (TextBox1.Text == "")
+            if (txtSearch.Text == "")
             {
                 Label9.Visible = false;
                 GridView1.DataSource = s.FindAllSuppliers();
@@ -37,7 +37,7 @@ namespace LUSSIS.View.StoreView.Clerk
             {
                 Label9.Visible = false;
                 List<Supplier> l1 = new List<Supplier>();
-                l1 = s.SearchSupplier(TextBox1.Text);
+                l1 = s.SearchSupplier(txtSearch.Text);
                 if (l1.Count != 0)
                 {
                     GridView1.DataSource = l1;
@@ -54,7 +54,7 @@ namespace LUSSIS.View.StoreView.Clerk
         }
 
 
-
+        //page change
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             LUSSdb entity = new LUSSdb();
@@ -64,6 +64,7 @@ namespace LUSSIS.View.StoreView.Clerk
             GridView1.DataBind();
         }
 
+        //row edit
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
             String id = GridView1.Rows[e.NewEditIndex].Cells[0].Text;

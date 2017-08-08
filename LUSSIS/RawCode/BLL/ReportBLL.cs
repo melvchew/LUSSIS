@@ -89,7 +89,7 @@ namespace LUSSIS.RawCode.BLL
         //---------------------------------------------------------------------------------------------------------------------
 
         //Created by Jinshan
-
+        //get low stock items
         public List<Item> GetLowStock()
         {
             List<Item> l2 = new List<Item>();
@@ -105,6 +105,7 @@ namespace LUSSIS.RawCode.BLL
             return l2;
         }
 
+        //get all items status
         public List<Item> GetAllStockStatus()
         {
             List<Item> l2 = new List<Item>();
