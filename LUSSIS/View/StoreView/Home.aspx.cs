@@ -13,6 +13,9 @@ namespace LUSSIS.View.StoreView
     public partial class Home : System.Web.UI.Page
     {
         HomePageBLL bll = new HomePageBLL();
+        VoucherManagementBLL b = new VoucherManagementBLL();
+        StockManagementBLL smbll = new StockManagementBLL();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int eId = Convert.ToInt32(Session["storeEmpId"]);
@@ -36,7 +39,9 @@ namespace LUSSIS.View.StoreView
                     Quantity = g.Sum(x => x.Quantity)
                 }).Take(5).ToList();
                 gvClerkReqItem.DataBind();
-            } else if (User.IsInRole("StoreSupervisor"))
+            }
+
+            else if (User.IsInRole("StoreSupervisor"))
             {
                 List<Item> itemList = bll.GetLowStock();
                 litSupLowStockTotal.Text = itemList.Count.ToString();
@@ -54,8 +59,29 @@ namespace LUSSIS.View.StoreView
                 }).Take(5).ToList();
                 gvSupReqItem.DataBind();
 
-                
-               
+                List<AdVoucherLIst> ladv = new List<AdVoucherLIst>();
+                ladv = b.getAdjVoucherListBelow250();
+                litAdjVoucherBelow250.Text = ladv.Count.ToString();
+                gvAdjVoucherBelow250.DataSource = ladv.Take(5).ToList();
+                gvAdjVoucherBelow250.DataBind();
+            }
+            else if (User.IsInRole("StoreManager"))
+            {
+                List<AdVoucherLIst> ladv = new List<AdVoucherLIst>();
+
+                ladv= b.getAdjVoucherList();
+                litAdjVoucher.Text = ladv.Count.ToString();
+
+                gvAdjVoucher.DataSource = ladv.Take(5).ToList();
+                gvAdjVoucher.DataBind();
+
+
+                List<PurchaseOrder> lpos = new List<PurchaseOrder>();
+                lpos = smbll.GetPurchaseOrders(false);
+
+                litViewOrder.Text = lpos.Count.ToString();
+                gvViewOrder.DataSource = lpos.Take(5).ToList();
+                gvViewOrder.DataBind();
             }
         }
     }

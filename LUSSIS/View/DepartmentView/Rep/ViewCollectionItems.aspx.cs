@@ -19,14 +19,10 @@ namespace LUSSIS.View.DepartmentView.Rep
             ManageCollectionPointBLL mcp = new ManageCollectionPointBLL();
             RolesManagementBLL rm = new RolesManagementBLL(); 
          
-            //// 1. Department ID 2. Disbursement ID => get in Session
-            int count = 0;
-            // HttpContext.Current.Session["DepartmentId"] = 1; // assign value to session variable
-            //Label6.Text = Session["DepartmentId"].ToString();  //get Session Variable Value
+
             Employee emp = rm.GetEmpByID(Convert.ToInt32(Session["empId"]));
             Department dep = rm.GetDeptByUser(emp);
             Label2.Text = dep.CollectionPoint.Description;
-            //Disbursement d = mcp.GetRequisitionById(Id);
 
             List<RequisitionItem> approvedRequsitionItemsByDepartment = mcp.GetAllApprovedRequsitionItemsByDepartment(dep);
 

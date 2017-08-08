@@ -175,37 +175,17 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p>You have a total of 5 pending adjustment vouchers that need approval.</p>
+                            <p>You have a total of <asp:Literal ID="litAdjVoucherBelow250" runat="server"></asp:Literal> pending adjustment vouchers that need approval.</p>
                             <p></p>
                             <div class="col-lg-12">
-                                <table class="table table-striped table-bordered">
-                                    <tr>
-                                        <th>Raised By</th>
-                                        <th>Submitted Date</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Rajkumar Murugesan</td>
-                                        <td>08/15/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Zhang Jin Shan</td>
-                                        <td>08/16/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kavya Elizabeth James</td>
-                                        <td>08/16/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Khin Su Pyae Moe</td>
-                                        <td>08/16/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Hu Xiao Xi</td>
-                                        <td>08/07/2017</td>
-                                    </tr>
-                                </table>
+                                <asp:GridView ID="gvAdjVoucherBelow250" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False">
+                                    <Columns>
+                                        <asp:BoundField HeaderText="Raised By" DataField="RaiseBy" />
+                                        <asp:BoundField HeaderText="Submitted Date" DataField="SubmitDate" DataFormatString="{0:d}" />
+                                    </Columns>
+                                </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink5" CssClass="pull-right" NavigateUrl="~/View/StoreView/Supervisor/AdjVoucherBelow250.aspx" runat="server">View Report</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink5" CssClass="pull-right" NavigateUrl="~/View/StoreView/Supervisor/AdjVoucherBelow250.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -225,37 +205,17 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p>You have a total of 7 pending adjustment vouchers that need approval.</p>
+                            <p>You have a total of <asp:Literal ID="litAdjVoucher" runat="server"></asp:Literal> pending adjustment vouchers that need approval.</p>
                             <p></p>
                             <div class="col-lg-12">
-                                <table class="table table-striped table-bordered">
-                                    <tr>
-                                        <th>Raised By</th>
-                                        <th>Submitted Date</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Rajkumar Murugesan</td>
-                                        <td>08/15/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Zhang Jin Shan</td>
-                                        <td>08/16/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Kavya Elizabeth James</td>
-                                        <td>08/16/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Hu Xiao Xi</td>
-                                        <td>08/16/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Khin Su Pyae Moe</td>
-                                        <td>08/16/2017</td>
-                                    </tr>
-                                </table>
+                                <asp:GridView ID="gvAdjVoucher" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False">
+                                    <Columns>
+                                        <asp:BoundField HeaderText="Raised By" DataField="RaiseBy"  />
+                                        <asp:BoundField HeaderText="Submitted Date" DataField="SubmitDate" DataFormatString="{0:d}" />
+                                    </Columns>
+                                </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink6" CssClass="pull-right" NavigateUrl="~/View/StoreView/Manager/AdjVoucher.aspx" runat="server">View Report</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink6" CssClass="pull-right" NavigateUrl="~/View/StoreView/Manager/AdjVoucher.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>
@@ -270,25 +230,17 @@
                             </div>
                         </div>
                         <div class="body">
-                            <p>You have a total of 2 pending purchase orders that need approval.</p>
+                            <p>You have a total of <asp:Literal ID="litViewOrder" runat="server"></asp:Literal> pending purchase orders that need approval.</p>
                             <p></p>
                             <div class="col-lg-12">
-                                <table class="table table-striped table-bordered">
-                                    <tr>
-                                        <th>Raised By</th>
-                                        <th>Submitted Date</th>
-                                    </tr>
-                                    <tr>
-                                        <td>ALPHA Office Supplies</td>
-                                        <td>8/1/2017</td>
-                                    </tr>
-                                    <tr>
-                                        <td>BANES Shop</td>
-                                        <td>8/7/2017</td>
-                                    </tr>
-                                </table>
+                                <asp:GridView ID="gvViewOrder" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False">
+                                    <Columns>
+                                        <asp:BoundField HeaderText="Raised By" DataField="Supplier.CompanyName" />
+                                        <asp:BoundField HeaderText="Submitted Date" DataField="OrderDate" DataFormatString="{0:d}" />
+                                    </Columns>
+                                </asp:GridView>
                                 <div>
-                                    <asp:HyperLink ID="HyperLink7" CssClass="pull-right" NavigateUrl="~/View/StoreView/Manager/ViewOrder.aspx" runat="server">View Report</asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink7" CssClass="pull-right" NavigateUrl="~/View/StoreView/Manager/ViewOrder.aspx" runat="server">More</asp:HyperLink>
                                 </div>
                             </div>
                         </div>

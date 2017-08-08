@@ -11,7 +11,6 @@ namespace LUSSIS.View.StoreView.Clerk
     public partial class UpdateSuppliers : System.Web.UI.Page
     {
         StockManagementBLL s = new StockManagementBLL();
-        List<Supplier> l;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,34 +19,34 @@ namespace LUSSIS.View.StoreView.Clerk
                 {
                     Supplier sp = new Supplier();
                     sp = s.getSupplierbyID(Request.QueryString["id"].ToString());
-                    TextBox1.Text = sp.SupplierId;
-                    TextBox2.Text = sp.CompanyName;
-                    TextBox3.Text = sp.ContactPerson;
-                    TextBox4.Text = sp.Phone;
-                    TextBox5.Text = sp.Fax;
-                    TextBox6.Text = sp.Address;
-                    TextBox7.Text = sp.Email;
-                    TextBox8.Text = sp.GstNo;
+                    txtSupplierId.Text = sp.SupplierId;
+                    txtCompanyName.Text = sp.CompanyName;
+                    txtContactPerson.Text = sp.ContactPerson;
+                    txtPhoneNo.Text = sp.Phone;
+                    txtFaxNo.Text = sp.Fax;
+                    txtAddress.Text = sp.Address;
+                    txtEmail.Text = sp.Email;
+                    txtGSTNo.Text = sp.GstNo;
                 }
             }
         }
-
-        protected void Button2_Click(object sender, EventArgs e)
+        //update supplier
+        protected void btnUpdate_Click(object sender, EventArgs e)
         {
             Supplier sp = new Supplier();
-            sp.SupplierId = TextBox1.Text;
-            sp.CompanyName = TextBox2.Text;
-            sp.ContactPerson = TextBox3.Text;
-            sp.Phone = TextBox4.Text;
-            sp.Fax = TextBox5.Text;
-            sp.Address = TextBox6.Text;
-            sp.Email = TextBox7.Text;
-            sp.GstNo = TextBox8.Text;
+            sp.SupplierId = txtSupplierId.Text;
+            sp.CompanyName = txtCompanyName.Text;
+            sp.ContactPerson = txtContactPerson.Text;
+            sp.Phone = txtPhoneNo.Text;
+            sp.Fax = txtFaxNo.Text;
+            sp.Address = txtAddress.Text;
+            sp.Email = txtEmail.Text;
+            sp.GstNo = txtGSTNo.Text;
             s.UpdateSupplier(sp);
             Response.Redirect("EditSuppliers.aspx");
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        //cancel and back to EditSuppliers.aspx
+        protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("EditSuppliers.aspx");
         }
